@@ -1,4 +1,4 @@
-import { Attachments, Client, createClient, ZendeskCallback, ZendeskID } from "node-zendesk";
+import { Attachments, Client, createClient } from "node-zendesk";
 import * as path from "path";
 
 const client: Client = createClient({
@@ -18,6 +18,10 @@ client.jobstatuses.watch(123, 2, 3).then(zendeskCallback);
 /** Macros Methods */
 client.macros.applyTicket(123, 123, zendeskCallback);
 client.macros.applyTicket(123, 123).then(zendeskCallback);
+
+/** Organizations Methods */
+client.organizations.list(zendeskCallback);
+client.organizations.list().then(zendeskCallback);
 
 /** Requests Methods */
 client.requests.list(zendeskCallback);
@@ -99,6 +103,7 @@ client.tickets.create({ ticket: { comment: {
   uploads: [token]
 } } }, zendeskCallback);
 client.tickets.create({ ticket: { comment: {} } }).then(zendeskCallback);
+client.tickets.create({ ticket: { comment: {}, requester: { name: "" } } }).then(zendeskCallback);
 client.tickets.createMany({ tickets: [{ comment: {} }] }, zendeskCallback);
 client.tickets.createMany({ tickets: [{ comment: {} }] }).then(zendeskCallback);
 client.tickets.update(123, { ticket: {} }, zendeskCallback);

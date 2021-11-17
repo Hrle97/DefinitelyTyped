@@ -134,6 +134,8 @@ redis.zadd('myset', 'NX', 'CH', 1, 'member').then(console.log);
 redis.zadd('myset', 'NX', 'CH', 1, 'member', cb);
 redis.zadd('myset', 'NX', 'CH', 'INCR', 1, 'member').then(console.log);
 redis.zadd('myset', 'NX', 'CH', 'INCR', 1, 'member', cb);
+redis.zscore('myset', 'member').then(console.log);
+redis.zscore('myset', 'member', cb);
 redis.zrem('myset', 'member').then(console.log);
 redis.zrem('myset', 'member', cbNumber);
 redis.zrem('myset', 'member', 'member2').then(console.log);
@@ -268,6 +270,11 @@ redis.get('foo').then((result: string | null) => {
 redis.sadd('set', 1, 3, 5, 7);
 redis.sadd('set', [1, 3, 5, 7]);
 
+// Test for ISMEMBER and MISMEMBER
+redis.sadd('set', 'val1', 'val2');
+redis.sismember('set', 'val1').then(console.log);
+redis.smismember('set', ...['val1', 'val2', 'val3']).then(console.log);
+
 // All arguments are passed directly to the redis server:
 redis.set('key', '100');
 redis.set('key', '100', 'XX');
@@ -369,6 +376,7 @@ new Redis({
         servername: 'tlsservername',
     },
     enableAutoPipelining: true,
+    disconnectTimeout: 1000
 });
 // Test commandTimeout
 new Redis({
@@ -441,6 +449,14 @@ Redis.Command.setArgumentTransformer('set', args => {
 
 Redis.Command.setReplyTransformer('get', (result: any) => {
     return result;
+});
+
+redis.scan(0).then(([nextCursor, keys]) => {
+    // nextCursor is always a string
+    if (nextCursor === '0') {
+        // keys is always an array of strings and it might be empty
+        return keys.map(key => key.trim());
+    }
 });
 
 redis.scan(0, 'match', '*foo*', 'count', 20).then(([nextCursor, keys]) => {
@@ -540,13 +556,15 @@ redis.xadd('streamName', 'MAXLEN', 100, '*', 'field', 'name');
 redis.xadd('streamName', 'MAXLEN', '~', 100, '*', 'field', 'name');
 redis.xclaim('streamName', 'groupName', 'consumerName', 3600000, 'id').then(console.log);
 redis.xclaim('streamName', 'groupName', 'consumerName', 3600000, 'id', cb);
+redis.xautoclaim('streamName', 'groupName', 'consumerName', 3600000, 'id').then(console.log);
 redis.xdel('streamName', 'id').then(console.log);
 redis.xdel('streamName', 'id', cbNumber);
 redis.xgroup('CREATE', 'streamName', 'groupName', '$').then(console.log);
 redis.xgroup('CREATE', 'streamName', 'groupName', '$', cb);
 redis.xgroup('SETUP', 'streamName', 'groupName', '$');
 redis.xgroup('DESTROY', 'streamName', 'groupName');
-redis.xgroup('DELCONSUMER', 'streamName', 'groupName', 'consumerName');
+redis.xgroup('CREATECONSUMER', 'streamName', 'groupName', 'consumerName').then(console.log);
+redis.xgroup('DELCONSUMER', 'streamName', 'groupName', 'consumerName').then(console.log);
 redis.xinfo('CONSUMERS', 'streamName', 'groupName').then(console.log);
 redis.xinfo('CONSUMERS', 'streamName', 'groupName', cb);
 redis.xinfo('GROUPS', 'streamName');
