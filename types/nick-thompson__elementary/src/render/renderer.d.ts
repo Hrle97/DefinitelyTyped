@@ -1,5 +1,8 @@
 import { EventEmitter } from 'events';
 
+import { MidiEvent } from '../midi';
+import { Child, NodeStatic } from '../node';
+
 export interface Renderer extends EventEmitter {
     /**
      * The load event fires when the runtime has finished preparing the audio
