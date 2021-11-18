@@ -1,15 +1,15 @@
-import { onCoreLoad } from './load';
-import { testCore } from './suites/core';
-import { testFactories } from './suites/factories';
-import { testNative } from './suites/native';
-import { testBasics } from './suites/basics';
-import { testDelays } from './suites/delays';
-import { testFilters } from './suites/filters';
-import { testMath } from './suites/math';
-import { testNoise } from './suites/noise';
-import { testOscillators } from './suites/oscillators';
-import { testSamples } from './suites/samples';
-import { testSignals } from './suites/signals';
+import { onCoreLoad } from './load.js';
+import { testCore } from './suites/core.js';
+import { testFactories } from './suites/factories.js';
+import { testNative } from './suites/native.js';
+import { testBasics } from './suites/basics.js';
+import { testDelays } from './suites/delays.js';
+import { testFilters } from './suites/filters.js';
+import { testMath } from './suites/math.js';
+import { testNoise } from './suites/noise.js';
+import { testOscillators } from './suites/oscillators.js';
+import { testSamples } from './suites/samples.js';
+import { testSignals } from './suites/signals.js';
 
 export {
     onCoreLoad,

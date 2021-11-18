@@ -11,8 +11,8 @@ import {
     testOscillators,
     testSamples,
     testSignals,
-} from './tests/tests';
-import { flush } from './tests/tester';
+} from './tests/tests.js';
+import { flush } from './tests/tester.js';
 
 onCoreLoad(
     testCore,

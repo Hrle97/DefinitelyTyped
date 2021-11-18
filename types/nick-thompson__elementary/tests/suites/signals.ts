@@ -1,5 +1,5 @@
-import { expect } from '../tester';
-import { el, ElementaryCallback } from '../load';
+import { expect } from '../tester.js';
+import { el, ElementaryCallback } from '../load.js';
 
 export const testSignals: ElementaryCallback = (
     core: el.Core,

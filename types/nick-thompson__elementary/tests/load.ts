@@ -1,5 +1,5 @@
 import * as el from '@nick-thompson/elementary';
-import { padEnd, print } from './tester';
+import { padEnd, print } from './tester.js';
 
 declare const global: any;
 const core: el.Core = global.elementary.core;

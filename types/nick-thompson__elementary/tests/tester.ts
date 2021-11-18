@@ -1,4 +1,4 @@
-import { el, core, process, console } from './load';
+import { el, core, process, console } from './load.js';
 
 // import * as colors from 'colors';
 
