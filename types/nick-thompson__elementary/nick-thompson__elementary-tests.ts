@@ -10,7 +10,7 @@ import {
     testNoise,
     testOscillators,
     testSamples,
-    testSignals
+    testSignals,
 } from './tests/index';
 import { flush } from './tests/tester';
 
@@ -33,4 +33,5 @@ onCoreLoad(
     testOscillators,
     testSamples,
     testSignals,
-    () => flush(stopMessage));
+    () => flush(stopMessage),
+);

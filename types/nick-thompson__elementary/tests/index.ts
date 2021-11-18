@@ -23,5 +23,5 @@ export {
     testNoise,
     testOscillators,
     testSamples,
-    testSignals
+    testSignals,
 };
