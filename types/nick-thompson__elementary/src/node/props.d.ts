@@ -1,10 +1,8 @@
 import { NativeNodeType, CompositeNodeType, NodeType } from './types';
-import { Node } from './node';
 import { Child } from './children';
 
 // for docs
-import { core } from './';
-import * as el from '../../';
+import { Node } from './node';
 
 // Base
 
@@ -15,7 +13,6 @@ import * as el from '../../';
  * string key.
  * Useful in some situations.
  *
- * @see core
  * @see KeyProps
  */
 export interface Props {
@@ -28,7 +25,6 @@ export interface Props {
  * Key determines whether props changed or the whole node changed upon
  * re-render.
  *
- * @see core
  * @see Props
  */
 export interface KeyProps {
@@ -43,8 +39,6 @@ export interface KeyProps {
 /**
  * Props for el.in.
  *
- * @see core
- * @see el.in
  * @see KeyProps
  */
 export interface InProps extends KeyProps {
@@ -52,7 +46,6 @@ export interface InProps extends KeyProps {
      * Input channel of the el.in node.
      *
      * @see InProps
-     * @see el.in
      */
     channel?: number;
 }
@@ -60,8 +53,6 @@ export interface InProps extends KeyProps {
 /**
  * Props for el.const.
  *
- * @see core
- * @see el.const
  * @see KeyProps
  */
 export interface ConstProps extends KeyProps {
@@ -69,7 +60,6 @@ export interface ConstProps extends KeyProps {
      * Value of the el.const node.
      *
      * @see ConstProps
-     * @see el.const
      */
     value: number;
 }
@@ -79,14 +69,12 @@ export interface ConstProps extends KeyProps {
 /**
  * Props for el.delay.
  *
- * @see core
  * @see KeyProps
  */
 export interface DelayProps extends KeyProps {
     /**
      * Maximum delay line in samples.
      *
-     * @see el.delay
      * @see DelayProps
      */
     size?: number;
@@ -97,7 +85,6 @@ export interface DelayProps extends KeyProps {
 /**
  * Props for el.convolve.
  *
- * @see core
  * @see KeyProps
  */
 export interface ConvolveProps extends KeyProps {
@@ -105,7 +92,6 @@ export interface ConvolveProps extends KeyProps {
      * Path to the file of the impulse response on disk.
      *
      * @see ConvolveProps
-     * @see el.convolve
      */
     path?: string;
 }
@@ -115,7 +101,6 @@ export interface ConvolveProps extends KeyProps {
 /**
  * Props for el.sample.
  *
- * @see core
  * @see KeyProps
  */
 export interface SampleProps extends KeyProps {
@@ -123,7 +108,6 @@ export interface SampleProps extends KeyProps {
      * Path to the file of the sample.
      *
      * @see SampleProps
-     * @see el.sample
      */
     path?: string;
 
@@ -132,7 +116,6 @@ export interface SampleProps extends KeyProps {
      * to read from the sample.
      *
      * @see SampleProps
-     * @see el.sample
      */
     channel?: number;
 
@@ -145,7 +128,6 @@ export interface SampleProps extends KeyProps {
      *   instead it continues playing it back from the start in a loop
      *
      * @see SampleProps
-     * @see el.sample
      */
     mode?: 'trigger' | 'gate' | 'loop';
 
@@ -153,7 +135,6 @@ export interface SampleProps extends KeyProps {
      * Offset in samples from the start of the sample where playback starts.
      *
      * @see SampleProps
-     * @see el.sample
      */
     startOffset?: number;
 
@@ -161,7 +142,6 @@ export interface SampleProps extends KeyProps {
      * Offset in samples from the end of the sample where playback ends.
      *
      * @see SampleProps
-     * @see el.sample
      */
     stopOffset?: number;
 }
@@ -170,7 +150,6 @@ export interface SampleProps extends KeyProps {
  * Props for el.table.
  * Properties 'path' and 'data' are mutually exclusive.
  *
- * @see core
  * @see KeyProps
  */
 export type TableProps = KeyProps &
@@ -192,7 +171,6 @@ export type TableProps = KeyProps &
 /**
  * Props for el.seq
  *
- * @see core
  * @see KeyProps
  */
 export interface SeqProps extends KeyProps {
@@ -200,7 +178,6 @@ export interface SeqProps extends KeyProps {
      * Sequence of values to generate.
      *
      * @see SeqProps
-     * @see el.seq
      */
     seq?: number[];
 
@@ -208,7 +185,6 @@ export interface SeqProps extends KeyProps {
      * When true, continues to output the sequence value until the next trigger.
      *
      * @see SeqProps
-     * @see el.seq
      */
     hold?: boolean;
 
@@ -216,7 +192,6 @@ export interface SeqProps extends KeyProps {
      * When true, sequence repeats, looping from start to end, indefinitely.
      *
      * @see SeqProps
-     * @see el.seq
      */
     loop?: boolean;
 }
@@ -226,7 +201,6 @@ export interface SeqProps extends KeyProps {
 /**
  * Type of props of any given {@link NodeType}.
  *
- * @see core
  * @see NativeNodeType
  * @see InProps
  * @see ConstProps
@@ -251,7 +225,6 @@ export type NativeNodeProps<T extends NativeNodeType> = {
 /**
  * Type of props of any given {@link CompositeNodeType}.
  *
- * @see core
  * @see Props
  */
 export type CompositeNodeProps<T extends CompositeNodeType> =
@@ -266,7 +239,6 @@ export type CompositeNodeProps<T extends CompositeNodeType> =
 /**
  * Type of props of any {@link NodeType}.
  *
- * @see core
  * @see NodeType
  * @see NativeNodeType
  * @see NativeNodeProps

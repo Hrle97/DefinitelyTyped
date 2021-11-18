@@ -1,18 +1,13 @@
 import { Node } from './node';
 import { Props } from './props';
-import {
-    ChildrenArray,
-    ChildrenArraySizeRange,
-    SizedChildrenArray,
-} from './children';
+import { ChildrenArraySizeRange, SizedChildrenArray } from './children';
 
 // for docs
-import { core } from './';
+import { ChildrenArray } from './children';
 
 /**
  * Internal types of {@link Node}.
  *
- * @see core
  * @see Node
  */
 export type NativeNodeType =
@@ -61,7 +56,6 @@ export type NativeNodeType =
 /**
  * Composites of native {@link Node}s.
  *
- * @see core
  * @see Node
  * @see Props
  * @see ChildrenArray
@@ -75,7 +69,6 @@ export type CompositeNodeType = {
 /**
  * Types of {@link Node}.
  *
- * @see core
  * @see Node
  * @see NativeNodeType
  * @see CompositeNodeType

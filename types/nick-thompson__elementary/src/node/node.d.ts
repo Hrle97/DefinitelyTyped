@@ -1,17 +1,14 @@
 import { NodeType, NativeNodeType, CompositeNodeType } from './types';
-import { NodeProps, Props } from './props';
+import { NodeProps } from './props';
 import { NodeChildren } from './children';
 
 // for docs
-import { Core } from './api';
-import { core } from './';
+import { Props } from './props';
 
 // Nodes
 
 /**
  * The fundamental building block of the Elementary audio graph.
- *
- * @see core
  */
 export interface Node {
     /**
@@ -27,7 +24,6 @@ export interface Node {
 /**
  * Native node specific to the {@link NativeNodeType}.
  *
- * @see core
  * @see Node
  */
 export interface NativeNode<T extends NativeNodeType = NativeNodeType>
@@ -45,7 +41,6 @@ export interface NativeNode<T extends NativeNodeType = NativeNodeType>
 /**
  * Native node specific to the {@link NativeNodeType}, props, and children.
  *
- * @see core
  * @see Node
  */
 export interface CompositeNode<T extends CompositeNodeType = CompositeNodeType>
@@ -65,7 +60,6 @@ export interface CompositeNode<T extends CompositeNodeType = CompositeNodeType>
  * If a {@link NativeNodeType} is passed props and children must match
  * the nodes' props and children types.
  *
- * @see core
  * @see Node
  * @see NativeNode
  * @see CompositeNode
@@ -156,7 +150,6 @@ export type SeqNode = NativeNode<'seq'>;
  * Returns a factory for the appropriate {@link NodeType}, props and children.
  * Most Elementary function types are created this way.
  *
- * @see core
  * @see Node
  * @see NodeType
  * @see NodeProps
@@ -185,7 +178,6 @@ export type NodeFactory<
  * a {@link Node} for the given {@link NodeType},
  * {@link NodeProps}, and {@link NodeChildren}
  *
- * @see core
  * @see Node
  * @see NodeType
  * @see NodeProps
@@ -208,7 +200,6 @@ export interface NodeConstructor {
 /**
  * Static members of {@link Node}.
  *
- * @see core
  * @see Node
  * @see NodeConstructor
  */

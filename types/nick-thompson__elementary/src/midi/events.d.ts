@@ -1,6 +1,3 @@
-// for docs
-import { core } from './';
-
 /**
  * Base MIDI event type.
  * MIDI events are emitted by MIDI devices such as keyboards, control
@@ -8,7 +5,6 @@ import { core } from './';
  * By default, Elementary listens to all MIDI events from all available MIDI
  * devices.
  *
- * @see core
  * @see MidiNoteEventBase
  * @see MidiControllerEvent
  */
@@ -33,7 +29,6 @@ export interface MidiEventBase {
 /**
  * Base type for MIDI note events.
  *
- * @see core
  * @see MidiEventBase
  * @see MidiNoteOnEvent
  * @see MidiNoteOffEvent
@@ -63,7 +58,6 @@ export interface MidiNoteEventBase extends MidiEventBase {
 /**
  * A stricter type for 'noteOn' MIDI event types.
  *
- * @see core
  * @see MidiNoteEventBase
  */
 export interface MidiNoteOnEvent extends MidiNoteEventBase {
@@ -76,7 +70,6 @@ export interface MidiNoteOnEvent extends MidiNoteEventBase {
 /**
  * A stricter type for 'noteOff' MIDI event types.
  *
- * @see core
  * @see MidiNoteEventBase
  */
 export interface MidiNoteOffEvent extends MidiNoteEventBase {
@@ -91,7 +84,6 @@ export interface MidiNoteOffEvent extends MidiNoteEventBase {
  * Unlike the base type, this one does not allow for types of note events
  * other than 'noteOn' and 'noteOff'.
  *
- * @see core
  * @see MidiNoteOnEvent
  * @see MidiNoteOffEvent
  * @see MidiNoteEventBase
@@ -101,7 +93,6 @@ export type MidiNoteEvent = MidiNoteOnEvent | MidiNoteOffEvent;
 /**
  * Base type for MIDI controller events usually emitted by control surfaces.
  *
- * @see core
  * @see MidiEventBase
  */
 export interface MidiControllerEvent extends MidiEventBase {
@@ -133,7 +124,6 @@ export interface MidiControllerEvent extends MidiEventBase {
 //  *
 //  * More information is needed to document this type of event.
 //  *
-//  * @see core
 //  * @see MidiEventBase
 //  */
 // export interface MidiProgramChangeEvent extends MidiEventBase {
@@ -144,7 +134,6 @@ export interface MidiControllerEvent extends MidiEventBase {
 //  *
 //  * More information is needed to document this type of event.
 //  *
-//  * @see core
 //  * @see MidiEventBase
 //  */
 // export interface MidiPitchWheelEvent extends MidiEventBase {
@@ -155,7 +144,6 @@ export interface MidiControllerEvent extends MidiEventBase {
 //  *
 //  * More information is needed to document this type of event.
 //  *
-//  * @see core
 //  * @see MidiEventBase
 //  */
 // export interface MidiAftertouchEvent extends MidiEventBase {
@@ -166,7 +154,6 @@ export interface MidiControllerEvent extends MidiEventBase {
 //  *
 //  * More information is needed to document this type of event.
 //  *
-//  * @see core
 //  * @see MidiEventBase
 //  */
 // export interface MidiChannelPressureEvent extends MidiEventBase {
@@ -177,7 +164,6 @@ export interface MidiControllerEvent extends MidiEventBase {
 //  *
 //  * More information is needed to document this type of event.
 //  *
-//  * @see core
 //  * @see MidiEventBase
 //  */
 // export interface MidiAllNotesOffEvent extends MidiEventBase {
@@ -188,7 +174,6 @@ export interface MidiControllerEvent extends MidiEventBase {
 //  *
 //  * More information is needed to document this type of event.
 //  *
-//  * @see core
 //  * @see MidiEventBase
 //  */
 // export interface MidiAllSoundOffEvent extends MidiEventBase {
@@ -199,7 +184,6 @@ export interface MidiControllerEvent extends MidiEventBase {
 //  *
 //  * More information is needed to document this type of event.
 //  *
-//  * @see core
 //  * @see MidiEventBase
 //  */
 // export interface MidiMetaEventEvent extends MidiEventBase {
@@ -209,7 +193,6 @@ export interface MidiControllerEvent extends MidiEventBase {
  * Raw MIDI event that is emitted when Elementary does not know which type
  * of event is appropriate for the given MIDI message.
  *
- * @see core
  * @see MidiEventBase
  */
 export interface MidiRawEvent extends MidiEventBase {
@@ -224,7 +207,6 @@ export interface MidiRawEvent extends MidiEventBase {
  * The base type is a lot looser and does not allow for fields that are
  * specific to certain types.
  *
- * @see core
  * @see MidiNoteOnEvent
  * @see MidiNoteOffEvent
  * @see MidiControllerEvent
