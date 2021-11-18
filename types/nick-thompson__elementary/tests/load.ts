@@ -3,6 +3,8 @@ import { padEnd, print } from './tester';
 
 declare const global: any;
 const core: el.Core = global.elementary.core;
+const process = global.process;
+const console = global.console;
 
 export type ElementaryCallback = (core: el.Core, el: el.Elementary) => void;
 
@@ -24,4 +26,4 @@ export function onCoreLoad(...callbacks: ElementaryCallback[]) {
     );
 }
 
-export { el, core };
+export { el, core, process, console };

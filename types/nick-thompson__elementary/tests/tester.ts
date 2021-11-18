@@ -1,17 +1,14 @@
-import { el, core } from './load';
+import { el, core, process, console } from './load';
 
 // import * as colors from 'colors';
 
-const messages: string[] = [];
-
 export function print(message: string) {
-    messages.push(message);
+    console.log(message);
 }
 
 export function flush(endMessage?: string) {
-    throw Error(`
-${messages.reduce((e, m) => `${e}\n${m}`, '')}
-${endMessage}`);
+    console.log(endMessage);
+    process.exit(0);
 }
 
 export function padEnd(s: string, n: number, c: string) {
