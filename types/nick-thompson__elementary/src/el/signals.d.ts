@@ -1,7 +1,4 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import * as node from '../node';
 
 // ============================================================================
 // Native
@@ -26,17 +23,16 @@ import * as el from '../';
  * the input signal
  *
  * @returns
- * a {@link core.LatchNode} that computes the controlled input signal output
+ * a {@link node.LatchNode} that computes the controlled input signal output
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.LatchNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.LatchNode
  */
-export const latch: core.NodeFactory<
-    'latch',
-    core.KeyProps,
-    [control: core.Child, input: core.Child]
+export const latch: node.NativeNodeFactory<
+  'latch',
+  node.KeyProps,
+  [control: node.Child, input: node.Child]
 >;
 
 /**
@@ -51,7 +47,7 @@ export const latch: core.NodeFactory<
  * reset the sequence position back to the beginning.
  *
  * @param [props]
- * {@link core.SeqProps} object
+ * {@link node.SeqProps} object
  *
  * @param next
  * the next step
@@ -60,17 +56,16 @@ export const latch: core.NodeFactory<
  * the last step
  *
  * @returns
- * a {@link core.SeqNode} that computes the output of the sequencer
+ * a {@link node.SeqNode} that computes the output of the sequencer
  *
- * @see el
- * @see core.SeqProps
- * @see core.Child
- * @see core.SeqNode
+ * @see node.SeqProps
+ * @see node.Child
+ * @see node.SeqNode
  */
-export const seq: core.NodeFactory<
-    'seq',
-    core.SeqProps,
-    [next: core.Child] | [next: core.Child, last: core.Child]
+export const seq: node.NativeNodeFactory<
+  'seq',
+  node.SeqProps,
+  [next: node.Child] | [next: node.Child, last: node.Child]
 >;
 
 // ============================================================================
@@ -105,23 +100,21 @@ export const seq: core.NodeFactory<
  * the gate signal limited to values of 0 and 1
  *
  * @returns
- * a {@link core.Node} that computes the output of the envelope
+ * a {@link node.Node} that computes the output of the envelope
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const adsr: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [
-        attack: core.Child,
-        delay: core.Child,
-        sustain: core.Child,
-        release: core.Child,
-        gate: core.Child,
-    ]
+export const adsr: node.CompositeNodeFactory<
+  node.KeyProps,
+  [
+    attack: node.Child,
+    delay: node.Child,
+    sustain: node.Child,
+    release: node.Child,
+    gate: node.Child,
+  ]
 >;
 
 /**
@@ -139,15 +132,13 @@ export const adsr: core.NodeFactory<
  * the incoming phase
  *
  * @returns
- * a {@link core.Node} that computes the output of the generator
+ * a {@link node.Node} that computes the output of the generator
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const hann: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [phase: core.Child]
+export const hann: node.CompositeNodeFactory<
+  node.KeyProps,
+  [phase: node.Child]
 >;

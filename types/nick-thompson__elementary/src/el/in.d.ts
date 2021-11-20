@@ -1,7 +1,4 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import * as node from '../node';
 
 // ============================================================================
 // Native
@@ -19,17 +16,16 @@ import * as el from '../';
  * to return the result of
  *
  * @returns
- * a {@link core.InNode} that returns the result of the operand
+ * a {@link node.InNode} that returns the result of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-declare const identity: core.NodeFactory<
-    'in',
-    core.KeyProps,
-    [operand: core.Child]
+declare const identity: node.NativeNodeFactory<
+  'in',
+  node.KeyProps,
+  [operand: node.Child]
 >;
 
 /**
@@ -38,39 +34,37 @@ declare const identity: core.NodeFactory<
  * incoming signal channel will be passed forward.
  *
  * @param [props]
- * {@link core.InProps} object
+ * {@link node.InProps} object
  *
  * @returns
- * a {@link core.InNode} that returns a stream of the input
+ * a {@link node.InNode} that returns a stream of the input
  *
- * @see el
- * @see core.InProps
- * @see core.Child
- * @see core.Node
+ * @see node.InProps
+ * @see node.Child
+ * @see node.Node
  */
-declare const input: core.NodeFactory<'in', core.InProps, []>;
+declare const input: node.NativeNodeFactory<'in', node.InProps>;
 
 /**
  * Either the identity or the input function.
  *
  * @param [props]
- * props object optional key or {@link core.InProps}
+ * props object optional key or {@link node.InProps}
  *
  * @param [operand]
  * if using in as the identity function the child of which the result will
  * be returned
  *
  * @returns
- * a {@link core.InNode} that returns the result of the operand or the
+ * a {@link node.InNode} that returns the result of the operand or the
  * stream of the input
  *
  * @see identity
  * @see input
- * @see el
- * @see core.InProps
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.InProps
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
 declare const _in: typeof identity & typeof input;
 

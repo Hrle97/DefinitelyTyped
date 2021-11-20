@@ -1,7 +1,4 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import { core } from '../core';
 
 // ============================================================================
 // Native
@@ -31,16 +28,15 @@ import * as el from '../';
  * @returns
  * a {@link core.SampleNode} that outputs the playback of the sample
  *
- * @see el
  * @see core.KeyProps
  * @see core.SampleProps
  * @see core.Child
  * @see core.SampleNode
  */
 export const sample: core.NodeFactory<
-    'sample',
-    core.SampleProps,
-    [trigger: core.Child]
+  'sample',
+  core.SampleProps,
+  [trigger: core.Child]
 >;
 
 /**
@@ -79,14 +75,13 @@ export const sample: core.NodeFactory<
  * @returns
  * a {@link core.TableNode} that computes the lookup table output
  *
- * @see el
  * @see core.KeyProps
  * @see core.TableProps
  * @see core.Child
  * @see core.TableNode
  */
 export const table: core.NodeFactory<
-    'table',
-    core.KeyProps,
-    [trigger: core.Child]
+  'table',
+  core.KeyProps,
+  [trigger: core.Child]
 >;

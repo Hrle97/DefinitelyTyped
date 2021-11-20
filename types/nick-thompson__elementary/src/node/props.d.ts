@@ -31,6 +31,13 @@ export interface KeyProps {
   key?: string;
 }
 
+/**
+ * Default props type
+ *
+ * @see KeyProps
+ */
+export type DefaultProps = KeyProps;
+
 // ***************************************************************************
 // Props
 

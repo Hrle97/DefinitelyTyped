@@ -1,7 +1,4 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import { core } from '../core';
 
 // ============================================================================
 // Native
@@ -28,15 +25,14 @@ import * as el from '../';
  * @returns
  * a {@link core.LatchNode} that computes the controlled input signal output
  *
- * @see el
  * @see core.KeyProps
  * @see core.Child
  * @see core.LatchNode
  */
 export const latch: core.NodeFactory<
-    'latch',
-    core.KeyProps,
-    [control: core.Child, input: core.Child]
+  'latch',
+  core.KeyProps,
+  [control: core.Child, input: core.Child]
 >;
 
 /**
@@ -62,15 +58,14 @@ export const latch: core.NodeFactory<
  * @returns
  * a {@link core.SeqNode} that computes the output of the sequencer
  *
- * @see el
  * @see core.SeqProps
  * @see core.Child
  * @see core.SeqNode
  */
 export const seq: core.NodeFactory<
-    'seq',
-    core.SeqProps,
-    [next: core.Child] | [next: core.Child, last: core.Child]
+  'seq',
+  core.SeqProps,
+  [next: core.Child] | [next: core.Child, last: core.Child]
 >;
 
 // ============================================================================
@@ -107,21 +102,20 @@ export const seq: core.NodeFactory<
  * @returns
  * a {@link core.Node} that computes the output of the envelope
  *
- * @see el
  * @see core.KeyProps
  * @see core.Child
  * @see core.Node
  */
 export const adsr: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [
-        attack: core.Child,
-        delay: core.Child,
-        sustain: core.Child,
-        release: core.Child,
-        gate: core.Child,
-    ]
+  core.CompositeNodeType,
+  core.KeyProps,
+  [
+    attack: core.Child,
+    delay: core.Child,
+    sustain: core.Child,
+    release: core.Child,
+    gate: core.Child,
+  ]
 >;
 
 /**
@@ -141,13 +135,12 @@ export const adsr: core.NodeFactory<
  * @returns
  * a {@link core.Node} that computes the output of the generator
  *
- * @see el
  * @see core.KeyProps
  * @see core.Child
  * @see core.Node
  */
 export const hann: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [phase: core.Child]
+  core.CompositeNodeType,
+  core.KeyProps,
+  [phase: core.Child]
 >;

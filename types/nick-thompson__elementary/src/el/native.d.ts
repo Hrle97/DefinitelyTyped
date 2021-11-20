@@ -1,12 +1,7 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import * as node from '../node';
 
 // ============================================================================
 // Native
-
-// TODO: figure out what root is and put it here
 
 /**
  * Generates a stream of random numbers
@@ -16,11 +11,10 @@ import * as el from '../';
  * props object with optional key
  *
  * @returns
- * a {@link core.RandNode} that computes a stream of random numbers
+ * a {@link node.RandNode} that computes a stream of random numbers
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.RandNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.RandNode
  */
-export const rand: core.NodeFactory<'rand', core.KeyProps, []>;
+export const rand: node.NativeNodeFactory<'rand', node.KeyProps>;

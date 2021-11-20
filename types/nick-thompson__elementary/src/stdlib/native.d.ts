@@ -1,12 +1,7 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import { core } from '../core';
 
 // ============================================================================
 // Native
-
-// TODO: figure out what root is and put it here
 
 /**
  * Generates a stream of random numbers
@@ -18,7 +13,6 @@ import * as el from '../';
  * @returns
  * a {@link core.RandNode} that computes a stream of random numbers
  *
- * @see el
  * @see core.KeyProps
  * @see core.Child
  * @see core.RandNode

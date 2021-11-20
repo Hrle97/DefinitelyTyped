@@ -1,10 +1,7 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import * as node from '../node';
 
 // ============================================================================
-// Native
+// Functions
 
 // in is in in.d.ts because it collides with the in function from math
 
@@ -19,13 +16,71 @@ import * as el from '../';
  *     el.inputs() === [el.in({channel: 0}), el.in({channel: 1})]
  *
  * @returns
- * an array of {@link core.InNode} that output the input signals of their
+ * an array of {@link node.InNode} that output the input signals of their
  * designated channels
  *
- * @see el
- * @see core.InNode
+ * @see node.InNode
  */
-export function inputs(): core.InNode[];
+export function inputs(): node.InNode[];
+
+/**
+ * Computes a real pole position giving exponential decay over t,
+ * where t is the time to decay 60dB.
+ * Computes lazily.
+ *
+ * @param child
+ * {@link node.Node} to compute the real pole position of
+ *
+ * @returns
+ * a {@link node.Node} that computes the real pole position of the child
+ *
+ * @see node.Node
+ */
+export function tau2pole(child: node.Node): node.Node;
+
+/**
+ * Computes a real pole position giving exponential decay over t,
+ * where t is the time to decay 60dB.
+ * Computes eagerly.
+ *
+ * @param time
+ * time to compute the real pole position of
+ *
+ * @returns
+ * real pole position of the time
+ */
+export function tau2pole(time: number): number;
+
+/**
+ * Equivalent to (time / 1000) * sampleRate,
+ * where time is the input time in milliseconds.
+ * Computes lazily.
+ *
+ * @param child
+ * {@link node.Node} to compute the sample count of
+ *
+ * @returns
+ * a {@link node.Node} computing the sample count the given child node
+ *
+ * @see node.Node
+ */
+export function ms2samps(child: node.Node): node.Node;
+
+/**
+ * Equivalent to (time / 1000) * sampleRate,
+ * where time is the input time in milliseconds.
+ * Computes eagerly.
+ *
+ * @param time
+ * time to convert to sample count
+ *
+ * @returns
+ * sample count of the time given
+ */
+export function ms2samps(time: number): number;
+
+// ============================================================================
+// Native
 
 /**
  * A constant value node whose value is set by the value prop.
@@ -37,18 +92,17 @@ export function inputs(): core.InNode[];
  *     el.cycle(el.const({value: 440}))
  *
  * @param [props]
- * {@link core.ConstProps} object
+ * {@link node.ConstProps} object
  *
  * @returns
- * a {@link core.ConstNode} that returns the given value
+ * a {@link node.ConstNode} that returns the given value
  *
- * @see el
- * @see core.KeyProps
- * @see core.ConstProps
- * @see core.Child
- * @see core.ConstNode
+ * @see node.KeyProps
+ * @see node.ConstProps
+ * @see node.Child
+ * @see node.ConstNode
  */
-declare const _const: core.NodeFactory<'const', core.ConstProps, []>;
+declare const _const: node.NativeNodeFactory<'const', node.ConstProps>;
 
 // noinspection ReservedWordAsName
 export { _const as const };
@@ -60,14 +114,13 @@ export { _const as const };
  * props object with optional key
  *
  * @returns
- * a {@link core.SrNode} that returns the current sample rate
+ * a {@link node.SrNode} that returns the current sample rate
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.SrNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.SrNode
  */
-export const sr: core.NodeFactory<'sr', core.KeyProps, []>;
+export const sr: node.NativeNodeFactory<'sr'>;
 
 /**
  * Outputs a continuous count of elapsed samples.
@@ -83,83 +136,17 @@ export const sr: core.NodeFactory<'sr', core.KeyProps, []>;
  * pulse to count
  *
  * @returns
- * a {@link core.CounterNode} that computes the count of the counter
+ * a {@link node.CounterNode} that computes the count of the counter
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.CounterNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.CounterNode
  */
-export const counter: core.NodeFactory<
-    'counter',
-    core.KeyProps,
-    [pulse: core.Child]
+export const counter: node.NativeNodeFactory<
+  'counter',
+  node.KeyProps,
+  [pulse: node.Child]
 >;
-
-// ============================================================================
-// Functions
-
-/**
- * Computes a real pole position giving exponential decay over t,
- * where t is the time to decay 60dB.
- * Computes lazily.
- *
- * @param child
- * {@link core.Node} to compute the real pole position of
- *
- * @returns
- * a {@link core.Node} that computes the real pole position of the child
- *
- * @see el
- * @see core.Node
- */
-export function tau2pole(child: core.Node): core.Node;
-
-/**
- * Computes a real pole position giving exponential decay over t,
- * where t is the time to decay 60dB.
- * Computes eagerly.
- *
- * @param time
- * time to compute the real pole position of
- *
- * @returns
- * real pole position of the time
- *
- * @see el
- */
-export function tau2pole(time: number): number;
-
-/**
- * Equivalent to (time / 1000) * sampleRate,
- * where time is the input time in milliseconds.
- * Computes lazily.
- *
- * @param child
- * {@link core.Node} to compute the sample count of
- *
- * @returns
- * a {@link core.Node} computing the sample count the given child node
- *
- * @see el
- * @see core.Node
- */
-export function ms2samps(child: core.Node): core.Node;
-
-/**
- * Equivalent to (time / 1000) * sampleRate,
- * where time is the input time in milliseconds.
- * Computes eagerly.
- *
- * @param time
- * time to convert to sample count
- *
- * @returns
- * sample count of the time given
- *
- * @see el
- */
-export function ms2samps(time: number): number;
 
 // ============================================================================
 // Composite
@@ -183,16 +170,14 @@ export function ms2samps(time: number): number;
  * result when signal is low
  *
  * @returns
- * a {@link core.Node} that results in high or low or their interpolation
+ * a {@link node.Node} that results in high or low or their interpolation
  * depending on the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const select: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [signal: core.Child, high: core.Child, low: core.Child]
+export const select: node.CompositeNodeFactory<
+  node.KeyProps,
+  [signal: node.Child, high: node.Child, low: node.Child]
 >;

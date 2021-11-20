@@ -1,7 +1,7 @@
 import { NodeType, NativeNodeType, CompositeNodeType } from './types';
 import { Context } from './context';
-import { Props, NodeProps } from './props';
-import { Children, NodeChildren } from './children';
+import { Props, DefaultProps, KeyProps, NodeProps, NativeNodeProps } from './props';
+import { Children, DefaultChildren, NodeChildren, NativeNodeChildren } from './children';
 
 // ***************************************************************************
 // Nodes
@@ -35,11 +35,11 @@ export interface NativeNode<T extends NativeNodeType = NativeNodeType>
    * @see Props
    */
   $$typeof: (T | unknown) & symbol;
-  // is symbol but T | unknown to suppress unused T warning
+  // NOTE: is symbol but T | unknown to suppress unused T warning
 }
 
 /**
- * Native node specific to the {@link NativeNodeType}, props, and children.
+ * Native node specific to the {@link CompositeNodeType}, props, and children.
  *
  * @see Node
  */
@@ -53,7 +53,7 @@ export interface CompositeNode<T extends CompositeNodeType = CompositeNodeType>
    * @see Props
    */
   $$typeof: (T | unknown) & symbol;
-  // is symbol but T | unknown to suppress unused T warning
+  // NOTE: is symbol but T | unknown to suppress unused T warning
 }
 
 /**
@@ -156,7 +156,16 @@ export type SeqNode = NativeNode<'seq'>;
 // Creation
 
 /**
- * Returns a function for the appropriate props and children
+ * Helper type that forces TypeScript to compute the type of function, so
+ * types that result in a function type look like an actual function in
+ * signatures.
+ */
+export type InferFunction<T extends (...params: any) => any> = (
+  ...params: Parameters<T>
+) => ReturnType<T>;
+
+/**
+ * Returns a function for the appropriate type, props and children.
  * Elementary stdlib function types are created this way.
  *
  * @see Node
@@ -164,14 +173,15 @@ export type SeqNode = NativeNode<'seq'>;
  * @see NodeProps
  * @see NodeChildren
  */
-export type NodeFunction<P extends Props, C extends Children> = (args: {
-  context: Context;
-  props?: P;
-  children?: C;
-}) => Node;
+export type CompositeNodeFunction<
+  P extends Props,
+  C extends Children,
+> = InferFunction<
+  (args: { context: Context; props?: P & KeyProps; children?: C }) => Node
+>;
 
 /**
- * Returns a factory for the appropriate {@link NodeType}, props and children.
+ * Returns a native factory for the appropriate type, props and children.
  * Elementary el function types are created this way.
  *
  * @see Node
@@ -179,12 +189,31 @@ export type NodeFunction<P extends Props, C extends Children> = (args: {
  * @see NodeProps
  * @see NodeChildren
  */
-export type NodeFactory<
-  T extends NodeType = NodeType,
-  P extends NodeProps<T> = NodeProps<T>,
-  C extends NodeChildren<T> = NodeChildren<T>,
-  R extends ConcreteNode<T> = ConcreteNode<T>,
-> = ((props: P, ...children: C) => R) & ((...children: C) => R);
+export type NativeNodeFactory<
+  T extends NativeNodeType = NativeNodeType,
+  P extends NativeNodeProps<T> = NativeNodeProps<T>,
+  C extends NativeNodeChildren<T> = NativeNodeChildren<T>,
+> = InferFunction<(props: P, ...children: C) => NativeNode<T>> &
+  InferFunction<(...children: C) => NativeNode<T>>;
+// NOTE: InferType twice because of TypeScript function intersections.
+
+/**
+ * Returns a composite factory for the appropriate type, props and children.
+ * Elementary el function types are created this way.
+ *
+ * @see Node
+ * @see NodeType
+ * @see NodeProps
+ * @see NodeChildren
+ */
+export type CompositeNodeFactory<
+  P extends Props = DefaultProps,
+  C extends Children = DefaultChildren,
+> = InferFunction<(props: P & KeyProps, ...children: C) =>
+CompositeNode<CompositeNodeFunction<P, C>> &
+  InferFunction<(...children: C) =>
+CompositeNode<CompositeNodeFunction<P, C>>>;
+// NOTE: InferType twice because of TypeScript function intersections.
 
 // ***************************************************************************
 // Sugar

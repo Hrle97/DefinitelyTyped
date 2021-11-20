@@ -1,25 +1,21 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import * as node from '../node';
 
 // ============================================================================
 // Native
 
 /**
- * A very simple single-sample delay {@link core.Node} (z^-1).
+ * A very simple single-sample delay {@link node.Node} (z^-1).
  *
  * @param [props]
  * props object with optional key
  *
  * @returns
- * the signal {@link core.ZNode} to delay
+ * the signal {@link node.ZNode} to delay
  *
- * @see el
- * @see core.KeyProps
- * @see core.ZNode
+ * @see node.KeyProps
+ * @see node.ZNode
  */
-export const z: core.NodeFactory<'z', core.KeyProps, []>;
+export const z: node.NativeNodeFactory<'z'>;
 
 /**
  * A variable-length delay line with a feedback component.
@@ -44,7 +40,7 @@ export const z: core.NodeFactory<'z', core.KeyProps, []>;
  *       signal));
  *
  * @param [props]
- * {@link core.DelayProps} object
+ * {@link node.DelayProps} object
  *
  * @param length
  * delay time in samples
@@ -56,15 +52,14 @@ export const z: core.NodeFactory<'z', core.KeyProps, []>;
  * the signal to delay
  *
  * @returns
- * a {@link core.DelayNode} that computes the output of the delay
+ * a {@link node.DelayNode} that computes the output of the delay
  *
- * @see el
- * @see core.DelayProps
- * @see core.Child
- * @see core.DelayNode
+ * @see node.DelayProps
+ * @see node.Child
+ * @see node.DelayNode
  */
-export const delay: core.NodeFactory<
-    'delay',
-    core.DelayProps,
-    [length: core.Child, feedback: core.Child, signal: core.Child]
+export const delay: node.NativeNodeFactory<
+  'delay',
+  node.DelayProps,
+  [length: node.Child, feedback: node.Child, signal: node.Child]
 >;

@@ -1,7 +1,4 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import * as node from '../node';
 
 // ============================================================================
 // Native
@@ -22,17 +19,16 @@ import * as el from '../';
  * signal to filter
  *
  * @returns
- * a {@link core.PoleNode} that filters the signal
+ * a {@link node.PoleNode} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.PoleNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.PoleNode
  */
-export const pole: core.NodeFactory<
-    'pole',
-    core.KeyProps,
-    [polePosition: core.Child, signal: core.Child]
+export const pole: node.NativeNodeFactory<
+  'pole',
+  node.KeyProps,
+  [polePosition: node.Child, signal: node.Child]
 >;
 
 /**
@@ -62,24 +58,23 @@ export const pole: core.NodeFactory<
  * signal to filter
  *
  * @returns
- * a {@link core.BiquadNode} that filters the signal
+ * a {@link node.BiquadNode} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.BiquadNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.BiquadNode
  */
-export const biquad: core.NodeFactory<
-    'biquad',
-    core.KeyProps,
-    [
-        b0: core.Child,
-        b1: core.Child,
-        b2: core.Child,
-        a1: core.Child,
-        a2: core.Child,
-        signal: core.Child,
-    ]
+export const biquad: node.NativeNodeFactory<
+  'biquad',
+  node.KeyProps,
+  [
+    b0: node.Child,
+    b1: node.Child,
+    b2: node.Child,
+    a1: node.Child,
+    a2: node.Child,
+    signal: node.Child,
+  ]
 >;
 
 /**
@@ -87,23 +82,22 @@ export const biquad: core.NodeFactory<
  * convolves it with the input signal.
  *
  * @param [props]
- * {@link core.ConvolveProps} object
+ * {@link node.ConvolveProps} object
  *
  * @param signal
  * signal to convolve
  *
  * @returns
- * a {@link core.ConvolveNode} that convolves the signal
+ * a {@link node.ConvolveNode} that convolves the signal
  *
- * @see el
- * @see core.ConvolveProps
- * @see core.Child
- * @see core.Node
+ * @see node.ConvolveProps
+ * @see node.Child
+ * @see node.Node
  */
-export const convolve: core.NodeFactory<
-    'convolve',
-    core.ConvolveProps,
-    [signal: core.Child]
+export const convolve: node.NativeNodeFactory<
+  'convolve',
+  node.ConvolveProps,
+  [signal: node.Child]
 >;
 
 // ============================================================================
@@ -128,17 +122,15 @@ export const convolve: core.NodeFactory<
  * signal to filter
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const zero: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [b0: core.Child, b1: core.Child, signal: core.Child]
+export const zero: node.CompositeNodeFactory<
+  node.KeyProps,
+  [b0: node.Child, b1: node.Child, signal: node.Child]
 >;
 
 /**
@@ -152,17 +144,15 @@ export const zero: core.NodeFactory<
  * signal to filter
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const dcblock: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [signal: core.Child]
+export const dcblock: node.CompositeNodeFactory<
+  node.KeyProps,
+  [signal: node.Child]
 >;
 
 /**
@@ -184,17 +174,15 @@ export const dcblock: core.NodeFactory<
  * signal to filter
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const df11: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [b0: core.Child, b1: core.Child, a1: core.Child, signal: core.Child]
+export const df11: node.CompositeNodeFactory<
+  node.KeyProps,
+  [b0: node.Child, b1: node.Child, a1: node.Child, signal: node.Child]
 >;
 
 /**
@@ -213,17 +201,15 @@ export const df11: core.NodeFactory<
  * signal to filter
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const smooth: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [polePosition: core.Child, signal: core.Child]
+export const smooth: node.CompositeNodeFactory<
+  node.KeyProps,
+  [polePosition: node.Child, signal: node.Child]
 >;
 
 /**
@@ -238,18 +224,13 @@ export const smooth: core.NodeFactory<
  * signal to filter
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const sm: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [signal: core.Child]
->;
+export const sm: node.CompositeNodeFactory<node.KeyProps, [signal: node.Child]>;
 
 /**
  * A simple lowpass biquad filter with a cutoff frequency, a Q,
@@ -268,17 +249,15 @@ export const sm: core.NodeFactory<
  * signal to filter
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const lowpass: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [cutoff: core.Child, Q: core.Child, signal: core.Child]
+export const lowpass: node.CompositeNodeFactory<
+  node.KeyProps,
+  [cutoff: node.Child, Q: node.Child, signal: node.Child]
 >;
 
 /**
@@ -298,17 +277,15 @@ export const lowpass: core.NodeFactory<
  * signal to filter
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const highpass: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [cutoff: core.Child, Q: core.Child, signal: core.Child]
+export const highpass: node.CompositeNodeFactory<
+  node.KeyProps,
+  [cutoff: node.Child, Q: node.Child, signal: node.Child]
 >;
 
 /**
@@ -328,17 +305,15 @@ export const highpass: core.NodeFactory<
  * signal
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const bandpass: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [cutoff: core.Child, Q: core.Child, signal: core.Child]
+export const bandpass: node.CompositeNodeFactory<
+  node.KeyProps,
+  [cutoff: node.Child, Q: node.Child, signal: node.Child]
 >;
 
 /**
@@ -358,17 +333,15 @@ export const bandpass: core.NodeFactory<
  * signal
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const allpass: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [cutoff: core.Child, Q: core.Child, signal: core.Child]
+export const allpass: node.CompositeNodeFactory<
+  node.KeyProps,
+  [cutoff: node.Child, Q: node.Child, signal: node.Child]
 >;
 
 /**
@@ -388,17 +361,15 @@ export const allpass: core.NodeFactory<
  * signal
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const notch: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [cutoff: core.Child, Q: core.Child, signal: core.Child]
+export const notch: node.CompositeNodeFactory<
+  node.KeyProps,
+  [cutoff: node.Child, Q: node.Child, signal: node.Child]
 >;
 
 /**
@@ -421,17 +392,15 @@ export const notch: core.NodeFactory<
  * signal
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const peak: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [cutoff: core.Child, Q: core.Child, gain: core.Child, signal: core.Child]
+export const peak: node.CompositeNodeFactory<
+  node.KeyProps,
+  [cutoff: node.Child, Q: node.Child, gain: node.Child, signal: node.Child]
 >;
 
 /**
@@ -454,17 +423,15 @@ export const peak: core.NodeFactory<
  * signal
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const lowshelf: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [cutoff: core.Child, Q: core.Child, gain: core.Child, signal: core.Child]
+export const lowshelf: node.CompositeNodeFactory<
+  node.KeyProps,
+  [cutoff: node.Child, Q: node.Child, gain: node.Child, signal: node.Child]
 >;
 
 /**
@@ -487,17 +454,15 @@ export const lowshelf: core.NodeFactory<
  * signal
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const highshelf: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [cutoff: core.Child, Q: core.Child, gain: core.Child, signal: core.Child]
+export const highshelf: node.CompositeNodeFactory<
+  node.KeyProps,
+  [cutoff: node.Child, Q: node.Child, gain: node.Child, signal: node.Child]
 >;
 
 /**
@@ -511,15 +476,13 @@ export const highshelf: core.NodeFactory<
  * signal to filter
  *
  * @returns
- * a {@link core.Node} that filters the signal
+ * a {@link node.Node} that filters the signal
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const pink: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [signal: core.Child]
+export const pink: node.CompositeNodeFactory<
+  node.KeyProps,
+  [signal: node.Child]
 >;

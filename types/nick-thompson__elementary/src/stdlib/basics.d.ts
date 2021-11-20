@@ -1,7 +1,4 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import { core } from '../core';
 
 // ============================================================================
 // Native
@@ -22,7 +19,6 @@ import * as el from '../';
  * an array of {@link core.InNode} that output the input signals of their
  * designated channels
  *
- * @see el
  * @see core.InNode
  */
 export function inputs(): core.InNode[];
@@ -42,7 +38,6 @@ export function inputs(): core.InNode[];
  * @returns
  * a {@link core.ConstNode} that returns the given value
  *
- * @see el
  * @see core.KeyProps
  * @see core.ConstProps
  * @see core.Child
@@ -62,7 +57,6 @@ export { _const as const };
  * @returns
  * a {@link core.SrNode} that returns the current sample rate
  *
- * @see el
  * @see core.KeyProps
  * @see core.Child
  * @see core.SrNode
@@ -85,15 +79,14 @@ export const sr: core.NodeFactory<'sr', core.KeyProps, []>;
  * @returns
  * a {@link core.CounterNode} that computes the count of the counter
  *
- * @see el
  * @see core.KeyProps
  * @see core.Child
  * @see core.CounterNode
  */
 export const counter: core.NodeFactory<
-    'counter',
-    core.KeyProps,
-    [pulse: core.Child]
+  'counter',
+  core.KeyProps,
+  [pulse: core.Child]
 >;
 
 // ============================================================================
@@ -110,7 +103,6 @@ export const counter: core.NodeFactory<
  * @returns
  * a {@link core.Node} that computes the real pole position of the child
  *
- * @see el
  * @see core.Node
  */
 export function tau2pole(child: core.Node): core.Node;
@@ -125,8 +117,6 @@ export function tau2pole(child: core.Node): core.Node;
  *
  * @returns
  * real pole position of the time
- *
- * @see el
  */
 export function tau2pole(time: number): number;
 
@@ -141,7 +131,6 @@ export function tau2pole(time: number): number;
  * @returns
  * a {@link core.Node} computing the sample count the given child node
  *
- * @see el
  * @see core.Node
  */
 export function ms2samps(child: core.Node): core.Node;
@@ -156,8 +145,6 @@ export function ms2samps(child: core.Node): core.Node;
  *
  * @returns
  * sample count of the time given
- *
- * @see el
  */
 export function ms2samps(time: number): number;
 
@@ -186,13 +173,12 @@ export function ms2samps(time: number): number;
  * a {@link core.Node} that results in high or low or their interpolation
  * depending on the signal
  *
- * @see el
  * @see core.KeyProps
  * @see core.Child
  * @see core.Node
  */
 export const select: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [signal: core.Child, high: core.Child, low: core.Child]
+  core.CompositeNodeType,
+  core.KeyProps,
+  [signal: core.Child, high: core.Child, low: core.Child]
 >;

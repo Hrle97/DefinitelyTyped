@@ -1,7 +1,4 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import { core } from '../core';
 
 // ============================================================================
 // Native
@@ -21,15 +18,14 @@ import * as el from '../';
  * @returns
  * a {@link core.InNode} that returns the result of the operand
  *
- * @see el
  * @see core.KeyProps
  * @see core.Child
  * @see core.Node
  */
 declare const identity: core.NodeFactory<
-    'in',
-    core.KeyProps,
-    [operand: core.Child]
+  'in',
+  core.KeyProps,
+  [operand: core.Child]
 >;
 
 /**
@@ -43,7 +39,6 @@ declare const identity: core.NodeFactory<
  * @returns
  * a {@link core.InNode} that returns a stream of the input
  *
- * @see el
  * @see core.InProps
  * @see core.Child
  * @see core.Node
@@ -66,7 +61,6 @@ declare const input: core.NodeFactory<'in', core.InProps, []>;
  *
  * @see identity
  * @see input
- * @see el
  * @see core.InProps
  * @see core.KeyProps
  * @see core.Child

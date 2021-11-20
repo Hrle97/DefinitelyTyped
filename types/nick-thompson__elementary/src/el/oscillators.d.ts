@@ -1,7 +1,4 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import * as node from '../node';
 
 // ============================================================================
 // Native
@@ -18,17 +15,16 @@ import * as el from '../';
  * the rate in Hz
  *
  * @returns
- * a {@link core.PhasorNode} the output of the phasor
+ * a {@link node.PhasorNode} the output of the phasor
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.PhasorNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.PhasorNode
  */
-export const phasor: core.NodeFactory<
-    'phasor',
-    core.KeyProps,
-    [rate: core.Child]
+export const phasor: node.NativeNodeFactory<
+  'phasor',
+  node.KeyProps,
+  [rate: node.Child]
 >;
 
 // ============================================================================
@@ -46,17 +42,15 @@ export const phasor: core.NodeFactory<
  * the rate in Hz
  *
  * @returns
- * a {@link core.Node} that computes the output of the pulse train
+ * a {@link node.Node} that computes the output of the pulse train
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const train: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [rate: core.Child]
+export const train: node.CompositeNodeFactory<
+  node.KeyProps,
+  [rate: node.Child]
 >;
 
 /**
@@ -71,17 +65,15 @@ export const train: core.NodeFactory<
  * the frequency in Hz
  *
  * @returns
- * a {@link core.Node} that computes the output of the sine wave
+ * a {@link node.Node} that computes the output of the sine wave
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const cycle: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [frequency: core.Child]
+export const cycle: node.CompositeNodeFactory<
+  node.KeyProps,
+  [frequency: node.Child]
 >;
 
 /**
@@ -99,17 +91,15 @@ export const cycle: core.NodeFactory<
  * the frequency in Hz
  *
  * @returns
- * a {@link core.Node} that computes the output of the saw wave
+ * a {@link node.Node} that computes the output of the saw wave
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const saw: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [frequency: core.Child]
+export const saw: node.CompositeNodeFactory<
+  node.KeyProps,
+  [frequency: node.Child]
 >;
 
 /**
@@ -127,17 +117,15 @@ export const saw: core.NodeFactory<
  * the frequency in Hz
  *
  * @returns
- * a {@link core.Node} that computes the output of the square wave
+ * a {@link node.Node} that computes the output of the square wave
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const square: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [frequency: core.Child]
+export const square: node.CompositeNodeFactory<
+  node.KeyProps,
+  [frequency: node.Child]
 >;
 
 /**
@@ -155,17 +143,15 @@ export const square: core.NodeFactory<
  * the frequency in Hz
  *
  * @returns
- * a {@link core.Node} that computes the output of the triangle wave
+ * a {@link node.Node} that computes the output of the triangle wave
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const triangle: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [frequency: core.Child]
+export const triangle: node.CompositeNodeFactory<
+  node.KeyProps,
+  [frequency: node.Child]
 >;
 
 /**
@@ -180,17 +166,15 @@ export const triangle: core.NodeFactory<
  * the frequency in Hz
  *
  * @returns
- * a {@link core.Node} that computes the output of the blepsaw
+ * a {@link node.Node} that computes the output of the blepsaw
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const blepsaw: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [frequency: core.Child]
+export const blepsaw: node.CompositeNodeFactory<
+  node.KeyProps,
+  [frequency: node.Child]
 >;
 
 /**
@@ -204,17 +188,15 @@ export const blepsaw: core.NodeFactory<
  * @param frequency
  * the frequency in Hz
  * @returns
- * a {@link core.Node} that computes the output of the blepsquare
+ * a {@link node.Node} that computes the output of the blepsquare
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const blepsquare: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [frequency: core.Child]
+export const blepsquare: node.CompositeNodeFactory<
+  node.KeyProps,
+  [frequency: node.Child]
 >;
 
 /**
@@ -240,15 +222,13 @@ export const blepsquare: core.NodeFactory<
  * the frequency in Hz
  *
  * @returns
- * a {@link core.Node} that computes the output of the bleptriangle
+ * a {@link node.Node} that computes the output of the bleptriangle
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const bleptriangle: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [frequency: core.Child]
+export const bleptriangle: node.CompositeNodeFactory<
+  node.KeyProps,
+  [frequency: node.Child]
 >;

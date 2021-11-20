@@ -72,6 +72,24 @@ export type ChildrenArray =
   | SizedChildrenArray<8>;
 
 /**
+ * Helper type to describe that some {@link Node}s can have a maximum of eight
+ * children and a minimum of one child.
+ *
+ * @see Child
+ * @see ChildrenArraySizeRange
+ * @see SizedChildrenArray
+ */
+export type VariadicChildrenArray =
+  | SizedChildrenArray<1>
+  | SizedChildrenArray<2>
+  | SizedChildrenArray<3>
+  | SizedChildrenArray<4>
+  | SizedChildrenArray<5>
+  | SizedChildrenArray<6>
+  | SizedChildrenArray<7>
+  | SizedChildrenArray<8>;
+
+/**
  * Helper type to get the children array size of {@link Node}s.
  *
  * @see Child
@@ -93,6 +111,17 @@ export type ChildrenArraySize<A extends any[]> = A['length'] &
  * @see ChildrenArray
  */
 export type Children = ChildrenArray;
+
+/**
+ * Default type for children.
+ *
+ * @see Child
+ * @see ChildrenArraySizeRange
+ * @see SizedChildrenArray
+ * @see ChildrenArray
+ * @see EmptyChildrenArray
+ */
+export type DefaultChildren = EmptyChildrenArray;
 
 /**
  * Type of children of any given {@link NativeNodeType}.

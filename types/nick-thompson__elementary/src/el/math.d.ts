@@ -1,7 +1,4 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import * as node from '../node';
 
 // ============================================================================
 // Native
@@ -20,14 +17,17 @@ import * as el from '../';
  * to compute the sine of
  *
  * @returns
- * a {@link core.SinNode} that computes the sine of the operand
+ * a {@link node.SinNode} that computes the sine of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.SinNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.SinNode
  */
-export const sin: core.NodeFactory<'sin', core.KeyProps, [operand: core.Child]>;
+export const sin: node.NativeNodeFactory<
+  'sin',
+  node.KeyProps,
+  [operand: node.Child]
+>;
 
 /**
  * Computes the cosine of the operand.
@@ -39,14 +39,17 @@ export const sin: core.NodeFactory<'sin', core.KeyProps, [operand: core.Child]>;
  * to compute the cosine of
  *
  * @returns
- * a {@link core.CosNode} that computes the cosine of the operand
+ * a {@link node.CosNode} that computes the cosine of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.CosNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.CosNode
  */
-export const cos: core.NodeFactory<'cos', core.KeyProps, [operand: core.Child]>;
+export const cos: node.NativeNodeFactory<
+  'cos',
+  node.KeyProps,
+  [operand: node.Child]
+>;
 
 /**
  * Computes the tangent of the operand.
@@ -58,14 +61,17 @@ export const cos: core.NodeFactory<'cos', core.KeyProps, [operand: core.Child]>;
  * to compute the tangent of
  *
  * @returns
- * a {@link core.TanNode} that computes the tangent of the operand
+ * a {@link node.TanNode} that computes the tangent of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.TanNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.TanNode
  */
-export const tan: core.NodeFactory<'tan', core.KeyProps, [operand: core.Child]>;
+export const tan: node.NativeNodeFactory<
+  'tan',
+  node.KeyProps,
+  [operand: node.Child]
+>;
 
 /**
  * Computes the hyperbolic tangent of the operand.
@@ -77,17 +83,16 @@ export const tan: core.NodeFactory<'tan', core.KeyProps, [operand: core.Child]>;
  * to compute the hyperbolic tangent of
  *
  * @returns
- * a {@link core.TanhNode} that computes the hyperbolic tangent of the operand
+ * a {@link node.TanhNode} that computes the hyperbolic tangent of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.TanhNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.TanhNode
  */
-export const tanh: core.NodeFactory<
-    'tanh',
-    core.KeyProps,
-    [operand: core.Child]
+export const tanh: node.NativeNodeFactory<
+  'tanh',
+  node.KeyProps,
+  [operand: node.Child]
 >;
 
 /**
@@ -100,18 +105,17 @@ export const tanh: core.NodeFactory<
  * to compute the inverse hyperbolic sine of
  *
  * @returns
- * a {@link core.AsinhNode} that computes the inverse hyperbolic sine
+ * a {@link node.AsinhNode} that computes the inverse hyperbolic sine
  * of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.AsinhNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.AsinhNode
  */
-export const asinh: core.NodeFactory<
-    'asinh',
-    core.KeyProps,
-    [operand: core.Child]
+export const asinh: node.NativeNodeFactory<
+  'asinh',
+  node.KeyProps,
+  [operand: node.Child]
 >;
 
 /**
@@ -124,16 +128,17 @@ export const asinh: core.NodeFactory<
  * to compute the natural logarithm of
  *
  * @returns
- * a {@link core.LnNode} that computes the natural logarithm of the operand
+ * a {@link node.LnNode} that computes the natural logarithm of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.LnNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.LnNode
  */
-export const ln: core.NodeFactory<'ln', core.KeyProps, [operand: core.Child]>;
-
-// TODO: confirm its the log in base 10
+export const ln: node.NativeNodeFactory<
+  'ln',
+  node.KeyProps,
+  [operand: node.Child]
+>;
 
 /**
  * Computes the logarithm in base 10 of the operand.
@@ -145,14 +150,17 @@ export const ln: core.NodeFactory<'ln', core.KeyProps, [operand: core.Child]>;
  * to compute the logarithm in base 10 of
  *
  * @returns
- * a {@link core.LogNode} that computes the logarithm in base 10 of the operand
+ * a {@link node.LogNode} that computes the logarithm in base 10 of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.LogNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.LogNode
  */
-export const log: core.NodeFactory<'log', core.KeyProps, [operand: core.Child]>;
+export const log: node.NativeNodeFactory<
+  'log',
+  node.KeyProps,
+  [operand: node.Child]
+>;
 
 /**
  * Computes the logarithm in base 2 of the operand.
@@ -164,17 +172,16 @@ export const log: core.NodeFactory<'log', core.KeyProps, [operand: core.Child]>;
  * to compute the logarithm in base 2 of
  *
  * @returns
- * a {@link core.Log2Node} that computes the logarithm in base 2 of the operand
+ * a {@link node.Log2Node} that computes the logarithm in base 2 of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Log2Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Log2Node
  */
-export const log2: core.NodeFactory<
-    'log2',
-    core.KeyProps,
-    [operand: core.Child]
+export const log2: node.NativeNodeFactory<
+  'log2',
+  node.KeyProps,
+  [operand: node.Child]
 >;
 
 /**
@@ -187,17 +194,16 @@ export const log2: core.NodeFactory<
  * to compute the ceiling of
  *
  * @returns
- * a {@link core.CeilNode} that computes the ceiling of the operand
+ * a {@link node.CeilNode} that computes the ceiling of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.CeilNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.CeilNode
  */
-export const ceil: core.NodeFactory<
-    'ceil',
-    core.KeyProps,
-    [operand: core.Child]
+export const ceil: node.NativeNodeFactory<
+  'ceil',
+  node.KeyProps,
+  [operand: node.Child]
 >;
 
 /**
@@ -210,17 +216,16 @@ export const ceil: core.NodeFactory<
  * to compute the floor of
  *
  * @returns
- * a {@link core.FloorNode} that computes the floor of the operand
+ * a {@link node.FloorNode} that computes the floor of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.FloorNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.FloorNode
  */
-export const floor: core.NodeFactory<
-    'floor',
-    core.KeyProps,
-    [operand: core.Child]
+export const floor: node.NativeNodeFactory<
+  'floor',
+  node.KeyProps,
+  [operand: node.Child]
 >;
 
 /**
@@ -233,20 +238,17 @@ export const floor: core.NodeFactory<
  * to compute the square root of
  *
  * @returns
- * a {@link core.SqrtNode} that computes the square root of the operand
+ * a {@link node.SqrtNode} that computes the square root of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.SqrtNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.SqrtNode
  */
-export const sqrt: core.NodeFactory<
-    'sqrt',
-    core.KeyProps,
-    [operand: core.Child]
+export const sqrt: node.NativeNodeFactory<
+  'sqrt',
+  node.KeyProps,
+  [operand: node.Child]
 >;
-
-// TODO: confirm base 10
 
 /**
  * Computes the exponential in base 10 of the operand.
@@ -258,14 +260,17 @@ export const sqrt: core.NodeFactory<
  * to compute the exponential in base 10 of
  *
  * @returns
- * a {@link core.ExpNode} that computes the exponential in base 10 of the operand
+ * a {@link node.ExpNode} that computes the exponential in base 10 of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.ExpNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.ExpNode
  */
-export const exp: core.NodeFactory<'exp', core.KeyProps, [operand: core.Child]>;
+export const exp: node.NativeNodeFactory<
+  'exp',
+  node.KeyProps,
+  [operand: node.Child]
+>;
 
 /**
  * Computes the absolute number of the operand.
@@ -277,14 +282,17 @@ export const exp: core.NodeFactory<'exp', core.KeyProps, [operand: core.Child]>;
  * to compute the absolute number of
  *
  * @returns
- * a {@link core.AbsNode} that computes the absolute number of the operand
+ * a {@link node.AbsNode} that computes the absolute number of the operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.AbsNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.AbsNode
  */
-export const abs: core.NodeFactory<'abs', core.KeyProps, [operand: core.Child]>;
+export const abs: node.NativeNodeFactory<
+  'abs',
+  node.KeyProps,
+  [operand: node.Child]
+>;
 
 // Binary
 
@@ -301,18 +309,17 @@ export const abs: core.NodeFactory<'abs', core.KeyProps, [operand: core.Child]>;
  * second operand
  *
  * @returns
- * a {@link core.LeNode} that computes whether the first is lesser
+ * a {@link node.LeNode} that computes whether the first is lesser
  * than the second operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.LeNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.LeNode
  */
-export const le: core.NodeFactory<
-    'le',
-    core.KeyProps,
-    [first: core.Child, second: core.Child]
+export const le: node.NativeNodeFactory<
+  'le',
+  node.KeyProps,
+  [first: node.Child, second: node.Child]
 >;
 
 /**
@@ -328,18 +335,17 @@ export const le: core.NodeFactory<
  * second operand
  *
  * @returns
- * a {@link core.LeqNode} that computes whether the first is lesser or equal
+ * a {@link node.LeqNode} that computes whether the first is lesser or equal
  * than the second operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.LeqNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.LeqNode
  */
-export const leq: core.NodeFactory<
-    'leq',
-    core.KeyProps,
-    [first: core.Child, second: core.Child]
+export const leq: node.NativeNodeFactory<
+  'leq',
+  node.KeyProps,
+  [first: node.Child, second: node.Child]
 >;
 
 /**
@@ -355,18 +361,17 @@ export const leq: core.NodeFactory<
  * second operand
  *
  * @returns
- * a {@link core.GeNode} that computes whether the first is greater
+ * a {@link node.GeNode} that computes whether the first is greater
  * than the second operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.GeNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.GeNode
  */
-export const ge: core.NodeFactory<
-    'ge',
-    core.KeyProps,
-    [first: core.Child, second: core.Child]
+export const ge: node.NativeNodeFactory<
+  'ge',
+  node.KeyProps,
+  [first: node.Child, second: node.Child]
 >;
 
 /**
@@ -382,18 +387,17 @@ export const ge: core.NodeFactory<
  * second operand
  *
  * @returns
- * a {@link core.GeqNode} that computes whether the first is greater or equal
+ * a {@link node.GeqNode} that computes whether the first is greater or equal
  * than the second operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.GeqNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.GeqNode
  */
-export const geq: core.NodeFactory<
-    'geq',
-    core.KeyProps,
-    [first: core.Child, second: core.Child]
+export const geq: node.NativeNodeFactory<
+  'geq',
+  node.KeyProps,
+  [first: node.Child, second: node.Child]
 >;
 
 /**
@@ -409,18 +413,17 @@ export const geq: core.NodeFactory<
  * second operand
  *
  * @returns
- * a {@link core.PowNode} that computes the power of the first with
+ * a {@link node.PowNode} that computes the power of the first with
  * the second as the exponent
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.PowNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.PowNode
  */
-export const pow: core.NodeFactory<
-    'pow',
-    core.KeyProps,
-    [first: core.Child, second: core.Child]
+export const pow: node.NativeNodeFactory<
+  'pow',
+  node.KeyProps,
+  [first: node.Child, second: node.Child]
 >;
 
 /**
@@ -436,17 +439,16 @@ export const pow: core.NodeFactory<
  * second operand
  *
  * @returns
- * a {@link core.ModNode} that computes the module of the first with the second
+ * a {@link node.ModNode} that computes the module of the first with the second
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.ModNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.ModNode
  */
-export const mod: core.NodeFactory<
-    'mod',
-    core.KeyProps,
-    [first: core.Child, second: core.Child]
+export const mod: node.NativeNodeFactory<
+  'mod',
+  node.KeyProps,
+  [first: node.Child, second: node.Child]
 >;
 
 /**
@@ -462,17 +464,16 @@ export const mod: core.NodeFactory<
  * second operand
  *
  * @returns
- * a {@link core.MinNode} that returns the result of the minimal operand
+ * a {@link node.MinNode} that returns the result of the minimal operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.MinNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.MinNode
  */
-export const min: core.NodeFactory<
-    'min',
-    core.KeyProps,
-    [first: core.Child, second: core.Child]
+export const min: node.NativeNodeFactory<
+  'min',
+  node.KeyProps,
+  [first: node.Child, second: node.Child]
 >;
 
 /**
@@ -488,17 +489,16 @@ export const min: core.NodeFactory<
  * second operand
  *
  * @returns
- * a {@link core.MaxNode} that returns the result of the maximal operand
+ * a {@link node.MaxNode} that returns the result of the maximal operand
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.MaxNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.MaxNode
  */
-export const max: core.NodeFactory<
-    'max',
-    core.KeyProps,
-    [first: core.Child, second: core.Child]
+export const max: node.NativeNodeFactory<
+  'max',
+  node.KeyProps,
+  [first: node.Child, second: node.Child]
 >;
 
 // Variadic
@@ -517,17 +517,16 @@ export const max: core.NodeFactory<
  * the operands to add up
  *
  * @returns
- * a {@link core.AddNode} that sums up the operands
+ * a {@link node.AddNode} that sums up the operands
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.AddNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.AddNode
  */
-export const add: core.NodeFactory<
-    'add',
-    core.KeyProps,
-    [...operands: core.VariadicChildrenArray]
+export const add: node.NativeNodeFactory<
+  'add',
+  node.KeyProps,
+  [...operands: node.VariadicChildrenArray]
 >;
 
 /**
@@ -541,17 +540,16 @@ export const add: core.NodeFactory<
  * the operands to subtract
  *
  * @returns
- * a {@link core.SubNode} that subtracts the rest of the operands from the first
+ * a {@link node.SubNode} that subtracts the rest of the operands from the first
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.SubNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.SubNode
  */
-export const sub: core.NodeFactory<
-    'sub',
-    core.KeyProps,
-    [...operands: core.VariadicChildrenArray]
+export const sub: node.NativeNodeFactory<
+  'sub',
+  node.KeyProps,
+  [...operands: node.VariadicChildrenArray]
 >;
 
 /**
@@ -568,17 +566,16 @@ export const sub: core.NodeFactory<
  * the operands to multiply
  *
  * @returns
- * a {@link core.MulNode} that multiplies the operands
+ * a {@link node.MulNode} that multiplies the operands
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.MulNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.MulNode
  */
-export const mul: core.NodeFactory<
-    'mul',
-    core.KeyProps,
-    [...operands: core.VariadicChildrenArray]
+export const mul: node.NativeNodeFactory<
+  'mul',
+  node.KeyProps,
+  [...operands: node.VariadicChildrenArray]
 >;
 
 /**
@@ -595,15 +592,14 @@ export const mul: core.NodeFactory<
  * the operands to divide
  *
  * @returns
- * a {@link core.DivNode} that divides the first with the rest of the operands
+ * a {@link node.DivNode} that divides the first with the rest of the operands
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.DivNode
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.DivNode
  */
-export const div: core.NodeFactory<
-    'div',
-    core.KeyProps,
-    [...operands: core.VariadicChildrenArray]
+export const div: node.NativeNodeFactory<
+  'div',
+  node.KeyProps,
+  [...operands: node.VariadicChildrenArray]
 >;

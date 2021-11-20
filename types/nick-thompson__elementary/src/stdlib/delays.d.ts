@@ -1,7 +1,4 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import { core } from '../core';
 
 // ============================================================================
 // Native
@@ -15,7 +12,6 @@ import * as el from '../';
  * @returns
  * the signal {@link core.ZNode} to delay
  *
- * @see el
  * @see core.KeyProps
  * @see core.ZNode
  */
@@ -58,13 +54,12 @@ export const z: core.NodeFactory<'z', core.KeyProps, []>;
  * @returns
  * a {@link core.DelayNode} that computes the output of the delay
  *
- * @see el
  * @see core.DelayProps
  * @see core.Child
  * @see core.DelayNode
  */
 export const delay: core.NodeFactory<
-    'delay',
-    core.DelayProps,
-    [length: core.Child, feedback: core.Child, signal: core.Child]
+  'delay',
+  core.DelayProps,
+  [length: core.Child, feedback: core.Child, signal: core.Child]
 >;

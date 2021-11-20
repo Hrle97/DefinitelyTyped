@@ -1,7 +1,4 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import * as node from '../node';
 
 // ============================================================================
 // Native
@@ -23,24 +20,23 @@ import * as el from '../';
  * Expects exactly one argument, the pulse train to trigger playback.
  *
  * @param [props]
- * {@link core.SampleProps} object
+ * {@link node.SampleProps} object
  *
  * @param trigger
  * the pulse train that triggers the playback
  *
  * @returns
- * a {@link core.SampleNode} that outputs the playback of the sample
+ * a {@link node.SampleNode} that outputs the playback of the sample
  *
- * @see el
- * @see core.KeyProps
- * @see core.SampleProps
- * @see core.Child
- * @see core.SampleNode
+ * @see node.KeyProps
+ * @see node.SampleProps
+ * @see node.Child
+ * @see node.SampleNode
  */
-export const sample: core.NodeFactory<
-    'sample',
-    core.SampleProps,
-    [trigger: core.Child]
+export const sample: node.NativeNodeFactory<
+  'sample',
+  node.SampleProps,
+  [trigger: node.Child]
 >;
 
 /**
@@ -71,22 +67,21 @@ export const sample: core.NodeFactory<
  *      el.add(0.1, el.mul(0.1, el.phasor(1))));
  *
  * @param [props]
- * {@link core.TableProps} object
+ * {@link node.TableProps} object
  *
  * @param trigger
  * the pulse train that triggers the playback
  *
  * @returns
- * a {@link core.TableNode} that computes the lookup table output
+ * a {@link node.TableNode} that computes the lookup table output
  *
- * @see el
- * @see core.KeyProps
- * @see core.TableProps
- * @see core.Child
- * @see core.TableNode
+ * @see node.KeyProps
+ * @see node.TableProps
+ * @see node.Child
+ * @see node.TableNode
  */
-export const table: core.NodeFactory<
-    'table',
-    core.KeyProps,
-    [trigger: core.Child]
+export const table: node.NativeNodeFactory<
+  'table',
+  node.KeyProps,
+  [trigger: node.Child]
 >;

@@ -1,7 +1,4 @@
-import { core } from './core';
-
-// for docs
-import * as el from '../';
+import * as node from '../node';
 
 // ============================================================================
 // Composite
@@ -14,14 +11,13 @@ import * as el from '../';
  * props object with optional key
  *
  * @returns
- * a {@link core.Node} that generates white noise
+ * a {@link node.Node} that generates white noise
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const noise: core.NodeFactory<core.CompositeNodeType, core.KeyProps, []>;
+export const noise: node.CompositeNodeFactory;
 
 /**
  * A simple pink noise generator.
@@ -31,15 +27,10 @@ export const noise: core.NodeFactory<core.CompositeNodeType, core.KeyProps, []>;
  * props object with optional key
  *
  * @returns
- * a {@link core.Node} that generates pink noise
+ * a {@link node.Node} that generates pink noise
  *
- * @see el
- * @see core.KeyProps
- * @see core.Child
- * @see core.Node
+ * @see node.KeyProps
+ * @see node.Child
+ * @see node.Node
  */
-export const pinknoise: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    []
->;
+export const pinknoise: node.CompositeNodeFactory;
