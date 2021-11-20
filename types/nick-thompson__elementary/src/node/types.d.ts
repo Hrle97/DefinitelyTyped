@@ -2,56 +2,66 @@ import { Node } from './node';
 import { Props } from './props';
 import { ChildrenArraySizeRange, SizedChildrenArray } from './children';
 
-// for docs
-import { ChildrenArray } from './children';
-
 /**
  * Internal types of {@link Node}.
  *
  * @see Node
  */
 export type NativeNodeType =
-    | 'sin'
-    | 'cos'
-    | 'tan'
-    | 'tanh'
-    | 'asinh'
-    | 'ln'
-    | 'log'
-    | 'log2'
-    | 'ceil'
-    | 'floor'
-    | 'sqrt'
-    | 'exp'
-    | 'abs'
-    | 'le'
-    | 'leq'
-    | 'ge'
-    | 'geq'
-    | 'pow'
-    | 'add'
-    | 'sub'
-    | 'mul'
-    | 'div'
-    | 'mod'
-    | 'min'
-    | 'max'
-    | 'root'
-    | 'in'
-    | 'sr'
-    | 'const'
-    | 'phasor'
-    | 'rand'
-    | 'counter'
-    | 'latch'
-    | 'sample'
-    | 'table'
-    | 'seq'
-    | 'delay'
-    | 'z'
-    | 'pole'
-    | 'biquad'
-    | 'convolve';
+  /* Analysis */
+  | 'meter'
+  /* Native */
+  | 'metro'
+  | 'rand'
+  /* Basics */
+  | 'in'
+  | 'sr'
+  | 'const'
+  | 'counter'
+  /* Delays */
+  | 'z'
+  | 'tapIn'
+  | 'tapOut'
+  | 'delay'
+  /* Filters */
+  | 'pole'
+  | 'biquad'
+  | 'convolve'
+  /* Math */
+  | 'sin'
+  | 'cos'
+  | 'tan'
+  | 'tanh'
+  | 'asinh'
+  | 'ln'
+  | 'log'
+  | 'log2'
+  | 'ceil'
+  | 'floor'
+  | 'sqrt'
+  | 'exp'
+  | 'abs'
+  | 'le'
+  | 'leq'
+  | 'ge'
+  | 'geq'
+  | 'pow'
+  | 'add'
+  | 'sub'
+  | 'mul'
+  | 'div'
+  | 'mod'
+  | 'min'
+  | 'max'
+  /* Noise */
+  /* Oscillators */
+  | 'phasor'
+  /* Samples */
+  | 'sample'
+  | 'table'
+  /* Signals */
+  | 'latch'
+  | 'seq';
 
 /**
  * Composites of native {@link Node}s.
@@ -61,9 +71,11 @@ export type NativeNodeType =
  * @see ChildrenArray
  */
 export type CompositeNodeType = {
-    [key in ChildrenArraySizeRange]:
-        | ((...children: SizedChildrenArray<key>) => Node)
-        | ((props: Props, ...children: SizedChildrenArray<key>) => Node);
+  [childrenArraySize in ChildrenArraySizeRange]: (args: {
+    props?: Props;
+    context: {};
+    children?: SizedChildrenArray<childrenArraySize>;
+  }) => Node;
 }[ChildrenArraySizeRange];
 
 /**

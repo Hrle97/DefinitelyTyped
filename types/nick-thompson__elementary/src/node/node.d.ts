@@ -1,24 +1,23 @@
 import { NodeType, NativeNodeType, CompositeNodeType } from './types';
-import { NodeProps } from './props';
-import { NodeChildren } from './children';
+import { Context } from './context';
+import { Props, NodeProps } from './props';
+import { Children, NodeChildren } from './children';
 
-// for docs
-import { Props } from './props';
-
+// ***************************************************************************
 // Nodes
 
 /**
  * The fundamental building block of the Elementary audio graph.
  */
 export interface Node {
-    /**
-     * Do not use this! It is only here to differentiate {@link Node} and
-     * {@link Props} types.
-     *
-     * @see Node
-     * @see Props
-     */
-    $$typeof: unknown;
+  /**
+   * Do not use this! It is only here to differentiate {@link Node} and
+   * {@link Props} types.
+   *
+   * @see Node
+   * @see Props
+   */
+  $$typeof: symbol;
 }
 
 /**
@@ -27,15 +26,16 @@ export interface Node {
  * @see Node
  */
 export interface NativeNode<T extends NativeNodeType = NativeNodeType>
-    extends Node {
-    /**
-     * Do not use this! It is only here to differentiate {@link Node} and
-     * {@link Props} types.
-     *
-     * @see Node
-     * @see Props
-     */
-    $$typeof: unknown;
+  extends Node {
+  /**
+   * Do not use this! It is only here to differentiate {@link Node} and
+   * {@link Props} types.
+   *
+   * @see Node
+   * @see Props
+   */
+  $$typeof: (T | unknown) & symbol;
+  // is symbol but T | unknown to suppress unused T warning
 }
 
 /**
@@ -44,15 +44,16 @@ export interface NativeNode<T extends NativeNodeType = NativeNodeType>
  * @see Node
  */
 export interface CompositeNode<T extends CompositeNodeType = CompositeNodeType>
-    extends Node {
-    /**
-     * Do not use this! It is only here to differentiate {@link Node} and
-     * {@link Props} types.
-     *
-     * @see Node
-     * @see Props
-     */
-    $$typeof: unknown;
+  extends Node {
+  /**
+   * Do not use this! It is only here to differentiate {@link Node} and
+   * {@link Props} types.
+   *
+   * @see Node
+   * @see Props
+   */
+  $$typeof: (T | unknown) & symbol;
+  // is symbol but T | unknown to suppress unused T warning
 }
 
 /**
@@ -70,12 +71,42 @@ export interface CompositeNode<T extends CompositeNodeType = CompositeNodeType>
  * @see NodeConstructor
  */
 export type ConcreteNode<T extends NodeType> = T extends NativeNodeType
-    ? NativeNode<T>
-    : T extends CompositeNodeType
-    ? CompositeNode<T>
-    : never;
+  ? NativeNode<T>
+  : T extends CompositeNodeType
+  ? CompositeNode<T>
+  : never;
+
+// ***************************************************************************
+// Native nodes
+
+// Analysis
+
+export type MeterNode = NativeNode<'meter'>;
 
 // Native
+
+export type RandNode = NativeNode<'rand'>;
+export type MetroNode = NativeNode<'metro'>;
+
+// Basics
+
+export type InNode = NativeNode<'in'>;
+export type SrNode = NativeNode<'sr'>;
+export type ConstNode = NativeNode<'const'>;
+export type CounterNode = NativeNode<'counter'>;
+
+// Delays
+
+export type ZNode = NativeNode<'z'>;
+export type TapOutNode = NativeNode<'tapOut'>;
+export type TapInNode = NativeNode<'tapIn'>;
+export type DelayNode = NativeNode<'delay'>;
+
+// Filters
+
+export type PoleNode = NativeNode<'pole'>;
+export type BiquadNode = NativeNode<'biquad'>;
+export type ConvolveNode = NativeNode<'convolve'>;
 
 // Math
 
@@ -107,29 +138,6 @@ export type SubNode = NativeNode<'sub'>;
 export type MulNode = NativeNode<'mul'>;
 export type DivNode = NativeNode<'div'>;
 
-// Native
-
-export type RootNode = NativeNode<'root'>;
-export type RandNode = NativeNode<'rand'>;
-
-// Basics
-
-export type InNode = NativeNode<'in'>;
-export type SrNode = NativeNode<'sr'>;
-export type ConstNode = NativeNode<'const'>;
-export type CounterNode = NativeNode<'counter'>;
-
-// Delays
-
-export type ZNode = NativeNode<'z'>;
-export type DelayNode = NativeNode<'delay'>;
-
-// Filters
-
-export type PoleNode = NativeNode<'pole'>;
-export type BiquadNode = NativeNode<'biquad'>;
-export type ConvolveNode = NativeNode<'convolve'>;
-
 // Oscillators
 
 export type PhasorNode = NativeNode<'phasor'>;
@@ -144,11 +152,27 @@ export type TableNode = NativeNode<'table'>;
 export type LatchNode = NativeNode<'latch'>;
 export type SeqNode = NativeNode<'seq'>;
 
+// ***************************************************************************
 // Creation
 
 /**
+ * Returns a function for the appropriate props and children
+ * Elementary stdlib function types are created this way.
+ *
+ * @see Node
+ * @see NodeType
+ * @see NodeProps
+ * @see NodeChildren
+ */
+export type NodeFunction<P extends Props, C extends Children> = (args: {
+  context: Context;
+  props?: P;
+  children?: C;
+}) => Node;
+
+/**
  * Returns a factory for the appropriate {@link NodeType}, props and children.
- * Most Elementary function types are created this way.
+ * Elementary el function types are created this way.
  *
  * @see Node
  * @see NodeType
@@ -156,65 +180,25 @@ export type SeqNode = NativeNode<'seq'>;
  * @see NodeChildren
  */
 export type NodeFactory<
-    T extends NodeType = NodeType,
-    P extends NodeProps<T> = NodeProps<T>,
-    C extends NodeChildren<T> = NodeChildren<T>,
-    R extends ConcreteNode<T> = ConcreteNode<T>,
+  T extends NodeType = NodeType,
+  P extends NodeProps<T> = NodeProps<T>,
+  C extends NodeChildren<T> = NodeChildren<T>,
+  R extends ConcreteNode<T> = ConcreteNode<T>,
 > = ((props: P, ...children: C) => R) & ((...children: C) => R);
 
-/**
- * Constructs a {@link Node} of the given {@link NodeType}.
- *
- * @param type
- * {@link NodeType} of the to create
- *
- * @param [props = {}]
- * {@link NodeProps} of the to create
- *
- * @param children
- * {@link NodeChildren} of the to create
- *
- * @returns
- * a {@link Node} for the given {@link NodeType},
- * {@link NodeProps}, and {@link NodeChildren}
- *
- * @see Node
- * @see NodeType
- * @see NodeProps
- * @see NodeChildren
- * @see NodeStatic
- */
-export interface NodeConstructor {
-    new <T extends NodeType>(
-        type: T,
-        props: NodeProps<T>,
-        children: NodeChildren<T>,
-    ): ConcreteNode<T>;
+// ***************************************************************************
+// Sugar
 
-    new <T extends NodeType>(
-        type: T,
-        children: NodeChildren<T>,
-    ): ConcreteNode<T>;
-}
+export type Sugar = (<T extends NodeType>(
+  type: T,
+  props: NodeProps<T>,
+  ...children: NodeChildren<T>
+) => ConcreteNode<T>) &
+  (<T extends NodeType>(
+    type: T,
+    ...children: NodeChildren<T>
+  ) => ConcreteNode<T>);
 
-/**
- * Static members of {@link Node}.
- *
- * @see Node
- * @see NodeConstructor
- */
-export interface NodeStatic extends NodeConstructor {
-    /**
-     * Checks whether an object is a {@link Node}
-     *
-     * @param toCheck
-     * object to check whether it is a {@link Node}
-     *
-     * @returns
-     * whether toCheck is a {@link Node}
-     *
-     * @see NodeStatic
-     * @see Node
-     */
-    isNode(toCheck: any): toCheck is Node;
-}
+export type CandyWrap = <O extends { [name: string]: NodeType }>(
+  object: O,
+) => { [name in keyof O]: NodeFactory<O[name]> };

@@ -20,29 +20,37 @@ export type Child = Node | number;
 export type ChildrenArraySizeRange = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 /**
+ * A helper empty children array.
+ *
+ * @see Child
+ * @see ChildrenArraySizeRange
+ */
+export type EmptyChildrenArray = never[];
+
+/**
  * A helper children array of fixed size in the range of [0, 8].
  *
  * @see Child
  * @see ChildrenArraySizeRange
  */
 export type SizedChildrenArray<Size extends ChildrenArraySizeRange> =
-    Size extends 1
-        ? [Child]
-        : Size extends 2
-        ? [Child, Child]
-        : Size extends 3
-        ? [Child, Child, Child]
-        : Size extends 4
-        ? [Child, Child, Child, Child]
-        : Size extends 5
-        ? [Child, Child, Child, Child, Child]
-        : Size extends 6
-        ? [Child, Child, Child, Child, Child, Child]
-        : Size extends 7
-        ? [Child, Child, Child, Child, Child, Child, Child]
-        : Size extends 8
-        ? [Child, Child, Child, Child, Child, Child, Child, Child]
-        : never[];
+  Size extends 1
+    ? [Child]
+    : Size extends 2
+    ? [Child, Child]
+    : Size extends 3
+    ? [Child, Child, Child]
+    : Size extends 4
+    ? [Child, Child, Child, Child]
+    : Size extends 5
+    ? [Child, Child, Child, Child, Child]
+    : Size extends 6
+    ? [Child, Child, Child, Child, Child, Child]
+    : Size extends 7
+    ? [Child, Child, Child, Child, Child, Child, Child]
+    : Size extends 8
+    ? [Child, Child, Child, Child, Child, Child, Child, Child]
+    : EmptyChildrenArray;
 
 /**
  * Helper type to describe that some {@link Node}s can have a maximum of eight
@@ -53,33 +61,15 @@ export type SizedChildrenArray<Size extends ChildrenArraySizeRange> =
  * @see SizedChildrenArray
  */
 export type ChildrenArray =
-    | SizedChildrenArray<0>
-    | SizedChildrenArray<1>
-    | SizedChildrenArray<2>
-    | SizedChildrenArray<3>
-    | SizedChildrenArray<4>
-    | SizedChildrenArray<5>
-    | SizedChildrenArray<6>
-    | SizedChildrenArray<7>
-    | SizedChildrenArray<8>;
-
-/**
- * Helper type to describe that some {@link Node}s can have a maximum of eight
- * children and a minimum of 1.
- *
- * @see Child
- * @see ChildrenArraySizeRange
- * @see SizedChildrenArray
- */
-export type VariadicChildrenArray =
-    | SizedChildrenArray<1>
-    | SizedChildrenArray<2>
-    | SizedChildrenArray<3>
-    | SizedChildrenArray<4>
-    | SizedChildrenArray<5>
-    | SizedChildrenArray<6>
-    | SizedChildrenArray<7>
-    | SizedChildrenArray<8>;
+  | EmptyChildrenArray
+  | SizedChildrenArray<1>
+  | SizedChildrenArray<2>
+  | SizedChildrenArray<3>
+  | SizedChildrenArray<4>
+  | SizedChildrenArray<5>
+  | SizedChildrenArray<6>
+  | SizedChildrenArray<7>
+  | SizedChildrenArray<8>;
 
 /**
  * Helper type to get the children array size of {@link Node}s.
@@ -90,7 +80,7 @@ export type VariadicChildrenArray =
  * @see ChildrenArray
  */
 export type ChildrenArraySize<A extends any[]> = A['length'] &
-    ChildrenArraySizeRange;
+  ChildrenArraySizeRange;
 
 // Generic
 
@@ -112,62 +102,59 @@ export type Children = ChildrenArray;
  * @see SizedChildrenArray
  * @see ChildrenArray
  */
-export type NativeNodeChildren<T extends NativeNodeType> = ({
-    [key in 'in']: SizedChildrenArray<0> | SizedChildrenArray<1>; // Basics
-} & {
-    [key in 'seq']: SizedChildrenArray<1> | SizedChildrenArray<2>; // Signals
-} & {
-    [key in  // Native
-        | 'rand'
-        // Basics
-        | 'sr'
-        // Delays
-        | 'z']: SizedChildrenArray<0>;
-} & {
-    [key in  // Basics
-        | 'counter'
-        // Math
-        | 'sin'
-        | 'cos'
-        | 'tan'
-        | 'tanh'
-        | 'asinh'
-        | 'ln'
-        | 'log'
-        | 'log2'
-        | 'ceil'
-        | 'floor'
-        | 'sqrt'
-        | 'exp'
-        | 'abs'
-        // Filters
-        | 'convolve'
-        // Oscillators
-        | 'phasor'
-        // Samples
-        | 'sample'
-        | 'table']: SizedChildrenArray<1>;
-} & {
-    [key in  // Math
-        | 'le'
-        | 'leq'
-        | 'ge'
-        | 'geq'
-        | 'pow'
-        | 'mod'
-        | 'min'
-        | 'max'
-        // Filters
-        | 'pole'
-        // Signals
-        | 'latch']: SizedChildrenArray<2>;
-} & {
-    [key in 'delay']: SizedChildrenArray<3>; // Delays
-} & {
-    [key in 'biquad']: SizedChildrenArray<6>; // Filters
-} & {
-    [other: string]: ChildrenArray;
-})[T];
+export type NativeNodeChildren<T extends NativeNodeType> = SizedChildrenArray<
+  {
+    /* Analysis */
+    meter: 0;
+    /* Native */
+    metro: 0;
+    rand: 0;
+    /* Basics */
+    in: 0 | 1;
+    sr: 0;
+    counter: 1;
+    /* Delays */
+    z: 0;
+    tapIn: 0;
+    tapOut: 1;
+    delay: 3;
+    /* Math */
+    sin: 1;
+    cos: 1;
+    tan: 1;
+    tanh: 1;
+    asinh: 1;
+    ln: 1;
+    log: 1;
+    log2: 1;
+    ceil: 1;
+    floor: 1;
+    sqrt: 1;
+    exp: 1;
+    abs: 1;
+    le: 2;
+    leq: 2;
+    ge: 2;
+    geq: 2;
+    pow: 2;
+    mod: 2;
+    min: 2;
+    max: 2;
+    /* Filters */
+    pole: 2;
+    biquad: 6;
+    convolve: 1;
+    /* Oscillators */
+    phasor: 1;
+    /* Samples */
+    sample: 1;
+    table: 1;
+    /* Signals */
+    latch: 2;
+    seq: 1 | 2;
+    [other: string]: ChildrenArraySizeRange;
+  }[T]
+>;
 
 /**
  * Type of children of any given {@link CompositeNodeType}.
@@ -178,13 +165,14 @@ export type NativeNodeChildren<T extends NativeNodeType> = ({
  * @see ChildrenArray
  */
 export type CompositeNodeChildren<T extends CompositeNodeType> =
-    Parameters<T> extends []
-        ? []
-        : Parameters<T> extends [infer IProps, ...infer IChildren]
-        ? IProps extends Child
-            ? SizedChildrenArray<ChildrenArraySize<[IProps, ...IChildren]>>
-            : SizedChildrenArray<ChildrenArraySize<IChildren>>
-        : never;
+  Parameters<T> extends []
+    ? EmptyChildrenArray
+    : Parameters<T> extends [infer IArgs, ...any]
+    ? IArgs extends { children?: infer IChildren }
+      ? /* this & any[] is a bit spooky, but TS throws errors if its not there */
+        SizedChildrenArray<ChildrenArraySize<IChildren & any[]>>
+      : EmptyChildrenArray
+    : EmptyChildrenArray;
 
 /**
  * Type of children of any given {@link NodeType}.
@@ -196,9 +184,9 @@ export type CompositeNodeChildren<T extends CompositeNodeType> =
  * @see CompositeNodeChildren
  */
 export type NodeChildren<T extends NodeType> = NodeType extends T
-    ? Children
-    : T extends NativeNodeType
-    ? NativeNodeChildren<T>
-    : T extends CompositeNodeType
-    ? CompositeNodeChildren<T>
-    : never;
+  ? Children
+  : T extends NativeNodeType
+  ? NativeNodeChildren<T>
+  : T extends CompositeNodeType
+  ? CompositeNodeChildren<T>
+  : never;

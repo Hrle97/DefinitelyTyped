@@ -9,21 +9,21 @@
  * @see MidiControllerEvent
  */
 export interface MidiEventBase {
-    /**
-     * Type of MIDI Event.
-     */
-    type: string;
+  /**
+   * Type of MIDI Event.
+   */
+  type: string;
 
-    /**
-     * Source of the MIDI event like a keyboard, control surface or even a
-     * virtual MIDI device.
-     */
-    source: string;
+  /**
+   * Source of the MIDI event like a keyboard, control surface or even a
+   * virtual MIDI device.
+   */
+  source: string;
 
-    /**
-     * The raw MIDI payload used for further deserialization.
-     */
-    bytes: string;
+  /**
+   * The raw MIDI payload used for further deserialization.
+   */
+  bytes: string;
 }
 
 /**
@@ -34,25 +34,25 @@ export interface MidiEventBase {
  * @see MidiNoteOffEvent
  */
 export interface MidiNoteEventBase extends MidiEventBase {
-    /**
-     * Frequency of the note being played which doesn't have to match the
-     * 'noteName' and 'noteNumber' properties to express motions like
-     * portamento and vibrato.
-     * - please refer to http://midi.teragonaudio.com/tutr/notenum.htm
-     */
-    noteFrequency: number;
+  /**
+   * Frequency of the note being played which doesn't have to match the
+   * 'noteName' and 'noteNumber' properties to express motions like
+   * portamento and vibrato.
+   * - please refer to http://midi.teragonaudio.com/tutr/notenum.htm
+   */
+  noteFrequency: number;
 
-    /**
-     * Name of the note being played.
-     * - please refer to http://midi.teragonaudio.com/tutr/notenum.htm
-     */
-    noteName: string;
+  /**
+   * Name of the note being played.
+   * - please refer to http://midi.teragonaudio.com/tutr/notenum.htm
+   */
+  noteName: string;
 
-    /**
-     * Number of the note being played.
-     * - please refer to http://midi.teragonaudio.com/tutr/notenum.htm
-     */
-    noteNumber: number;
+  /**
+   * Number of the note being played.
+   * - please refer to http://midi.teragonaudio.com/tutr/notenum.htm
+   */
+  noteNumber: number;
 }
 
 /**
@@ -61,10 +61,10 @@ export interface MidiNoteEventBase extends MidiEventBase {
  * @see MidiNoteEventBase
  */
 export interface MidiNoteOnEvent extends MidiNoteEventBase {
-    /**
-     * Since this is a 'noteOn' event it can only be a 'noteOn' value.
-     */
-    type: 'noteOn';
+  /**
+   * Since this is a 'noteOn' event it can only be a 'noteOn' value.
+   */
+  type: 'noteOn';
 }
 
 /**
@@ -73,10 +73,10 @@ export interface MidiNoteOnEvent extends MidiNoteEventBase {
  * @see MidiNoteEventBase
  */
 export interface MidiNoteOffEvent extends MidiNoteEventBase {
-    /**
-     * Since this is a 'noteOff' event it can only be a 'noteOff' value.
-     */
-    type: 'noteOff';
+  /**
+   * Since this is a 'noteOff' event it can only be a 'noteOff' value.
+   */
+  type: 'noteOff';
 }
 
 /**
@@ -96,27 +96,27 @@ export type MidiNoteEvent = MidiNoteOnEvent | MidiNoteOffEvent;
  * @see MidiEventBase
  */
 export interface MidiControllerEvent extends MidiEventBase {
-    /**
-     * Since this is a 'controller' event the only possible value of this field
-     * is 'controller'.
-     */
-    type: 'controller';
+  /**
+   * Since this is a 'controller' event the only possible value of this field
+   * is 'controller'.
+   */
+  type: 'controller';
 
-    /**
-     * One of the 16 available MIDI channels where each one represents a
-     * separate 'instrument'.
-     */
-    channel: number;
+  /**
+   * One of the 16 available MIDI channels where each one represents a
+   * separate 'instrument'.
+   */
+  channel: number;
 
-    /**
-     * The property of the channel to target; volume, pan and such.
-     */
-    target: number;
+  /**
+   * The property of the channel to target; volume, pan and such.
+   */
+  target: number;
 
-    /**
-     * The value of the target property.
-     */
-    value: number;
+  /**
+   * The value of the target property.
+   */
+  value: number;
 }
 
 // /**
@@ -196,10 +196,10 @@ export interface MidiControllerEvent extends MidiEventBase {
  * @see MidiEventBase
  */
 export interface MidiRawEvent extends MidiEventBase {
-    /**
-     * The type can only be 'raw' for this type of event.
-     */
-    type: 'raw';
+  /**
+   * The type can only be 'raw' for this type of event.
+   */
+  type: 'raw';
 }
 
 /**
@@ -220,14 +220,45 @@ export interface MidiRawEvent extends MidiEventBase {
  * @see MidiRawEvent
  */
 export type MidiEvent =
-    | MidiNoteOnEvent
-    | MidiNoteOffEvent
-    | MidiControllerEvent
-    // MidiProgramChangeEvent |
-    // MidiPitchWheelEvent |
-    // MidiAftertouchEvent |
-    // MidiChannelPressureEvent |
-    // MidiAllNotesOffEvent |
-    // MidiAllSoundOffEvent |
-    // MidiMetaEventEvent |
-    | MidiRawEvent;
+  | MidiNoteOnEvent
+  | MidiNoteOffEvent
+  | MidiControllerEvent
+  // MidiProgramChangeEvent |
+  // MidiPitchWheelEvent |
+  // MidiAftertouchEvent |
+  // MidiChannelPressureEvent |
+  // MidiAllNotesOffEvent |
+  // MidiAllSoundOffEvent |
+  // MidiMetaEventEvent |
+  | MidiRawEvent;
+
+/**
+ * Event emitted by meter nodes that measure volume on every block.
+ */
+interface MeterEvent {
+  /**
+   * Name of the meter node that emitted the event.
+   */
+  source?: string;
+
+  /**
+   * Minimal volume in the interval between emitted meter events.
+   */
+  min: number;
+
+  /**
+   * Maximal volume in the interval between emitted meter events.
+   */
+  max: number;
+}
+
+/**
+ * Event emitted by metro nodes that fire off on each interval they were
+ * created with.
+ */
+interface MetroEvent {
+  /**
+   * Name of the metro node that emitted the event.
+   */
+  source?: string;
+}
