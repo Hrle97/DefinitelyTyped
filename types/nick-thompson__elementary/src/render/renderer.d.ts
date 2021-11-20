@@ -7,7 +7,7 @@ import {
   NodeChildren,
   ConcreteNode,
 } from '../node';
-import { MidiEvent, MeterEvent, MetroEvent } from './events';
+import { LoadEvent, MidiEvent, MeterEvent, MetroEvent } from './events';
 
 export interface Renderer extends EventEmitter {
   /**
@@ -22,7 +22,7 @@ export interface Renderer extends EventEmitter {
    *
    * @see Renderer
    */
-  on(event: 'load', doThis: () => void): this;
+  on(event: 'load', doThis: (event: LoadEvent) => void): this;
 
   /**
    * The midi event fires any time the runtime receives a MIDI event from
@@ -100,40 +100,36 @@ export interface Renderer extends EventEmitter {
   render(...children: Child[]): void;
 }
 
+/**
+ * WebAudio renderer for Elementary.
+ *
+ * Rendering Elementary applications via WebAudio is extremely simple. In
+ * general, you'll just need to import the {@link ElementaryWebAudioRenderer}
+ * from the top level package, establish a callback for the "load" event,
+ * initialize the renderer by passing in an {@link AudioContext} and an
+ * optional configuration object, then connect the resulting
+ * {@link AudioWorkletNode} to your desired destination.
+ *
+ * @example
+ *   import {
+ *     ElementaryWebAudioRenderer as core,
+ *     el
+ *   } from '@nick-thompson/elementary';
+ *
+ *   core.on('load', function() {
+ *     core.render(el.cycle(440), el.cycle(441));
+ *   });
+ *
+ * @see Renderer
+ */
 export interface ElementaryWebAudioRenderer extends Renderer {
   /**
-   * Rendering Elementary applications via WebAudio is extremely simple. In
-   * general, you'll just need to import the {@link ElementaryWebAudioRenderer}
-   * from the top level package, establish a callback for the "load" event,
-   * initialize the renderer by passing in an {@link AudioContext} and an
-   * optional configuration object, then connect the resulting
-   * {@link AudioWorkletNode} to your desired destination.
-   *
    * This method installs the necessary communication mechanisms between the
    * {@link Renderer} and the backend engine, and if necessary, spins up an
    * instance of the underlying engine. It must be called once at the
    * beginning of your application's lifetime to kick off the Elementary
    * engine, and should be called only after installing a "load" event
    * listener on the {@link Renderer} instance itself.
-   *
-   * @example
-   *   import {
-   *     ElementaryWebAudioRenderer as core,
-   *     el
-   *   } from '@nick-thompson/elementary';
-   *
-   *   core.on('load', function() {
-   *     core.render(el.cycle(440), el.cycle(441));
-   *   });
-   *
-   *   (async function main() {
-   *     let node = await core.initialize(ctx, {
-   *       numberOfInputs: 0,
-   *       numberOfOutputs: 1,
-   *       outputChannelCount: [2],
-   *     });
-   *     node.connect(ctx.destination);
-   *   })();
    *
    * @async
    *
@@ -156,6 +152,11 @@ export interface ElementaryWebAudioRenderer extends Renderer {
   ): Promise<undefined>;
 }
 
+/**
+ * Renderer for the Elemenentary CLI.
+ *
+ * @see Renderer
+ */
 export interface ElementaryNodeRenderer extends Renderer {
   /**
    * This method installs the necessary communication mechanisms between the
@@ -175,6 +176,11 @@ export interface ElementaryNodeRenderer extends Renderer {
   initialize(): Promise<undefined>;
 }
 
+/**
+ * Renderer for the Elementary DevKit.
+ *
+ * @see Renderer
+ */
 export interface ElementaryPluginRenderer extends Renderer {
   /**
    * This method installs the necessary communication mechanisms between the
