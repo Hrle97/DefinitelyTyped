@@ -1,30 +1,8 @@
-import {
-  onCoreLoad,
-  testCore,
-  testFactories,
-  testNative,
-  testBasics,
-  testDelays,
-  testFilters,
-  testMath,
-  testNoise,
-  testOscillators,
-  testSamples,
-  testSignals,
-} from './tests/tests.js';
-import { flush } from './tests/tester.js';
+import * as suites from './tests/suites';
+import { onCoreLoad } from './tests/load.js';
+import { end } from './tests/tester.js';
 
 onCoreLoad(
-  testCore,
-  testFactories,
-  testNative,
-  testBasics,
-  testDelays,
-  testFilters,
-  testMath,
-  testNoise,
-  testOscillators,
-  testSamples,
-  testSignals,
-  () => flush('Everything is looking good!'),
+  ...Object.keys(suites).map(k => suites[k as keyof typeof suites]),
+  () => end('Everything is looking good!'),
 );
