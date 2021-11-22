@@ -1,9 +1,10 @@
 import { Node } from './node';
+import { Context } from './context';
 import { Props } from './props';
 import { ChildrenArraySizeRange, SizedChildrenArray } from './children';
 
 /**
- * Internal types of {@link Node}.
+ * Native types of {@link Node}.
  *
  * @see Node
  */
@@ -64,7 +65,7 @@ export type NativeNodeType =
   | 'seq';
 
 /**
- * Composites of native {@link Node}s.
+ * Composites types of {@link Node}s.
  *
  * @see Node
  * @see Props
@@ -72,9 +73,9 @@ export type NativeNodeType =
  */
 export type CompositeNodeType = {
   [childrenArraySize in ChildrenArraySizeRange]: (args: {
-    props?: Props;
-    context: {};
-    children?: SizedChildrenArray<childrenArraySize>;
+    context: Context;
+    props: Props;
+    children: SizedChildrenArray<childrenArraySize>;
   }) => Node;
 }[ChildrenArraySizeRange];
 

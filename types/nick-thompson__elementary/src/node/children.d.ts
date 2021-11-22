@@ -20,12 +20,19 @@ export type Child = Node | number;
 export type ChildrenArraySizeRange = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 /**
+ * Variadic {@link Node} children array size range.
+ * Variadic {@link Node}s (ie. "add" and "div") can have eight children at
+ * most and at least one child.
+ */
+export type VariadicChildrenArraySizeRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+
+/**
  * A helper empty children array.
  *
  * @see Child
  * @see ChildrenArraySizeRange
  */
-export type EmptyChildrenArray = never[];
+export type EmptyChildrenArray = Child[] & { length: 0 };
 
 /**
  * A helper children array of fixed size in the range of [0, 8].
@@ -60,16 +67,7 @@ export type SizedChildrenArray<Size extends ChildrenArraySizeRange> =
  * @see ChildrenArraySizeRange
  * @see SizedChildrenArray
  */
-export type ChildrenArray =
-  | EmptyChildrenArray
-  | SizedChildrenArray<1>
-  | SizedChildrenArray<2>
-  | SizedChildrenArray<3>
-  | SizedChildrenArray<4>
-  | SizedChildrenArray<5>
-  | SizedChildrenArray<6>
-  | SizedChildrenArray<7>
-  | SizedChildrenArray<8>;
+export type ChildrenArray = SizedChildrenArray<ChildrenArraySizeRange>;
 
 /**
  * Helper type to describe that some {@link Node}s can have a maximum of eight
@@ -80,14 +78,7 @@ export type ChildrenArray =
  * @see SizedChildrenArray
  */
 export type VariadicChildrenArray =
-  | SizedChildrenArray<1>
-  | SizedChildrenArray<2>
-  | SizedChildrenArray<3>
-  | SizedChildrenArray<4>
-  | SizedChildrenArray<5>
-  | SizedChildrenArray<6>
-  | SizedChildrenArray<7>
-  | SizedChildrenArray<8>;
+  SizedChildrenArray<VariadicChildrenArraySizeRange>;
 
 /**
  * Helper type to get the children array size of {@link Node}s.
@@ -166,6 +157,10 @@ export type NativeNodeChildren<T extends NativeNodeType> = SizedChildrenArray<
     ge: 2;
     geq: 2;
     pow: 2;
+    add: VariadicChildrenArraySizeRange;
+    sub: VariadicChildrenArraySizeRange;
+    mul: VariadicChildrenArraySizeRange;
+    div: VariadicChildrenArraySizeRange;
     mod: 2;
     min: 2;
     max: 2;

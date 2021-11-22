@@ -1,7 +1,19 @@
 import { NodeType, NativeNodeType, CompositeNodeType } from './types';
 import { Context } from './context';
-import { Props, DefaultProps, KeyProps, NodeProps, NativeNodeProps } from './props';
-import { Children, DefaultChildren, NodeChildren, NativeNodeChildren } from './children';
+import {
+  Props,
+  DefaultProps,
+  KeyProps,
+  NodeProps,
+  NativeNodeProps,
+} from './props';
+import {
+  Children,
+  DefaultChildren,
+  NodeChildren,
+  NativeNodeChildren,
+} from './children';
+import * as util from '../util';
 
 // ***************************************************************************
 // Nodes
@@ -156,16 +168,7 @@ export type SeqNode = NativeNode<'seq'>;
 // Creation
 
 /**
- * Helper type that forces TypeScript to compute the type of function, so
- * types that result in a function type look like an actual function in
- * signatures.
- */
-export type InferFunction<T extends (...params: any) => any> = (
-  ...params: Parameters<T>
-) => ReturnType<T>;
-
-/**
- * Returns a function for the appropriate type, props and children.
+ * Returns a function for the appropriate props and children.
  * Elementary stdlib function types are created this way.
  *
  * @see Node
@@ -176,9 +179,7 @@ export type InferFunction<T extends (...params: any) => any> = (
 export type CompositeNodeFunction<
   P extends Props,
   C extends Children,
-> = InferFunction<
-  (args: { context: Context; props?: P & KeyProps; children?: C }) => Node
->;
+> = (args: { context: Context; props?: P & KeyProps; children?: C }) => Node;
 
 /**
  * Returns a native factory for the appropriate type, props and children.
@@ -193,9 +194,8 @@ export type NativeNodeFactory<
   T extends NativeNodeType = NativeNodeType,
   P extends NativeNodeProps<T> = NativeNodeProps<T>,
   C extends NativeNodeChildren<T> = NativeNodeChildren<T>,
-> = InferFunction<(props: P, ...children: C) => NativeNode<T>> &
-  InferFunction<(...children: C) => NativeNode<T>>;
-// NOTE: InferType twice because of TypeScript function intersections.
+> = ((props: P & KeyProps, ...children: C) => NativeNode<T>) &
+  ((...children: C) => NativeNode<T>);
 
 /**
  * Returns a composite factory for the appropriate type, props and children.
@@ -209,11 +209,13 @@ export type NativeNodeFactory<
 export type CompositeNodeFactory<
   P extends Props = DefaultProps,
   C extends Children = DefaultChildren,
-> = InferFunction<(props: P & KeyProps, ...children: C) =>
-CompositeNode<CompositeNodeFunction<P, C>> &
-  InferFunction<(...children: C) =>
-CompositeNode<CompositeNodeFunction<P, C>>>;
-// NOTE: InferType twice because of TypeScript function intersections.
+> = ((
+  props: P & KeyProps,
+  ...children: C
+) => CompositeNode<CompositeNodeFunction<P, C> & CompositeNodeType>) &
+  ((
+    ...children: C
+  ) => CompositeNode<CompositeNodeFunction<P, C> & CompositeNodeType>);
 
 // ***************************************************************************
 // Sugar
@@ -228,6 +230,15 @@ export type Sugar = (<T extends NodeType>(
     ...children: NodeChildren<T>
   ) => ConcreteNode<T>);
 
-export type CandyWrap = <O extends { [name: string]: NodeType }>(
-  object: O,
-) => { [name in keyof O]: NodeFactory<O[name]> };
+export type CandyWrap<O extends { [name: string]: NodeType }> = {
+  [name in keyof O]: util.Infer<
+    O[name] extends NativeNodeType
+      ? NativeNodeFactory<O[name]>
+      : O[name] extends CompositeNodeType
+      ? CompositeNodeFactory<O[name]>
+      : never
+  >;
+};
+
+type a = CandyWrap<{ s: 'mul'; d: (args: { children: [any] }) => Node }>;
+type b = a['d'];
