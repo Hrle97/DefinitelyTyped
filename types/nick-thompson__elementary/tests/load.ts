@@ -1,31 +1,29 @@
 import * as el from '@nick-thompson/elementary';
-import { padEnd, print } from './tester';
+import { padEnd, print } from './tester.js';
 
 declare const global: any;
 const core: el.Core = global.elementary.core;
+const process = global.process;
+const console = global.console;
 
 export type ElementaryCallback = (core: el.Core, el: el.Elementary) => void;
 
 function printCallback(name: string, index: number) {
-    print(`
+  print(`
 Running: ${name}
 Number: ${index}
 `);
 }
 
 export function onCoreLoad(...callbacks: ElementaryCallback[]) {
-    core.on('load', () =>
-        callbacks.forEach(
-            (callback, index) => {
-                const callbackName =
-                    padEnd(
-                        callback.name.slice(0, 20),
-                        20,
-                        ' ');
+  core.on('load', () =>
+    callbacks.forEach((callback, index) => {
+      const callbackName = padEnd(callback.name.slice(0, 20), 20, ' ');
 
-                printCallback(callbackName, index);
-                callback(core, el);
-            }));
+      printCallback(callbackName, index);
+      callback(core, el);
+    }),
+  );
 }
 
-export { el, core };
+export { el, core, process, console };

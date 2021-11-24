@@ -2,7 +2,6 @@ import * as _core from './core';
 import { Core } from './api';
 
 // for docs
-// noinspection ES6UnusedImports
 import * as el from '../../';
 
 /**

@@ -1,7 +1,6 @@
 import { core } from './core';
 
 // for docs
-// noinspection ES6UnusedImports
 import * as el from '../';
 
 // ============================================================================
@@ -33,15 +32,15 @@ import * as el from '../';
  * @see core.NodeProps
  * @see core.NodeChildren
  */
-export const
-    createNode:
-        (<T extends core.NodeType>(
-            type: T,
-            props: core.NodeProps<T>,
-            ...children: core.NodeChildren<T>) => core.ConcreteNode<T>) &
-        (<T extends core.NodeType>(
-            type: T,
-            ...children: core.NodeChildren<T>) => core.ConcreteNode<T>);
+export const createNode: (<T extends core.NodeType>(
+    type: T,
+    props: core.NodeProps<T>,
+    ...children: core.NodeChildren<T>
+) => core.ConcreteNode<T>) &
+    (<T extends core.NodeType>(
+        type: T,
+        ...children: core.NodeChildren<T>
+    ) => core.ConcreteNode<T>);
 
 /**
  * A convenience wrapper for defining factory functions around
@@ -59,4 +58,5 @@ export const
  * @see core.NodeFactory
  */
 export function createNodeFactory<T extends core.NodeType>(
-    type: T): core.NodeFactory<T>;
+    type: T,
+): core.NodeFactory<T>;

@@ -1,7 +1,6 @@
 import { core } from './core';
 
 // for docs
-// noinspection ES6UnusedImports
 import * as el from '../';
 
 // ============================================================================
@@ -28,12 +27,7 @@ import * as el from '../';
  * @see core.Child
  * @see core.SinNode
  */
-export const sin:
-    core.NodeFactory<'sin',
-        core.KeyProps,
-        [
-            operand: core.Child
-        ]>;
+export const sin: core.NodeFactory<'sin', core.KeyProps, [operand: core.Child]>;
 
 /**
  * Computes the cosine of the operand.
@@ -52,12 +46,7 @@ export const sin:
  * @see core.Child
  * @see core.CosNode
  */
-export const cos:
-    core.NodeFactory<'cos',
-        core.KeyProps,
-        [
-            operand: core.Child
-        ]>;
+export const cos: core.NodeFactory<'cos', core.KeyProps, [operand: core.Child]>;
 
 /**
  * Computes the tangent of the operand.
@@ -76,12 +65,7 @@ export const cos:
  * @see core.Child
  * @see core.TanNode
  */
-export const tan:
-    core.NodeFactory<'tan',
-        core.KeyProps,
-        [
-            operand: core.Child
-        ]>;
+export const tan: core.NodeFactory<'tan', core.KeyProps, [operand: core.Child]>;
 
 /**
  * Computes the hyperbolic tangent of the operand.
@@ -100,12 +84,11 @@ export const tan:
  * @see core.Child
  * @see core.TanhNode
  */
-export const tanh:
-    core.NodeFactory<'tanh',
-        core.KeyProps,
-        [
-            operand: core.Child
-        ]>;
+export const tanh: core.NodeFactory<
+    'tanh',
+    core.KeyProps,
+    [operand: core.Child]
+>;
 
 /**
  * Computes the inverse hyperbolic sine of the operand.
@@ -125,12 +108,11 @@ export const tanh:
  * @see core.Child
  * @see core.AsinhNode
  */
-export const asinh:
-    core.NodeFactory<'asinh',
-        core.KeyProps,
-        [
-            operand: core.Child
-        ]>;
+export const asinh: core.NodeFactory<
+    'asinh',
+    core.KeyProps,
+    [operand: core.Child]
+>;
 
 /**
  * Computes the natural logarithm of the operand.
@@ -149,12 +131,7 @@ export const asinh:
  * @see core.Child
  * @see core.LnNode
  */
-export const ln:
-    core.NodeFactory<'ln',
-        core.KeyProps,
-        [
-            operand: core.Child
-        ]>;
+export const ln: core.NodeFactory<'ln', core.KeyProps, [operand: core.Child]>;
 
 // TODO: confirm its the log in base 10
 
@@ -175,12 +152,7 @@ export const ln:
  * @see core.Child
  * @see core.LogNode
  */
-export const log:
-    core.NodeFactory<'log',
-        core.KeyProps,
-        [
-            operand: core.Child
-        ]>;
+export const log: core.NodeFactory<'log', core.KeyProps, [operand: core.Child]>;
 
 /**
  * Computes the logarithm in base 2 of the operand.
@@ -199,12 +171,11 @@ export const log:
  * @see core.Child
  * @see core.Log2Node
  */
-export const log2:
-    core.NodeFactory<'log2',
-        core.KeyProps,
-        [
-            operand: core.Child
-        ]>;
+export const log2: core.NodeFactory<
+    'log2',
+    core.KeyProps,
+    [operand: core.Child]
+>;
 
 /**
  * Computes the ceiling of the operand.
@@ -223,12 +194,11 @@ export const log2:
  * @see core.Child
  * @see core.CeilNode
  */
-export const ceil:
-    core.NodeFactory<'ceil',
-        core.KeyProps,
-        [
-            operand: core.Child
-        ]>;
+export const ceil: core.NodeFactory<
+    'ceil',
+    core.KeyProps,
+    [operand: core.Child]
+>;
 
 /**
  * Computes the floor of the operand.
@@ -247,12 +217,11 @@ export const ceil:
  * @see core.Child
  * @see core.FloorNode
  */
-export const floor:
-    core.NodeFactory<'floor',
-        core.KeyProps,
-        [
-            operand: core.Child
-        ]>;
+export const floor: core.NodeFactory<
+    'floor',
+    core.KeyProps,
+    [operand: core.Child]
+>;
 
 /**
  * Computes the square root of the operand.
@@ -271,12 +240,11 @@ export const floor:
  * @see core.Child
  * @see core.SqrtNode
  */
-export const sqrt:
-    core.NodeFactory<'sqrt',
-        core.KeyProps,
-        [
-            operand: core.Child
-        ]>;
+export const sqrt: core.NodeFactory<
+    'sqrt',
+    core.KeyProps,
+    [operand: core.Child]
+>;
 
 // TODO: confirm base 10
 
@@ -297,12 +265,7 @@ export const sqrt:
  * @see core.Child
  * @see core.ExpNode
  */
-export const exp:
-    core.NodeFactory<'exp',
-        core.KeyProps,
-        [
-            operand: core.Child
-        ]>;
+export const exp: core.NodeFactory<'exp', core.KeyProps, [operand: core.Child]>;
 
 /**
  * Computes the absolute number of the operand.
@@ -321,12 +284,7 @@ export const exp:
  * @see core.Child
  * @see core.AbsNode
  */
-export const abs:
-    core.NodeFactory<'abs',
-        core.KeyProps,
-        [
-            operand: core.Child
-        ]>;
+export const abs: core.NodeFactory<'abs', core.KeyProps, [operand: core.Child]>;
 
 // Binary
 
@@ -351,13 +309,11 @@ export const abs:
  * @see core.Child
  * @see core.LeNode
  */
-export const le:
-    core.NodeFactory<'le',
-        core.KeyProps,
-        [
-            first: core.Child,
-            second: core.Child
-        ]>;
+export const le: core.NodeFactory<
+    'le',
+    core.KeyProps,
+    [first: core.Child, second: core.Child]
+>;
 
 /**
  * Computes whether the first is lesser or equal than the second.
@@ -380,13 +336,11 @@ export const le:
  * @see core.Child
  * @see core.LeqNode
  */
-export const leq:
-    core.NodeFactory<'leq',
-        core.KeyProps,
-        [
-            first: core.Child,
-            second: core.Child
-        ]>;
+export const leq: core.NodeFactory<
+    'leq',
+    core.KeyProps,
+    [first: core.Child, second: core.Child]
+>;
 
 /**
  * Computes whether the first is greater than the second.
@@ -409,13 +363,11 @@ export const leq:
  * @see core.Child
  * @see core.GeNode
  */
-export const ge:
-    core.NodeFactory<'ge',
-        core.KeyProps,
-        [
-            first: core.Child,
-            second: core.Child
-        ]>;
+export const ge: core.NodeFactory<
+    'ge',
+    core.KeyProps,
+    [first: core.Child, second: core.Child]
+>;
 
 /**
  * Computes whether the first is greater or equal than the second.
@@ -438,13 +390,11 @@ export const ge:
  * @see core.Child
  * @see core.GeqNode
  */
-export const geq:
-    core.NodeFactory<'geq',
-        core.KeyProps,
-        [
-            first: core.Child,
-            second: core.Child
-        ]>;
+export const geq: core.NodeFactory<
+    'geq',
+    core.KeyProps,
+    [first: core.Child, second: core.Child]
+>;
 
 /**
  * Computes the power of the first with with the second as the exponent.
@@ -467,13 +417,11 @@ export const geq:
  * @see core.Child
  * @see core.PowNode
  */
-export const pow:
-    core.NodeFactory<'pow',
-        core.KeyProps,
-        [
-            first: core.Child,
-            second: core.Child
-        ]>;
+export const pow: core.NodeFactory<
+    'pow',
+    core.KeyProps,
+    [first: core.Child, second: core.Child]
+>;
 
 /**
  * Computes the modulo of the first with the second.
@@ -495,13 +443,11 @@ export const pow:
  * @see core.Child
  * @see core.ModNode
  */
-export const mod:
-    core.NodeFactory<'mod',
-        core.KeyProps,
-        [
-            first: core.Child,
-            second: core.Child
-        ]>;
+export const mod: core.NodeFactory<
+    'mod',
+    core.KeyProps,
+    [first: core.Child, second: core.Child]
+>;
 
 /**
  * Returns the result of the minimal operand.
@@ -523,13 +469,11 @@ export const mod:
  * @see core.Child
  * @see core.MinNode
  */
-export const min:
-    core.NodeFactory<'min',
-        core.KeyProps,
-        [
-            first: core.Child,
-            second: core.Child
-        ]>;
+export const min: core.NodeFactory<
+    'min',
+    core.KeyProps,
+    [first: core.Child, second: core.Child]
+>;
 
 /**
  * Returns the result of the maximal operand.
@@ -551,13 +495,11 @@ export const min:
  * @see core.Child
  * @see core.MaxNode
  */
-export const max:
-    core.NodeFactory<'max',
-        core.KeyProps,
-        [
-            first: core.Child,
-            second: core.Child
-        ]>;
+export const max: core.NodeFactory<
+    'max',
+    core.KeyProps,
+    [first: core.Child, second: core.Child]
+>;
 
 // Variadic
 
@@ -582,12 +524,11 @@ export const max:
  * @see core.Child
  * @see core.AddNode
  */
-export const add:
-    core.NodeFactory<'add',
-        core.KeyProps,
-        [
-            ...operands: core.VariadicChildrenArray
-        ]>;
+export const add: core.NodeFactory<
+    'add',
+    core.KeyProps,
+    [...operands: core.VariadicChildrenArray]
+>;
 
 /**
  * Subtracts the rest of the operands from the first.
@@ -607,12 +548,11 @@ export const add:
  * @see core.Child
  * @see core.SubNode
  */
-export const sub:
-    core.NodeFactory<'sub',
-        core.KeyProps,
-        [
-            ...operands: core.VariadicChildrenArray
-        ]>;
+export const sub: core.NodeFactory<
+    'sub',
+    core.KeyProps,
+    [...operands: core.VariadicChildrenArray]
+>;
 
 /**
  * Multiplies the operands.
@@ -635,12 +575,11 @@ export const sub:
  * @see core.Child
  * @see core.MulNode
  */
-export const mul:
-    core.NodeFactory<'mul',
-        core.KeyProps,
-        [
-            ...operands: core.VariadicChildrenArray
-        ]>;
+export const mul: core.NodeFactory<
+    'mul',
+    core.KeyProps,
+    [...operands: core.VariadicChildrenArray]
+>;
 
 /**
  * Divides the first with the rest of the operands.
@@ -663,9 +602,8 @@ export const mul:
  * @see core.Child
  * @see core.DivNode
  */
-export const div:
-    core.NodeFactory<'div',
-        core.KeyProps,
-        [
-            ...operands: core.VariadicChildrenArray
-        ]>;
+export const div: core.NodeFactory<
+    'div',
+    core.KeyProps,
+    [...operands: core.VariadicChildrenArray]
+>;

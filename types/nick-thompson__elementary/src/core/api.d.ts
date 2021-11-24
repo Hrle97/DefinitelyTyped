@@ -5,7 +5,6 @@ import { Child } from './children';
 import { MidiEvent } from './midi';
 
 // for docs
-// noinspection ES6UnusedImports
 import * as el from '../../';
 
 /**

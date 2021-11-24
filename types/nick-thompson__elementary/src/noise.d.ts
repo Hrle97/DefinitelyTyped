@@ -1,7 +1,6 @@
 import { core } from './core';
 
 // for docs
-// noinspection ES6UnusedImports
 import * as el from '../';
 
 // ============================================================================
@@ -22,10 +21,7 @@ import * as el from '../';
  * @see core.Child
  * @see core.Node
  */
-export const noise:
-    core.NodeFactory<core.CompositeNodeType,
-        core.KeyProps,
-        []>;
+export const noise: core.NodeFactory<core.CompositeNodeType, core.KeyProps, []>;
 
 /**
  * A simple pink noise generator.
@@ -42,7 +38,8 @@ export const noise:
  * @see core.Child
  * @see core.Node
  */
-export const pinknoise:
-    core.NodeFactory<core.CompositeNodeType,
-        core.KeyProps,
-        []>;
+export const pinknoise: core.NodeFactory<
+    core.CompositeNodeType,
+    core.KeyProps,
+    []
+>;
