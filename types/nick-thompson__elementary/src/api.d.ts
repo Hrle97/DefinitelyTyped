@@ -1,6 +1,7 @@
 import * as _Elementary from './elementary';
 
 // for docs
+// noinspection ES6UnusedImports
 import * as el from '../';
 
 /**

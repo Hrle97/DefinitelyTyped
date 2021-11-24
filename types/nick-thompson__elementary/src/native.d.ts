@@ -1,6 +1,7 @@
 import { core } from './core';
 
 // for docs
+// noinspection ES6UnusedImports
 import * as el from '../';
 
 // ============================================================================
@@ -23,4 +24,7 @@ import * as el from '../';
  * @see core.Child
  * @see core.RandNode
  */
-export const rand: core.NodeFactory<'rand', core.KeyProps, []>;
+export const rand:
+    core.NodeFactory<'rand',
+        core.KeyProps,
+        []>;

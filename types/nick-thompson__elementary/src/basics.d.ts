@@ -1,6 +1,7 @@
 import { core } from './core';
 
 // for docs
+// noinspection ES6UnusedImports
 import * as el from '../';
 
 // ============================================================================
@@ -48,7 +49,10 @@ export function inputs(): core.InNode[];
  * @see core.Child
  * @see core.ConstNode
  */
-declare const _const: core.NodeFactory<'const', core.ConstProps, []>;
+declare const _const:
+    core.NodeFactory<'const',
+        core.ConstProps,
+        []>;
 
 // noinspection ReservedWordAsName
 export { _const as const };
@@ -67,7 +71,10 @@ export { _const as const };
  * @see core.Child
  * @see core.SrNode
  */
-export const sr: core.NodeFactory<'sr', core.KeyProps, []>;
+export const sr:
+    core.NodeFactory<'sr',
+        core.KeyProps,
+        []>;
 
 /**
  * Outputs a continuous count of elapsed samples.
@@ -90,11 +97,10 @@ export const sr: core.NodeFactory<'sr', core.KeyProps, []>;
  * @see core.Child
  * @see core.CounterNode
  */
-export const counter: core.NodeFactory<
-    'counter',
-    core.KeyProps,
-    [pulse: core.Child]
->;
+export const counter:
+    core.NodeFactory<'counter',
+        core.KeyProps,
+        [pulse: core.Child]>;
 
 // ============================================================================
 // Functions
@@ -113,7 +119,8 @@ export const counter: core.NodeFactory<
  * @see el
  * @see core.Node
  */
-export function tau2pole(child: core.Node): core.Node;
+export function tau2pole(
+    child: core.Node): core.Node;
 
 /**
  * Computes a real pole position giving exponential decay over t,
@@ -128,7 +135,8 @@ export function tau2pole(child: core.Node): core.Node;
  *
  * @see el
  */
-export function tau2pole(time: number): number;
+export function tau2pole(
+    time: number): number;
 
 /**
  * Equivalent to (time / 1000) * sampleRate,
@@ -144,7 +152,8 @@ export function tau2pole(time: number): number;
  * @see el
  * @see core.Node
  */
-export function ms2samps(child: core.Node): core.Node;
+export function ms2samps(
+    child: core.Node): core.Node;
 
 /**
  * Equivalent to (time / 1000) * sampleRate,
@@ -159,7 +168,8 @@ export function ms2samps(child: core.Node): core.Node;
  *
  * @see el
  */
-export function ms2samps(time: number): number;
+export function ms2samps(
+    time: number): number;
 
 // ============================================================================
 // Composite
@@ -191,8 +201,11 @@ export function ms2samps(time: number): number;
  * @see core.Child
  * @see core.Node
  */
-export const select: core.NodeFactory<
-    core.CompositeNodeType,
-    core.KeyProps,
-    [signal: core.Child, high: core.Child, low: core.Child]
->;
+export const select:
+    core.NodeFactory<core.CompositeNodeType,
+        core.KeyProps,
+        [
+            signal: core.Child,
+            high: core.Child,
+            low: core.Child
+        ]>;

@@ -1,6 +1,7 @@
 import { core } from './core';
 
 // for docs
+// noinspection ES6UnusedImports
 import * as el from '../';
 
 // ============================================================================
@@ -37,11 +38,12 @@ import * as el from '../';
  * @see core.Child
  * @see core.SampleNode
  */
-export const sample: core.NodeFactory<
-    'sample',
-    core.SampleProps,
-    [trigger: core.Child]
->;
+export const sample:
+    core.NodeFactory<'sample',
+        core.SampleProps,
+        [
+            trigger: core.Child
+        ]>;
 
 /**
  * Loads a lookup table which is then read from with a position determined
@@ -85,8 +87,9 @@ export const sample: core.NodeFactory<
  * @see core.Child
  * @see core.TableNode
  */
-export const table: core.NodeFactory<
-    'table',
-    core.KeyProps,
-    [trigger: core.Child]
->;
+export const table:
+    core.NodeFactory<'table',
+        core.KeyProps,
+        [
+            trigger: core.Child
+        ]>;

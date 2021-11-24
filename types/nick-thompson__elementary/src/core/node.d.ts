@@ -1,9 +1,12 @@
 import { NodeType, NativeNodeType, CompositeNodeType } from './types';
+// noinspection ES6UnusedImports
 import { NodeProps, Props } from './props';
 import { NodeChildren } from './children';
 
 // for docs
+// noinspection ES6UnusedImports
 import { Core } from './api';
+// noinspection ES6UnusedImports
 import { core } from './';
 
 // Nodes
@@ -30,8 +33,8 @@ export interface Node {
  * @see core
  * @see Node
  */
-export interface NativeNode<T extends NativeNodeType = NativeNodeType>
-    extends Node {
+export interface NativeNode<T extends NativeNodeType =
+    NativeNodeType> extends Node {
     /**
      * Do not use this! It is only here to differentiate {@link Node} and
      * {@link Props} types.
@@ -48,8 +51,8 @@ export interface NativeNode<T extends NativeNodeType = NativeNodeType>
  * @see core
  * @see Node
  */
-export interface CompositeNode<T extends CompositeNodeType = CompositeNodeType>
-    extends Node {
+export interface CompositeNode<T extends CompositeNodeType =
+    CompositeNodeType> extends Node {
     /**
      * Do not use this! It is only here to differentiate {@link Node} and
      * {@link Props} types.
@@ -75,11 +78,10 @@ export interface CompositeNode<T extends CompositeNodeType = CompositeNodeType>
  * @see NodeProps
  * @see NodeConstructor
  */
-export type ConcreteNode<T extends NodeType> = T extends NativeNodeType
-    ? NativeNode<T>
-    : T extends CompositeNodeType
-    ? CompositeNode<T>
-    : never;
+export type ConcreteNode<T extends NodeType> =
+    T extends NativeNodeType ? NativeNode<T> :
+    T extends CompositeNodeType ? CompositeNode<T> :
+    never;
 
 // Native
 
@@ -162,12 +164,12 @@ export type SeqNode = NativeNode<'seq'>;
  * @see NodeProps
  * @see NodeChildren
  */
-export type NodeFactory<
-    T extends NodeType = NodeType,
+export type NodeFactory<T extends NodeType = NodeType,
     P extends NodeProps<T> = NodeProps<T>,
     C extends NodeChildren<T> = NodeChildren<T>,
-    R extends ConcreteNode<T> = ConcreteNode<T>,
-> = ((props: P, ...children: C) => R) & ((...children: C) => R);
+    R extends ConcreteNode<T> = ConcreteNode<T>> =
+    ((props: P, ...children: C) => R) &
+    ((...children: C) => R);
 
 /**
  * Constructs a {@link Node} of the given {@link NodeType}.
@@ -193,16 +195,13 @@ export type NodeFactory<
  * @see NodeStatic
  */
 export interface NodeConstructor {
-    new <T extends NodeType>(
-        type: T,
-        props: NodeProps<T>,
-        children: NodeChildren<T>,
-    ): ConcreteNode<T>;
+    new<T extends NodeType>(
+        type: T, props: NodeProps<T>, children: NodeChildren<T>):
+        ConcreteNode<T>;
 
-    new <T extends NodeType>(
-        type: T,
-        children: NodeChildren<T>,
-    ): ConcreteNode<T>;
+    new<T extends NodeType>(
+        type: T, children: NodeChildren<T>):
+        ConcreteNode<T>;
 }
 
 /**

@@ -1,4 +1,5 @@
 // for docs
+// noinspection ES6UnusedImports
 import { core } from './';
 
 /**
@@ -96,7 +97,9 @@ export interface MidiNoteOffEvent extends MidiNoteEventBase {
  * @see MidiNoteOffEvent
  * @see MidiNoteEventBase
  */
-export type MidiNoteEvent = MidiNoteOnEvent | MidiNoteOffEvent;
+export type MidiNoteEvent =
+    MidiNoteOnEvent |
+    MidiNoteOffEvent;
 
 /**
  * Base type for MIDI controller events usually emitted by control surfaces.
@@ -238,9 +241,9 @@ export interface MidiRawEvent extends MidiEventBase {
  * @see MidiRawEvent
  */
 export type MidiEvent =
-    | MidiNoteOnEvent
-    | MidiNoteOffEvent
-    | MidiControllerEvent
+    MidiNoteOnEvent |
+    MidiNoteOffEvent |
+    MidiControllerEvent |
     // MidiProgramChangeEvent |
     // MidiPitchWheelEvent |
     // MidiAftertouchEvent |
@@ -248,4 +251,4 @@ export type MidiEvent =
     // MidiAllNotesOffEvent |
     // MidiAllSoundOffEvent |
     // MidiMetaEventEvent |
-    | MidiRawEvent;
+    MidiRawEvent;
