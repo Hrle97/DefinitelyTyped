@@ -1,4 +1,4 @@
-import { NativeNodeType, CompositeNodeType, NodeType } from './types';
+import { NativeNodeType, CompositeNodeType, NodeType } from "./types";
 
 // ***************************************************************************
 // Base
@@ -213,7 +213,7 @@ export interface SampleProps extends KeyProps {
    *
    * @see SampleProps
    */
-  mode?: 'trigger' | 'gate' | 'loop';
+  mode?: "trigger" | "gate" | "loop";
 
   /**
    * Offset in samples from the start of the sample where playback starts.

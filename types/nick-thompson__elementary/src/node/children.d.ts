@@ -1,5 +1,5 @@
-import { NativeNodeType, CompositeNodeType, NodeType } from './types';
-import { Node } from './node';
+import { Node } from "./node";
+import { CompositeNodeType, NativeNodeType, NodeType } from "./types";
 
 // Child
 
@@ -27,7 +27,7 @@ export type ChildrenArraySizeRange = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 export type VariadicChildrenArraySizeRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 /**
- * A helper empty children array.
+ * A helper empty children array type.
  *
  * @see Child
  * @see ChildrenArraySizeRange
@@ -60,8 +60,8 @@ export type SizedChildrenArray<Size extends ChildrenArraySizeRange> =
     : EmptyChildrenArray;
 
 /**
- * Helper type to describe that some {@link Node}s can have a maximum of eight
- * children.
+ * Helper type to describe that some {@link Node}s have a children array witha
+ * a size in the range [1, 8].
  *
  * @see Child
  * @see ChildrenArraySizeRange
@@ -88,7 +88,7 @@ export type VariadicChildrenArray =
  * @see SizedChildrenArray
  * @see ChildrenArray
  */
-export type ChildrenArraySize<A extends any[]> = A['length'] &
+export type ChildrenArraySize<A extends any[]> = A["length"] &
   ChildrenArraySizeRange;
 
 // Generic
@@ -193,7 +193,10 @@ export type CompositeNodeChildren<T extends CompositeNodeType> =
     ? EmptyChildrenArray
     : Parameters<T> extends [infer IArgs, ...any]
     ? IArgs extends { children?: infer IChildren }
-      ? /* this & any[] is a bit spooky, but TS throws errors if its not there */
+      ? /*
+         * & any[] is a bit spooky, but TS throws errors
+         * if its not there
+         */
         SizedChildrenArray<ChildrenArraySize<IChildren & any[]>>
       : EmptyChildrenArray
     : EmptyChildrenArray;
