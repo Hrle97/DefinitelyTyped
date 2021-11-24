@@ -84,12 +84,7 @@ const config: WebpackDevServer.Configuration = {
             logLevel: 'debug',
         },
     },
-    server: {
-        type: 'https',
-        options: {
-            passphrase: '----',
-        },
-    },
+
     headers: {
         'X-Custom-Header': 'yes',
     },
@@ -200,7 +195,7 @@ const c4: WebpackDevServer.Configuration = {
     port: 8080,
 
     static: ['/path/to/directory', '/path/to/another-directory'],
-    server: 'spdy',
+
     devMiddleware: {
         writeToDisk: (filePath: string) => true,
     },
@@ -231,7 +226,7 @@ const c6: WebpackDevServer.Configuration = {
     // Host and port are required options to correct work.
     host: 'localhost',
     port: 8080,
-    webSocketServer: 'sockjs',
+
     historyApiFallback: {
         disableDotRule: true,
         htmlAcceptHeaders: ['text/html'],
