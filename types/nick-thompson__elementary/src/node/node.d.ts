@@ -239,7 +239,9 @@ export type Sugar = (<T extends NodeType>(
     ...children: NodeChildren<T>
   ) => ConcreteNode<T>);
 
-export type CandyWrap<O extends { [name: string]: NodeType }> = {
+export type CandyWrap = <O extends { [name: string]: NodeType }>(
+  object: O
+) => {
   [name in keyof O]: O[name] extends NativeNodeType
     ? NativeNodeFactory<O[name]>
     : O[name] extends CompositeNodeType

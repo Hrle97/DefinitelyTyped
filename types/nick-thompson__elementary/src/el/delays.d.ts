@@ -1,4 +1,4 @@
-import * as node from '../node';
+import * as node from "../node";
 
 // ============================================================================
 // Native
@@ -15,7 +15,66 @@ import * as node from '../node';
  * @see node.KeyProps
  * @see node.ZNode
  */
-export const z: node.NativeNodeFactory<'z'>;
+export const z: node.NativeNodeFactory<"z">;
+
+/**
+ * The {@link node.TapOutNode} pairs with the tapIn node to provide special
+ * case behavior for implementing feedback around arbitrary parts of your
+ * signal graph. A {@link node.TapOutNode} is identified by name, and its
+ * signal can be fed back into any part of your signal graph using a tapIn
+ * node by the same name.
+ *
+ * It's important to note that in the digital domain, feedback requires at
+ * least a single sample delay. For efficiency, the {@link node.TapOutNode}
+ * implements an implicit delay before the signal is propagated onwards and to
+ * any corresponding {@link node.TapInNode}s.
+ *
+ * Note: Feedback loops can very easily build unstable scenarios that grow in
+ * volume extremely quickly. Elementary cannot provide implicit constraints to
+ * prevent this behavior. Please use care when implementing feedback to insert
+ * appropriate gains.
+ *
+ * @param [props]
+ * props object with optional key
+ *
+ * @param signal
+ * signal {@link node.Node} to tap out
+ *
+ * @returns
+ * the delayed pass through {@link node.TapOutNode}
+ *
+ * @see node.TapOutProps
+ * @see node.Child
+ * @see node.TapOutNode
+ */
+export const tapOut: node.NativeNodeFactory<
+  "tapOut",
+  node.TapOutProps,
+  [node.Child]
+>;
+
+/**
+ * See the description for the {@link node.TapOoutNode} above.
+ *
+ * Given a {@link node.TapOutNode} with a known name in a signal graph, we can
+ * use {@link node.TapInNode} to wire the signal into any other region of our
+ * graph, allowing feedback around arbitrary subgraphs.
+ *
+ * Note: Feedback loops can very easily build unstable scenarios that grow in
+ * volume extremely quickly. Elementary cannot provide implicit constraints to
+ * prevent this behavior. Please use care when implementing feedback to insert
+ * appropriate gains.
+ *
+ * @param [props]
+ * props object with optional key
+ *
+ * @returns
+ * the signal from the wired {@link node.TapOutNode}
+ *
+ * @see node.TapInProps
+ * @see node.TapInNode
+ */
+export const tapIn: node.NativeNodeFactory<"tapIn", node.TapInProps>;
 
 /**
  * A variable-length delay line with a feedback component.
@@ -59,7 +118,7 @@ export const z: node.NativeNodeFactory<'z'>;
  * @see node.DelayNode
  */
 export const delay: node.NativeNodeFactory<
-  'delay',
+  "delay",
   node.DelayProps,
   [length: node.Child, feedback: node.Child, signal: node.Child]
 >;

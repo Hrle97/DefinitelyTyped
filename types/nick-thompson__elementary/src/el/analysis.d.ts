@@ -1,4 +1,4 @@
-import * as node from '../node';
+import * as node from "../node";
 
 // ============================================================================
 // Native
@@ -18,4 +18,4 @@ import * as node from '../node';
  * @see node.MeterProps
  * @see node.MeterNode
  */
-export const meter: node.NativeNodeFactory<'meter', node.MeterProps>;
+export const meter: node.NativeNodeFactory<"meter", node.MeterProps>;
