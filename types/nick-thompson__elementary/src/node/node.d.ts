@@ -1,15 +1,52 @@
 import { NodeType, NativeNodeType, CompositeNodeType } from "./types";
-import { Context } from "./context";
-import { Props, DefaultProps, KeyProps, NativeNodeProps } from "./props";
-import { Children, DefaultChildren, NativeNodeChildren } from "./children";
+import { NodeName } from "./names";
 
-// ***************************************************************************
-// Nodes
+/**
+ * Native node specific to the {@link NativeNodeType}.
+ *
+ * If a {@link NativeNodeType} is not provided {@link Node} is returned.
+ *
+ * @see Node
+ * @see NativeNodeType
+ */
+export type NativeNode<T extends NativeNodeType | never = never> =
+  T extends NativeNodeType ? NamedNativeNode<T> : Node;
+
+/**
+ * Composite node specific to the {@link CompositeNodeType}.
+ *
+ * If a {@link CompositeNodeType} is not provided {@link Node} is returned.
+ *
+ * @see Node
+ * @see CompositeNodeType
+ */
+export type CompositeNode<T extends CompositeNodeType | never = never> =
+  T extends Function ? NamedCompositeNode<T["name"]> : Node;
+
+/**
+ * The node for the given {@link NodeType}.
+ *
+ * If a {@link NodeType} is not provided a base node type is returned.
+ *
+ * @see Node
+ * @see NativeNode
+ * @see CompositeNode
+ * @see NodeType
+ * @see NativeNodeType
+ * @see CompositeNodeType
+ */
+export type Node<T extends NodeType | never = never> = T extends never
+  ? BaseNode
+  : T extends NativeNodeType
+  ? NativeNode<T>
+  : T extends CompositeNodeType
+  ? CompositeNode<T>
+  : never;
 
 /**
  * The fundamental building block of the Elementary audio graph.
  */
-export interface Node {
+interface BaseNode {
   /**
    * Do not use this! It is only here to differentiate {@link Node} and
    * {@link Props} types.
@@ -21,38 +58,11 @@ export interface Node {
 }
 
 /**
- * Native node specific to the {@link NativeNodeType}.
+ * {@link NativeNode} for prettier messages.
  *
- * @see Node
+ * @see BaseNode
  */
-export interface NativeNode<T extends NativeNodeType = NativeNodeType>
-  extends Node {
-  /**
-   * Do not use this! It is only here to differentiate {@link Node} and
-   * {@link Props} types.
-   *
-   * @see Node
-   * @see Props
-   */
-  $$typeof: (T | unknown) & symbol;
-  // NOTE: $$typeof is symbol but T | unknown to suppress unused T warning
-}
-
-/**
- * Native node specific to the {@link CompositeNodeType}, props, and children.
- *
- * @see Node
- */
-export type CompositeNode<T extends CompositeNodeType = CompositeNodeType> =
-  T extends Function ? NamedCompositeNode<T["name"]> : never;
-
-/**
- * {@link CompositeNode} type for prettier messages.
- *
- * @see Node
- * @see CompositeNode
- */
-export interface NamedCompositeNode<Name extends string = string> extends Node {
+interface NamedNativeNode<Name extends NodeName> extends BaseNode {
   /**
    * Do not use this! It is only here to differentiate {@link Node} and
    * {@link Props} types.
@@ -65,21 +75,19 @@ export interface NamedCompositeNode<Name extends string = string> extends Node {
 }
 
 /**
- * The node for the given {@link NodeType}, props and children.
- * If a {@link NativeNodeType} is passed props and children must match
- * the nodes' props and children types.
+ * {@link CompositeNode} type for prettier messages.
  *
- * @see Node
- * @see NativeNode
+ * @see BaseNode
  * @see CompositeNode
- * @see NodeType
- * @see NativeNodeType
- * @see CompositeNodeType
- * @see NodeProps
- * @see NodeConstructor
  */
-export type ConcreteNode<T extends NodeType> = T extends NativeNodeType
-  ? NativeNode<T>
-  : T extends CompositeNodeType
-  ? CompositeNode<T>
-  : never;
+interface NamedCompositeNode<Name extends NodeName> extends BaseNode {
+  /**
+   * Do not use this! It is only here to differentiate {@link Node} and
+   * {@link Props} types.
+   *
+   * @see Node
+   * @see Props
+   */
+  $$typeof: (Name | unknown) & symbol;
+  // NOTE: $$typeof is symbol but T | unknown to suppress unused T warning
+}

@@ -1,7 +1,10 @@
-import { Node } from "./node";
-import { Context } from "./context";
-import { Props } from "./props";
-import { ChildrenArraySizeRange, SizedChildrenArray } from "./children";
+export * from "./builtin";
+export * from "./types";
+
+import { Node } from "../node";
+import { Context } from "../context";
+import { Props } from "../props";
+import { ChildrenArraySizeRange, SizedChildrenArray } from "../children";
 
 /**
  * Builtin native types of {@link Node}s.
