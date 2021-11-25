@@ -1,4 +1,4 @@
-import { EventEmitter } from 'events';
+import { EventEmitter } from "events";
 
 import {
   Child,
@@ -6,69 +6,36 @@ import {
   NodeProps,
   NodeChildren,
   ConcreteNode,
-} from '../node';
-import { LoadEvent, MidiEvent, MeterEvent, MetroEvent } from './events';
+} from "../node";
+
+import { EventType, EventCallback } from "../event";
 
 export interface Renderer extends EventEmitter {
   /**
+   * Registers a callback for the specified event type.
+   *
    * The load event fires when the runtime has finished preparing the audio
    * rendering thread and is ready to handle render calls.
    *
-   * @param event
-   * event name
-   *
-   * @param doThis
-   * callback to call
-   *
-   * @see Renderer
-   */
-  on(event: 'load', doThis: (event: LoadEvent) => void): this;
-
-  /**
    * The midi event fires any time the runtime receives a MIDI event from
    * any connected and enabled device. By default, the runtime will be
    * listening to any such device, which may yield frequent MIDI events.
    *
-   * @param event
-   * event name
-   *
-   * @param doThis
-   * callback to call with the {@link MidiEvent}
-   *
-   * @see Renderer
-   * @see MidiEvent
-   */
-  on(event: 'midi', doThis: (event: MidiEvent) => void): this;
-
-  /**
    * The meter event fires any time a meter node emits it. This happens on
    * each block processed by the renderer.
    *
-   * @param event
-   * event name
-   *
-   * @param doThis
-   * callback to call with the {@link MeterEvent}
-   *
-   * @see Renderer
-   * @see MeterEvent
-   */
-  on(event: 'meter', doThis: (event: MeterEvent) => void): this;
-
-  /**
-   * The meter event fires any time a metro node emits it. This happens on
+   * The metro event fires any time a metro node emits it. This happens on
    * each interval that the meter event node was initialized with.
    *
-   * @param event
-   * event name
+   * @param type
+   * event type
    *
-   * @param doThis
-   * callback to call with the {@link MetroEvent}
+   * @param callback
+   * callback to call
    *
    * @see Renderer
-   * @see MetroEvent
    */
-  on(event: 'metro', doThis: (event: MetroEvent) => void): this;
+  on: <T extends EventType>(type: T, doThis: EventCallback<T>) => this;
 
   /**
    * Factory for any {@link Node} type.
@@ -81,7 +48,7 @@ export interface Renderer extends EventEmitter {
   createNode: <T extends NodeType>(
     type: T,
     props: NodeProps<T>,
-    children: NodeChildren<T>,
+    children: NodeChildren<T>
   ) => ConcreteNode<T>;
 
   /**
@@ -148,7 +115,7 @@ export interface ElementaryWebAudioRenderer extends Renderer {
    */
   initialize(
     context: AudioContext,
-    options: AudioWorkletNodeOptions,
+    options: AudioWorkletNodeOptions
   ): Promise<undefined>;
 }
 

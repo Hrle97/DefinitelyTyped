@@ -1,29 +1,4 @@
 /**
- * Event emitted by a renderer after it has been initialized.
- */
-export interface LoadEvent {
-  /**
-   * Sample rate with which the renderer was initialized.
-   */
-  sampleRate: number;
-
-  /**
-   * Block size with which the renderer was initialized.
-   */
-  blockSize: number;
-
-  /**
-   * Number of input channels with which the renderer was initialized.
-   */
-  numInputs: number;
-
-  /**
-   * Number of output channels with which the renderer was initialized.
-   */
-  numOutputs: number;
-}
-
-/**
  * Base MIDI event type.
  * MIDI events are emitted by MIDI devices such as keyboards, control
  * surfaces or even virtual MIDI devices.
@@ -89,7 +64,7 @@ export interface MidiNoteOnEvent extends MidiNoteEventBase {
   /**
    * Since this is a 'noteOn' event it can only be a 'noteOn' value.
    */
-  type: 'noteOn';
+  type: "noteOn";
 }
 
 /**
@@ -101,7 +76,7 @@ export interface MidiNoteOffEvent extends MidiNoteEventBase {
   /**
    * Since this is a 'noteOff' event it can only be a 'noteOff' value.
    */
-  type: 'noteOff';
+  type: "noteOff";
 }
 
 /**
@@ -125,7 +100,7 @@ export interface MidiControllerEvent extends MidiEventBase {
    * Since this is a 'controller' event the only possible value of this field
    * is 'controller'.
    */
-  type: 'controller';
+  type: "controller";
 
   /**
    * One of the 16 available MIDI channels where each one represents a
@@ -224,7 +199,7 @@ export interface MidiRawEvent extends MidiEventBase {
   /**
    * The type can only be 'raw' for this type of event.
    */
-  type: 'raw';
+  type: "raw";
 }
 
 /**
@@ -256,34 +231,3 @@ export type MidiEvent =
   // MidiAllSoundOffEvent |
   // MidiMetaEventEvent |
   | MidiRawEvent;
-
-/**
- * Event emitted by meter nodes that measure volume on every block.
- */
-interface MeterEvent {
-  /**
-   * Name of the meter node that emitted the event.
-   */
-  source?: string;
-
-  /**
-   * Minimal volume in the interval between emitted meter events.
-   */
-  min: number;
-
-  /**
-   * Maximal volume in the interval between emitted meter events.
-   */
-  max: number;
-}
-
-/**
- * Event emitted by metro nodes that fire off on each interval they were
- * created with.
- */
-interface MetroEvent {
-  /**
-   * Name of the metro node that emitted the event.
-   */
-  source?: string;
-}
