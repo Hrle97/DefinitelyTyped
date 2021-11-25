@@ -1,3 +1,9 @@
-import { Child } from "../children";
+/**
+ * Meter node children.
+ */
+export type MeterChildren = [];
 
-export {};
+/**
+ * Rand node children.
+ */
+export type RandChildren = [];

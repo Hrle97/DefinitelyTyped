@@ -1,3 +1,9 @@
-import { Child } from "../children";
+/**
+ * Noise node children.
+ */
+export type NoiseChildren = [];
 
-export {};
+/**
+ * PinkNoise node children.
+ */
+export type PinkNoiseChildren = [];
