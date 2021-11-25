@@ -98,7 +98,7 @@ export type ConcreteNode<T extends NodeType> = T extends NativeNodeType
   : never;
 
 // ***************************************************************************
-// Native nodes
+// Builtin native nodes
 
 // Analysis
 
@@ -188,7 +188,7 @@ export type SeqNode = NativeNode<"seq">;
 export type CompositeNodeFunction<
   P extends Props,
   C extends Children
-> = (args: { context: Context; props?: P & KeyProps; children?: C }) => Node;
+> = (args: { context: Context; props: P & KeyProps; children: C }) => Node;
 
 /**
  * Returns a native factory for the appropriate type, props and children.

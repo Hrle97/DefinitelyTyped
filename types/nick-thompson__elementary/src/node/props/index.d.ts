@@ -1,4 +1,4 @@
-import { NativeNodeType, CompositeNodeType, NodeType } from "./types";
+import { NativeNodeType, CompositeNodeType, NodeType } from "../types";
 
 // ***************************************************************************
 // Base

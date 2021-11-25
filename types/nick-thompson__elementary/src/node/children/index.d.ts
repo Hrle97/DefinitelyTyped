@@ -1,5 +1,5 @@
-import { Node } from "./node";
-import { CompositeNodeType, NativeNodeType, NodeType } from "./types";
+import { Node } from "../node";
+import { CompositeNodeType, NativeNodeType, NodeType } from "../types";
 
 // Child
 
