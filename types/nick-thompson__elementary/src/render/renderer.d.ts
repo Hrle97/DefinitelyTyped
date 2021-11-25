@@ -1,11 +1,14 @@
 import { EventEmitter } from "events";
 
 import {
+  Props,
   Child,
+  Children,
   NodeType,
   NodeProps,
   NodeChildren,
   ConcreteNode,
+  CompositeNodeFunction,
 } from "../node";
 
 import { EventType, EventCallback } from "../event";
@@ -40,6 +43,18 @@ export interface Renderer extends EventEmitter {
   /**
    * Factory for any {@link Node} type.
    *
+   * @param type
+   * the type of {@link Node} to create
+   *
+   * @param props
+   * the props of {@link Node} to create
+   *
+   * @param children
+   * the children of {@link Node} to create
+   *
+   * @returns
+   * the newly created {@link Node}
+   *
    * @see Node
    * @see NodeType
    * @see NodeProps
@@ -52,8 +67,37 @@ export interface Renderer extends EventEmitter {
   ) => ConcreteNode<T>;
 
   /**
+   * Memoizes the result of the provided {@link CompositeNodeFunction}.
+   *
+   * If the predicate returns false, the previous result of the
+   * {@link CompositeNodeFunction} is used, and otherwise, a new result is
+   * computed.
+   *
+   * If no predicate is provided, the predicate is equal to shallowly
+   * equating the previous props to the next props.
+   *
+   * @param composite
+   * {@link CompositeNodeFunction} to memoize the result of
+   *
+   * @param [predicate]
+   * should return false when a new result of the provided
+   * {@link CompositeNodeFunction} should be computed, and true otherwise
+   *
+   * @returns
+   * if predicate is false, the newly computed result of the provided
+   * {@link CompositeNodeFunction} and the memoized result otherwise
+   *
+   * @see Renderer
+   * @see CompositeNodeFunction
+   */
+  memo: <P extends Props, C extends Children>(
+    composite: CompositeNodeFunction<P, C>,
+    predicate?: (prevProps: P, nextProps: P) => boolean
+  ) => CompositeNodeFunction<P, C>;
+
+  /**
    * Accepts a variadic set of arguments, each one representing the audio
-   * signal that is to be rendered into the given channel.
+   * signal that will rendered into the given channel.
    *
    * Will throw an error if invoked before the load event has fired.
    *
@@ -68,7 +112,48 @@ export interface Renderer extends EventEmitter {
 }
 
 /**
- * WebAudio renderer for Elementary.
+ * Base {@link Renderer} type for the {@link ElementaryNodeRenderer} and
+ * {@link ElementaryPluginRenderer}.
+ *
+ * @see Renderer
+ */
+export interface NativeRenderer extends Renderer {
+  /**
+   * This method installs the necessary communication mechanisms between the
+   * {@link Renderer} and the backend engine, and if necessary, spins up an
+   * instance of the underlying engine. It must be called once at the
+   * beginning of your application's lifetime to kick off the Elementary
+   * engine, and should be called only after installing a "load" event
+   * listener on the {@link Renderer} instance itself.
+   *
+   * @async
+   *
+   * @returns
+   * when the {@link Renderer} is initialized
+   *
+   * @see Renderer
+   */
+  initialize(): Promise<undefined>;
+}
+
+/**
+ * {@link Renderer} for the Elemenentary CLI.
+ *
+ * @see Renderer
+ * @see NativeRenderer
+ */
+export interface ElementaryNodeRenderer extends NativeRenderer {}
+
+/**
+ * {@link Renderer} for the Elementary DevKit.
+ *
+ * @see Renderer
+ * @see NativeRenderer
+ */
+export interface ElementaryPluginRenderer extends NativeRenderer {}
+
+/**
+ * WebAudio {@link Renderer} for Elementary.
  *
  * Rendering Elementary applications via WebAudio is extremely simple. In
  * general, you'll just need to import the {@link ElementaryWebAudioRenderer}
@@ -117,52 +202,4 @@ export interface ElementaryWebAudioRenderer extends Renderer {
     context: AudioContext,
     options: AudioWorkletNodeOptions
   ): Promise<undefined>;
-}
-
-/**
- * Renderer for the Elemenentary CLI.
- *
- * @see Renderer
- */
-export interface ElementaryNodeRenderer extends Renderer {
-  /**
-   * This method installs the necessary communication mechanisms between the
-   * {@link Renderer} and the backend engine, and if necessary, spins up an
-   * instance of the underlying engine. It must be called once at the
-   * beginning of your application's lifetime to kick off the Elementary
-   * engine, and should be called only after installing a "load" event
-   * listener on the {@link Renderer} instance itself.
-   *
-   * @async
-   *
-   * @returns
-   * when the {@link Renderer} is initialized
-   *
-   * @see Renderer
-   */
-  initialize(): Promise<undefined>;
-}
-
-/**
- * Renderer for the Elementary DevKit.
- *
- * @see Renderer
- */
-export interface ElementaryPluginRenderer extends Renderer {
-  /**
-   * This method installs the necessary communication mechanisms between the
-   * {@link Renderer} and the backend engine, and if necessary, spins up an
-   * instance of the underlying engine. It must be called once at the
-   * beginning of your application's lifetime to kick off the Elementary
-   * engine, and should be called only after installing a "load" event
-   * listener on the {@link Renderer} instance itself.
-   *
-   * @async
-   *
-   * @returns
-   * when the {@link Renderer} is initialized
-   *
-   * @see Renderer
-   */
-  initialize(): Promise<undefined>;
 }
