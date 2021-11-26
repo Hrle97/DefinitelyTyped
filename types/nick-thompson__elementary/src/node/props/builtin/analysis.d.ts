@@ -1,15 +1,13 @@
 import { KeyProps } from "../props";
 
 /**
- * Props for el.meter.
- *
- * @see KeyProps
+ * MeterNode props.
  */
 export interface MeterProps extends KeyProps {
   /**
-   * Name of the el.meter node. Default is ''.
+   * Name of the MeterNode.
    *
-   * @see MeterProps
+   * Default is ''.
    */
   name?: string;
 }

@@ -1,53 +1,44 @@
 import { KeyProps } from "../props";
 
 /**
- * Props for el.tapOut.
- *
- * @see KeyProps
+ * ZNode props.
+ */
+export interface ZNode extends KeyProps {}
+
+/**
+ * TapOutNode props.
  */
 export interface TapOutProps extends KeyProps {
   /**
-   * Name of the el.tapOut node.
-   *
-   * @see TapOutProps
+   * Name of the TapOutNode.
    */
   name: string;
 
   /**
-   * Delay of the el.tapOut node. Default is 512.
+   * Delay of the TapOutNode. Default is 512.
    *
    * The delay will be clamped up to the block size for performance reasons,
    * but this could change in a future release.
-   *
-   * @see TapOutProps
    */
   size?: string;
 }
 
 /**
- * Props for el.tapIn.
- *
- * @see KeyProps
+ * TapInNode props.
  */
 export interface TapInProps extends KeyProps {
   /**
-   * Name of the el.tapOut node that this should take the signal from.
-   *
-   * @see TapOutProps
+   * Name of the TapOutNode that this should take the signal from.
    */
   name: string;
 }
 
 /**
- * Props for el.delay.
- *
- * @see KeyProps
+ * DelayNode props.
  */
 export interface DelayProps extends KeyProps {
   /**
    * Maximum delay line in samples.
-   *
-   * @see DelayProps
    */
   size?: number;
 }

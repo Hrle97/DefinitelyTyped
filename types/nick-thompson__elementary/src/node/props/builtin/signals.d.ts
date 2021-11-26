@@ -1,29 +1,41 @@
 import { KeyProps } from "../props";
 
 /**
- * Props for el.seq
- *
- * @see KeyProps
+ * EnvNode props.
+ */
+export interface EnvProps extends KeyProps {}
+
+/**
+ * AdsrNode props.
+ */
+export interface AdsrProps extends KeyProps {}
+
+/**
+ * LatchNode props.
+ */
+export interface LatchProps extends KeyProps {}
+
+/**
+ * SeqNode props.
  */
 export interface SeqProps extends KeyProps {
   /**
    * Sequence of values to generate.
-   *
-   * @see SeqProps
    */
   seq?: number[];
 
   /**
    * When true, continues to output the sequence value until the next trigger.
-   *
-   * @see SeqProps
    */
   hold?: boolean;
 
   /**
    * When true, sequence repeats, looping from start to end, indefinitely.
-   *
-   * @see SeqProps
    */
   loop?: boolean;
 }
+
+/**
+ * HannNode props.
+ */
+export interface HannProps extends KeyProps {}

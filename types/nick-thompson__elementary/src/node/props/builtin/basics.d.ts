@@ -1,29 +1,26 @@
 import { KeyProps } from "../props";
 
 /**
- * Props for el.in.
- *
- * @see KeyProps
+ * SrNode props.
  */
-export interface InProps extends KeyProps {
-  /**
-   * Input channel of the el.in node.
-   *
-   * @see InProps
-   */
-  channel?: number;
-}
+export interface SrProps extends KeyProps {}
 
 /**
- * Props for el.const.
- *
- * @see KeyProps
+ * ConstNode props.
  */
 export interface ConstProps extends KeyProps {
   /**
-   * Value of the el.const node.
-   *
-   * @see ConstProps
+   * Value of the ConstNode.
    */
   value: number;
 }
+
+/**
+ * CounterNode props.
+ */
+export interface CounterProps extends KeyProps {}
+
+/**
+ * SelectNode props.
+ */
+export interface SelectProps extends KeyProps {}

@@ -1,22 +1,23 @@
 import { KeyProps } from "../props";
 
 /**
- * Props for el.metro.
- *
- * @see KeyProps
+ * MetroNode props.
  */
 export interface MetroProps extends KeyProps {
   /**
-   * Name of the el.metro node. Default is ''.
+   * Name of the MetroNode.
    *
-   * @see MetroProps
+   * Default is ''.
    */
   name?: string;
 
   /**
    * Interval in which the 'metro' event will be fired.
-   *
-   * @see MetroProps
    */
   interval?: number;
 }
+
+/**
+ * RandNode props.
+ */
+export interface RandProps extends KeyProps {}
