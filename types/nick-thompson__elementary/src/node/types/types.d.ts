@@ -1,7 +1,21 @@
 import { Node } from "../node";
 import { Context } from "../context";
 import { Props } from "../props";
+import { Children } from "../children";
+import { Name } from "../names";
 import { ChildrenArraySizeRange, SizedChildrenArray } from "../children";
+
+/**
+ * Returns a composite node function for the appropriate name, props,
+ * and children.
+ */
+export type CompositeNodeFunction<
+  N extends Name,
+  P extends Props,
+  C extends Children
+> = ((args: { context: Context; props: P; children: C }) => Node) & {
+  name: N;
+};
 
 /**
  * Builtin native types of {@link Node}s.

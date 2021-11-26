@@ -10,23 +10,84 @@ import {
   MeterProps,
   /* Native */
   MetroProps,
+  RandProps,
   /* Basics */
-  InProps,
+  SrProps,
   ConstProps,
+  CounterProps,
+  SelectProps,
   /* Delays */
-  DelayProps,
+  ZProps,
   TapOutProps,
   TapInProps,
+  DelayProps,
   /* Filters */
+  PoleProps,
+  ZeroProps,
+  DcBlockProps,
+  Df11Props,
+  SmoothProps,
+  SmProps,
+  BiquadProps,
+  LowPassProps,
+  HighPassProps,
+  BandPassProps,
+  AllPassProps,
+  NotchProps,
+  PeakProps,
+  LowShelfProps,
+  HighShelfProps,
   ConvolveProps,
   /* Math */
+  SinProps,
+  CosProps,
+  TanProps,
+  TanhProps,
+  AsinhProps,
+  LnProps,
+  LogProps,
+  Log2Props,
+  CeilProps,
+  FloorProps,
+  SqrtProps,
+  ExpProps,
+  AbsProps,
+  LeProps,
+  LeqProps,
+  GeProps,
+  GeqProps,
+  PowProps,
+  ModProps,
+  MinProps,
+  MaxProps,
+  AddProps,
+  SubProps,
+  MulProps,
+  DivProps,
   /* Noise */
+  NoiseProps,
+  PinkNoiseProps,
   /* Oscillators */
+  PhasorProps,
+  TrainProps,
+  CycleProps,
+  SawProps,
+  SquareProps,
+  TriangleProps,
+  BlepSawProps,
+  BlepSquareProps,
+  BlepTriangleProps,
   /* Samples */
   SampleProps,
   TableProps,
   /* Signals */
+  EnvProps,
+  AdsrProps,
+  LatchProps,
   SeqProps,
+  HannProps,
+  /* In */
+  InProps,
 } from "./builtin";
 
 /**
@@ -78,26 +139,88 @@ export type DefaultProps = KeyProps;
  * @see KeyProps
  */
 export type BuiltinNativeNodeProps<T extends BuiltinNativeNodeType> = {
-  // Analysis
-  metro: MetroProps;
-  // Native
+  /* Analysis */
   meter: MeterProps;
-  // Baiscs
-  in: InProps | KeyProps;
+  /* Native */
+  metro: MetroProps;
+  rand: RandProps;
+  /* Basics */
+  sr: SrProps;
   const: ConstProps;
-  // Delays
+  counter: CounterProps;
+  select: SelectProps;
+  /* Delays */
+  z: ZProps;
   tapOut: TapOutProps;
   tapIn: TapInProps;
   delay: DelayProps;
-  // Filters
+  /* Filters */
+  pole: PoleProps;
+  zero: ZeroProps;
+  dcblock: DcBlockProps;
+  df11: Df11Props;
+  smooth: SmoothProps;
+  sm: SmProps;
+  biquad: BiquadProps;
+  low: LowPassProps;
+  high: HighPassProps;
+  band: BandPassProps;
+  all: AllPassProps;
+  notch: NotchProps;
+  peak: PeakProps;
+  lowShelf: LowShelfProps;
+  highShelf: HighShelfProps;
   convolve: ConvolveProps;
-  // Samples
+  /* Math */
+  sin: SinProps;
+  cos: CosProps;
+  tan: TanProps;
+  tanh: TanhProps;
+  asinh: AsinhProps;
+  ln: LnProps;
+  log: LogProps;
+  log2: Log2Props;
+  ceil: CeilProps;
+  floor: FloorProps;
+  sqrt: SqrtProps;
+  exp: ExpProps;
+  abs: AbsProps;
+  le: LeProps;
+  leq: LeqProps;
+  ge: GeProps;
+  geq: GeqProps;
+  pow: PowProps;
+  mod: ModProps;
+  min: MinProps;
+  max: MaxProps;
+  add: AddProps;
+  sub: SubProps;
+  mul: MulProps;
+  div: DivProps;
+  /* Noise */
+  noise: NoiseProps;
+  pinknoise: PinkNoiseProps;
+  /* Oscillators */
+  phasor: PhasorProps;
+  train: TrainProps;
+  cycle: CycleProps;
+  saw: SawProps;
+  square: SquareProps;
+  triangle: TriangleProps;
+  blepsaw: BlepSawProps;
+  blepsquare: BlepSquareProps;
+  bleptriangle: BlepTriangleProps;
+  /* Samples */
   sample: SampleProps;
   table: TableProps;
-  // Signals
+  /* Signals */
+  env: EnvProps;
+  adsr: AdsrProps;
+  latch: LatchProps;
   seq: SeqProps;
-  // Other
-  [other: string]: KeyProps;
+  hann: HannProps;
+  /* In */
+  in: InProps;
 }[T];
 
 /**

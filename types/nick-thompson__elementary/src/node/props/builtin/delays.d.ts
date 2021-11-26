@@ -3,7 +3,7 @@ import { KeyProps } from "../props";
 /**
  * ZNode props.
  */
-export interface ZNode extends KeyProps {}
+export interface ZProps extends KeyProps {}
 
 /**
  * TapOutNode props.

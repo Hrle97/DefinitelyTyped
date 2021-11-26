@@ -1,8 +1,8 @@
 /**
- * Context passed to a node function to get information about the current
- * renderer.
+ * Context passed to a composite node function to get information about the
+ * current renderer.
  */
-export interface RenderContext {
+export interface Context {
   /**
    * Sample rate of current renderer.
    */
@@ -23,9 +23,3 @@ export interface RenderContext {
    */
   numOutputs: number;
 }
-
-/**
- * Context passed to a node function to get information about the current
- * renderer.
- */
-export type Context = RenderContext;
