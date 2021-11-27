@@ -104,3 +104,9 @@ export type BuiltinCompositeNameTypeMap =
     Record<names.AdsrName, types.AdsrType> &
     Record<names.HannName, types.HannType>;
 /* In */
+
+/**
+ * Maps builtin node names to their type.
+ */
+export type BuiltinNameTypeMap = BuiltinNativeNameTypeMap &
+  BuiltinCompositeNameTypeMap;
