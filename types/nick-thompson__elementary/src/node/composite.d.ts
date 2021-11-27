@@ -1,4 +1,4 @@
-import { Name } from "./name";
+import { Name } from "./names";
 import { Props } from "./props";
 import { Children } from "./children";
 import { Node } from "./node";
