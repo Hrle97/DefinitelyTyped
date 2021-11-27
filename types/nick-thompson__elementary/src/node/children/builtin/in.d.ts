@@ -1,9 +1,9 @@
 import { Child } from "../children";
 
 /**
- * In node children.
+ * InNode children.
  */
-export type InNodeChildren =
+export type InChildren =
   | []
   | [
       /*

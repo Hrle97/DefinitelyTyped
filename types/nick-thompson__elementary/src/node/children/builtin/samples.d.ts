@@ -1,7 +1,7 @@
 import { Child } from "../children";
 
 /**
- * Sample node children.
+ * SampleNode children.
  */
 export type SampleChildren = [
   /**
@@ -11,7 +11,7 @@ export type SampleChildren = [
 ];
 
 /**
- * Table node children.
+ * TableNode children.
  */
 export type TableChildren = [
   /**

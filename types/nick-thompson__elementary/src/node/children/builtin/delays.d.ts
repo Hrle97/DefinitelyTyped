@@ -1,27 +1,27 @@
 import { Child } from "../children";
 
 /**
- * Z node children.
+ * ZNode children.
  */
 export type ZChildren = [];
 
 /**
- * TapOut node children.
+ * TapOutNode children.
  */
 export type TapOutChildren = [
   /**
-   * Signal to use in a TapIn node.
+   * Signal to use in a TapInNode.
    */
   signal: Child
 ];
 
 /**
- * TapIn node children.
+ * TapInNode children.
  */
 export type TapInChildren = [];
 
 /**
- * Delay node children.
+ * DelayNode children.
  */
 export type DelayChildren = [
   /**

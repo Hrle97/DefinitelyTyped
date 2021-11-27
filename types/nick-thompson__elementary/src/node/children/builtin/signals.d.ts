@@ -1,7 +1,7 @@
 import { Child } from "../children";
 
 /**
- * Env node children.
+ * EnvNode children.
  */
 export type EnvChildren = [
   /**
@@ -21,7 +21,7 @@ export type EnvChildren = [
 ];
 
 /**
- * Adsr node children.
+ * AdsrNode children.
  */
 export type AdsrChildren = [
   /**
@@ -51,7 +51,7 @@ export type AdsrChildren = [
 ];
 
 /**
- * Latch node children.
+ * LatchNode children.
  */
 export type LatchChildren = [
   /**
@@ -66,7 +66,7 @@ export type LatchChildren = [
 ];
 
 /**
- * Seq node children.
+ * SeqNode children.
  */
 export type SeqChildren = [
   /**
@@ -81,7 +81,7 @@ export type SeqChildren = [
 ];
 
 /**
- * Hann node children.
+ * HannNode children.
  */
 export type HannChildren = [
   /**

@@ -1,27 +1,27 @@
 import { Child } from "../children";
 
 /**
- * Sr node children.
+ * SrNode children.
  */
 export type SrChildren = [];
 
 /**
- * Const node children.
+ * ConstNode children.
  */
 export type ConstChildren = [];
 
 /**
- * Counter node children.
+ * CounterNode children.
  */
 export type CounterChildren = [
   /**
-   * Impulse train that controls when the counter node is counting samples.
+   * Impulse train that controls when the counterNode is counting samples.
    */
   train: Child
 ];
 
 /**
- * Select node children.
+ * SelectNode children.
  */
 export type SelectChildren = [
   /**

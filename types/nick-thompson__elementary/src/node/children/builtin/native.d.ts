@@ -1,9 +1,9 @@
 /**
- * Meter node children.
+ * MetroNode children.
  */
-export type MeterChildren = [];
+export type MetroChildren = [];
 
 /**
- * Rand node children.
+ * RandNode children.
  */
 export type RandChildren = [];

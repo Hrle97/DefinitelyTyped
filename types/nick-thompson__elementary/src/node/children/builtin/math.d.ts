@@ -2,7 +2,7 @@ import { Child } from "../children";
 import { VariadicChildrenArray } from "../array";
 
 /**
- * Sin node children.
+ * SinNode children.
  */
 export type SinChildren = [
   /**
@@ -12,7 +12,7 @@ export type SinChildren = [
 ];
 
 /**
- * Cos node children.
+ * CosNode children.
  */
 export type CosChildren = [
   /**
@@ -22,7 +22,7 @@ export type CosChildren = [
 ];
 
 /**
- * Tan node children.
+ * TanNode children.
  */
 export type TanChildren = [
   /**
@@ -32,7 +32,7 @@ export type TanChildren = [
 ];
 
 /**
- * Tanh node children.
+ * TanhNode children.
  */
 export type TanhChildren = [
   /**
@@ -42,7 +42,7 @@ export type TanhChildren = [
 ];
 
 /**
- * Asinh node children.
+ * AsinhNode children.
  */
 export type AsinhChildren = [
   /**
@@ -52,7 +52,7 @@ export type AsinhChildren = [
 ];
 
 /**
- * Ln node children.
+ * LnNode children.
  */
 export type LnChildren = [
   /**
@@ -62,7 +62,7 @@ export type LnChildren = [
 ];
 
 /**
- * Log node children.
+ * LogNode children.
  */
 export type LogChildren = [
   /**
@@ -72,7 +72,7 @@ export type LogChildren = [
 ];
 
 /**
- * Log2 node children.
+ * Log2Node children.
  */
 export type Log2Children = [
   /**
@@ -82,7 +82,7 @@ export type Log2Children = [
 ];
 
 /**
- * Ceil node children.
+ * CeilNode children.
  */
 export type CeilChildren = [
   /**
@@ -93,7 +93,7 @@ export type CeilChildren = [
 ];
 
 /**
- * Floor node children.
+ * FloorNode children.
  */
 export type FloorChildren = [
   /**
@@ -103,7 +103,7 @@ export type FloorChildren = [
 ];
 
 /**
- * Sqrt node children.
+ * SqrtNode children.
  */
 export type SqrtChildren = [
   /**
@@ -113,7 +113,7 @@ export type SqrtChildren = [
 ];
 
 /**
- * Exp node children.
+ * ExpNode children.
  */
 export type ExpChildren = [
   /**
@@ -123,7 +123,7 @@ export type ExpChildren = [
 ];
 
 /**
- * Abs node children.
+ * AbsNode children.
  */
 export type AbsChildren = [
   /**
@@ -133,7 +133,7 @@ export type AbsChildren = [
 ];
 
 /**
- * Le node children.
+ * LeNode children.
  */
 export type LeChildren = [
   /**
@@ -148,7 +148,7 @@ export type LeChildren = [
 ];
 
 /**
- * Leq node children.
+ * LeqNode children.
  */
 export type LeqChildren = [
   /**
@@ -163,7 +163,7 @@ export type LeqChildren = [
 ];
 
 /**
- * Ge node children.
+ * GeNode children.
  */
 export type GeChildren = [
   /**
@@ -178,7 +178,7 @@ export type GeChildren = [
 ];
 
 /**
- * Geq node children.
+ * GeqNode children.
  */
 export type GeqChildren = [
   /**
@@ -193,7 +193,7 @@ export type GeqChildren = [
 ];
 
 /**
- * Pow node children.
+ * PowNode children.
  */
 export type PowChildren = [
   /**
@@ -208,7 +208,7 @@ export type PowChildren = [
 ];
 
 /**
- * Mod node children.
+ * ModNode children.
  */
 export type ModChildren = [
   /**
@@ -223,7 +223,7 @@ export type ModChildren = [
 ];
 
 /**
- * Min node children.
+ * MinNode children.
  */
 export type MinChildren = [
   /**
@@ -238,7 +238,7 @@ export type MinChildren = [
 ];
 
 /**
- * Max node children.
+ * MaxNode children.
  */
 export type MaxChildren = [
   /**
@@ -253,21 +253,21 @@ export type MaxChildren = [
 ];
 
 /**
- * Add node children.
+ * AddNode children.
  */
 export type AddChildren = VariadicChildrenArray;
 
 /**
- * Sub node children.
+ * SubNode children.
  */
 export type SubChildren = VariadicChildrenArray;
 
 /**
- * Mul node children.
+ * MulNode children.
  */
 export type MulChildren = VariadicChildrenArray;
 
 /**
- * Div node children.
+ * DivNode children.
  */
 export type DivChildren = VariadicChildrenArray;

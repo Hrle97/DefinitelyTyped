@@ -1,7 +1,7 @@
 import { Child } from "../children";
 
 /**
- * Pole node children.
+ * PoleNode children.
  */
 export type PoleChildren = [
   /**
@@ -16,7 +16,7 @@ export type PoleChildren = [
 ];
 
 /**
- * Zero node children.
+ * ZeroNode children.
  */
 export type ZeroChildren = [
   /**
@@ -36,7 +36,7 @@ export type ZeroChildren = [
 ];
 
 /**
- * DcBlock node children.
+ * DcBlockNode children.
  */
 export type DcBlockChildren = [
   /**
@@ -46,7 +46,7 @@ export type DcBlockChildren = [
 ];
 
 /**
- * Df11 node children.
+ * Df11Node children.
  */
 export type Df11Children = [
   /**
@@ -71,7 +71,7 @@ export type Df11Children = [
 ];
 
 /**
- * Smooth node children.
+ * SmoothNode children.
  */
 export type SmoothChildren = [
   /**
@@ -86,7 +86,7 @@ export type SmoothChildren = [
 ];
 
 /**
- * Sm node children.
+ * SmNode children.
  */
 export type SmChildren = [
   /**
@@ -96,7 +96,7 @@ export type SmChildren = [
 ];
 
 /**
- * Biquad node children.
+ * BiquadNode children.
  */
 export type BiquadChildren = [
   /**
@@ -131,7 +131,7 @@ export type BiquadChildren = [
 ];
 
 /**
- * LowPass node children.
+ * LowPassNode children.
  */
 export type LowPassChildren = [
   /**
@@ -151,7 +151,7 @@ export type LowPassChildren = [
 ];
 
 /**
- * HighPass node children.
+ * HighPassNode children.
  */
 export type HighPassChildren = [
   /**
@@ -171,7 +171,7 @@ export type HighPassChildren = [
 ];
 
 /**
- * BandPass node children.
+ * BandPassNode children.
  */
 export type BandPassChildren = [
   /**
@@ -191,7 +191,7 @@ export type BandPassChildren = [
 ];
 
 /**
- * AllPass node children.
+ * AllPassNode children.
  */
 export type AllPassChildren = [
   /**
@@ -211,7 +211,7 @@ export type AllPassChildren = [
 ];
 
 /**
- * Notch node children.
+ * NotchNode children.
  */
 export type NotchChildren = [
   /**
@@ -231,7 +231,7 @@ export type NotchChildren = [
 ];
 
 /**
- * Peak node children.
+ * PeakNode children.
  */
 export type PeakChildren = [
   /**
@@ -256,7 +256,7 @@ export type PeakChildren = [
 ];
 
 /**
- * LowShelf node children.
+ * LowShelfNode children.
  */
 export type LowShelfChildren = [
   /**
@@ -281,7 +281,7 @@ export type LowShelfChildren = [
 ];
 
 /**
- * HighShelf node children.
+ * HighShelfNode children.
  */
 export type HighShelfChildren = [
   /**
@@ -306,7 +306,7 @@ export type HighShelfChildren = [
 ];
 
 /**
- * Convolve node children.
+ * ConvolveNode children.
  */
 export type ConvolveChildren = [
   /**
@@ -316,7 +316,7 @@ export type ConvolveChildren = [
 ];
 
 /**
- * Pink node children.
+ * PinkNode children.
  */
 export type PinkChildren = [
   /**

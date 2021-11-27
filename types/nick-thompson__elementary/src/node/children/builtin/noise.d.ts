@@ -1,9 +1,9 @@
 /**
- * Noise node children.
+ * NoiseNode children.
  */
 export type NoiseChildren = [];
 
 /**
- * PinkNoise node children.
+ * PinkNoiseNode children.
  */
 export type PinkNoiseChildren = [];

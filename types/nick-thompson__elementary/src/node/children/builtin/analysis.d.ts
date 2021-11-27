@@ -1,7 +1,7 @@
 import { Child } from "../children";
 
 /**
- * Meter node children.
+ * MeterNode children.
  */
 export type MeterChildren = [
   /**

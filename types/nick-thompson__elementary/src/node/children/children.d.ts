@@ -1,26 +1,107 @@
-import { Node } from "../node";
-
 import {
-  BuiltinNativeNodeType,
-  NativeNodeType,
-  CompositeNodeType,
-  NodeType,
+  BuiltinNativeType,
+  BuiltinCompositeType,
+  NativeType,
+  CompositeType,
+  Type,
+  TypeName,
 } from "../types";
 
 import {
-  ChildrenArraySizeRange,
-  VariadicChildrenArraySizeRange,
+  /* Analysis */
+  MeterChildren,
+  /* Native */
+  MetroChildren,
+  RandChildren,
+  /* Basics */
+  SrChildren,
+  ConstChildren,
+  CounterChildren,
+  SelectChildren,
+  /* Delays */
+  ZChildren,
+  TapOutChildren,
+  TapInChildren,
+  DelayChildren,
+  /* Filters */
+  PoleChildren,
+  ZeroChildren,
+  DcBlockChildren,
+  Df11Children,
+  SmoothChildren,
+  SmChildren,
+  BiquadChildren,
+  LowPassChildren,
+  HighPassChildren,
+  BandPassChildren,
+  AllPassChildren,
+  NotchChildren,
+  PeakChildren,
+  LowShelfChildren,
+  HighShelfChildren,
+  ConvolveChildren,
+  PinkChildren,
+  /* Math */
+  SinChildren,
+  CosChildren,
+  TanChildren,
+  TanhChildren,
+  AsinhChildren,
+  LnChildren,
+  LogChildren,
+  Log2Children,
+  CeilChildren,
+  FloorChildren,
+  SqrtChildren,
+  ExpChildren,
+  AbsChildren,
+  LeChildren,
+  LeqChildren,
+  GeChildren,
+  GeqChildren,
+  PowChildren,
+  ModChildren,
+  MinChildren,
+  MaxChildren,
+  AddChildren,
+  SubChildren,
+  MulChildren,
+  DivChildren,
+  /* Noise */
+  NoiseChildren,
+  PinkNoiseChildren,
+  /* Oscillators */
+  PhasorChildren,
+  TrainChildren,
+  CycleChildren,
+  SawChildren,
+  SquareChildren,
+  TriangleChildren,
+  BlepSawChildren,
+  BlepSquareChildren,
+  BlepTriangleChildren,
+  /* Samples */
+  SampleChildren,
+  TableChildren,
+  /* Signals */
+  EnvChildren,
+  AdsrChildren,
+  LatchChildren,
+  SeqChildren,
+  HannChildren,
+  /* In */
+  InChildren,
+} from "./builtin";
+
+import {
   EmptyChildrenArray,
   SizedChildrenArray,
   ChildrenArray,
   ChildrenArraySize,
 } from "./array";
 
-// Child
-
 /**
- * {@link Node} child type. Any number will be converted to an el.const node
- * internally.
+ * Node child type. Any number will be converted to a ConstNode internally.
  *
  * @see Node
  */
@@ -43,90 +124,141 @@ export type Children = ChildrenArray;
 export type DefaultChildren = EmptyChildrenArray;
 
 /**
- * Type of children of any given {@link BuiltinNativeNodeType}.
+ * Children for the provided builtin native node type.
  *
- * @see Child
- * @see Children
+ * @see BuiltinNativeType
  */
-export type BuiltinNativeNodeChildren<T extends NativeNodeType> =
-  SizedChildrenArray<
-    {
-      /* Analysis */
-      meter: 0;
-      /* Native */
-      metro: 0;
-      rand: 0;
-      /* Basics */
-      in: 0 | 1;
-      sr: 0;
-      counter: 1;
-      /* Delays */
-      z: 0;
-      tapIn: 0;
-      tapOut: 1;
-      delay: 3;
-      /* Math */
-      sin: 1;
-      cos: 1;
-      tan: 1;
-      tanh: 1;
-      asinh: 1;
-      ln: 1;
-      log: 1;
-      log2: 1;
-      ceil: 1;
-      floor: 1;
-      sqrt: 1;
-      exp: 1;
-      abs: 1;
-      le: 2;
-      leq: 2;
-      ge: 2;
-      geq: 2;
-      pow: 2;
-      add: VariadicChildrenArraySizeRange;
-      sub: VariadicChildrenArraySizeRange;
-      mul: VariadicChildrenArraySizeRange;
-      div: VariadicChildrenArraySizeRange;
-      mod: 2;
-      min: 2;
-      max: 2;
-      /* Filters */
-      pole: 2;
-      biquad: 6;
-      convolve: 1;
-      /* Oscillators */
-      phasor: 1;
-      /* Samples */
-      sample: 1;
-      table: 1;
-      /* Signals */
-      latch: 2;
-      seq: 1 | 2;
-      [other: string]: ChildrenArraySizeRange;
-    }[T]
-  >;
+export type BuiltinNativeTypeChildren<T extends BuiltinNativeType> = {
+  /* Analysis */
+  meter: MeterChildren;
+  /* Native */
+  metro: MetroChildren;
+  rand: RandChildren;
+  /* Basics */
+  sr: SrChildren;
+  const: ConstChildren;
+  counter: CounterChildren;
+  /* Delays */
+  z: ZChildren;
+  tapOut: TapOutChildren;
+  tapIn: TapInChildren;
+  delay: DelayChildren;
+  /* Filters */
+  pole: PoleChildren;
+  biquad: BiquadChildren;
+  convolve: ConvolveChildren;
+  /* Math */
+  sin: SinChildren;
+  cos: CosChildren;
+  tan: TanChildren;
+  tanh: TanhChildren;
+  asinh: AsinhChildren;
+  ln: LnChildren;
+  log: LogChildren;
+  log2: Log2Children;
+  ceil: CeilChildren;
+  floor: FloorChildren;
+  sqrt: SqrtChildren;
+  exp: ExpChildren;
+  abs: AbsChildren;
+  le: LeChildren;
+  leq: LeqChildren;
+  ge: GeChildren;
+  geq: GeqChildren;
+  pow: PowChildren;
+  mod: ModChildren;
+  min: MinChildren;
+  max: MaxChildren;
+  add: AddChildren;
+  sub: SubChildren;
+  mul: MulChildren;
+  div: DivChildren;
+  /* Noise */
+  /* Oscillators */
+  phasor: PhasorChildren;
+  /* Samples */
+  sample: SampleChildren;
+  table: TableChildren;
+  /* Signals */
+  latch: LatchChildren;
+  seq: SeqChildren;
+  /* In */
+  in: InChildren;
+}[TypeName<T>];
 
 /**
- * Type of children of any given {@link NativeNodeType}.
+ * Children for the provided builtin composite node type.
  *
- * @see Child
- * @see Children
+ * @see BuiltinCompositeType
  */
-export type NativeNodeChildren<T extends NativeNodeType> =
-  T extends BuiltinNativeNodeType ? BuiltinNativeNodeChildren<T> : Children;
+export type BuiltinCompositeTypeChildren<T extends BuiltinCompositeType> = {
+  /* Analysis */
+  /* Native */
+  /* Basics */
+  select: SelectChildren;
+  /* Delays */
+  /* Filters */
+  zero: ZeroChildren;
+  dcblock: DcBlockChildren;
+  df11: Df11Children;
+  smooth: SmoothChildren;
+  sm: SmChildren;
+  lowpass: LowPassChildren;
+  highpass: HighPassChildren;
+  bandpass: BandPassChildren;
+  allpass: AllPassChildren;
+  notch: NotchChildren;
+  peak: PeakChildren;
+  lowshelf: LowShelfChildren;
+  highshelf: HighShelfChildren;
+  pink: PinkChildren;
+  /* Math */
+  /* Noise */
+  noise: NoiseChildren;
+  pinknoise: PinkNoiseChildren;
+  /* Oscillators */
+  train: TrainChildren;
+  cycle: CycleChildren;
+  saw: SawChildren;
+  square: SquareChildren;
+  triangle: TriangleChildren;
+  blepsaw: BlepSawChildren;
+  blepsquare: BlepSquareChildren;
+  bleptriangle: BlepTriangleChildren;
+  /* Samples */
+  /* Signals */
+  env: EnvChildren;
+  adsr: AdsrChildren;
+  hann: HannChildren;
+  /* In */
+}[TypeName<T>];
 
 /**
- * Type of children of any given {@link CompositeNodeType}.
+ * Children for the provided native node type.
  *
- * @see Child
- * @see ChildrenArraySizeRange
+ * @see NativeType
+ * @see BuiltinNativeType
+ * @see BuiltinNativeTypeChildren
+ * @see DefaultChildren
+ */
+export type NativeTypeChildren<T extends NativeType> =
+  T extends BuiltinNativeType ? BuiltinNativeTypeChildren<T> : DefaultChildren;
+
+/**
+ * Children for the provided composite node type.
+ *
+ * @see CompositeType
+ * @see BuiltinCompositeType
+ * @see BuiltinCompositeTypeChildren
+ * @see DefaultChildren
  * @see SizedChildrenArray
- * @see ChildrenArray
+ * @see ChildrenArraySize
  */
-export type CompositeNodeChildren<T extends CompositeNodeType> =
-  Parameters<T> extends []
-    ? EmptyChildrenArray
+export type CompositeTypeChildren<T extends CompositeType> =
+  T extends BuiltinCompositeType
+    ? BuiltinCompositeTypeChildren<T>
+    : Parameters<T> extends []
+    ? DefaultChildren
     : Parameters<T> extends [infer IArgs, ...any]
     ? IArgs extends { children?: infer IChildren }
       ? /*
@@ -134,22 +266,20 @@ export type CompositeNodeChildren<T extends CompositeNodeType> =
          * if its not there
          */
         SizedChildrenArray<ChildrenArraySize<IChildren & any[]>>
-      : EmptyChildrenArray
-    : EmptyChildrenArray;
+      : DefaultChildren
+    : DefaultChildren;
 
 /**
- * Type of children of any given {@link NodeType}.
+ * Children for the provided node type.
  *
- * @see NodeType
- * @see NativeNodeType
- * @see CompositeNodeType
- * @see NativeNodeChildren
- * @see CompositeNodeChildren
+ * @see Type
+ * @see NativeType
+ * @see NativeTypeChildren
+ * @see CompositeType
+ * @see CompositeTypeChildren
  */
-export type NodeChildren<T extends NodeType> = NodeType extends T
-  ? Children
-  : T extends NativeNodeType
-  ? NativeNodeChildren<T>
-  : T extends CompositeNodeType
-  ? CompositeNodeChildren<T>
+export type TypeChildren<T extends Type> = T extends NativeType
+  ? NativeTypeChildren<T>
+  : T extends CompositeType
+  ? CompositeTypeChildren<T>
   : never;
