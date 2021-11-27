@@ -277,8 +277,8 @@ export type CompositeTypeProps<T extends CompositeType> =
     ? BuiltinCompositeTypeProps<T>
     : Parameters<T> extends []
     ? DefaultProps
-    : Parameters<T> extends [infer IArgs, ...any]
-    ? IArgs extends { props: infer IProps }
+    : Parameters<T> extends [infer IParams, ...any]
+    ? IParams extends { props: infer IProps }
       ? IProps & KeyProps
       : DefaultProps
     : DefaultProps;

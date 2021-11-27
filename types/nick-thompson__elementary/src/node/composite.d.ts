@@ -42,7 +42,6 @@ export type CompositeFunction<
   N extends Name,
   P extends Props,
   C extends Children
-> = ((args: { context: Context; props: P; children: C }) => Node) &
-  Function & {
-    name: N;
-  };
+> = ((args: { context: Context; props: P; children: C }) => Node) & {
+  name: N;
+};
