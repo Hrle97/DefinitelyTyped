@@ -1,4 +1,7 @@
+import { InName } from "../../names";
 /**
  * InNode type.
+ *
+ * @see InName
  */
-export type InType = "in";
+export type InType = InName;

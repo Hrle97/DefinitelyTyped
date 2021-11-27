@@ -1,4 +1,5 @@
+import { MeterName } from "../../names";
 /**
  * MeterNode type.
  */
-export type MeterType = "meter";
+export type MeterType = MeterName;
