@@ -104,3 +104,9 @@ export type BuiltinCompositeNameChildrenMap =
     Record<names.AdsrName, children.AdsrChildren> &
     Record<names.HannName, children.HannChildren>;
 /* In */
+
+/**
+ * Maps builtin node names to their children.
+ */
+export type BuiltinNameChildrenMap = BuiltinNativeNameChildrenMap &
+  BuiltinCompositeNameChildrenMap;

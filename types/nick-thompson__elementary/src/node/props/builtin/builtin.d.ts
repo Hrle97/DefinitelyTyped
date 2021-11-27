@@ -104,3 +104,9 @@ export type BuiltinCompositeNamePropsMap =
     Record<names.AdsrName, props.AdsrProps> &
     Record<names.HannName, props.HannProps>;
 /* In */
+
+/**
+ * Maps builtin node names to their props.
+ */
+export type BuiltinNamePropsMap = BuiltinNativeNamePropsMap &
+  BuiltinCompositeNamePropsMap;
