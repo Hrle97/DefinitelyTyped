@@ -1,10 +1,12 @@
 import {
   BuiltinNativeType,
   BuiltinCompositeType,
+  BuiltinType,
   NativeType,
   CompositeType,
   Type,
-  TypeName,
+  NativeTypeName,
+  CompositeTypeName,
 } from "../types";
 
 import {
@@ -96,8 +98,6 @@ import {
 /**
  * Base node props.
  *
- * Unlike key props, this type allows for any prop value with a string key.
- *
  * @see KeyProps
  */
 export interface Props {
@@ -105,7 +105,7 @@ export interface Props {
 }
 
 /**
- * Key node props.
+ * Node key props.
  *
  * Key determines whether props changed or the whole node changed upon
  * re-render.
@@ -186,7 +186,7 @@ export type BuiltinNativeTypeProps<T extends BuiltinNativeType> = {
   seq: SeqProps;
   /* In */
   in: InProps;
-}[TypeName<T>];
+}[NativeTypeName<T>];
 
 /**
  * Props for the provided builtin composite node type.
@@ -233,7 +233,23 @@ export type BuiltinCompositeTypeProps<T extends BuiltinCompositeType> = {
   adsr: AdsrProps;
   hann: HannProps;
   /* In */
-}[TypeName<T>];
+}[CompositeTypeName<T>];
+
+/**
+ * Props for the provided builtin node type.
+ *
+ * @see BuiltinType
+ * @see BuiltinNativeType
+ * @see BuiltinNativeTypeProps
+ * @see BuiltinCompositeType
+ * @see BuiltinCompositeTypeProps
+ */
+export type BuiltinTypeProps<T extends BuiltinType> =
+  T extends BuiltinNativeType
+    ? BuiltinNativeTypeProps<T>
+    : T extends BuiltinCompositeType
+    ? BuiltinCompositeTypeProps<T>
+    : never;
 
 /**
  * Props for provided native node type.

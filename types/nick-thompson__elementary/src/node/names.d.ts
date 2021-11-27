@@ -1,5 +1,5 @@
 /**
- * Names of builtin native nodes.
+ * Builtin native node names.
  */
 export type BuiltinNativeName =
   /* Analysis */
@@ -103,11 +103,21 @@ export type BuiltinCompositeName =
 /* In */
 
 /**
- * Names of builtin nodes.
+ * Builtin node names.
  */
 export type BuiltinName = BuiltinNativeName | BuiltinCompositeName;
 
 /**
- * Names of nodes.
+ * Native node names.
  */
-export type Name = string;
+export type NativeName = string;
+
+/**
+ * Composite node names.
+ */
+export type CompositeName = string;
+
+/**
+ * Node names.
+ */
+export type Name = NativeName | CompositeName;

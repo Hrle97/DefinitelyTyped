@@ -1,10 +1,12 @@
 import {
   BuiltinNativeType,
   BuiltinCompositeType,
+  BuiltinType,
   NativeType,
   CompositeType,
   Type,
-  TypeName,
+  NativeTypeName,
+  CompositeTypeName,
 } from "../types";
 
 import {
@@ -184,7 +186,7 @@ export type BuiltinNativeTypeChildren<T extends BuiltinNativeType> = {
   seq: SeqChildren;
   /* In */
   in: InChildren;
-}[TypeName<T>];
+}[NativeTypeName<T>];
 
 /**
  * Children for the provided builtin composite node type.
@@ -231,7 +233,23 @@ export type BuiltinCompositeTypeChildren<T extends BuiltinCompositeType> = {
   adsr: AdsrChildren;
   hann: HannChildren;
   /* In */
-}[TypeName<T>];
+}[CompositeTypeName<T>];
+
+/**
+ * Children for the provided builtin node type.
+ *
+ * @see BuiltinType
+ * @see BuiltinNativeType
+ * @see BuiltinNativeTypeChildren
+ * @see BuiltinCompositeType
+ * @see BuiltinCompositeTypeChildren
+ */
+export type BuiltinTypeChildren<T extends BuiltinType> =
+  T extends BuiltinNativeType
+    ? BuiltinNativeTypeChildren<T>
+    : T extends BuiltinCompositeType
+    ? BuiltinCompositeTypeChildren<T>
+    : never;
 
 /**
  * Children for the provided native node type.
