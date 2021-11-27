@@ -1,4 +1,4 @@
-import { CompositeFunction } from "../types";
+import { CompositeFunction } from "../../composite";
 
 /**
  * SrNode type.

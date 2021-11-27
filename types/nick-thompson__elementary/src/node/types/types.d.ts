@@ -1,33 +1,12 @@
-import { Node } from "../node";
-import { Context } from "../context";
-import { Props } from "../props";
-import { Children } from "../children";
 import {
-  Name,
   BuiltinNativeName,
   BuiltinCompositeName,
   NativeName,
   CompositeName,
-} from "../names";
+} from "../name";
+import { CompositeFunction } from "../composite";
+import { Props } from "../props";
 import { ChildrenArraySizeRange, SizedChildrenArray } from "../children";
-
-/**
- * Composite node function for the provided name, props, and children.
- *
- * @see Name
- * @see Context
- * @see Props
- * @see Children
- * @see Node
- */
-export type CompositeFunction<
-  N extends Name,
-  P extends Props,
-  C extends Children
-> = ((args: { context: Context; props: P; children: C }) => Node) &
-  Function & {
-    name: N;
-  };
 
 /**
  * Builtin native node types.
