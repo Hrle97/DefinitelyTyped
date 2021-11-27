@@ -10,97 +10,16 @@ import {
 } from "../types";
 
 import {
-  /* Analysis */
-  MeterChildren,
-  /* Native */
-  MetroChildren,
-  RandChildren,
-  /* Basics */
-  SrChildren,
-  ConstChildren,
-  CounterChildren,
-  SelectChildren,
-  /* Delays */
-  ZChildren,
-  TapOutChildren,
-  TapInChildren,
-  DelayChildren,
-  /* Filters */
-  PoleChildren,
-  ZeroChildren,
-  DcBlockChildren,
-  Df11Children,
-  SmoothChildren,
-  SmChildren,
-  BiquadChildren,
-  LowPassChildren,
-  HighPassChildren,
-  BandPassChildren,
-  AllPassChildren,
-  NotchChildren,
-  PeakChildren,
-  LowShelfChildren,
-  HighShelfChildren,
-  ConvolveChildren,
-  PinkChildren,
-  /* Math */
-  SinChildren,
-  CosChildren,
-  TanChildren,
-  TanhChildren,
-  AsinhChildren,
-  LnChildren,
-  LogChildren,
-  Log2Children,
-  CeilChildren,
-  FloorChildren,
-  SqrtChildren,
-  ExpChildren,
-  AbsChildren,
-  LeChildren,
-  LeqChildren,
-  GeChildren,
-  GeqChildren,
-  PowChildren,
-  ModChildren,
-  MinChildren,
-  MaxChildren,
-  AddChildren,
-  SubChildren,
-  MulChildren,
-  DivChildren,
-  /* Noise */
-  NoiseChildren,
-  PinkNoiseChildren,
-  /* Oscillators */
-  PhasorChildren,
-  TrainChildren,
-  CycleChildren,
-  SawChildren,
-  SquareChildren,
-  TriangleChildren,
-  BlepSawChildren,
-  BlepSquareChildren,
-  BlepTriangleChildren,
-  /* Samples */
-  SampleChildren,
-  TableChildren,
-  /* Signals */
-  EnvChildren,
-  AdsrChildren,
-  LatchChildren,
-  SeqChildren,
-  HannChildren,
-  /* In */
-  InChildren,
-} from "./builtin";
-
-import {
   EmptyChildrenArray,
   SizedChildrenArray,
   ChildrenArray,
   ChildrenArraySize,
 } from "./array";
+
+import {
+  BuiltinNativeNameChildrenMap,
+  BuiltinCompositeNameChildrenMap,
+} from "./builtin";
 
 /**
  * Node child type. Any number will be converted to a ConstNode internally.
@@ -134,111 +53,19 @@ export type DefaultChildren = EmptyChildrenArray;
  * Children for the provided builtin native node type.
  *
  * @see BuiltinNativeType
+ * @see BuiltinNativeNameChildrenMap
  */
-export type BuiltinNativeTypeChildren<T extends BuiltinNativeType> = {
-  /* Analysis */
-  meter: MeterChildren;
-  /* Native */
-  metro: MetroChildren;
-  rand: RandChildren;
-  /* Basics */
-  sr: SrChildren;
-  const: ConstChildren;
-  counter: CounterChildren;
-  /* Delays */
-  z: ZChildren;
-  tapOut: TapOutChildren;
-  tapIn: TapInChildren;
-  delay: DelayChildren;
-  /* Filters */
-  pole: PoleChildren;
-  biquad: BiquadChildren;
-  convolve: ConvolveChildren;
-  /* Math */
-  sin: SinChildren;
-  cos: CosChildren;
-  tan: TanChildren;
-  tanh: TanhChildren;
-  asinh: AsinhChildren;
-  ln: LnChildren;
-  log: LogChildren;
-  log2: Log2Children;
-  ceil: CeilChildren;
-  floor: FloorChildren;
-  sqrt: SqrtChildren;
-  exp: ExpChildren;
-  abs: AbsChildren;
-  le: LeChildren;
-  leq: LeqChildren;
-  ge: GeChildren;
-  geq: GeqChildren;
-  pow: PowChildren;
-  mod: ModChildren;
-  min: MinChildren;
-  max: MaxChildren;
-  add: AddChildren;
-  sub: SubChildren;
-  mul: MulChildren;
-  div: DivChildren;
-  /* Noise */
-  /* Oscillators */
-  phasor: PhasorChildren;
-  /* Samples */
-  sample: SampleChildren;
-  table: TableChildren;
-  /* Signals */
-  latch: LatchChildren;
-  seq: SeqChildren;
-  /* In */
-  in: InChildren;
-}[NativeTypeName<T>];
+export type BuiltinNativeTypeChildren<T extends BuiltinNativeType> =
+  BuiltinNativeNameChildrenMap[NativeTypeName<T>];
 
 /**
  * Children for the provided builtin composite node type.
  *
  * @see BuiltinCompositeType
+ * @see BuiltinCompositeNameChildrenMap
  */
-export type BuiltinCompositeTypeChildren<T extends BuiltinCompositeType> = {
-  /* Analysis */
-  /* Native */
-  /* Basics */
-  select: SelectChildren;
-  /* Delays */
-  /* Filters */
-  zero: ZeroChildren;
-  dcblock: DcBlockChildren;
-  df11: Df11Children;
-  smooth: SmoothChildren;
-  sm: SmChildren;
-  lowpass: LowPassChildren;
-  highpass: HighPassChildren;
-  bandpass: BandPassChildren;
-  allpass: AllPassChildren;
-  notch: NotchChildren;
-  peak: PeakChildren;
-  lowshelf: LowShelfChildren;
-  highshelf: HighShelfChildren;
-  pink: PinkChildren;
-  /* Math */
-  /* Noise */
-  noise: NoiseChildren;
-  pinknoise: PinkNoiseChildren;
-  /* Oscillators */
-  train: TrainChildren;
-  cycle: CycleChildren;
-  saw: SawChildren;
-  square: SquareChildren;
-  triangle: TriangleChildren;
-  blepsaw: BlepSawChildren;
-  blepsquare: BlepSquareChildren;
-  bleptriangle: BlepTriangleChildren;
-  /* Samples */
-  /* Signals */
-  env: EnvChildren;
-  adsr: AdsrChildren;
-  hann: HannChildren;
-  /* In */
-}[CompositeTypeName<T>];
+export type BuiltinCompositeTypeChildren<T extends BuiltinCompositeType> =
+  BuiltinCompositeNameChildrenMap[CompositeTypeName<T>];
 
 /**
  * Children for the provided builtin node type.

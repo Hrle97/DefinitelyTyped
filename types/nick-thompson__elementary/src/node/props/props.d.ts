@@ -10,89 +10,8 @@ import {
 } from "../types";
 
 import {
-  /* Analysis */
-  MeterProps,
-  /* Native */
-  MetroProps,
-  RandProps,
-  /* Basics */
-  SrProps,
-  ConstProps,
-  CounterProps,
-  SelectProps,
-  /* Delays */
-  ZProps,
-  TapOutProps,
-  TapInProps,
-  DelayProps,
-  /* Filters */
-  PoleProps,
-  ZeroProps,
-  DcBlockProps,
-  Df11Props,
-  SmoothProps,
-  SmProps,
-  BiquadProps,
-  LowPassProps,
-  HighPassProps,
-  BandPassProps,
-  AllPassProps,
-  NotchProps,
-  PeakProps,
-  LowShelfProps,
-  HighShelfProps,
-  ConvolveProps,
-  PinkProps,
-  /* Math */
-  SinProps,
-  CosProps,
-  TanProps,
-  TanhProps,
-  AsinhProps,
-  LnProps,
-  LogProps,
-  Log2Props,
-  CeilProps,
-  FloorProps,
-  SqrtProps,
-  ExpProps,
-  AbsProps,
-  LeProps,
-  LeqProps,
-  GeProps,
-  GeqProps,
-  PowProps,
-  ModProps,
-  MinProps,
-  MaxProps,
-  AddProps,
-  SubProps,
-  MulProps,
-  DivProps,
-  /* Noise */
-  NoiseProps,
-  PinkNoiseProps,
-  /* Oscillators */
-  PhasorProps,
-  TrainProps,
-  CycleProps,
-  SawProps,
-  SquareProps,
-  TriangleProps,
-  BlepSawProps,
-  BlepSquareProps,
-  BlepTriangleProps,
-  /* Samples */
-  SampleProps,
-  TableProps,
-  /* Signals */
-  EnvProps,
-  AdsrProps,
-  LatchProps,
-  SeqProps,
-  HannProps,
-  /* In */
-  InProps,
+  BuiltinNativeNamePropsMap,
+  BuiltinCompositeNamePropsMap,
 } from "./builtin";
 
 /**
@@ -130,110 +49,16 @@ export type DefaultProps = Props & KeyProps;
  *
  * @see BuiltinNativeType
  */
-export type BuiltinNativeTypeProps<T extends BuiltinNativeType> = {
-  /* Analysis */
-  meter: MeterProps;
-  /* Native */
-  metro: MetroProps;
-  rand: RandProps;
-  /* Basics */
-  sr: SrProps;
-  const: ConstProps;
-  counter: CounterProps;
-  /* Delays */
-  z: ZProps;
-  tapOut: TapOutProps;
-  tapIn: TapInProps;
-  delay: DelayProps;
-  /* Filters */
-  pole: PoleProps;
-  biquad: BiquadProps;
-  convolve: ConvolveProps;
-  /* Math */
-  sin: SinProps;
-  cos: CosProps;
-  tan: TanProps;
-  tanh: TanhProps;
-  asinh: AsinhProps;
-  ln: LnProps;
-  log: LogProps;
-  log2: Log2Props;
-  ceil: CeilProps;
-  floor: FloorProps;
-  sqrt: SqrtProps;
-  exp: ExpProps;
-  abs: AbsProps;
-  le: LeProps;
-  leq: LeqProps;
-  ge: GeProps;
-  geq: GeqProps;
-  pow: PowProps;
-  mod: ModProps;
-  min: MinProps;
-  max: MaxProps;
-  add: AddProps;
-  sub: SubProps;
-  mul: MulProps;
-  div: DivProps;
-  /* Noise */
-  /* Oscillators */
-  phasor: PhasorProps;
-  /* Samples */
-  sample: SampleProps;
-  table: TableProps;
-  /* Signals */
-  latch: LatchProps;
-  seq: SeqProps;
-  /* In */
-  in: InProps;
-}[NativeTypeName<T>];
+export type BuiltinNativeTypeProps<T extends BuiltinNativeType> =
+  BuiltinNativeNamePropsMap[NativeTypeName<T>];
 
 /**
  * Props for the provided builtin composite node type.
  *
  * @see BuiltinCompositeType
  */
-export type BuiltinCompositeTypeProps<T extends BuiltinCompositeType> = {
-  /* Analysis */
-  /* Native */
-  /* Basics */
-  select: SelectProps;
-  /* Delays */
-  /* Filters */
-  zero: ZeroProps;
-  dcblock: DcBlockProps;
-  df11: Df11Props;
-  smooth: SmoothProps;
-  sm: SmProps;
-  lowpass: LowPassProps;
-  highpass: HighPassProps;
-  bandpass: BandPassProps;
-  allpass: AllPassProps;
-  notch: NotchProps;
-  peak: PeakProps;
-  lowshelf: LowShelfProps;
-  highshelf: HighShelfProps;
-  pink: PinkProps;
-  /* Math */
-  /* Noise */
-  noise: NoiseProps;
-  pinknoise: PinkNoiseProps;
-  /* Oscillators */
-  train: TrainProps;
-  cycle: CycleProps;
-  saw: SawProps;
-  square: SquareProps;
-  triangle: TriangleProps;
-  blepsaw: BlepSawProps;
-  blepsquare: BlepSquareProps;
-  bleptriangle: BlepTriangleProps;
-  /* Samples */
-  /* Signals */
-  env: EnvProps;
-  adsr: AdsrProps;
-  hann: HannProps;
-  /* In */
-}[CompositeTypeName<T>];
+export type BuiltinCompositeTypeProps<T extends BuiltinCompositeType> =
+  BuiltinCompositeNamePropsMap[CompositeTypeName<T>];
 
 /**
  * Props for the provided builtin node type.
