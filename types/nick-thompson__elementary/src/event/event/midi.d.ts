@@ -186,7 +186,7 @@ export interface MidiControllerEvent extends MidiEventBase {
 //  *
 //  * @see MidiEventBase
 //  */
-// export interface MidiMetaEventEvent extends MidiEventBase {
+// export interface MidiMetaEvent extends MidiEventBase {
 // }
 
 /**
@@ -216,7 +216,7 @@ export interface MidiRawEvent extends MidiEventBase {
  * @see MidiChannelPressureEvent
  * @see MidiAllNotesOffEvent
  * @see MidiAllSoundOffEvent
- * @see MidiMetaEventEvent
+ * @see MidiMetaEvent
  * @see MidiRawEvent
  */
 export type MidiEvent =
@@ -229,5 +229,5 @@ export type MidiEvent =
   // MidiChannelPressureEvent |
   // MidiAllNotesOffEvent |
   // MidiAllSoundOffEvent |
-  // MidiMetaEventEvent |
+  // MidiMetaEvent |
   | MidiRawEvent;

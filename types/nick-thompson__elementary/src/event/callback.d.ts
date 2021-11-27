@@ -1,6 +1,12 @@
-import { EventType } from "./types";
-import { EventProps } from "./props";
+import { Type } from "./types";
+import { TypeEventMap } from "./event";
 
-export type EventCallback<T extends EventType = EventType> = (
-  props: EventProps<T>
+/**
+ * Callback for the provided event type.
+ *
+ * @see EventType
+ * @see TypeEvent
+ */
+export type TypeCallback<T extends Type = Type> = (
+  props: TypeEventMap[T]
 ) => void;

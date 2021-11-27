@@ -1,4 +1,5 @@
 export * from "./composite";
+export * from "./names";
 export * from "./types";
 export * from "./props";
 export * from "./children";

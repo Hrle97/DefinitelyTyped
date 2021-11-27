@@ -1,8 +1,8 @@
 import { Renderer } from "./renderer";
 
 /**
- * Base {@link Renderer} type for the {@link ElementaryNodeRenderer} and
- * {@link ElementaryPluginRenderer}.
+ * Base {@link Renderer} type for the ElementaryNodeRenderer and
+ * ElementaryPluginRenderer.
  *
  * @see Renderer
  */

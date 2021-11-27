@@ -1,3 +1,3 @@
 export * from "./types";
-export * from "./props";
+export * from "./event";
 export * from "./callback";

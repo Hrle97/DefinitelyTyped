@@ -1,17 +1,7 @@
 import { EventEmitter } from "events";
 
-import {
-  Props,
-  Child,
-  Children,
-  NodeType,
-  NodeProps,
-  NodeChildren,
-  Node,
-  CompositeNodeFunction,
-} from "../node";
-
-import { EventType, EventCallback } from "../event";
+import * as node from "../node";
+import * as event from "../event";
 
 export interface Renderer extends EventEmitter {
   /**
@@ -31,69 +21,73 @@ export interface Renderer extends EventEmitter {
    * each interval that the meter event node was initialized with.
    *
    * @param type
-   * event type
+   * {@link event.Type} on which to call the callback
    *
    * @param callback
-   * callback to call
+   * {@link event.TypeCallback} to call
    *
-   * @see Renderer
+   * @see event.Type
+   * @see event.TypeCallback
    */
-  on: <T extends EventType>(type: T, doThis: EventCallback<T>) => this;
+  on: <T extends event.Type>(type: T, doThis: event.TypeCallback<T>) => this;
 
   /**
-   * Factory for any {@link Node} type.
+   * Factory for any {@link node.Node} type.
    *
    * @param type
-   * the type of {@link Node} to create
+   * the type of {@link node.Node} to create
    *
    * @param props
-   * the props of {@link Node} to create
+   * the props of {@link node.Node} to create
    *
    * @param children
-   * the children of {@link Node} to create
+   * the children of {@link node.Node} to create
    *
    * @returns
-   * the newly created {@link Node}
+   * the newly created {@link node.Node}
    *
-   * @see Node
-   * @see NodeType
-   * @see NodeProps
-   * @see NodeChildren
+   * @see node.Node
+   * @see node.TypeProps
+   * @see node.TypeChildren
+   * @see node.TypeNode
    */
-  createNode: <T extends NodeType>(
+  createNode: <T extends node.Type>(
     type: T,
-    props: NodeProps<T>,
-    children: NodeChildren<T>
-  ) => Node<T>;
+    props: node.TypeProps<T>,
+    children: node.TypeChildren<T>
+  ) => node.TypeNode<T>;
 
   /**
-   * Memoizes the result of the provided {@link CompositeNodeFunction}.
+   * Memoizes the result of the provided {@link node.CompositeFunction}
    *
    * If the predicate returns false, the previous result of the
-   * {@link CompositeNodeFunction} is used, and otherwise, a new result is
+   * {@link node.CompositeFunction} is used, and otherwise, a new result is
    * computed.
    *
    * If no predicate is provided, the predicate is equal to shallowly
    * equating the previous props to the next props.
    *
    * @param composite
-   * {@link CompositeNodeFunction} to memoize the result of
+   * {@link node.CompositeFunction} to memoize the result of
    *
    * @param [predicate]
    * should return false when a new result of the provided
-   * {@link CompositeNodeFunction} should be computed, and true otherwise
+   * {@link node.CompositeFunction} should be computed, and true otherwise
    *
    * @returns
    * if predicate is false, the newly computed result of the provided
-   * {@link CompositeNodeFunction} and the memoized result otherwise
+   * {@link node.CompositeFunction} and the memoized result otherwise
    *
    * @see Renderer
-   * @see CompositeNodeFunction
+   * @see node.Name
+   * @see node.Props
+   * @see node.Children
+   * @see node.CompositeFunction
    */
-  memo: <P extends Props, C extends Children>(
-    composite: CompositeNodeFunction<P, C>,
+  memo: <N extends node.Name, P extends node.Props, C extends node.Children>(
+    composite: node.CompositeFunction<N, P, C>,
     predicate?: (prevProps: P, nextProps: P) => boolean
-  ) => CompositeNodeFunction<P, C>;
+  ) => node.CompositeFunction<N, P, C>;
 
   /**
    * Accepts a variadic set of arguments, each one representing the audio
@@ -102,11 +96,9 @@ export interface Renderer extends EventEmitter {
    * Will throw an error if invoked before the load event has fired.
    *
    * @param children
-   * {@link Child}ren to render in channels
+   * {@link node.Child}ren to render in channels
    *
-   * @see Renderer
-   * @see Child
-   * @see Node
+   * @see node.Child
    */
-  render(...children: Child[]): void;
+  render(...children: node.Child[]): void;
 }
