@@ -1,25 +1,3 @@
-import {
-  TrainProps,
-  CycleProps,
-  SawProps,
-  SquareProps,
-  TriangleProps,
-  BlepSawProps,
-  BlepSquareProps,
-  BlepTriangleProps,
-} from "../../props/builtin/oscillators";
-
-import {
-  TrainChildren,
-  CycleChildren,
-  SawChildren,
-  SquareChildren,
-  TriangleChildren,
-  BlepSawChildren,
-  BlepSquareChildren,
-  BlepTriangleChildren,
-} from "../../children/builtin/oscillators";
-
 import { CompositeFunction } from "../types";
 
 /**
@@ -27,21 +5,29 @@ import { CompositeFunction } from "../types";
  */
 export type PhasorType = "phasor";
 
+import { TrainProps } from "../../props";
+import { TrainChildren } from "../../children";
 /**
  * TrainNode type.
  */
 export type TrainType = CompositeFunction<"train", TrainProps, TrainChildren>;
 
+import { CycleProps } from "../../props";
+import { CycleChildren } from "../../children";
 /**
  * CycleNode type.
  */
 export type CycleType = CompositeFunction<"cycle", CycleProps, CycleChildren>;
 
+import { SawProps } from "../../props";
+import { SawChildren } from "../../children";
 /**
  * SawNode type.
  */
 export type SawType = CompositeFunction<"saw", SawProps, SawChildren>;
 
+import { SquareProps } from "../../props";
+import { SquareChildren } from "../../children";
 /**
  * SquareNode type.
  */
@@ -51,6 +37,8 @@ export type SquareType = CompositeFunction<
   SquareChildren
 >;
 
+import { TriangleProps } from "../../props";
+import { TriangleChildren } from "../../children";
 /**
  * TriangleNode type.
  */
@@ -60,6 +48,8 @@ export type TriangleType = CompositeFunction<
   TriangleChildren
 >;
 
+import { BlepSawProps } from "../../props";
+import { BlepSawChildren } from "../../children";
 /**
  * BlepSawNode type.
  */
@@ -69,6 +59,8 @@ export type BlepSawType = CompositeFunction<
   BlepSawChildren
 >;
 
+import { BlepSquareProps } from "../../props";
+import { BlepSquareChildren } from "../../children";
 /**
  * BlepSquareNode type.
  */
@@ -78,6 +70,8 @@ export type BlepSquareType = CompositeFunction<
   BlepSquareChildren
 >;
 
+import { BlepTriangleProps } from "../../props";
+import { BlepTriangleChildren } from "../../children";
 /**
  * BlepTriangleNode type.
  */

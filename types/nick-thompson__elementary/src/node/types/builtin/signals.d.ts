@@ -1,18 +1,14 @@
-import { EnvProps, AdsrProps, HannProps } from "../../props/builtin/signals";
-
-import {
-  EnvChildren,
-  AdsrChildren,
-  HannChildren,
-} from "../../children/builtin/signals";
-
 import { CompositeFunction } from "../types";
 
+import { EnvProps } from "../../props";
+import { EnvChildren } from "../../children";
 /**
  * EnvNode type.
  */
 export type EnvType = CompositeFunction<"env", EnvProps, EnvChildren>;
 
+import { AdsrProps } from "../../props";
+import { AdsrChildren } from "../../children";
 /**
  * AdsrNode type.
  */
@@ -28,6 +24,8 @@ export type LatchType = "latch";
  */
 export type SeqType = "seq";
 
+import { HannProps } from "../../props";
+import { HannChildren } from "../../children";
 /**
  * HannNode type.
  */
