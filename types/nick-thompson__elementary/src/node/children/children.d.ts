@@ -112,15 +112,20 @@ export type Child = Node | number;
 /**
  * Base type for children.
  *
- * @see Child
  * @see ChildrenArray
  */
 export type Children = ChildrenArray;
 
 /**
+ * Empty children array.
+ *
+ * @see EmptyChildrenArray
+ */
+export type EmptyChildren = EmptyChildrenArray;
+
+/**
  * Default type for children.
  *
- * @see Child
  * @see EmptyChildrenArray
  */
 export type DefaultChildren = EmptyChildrenArray;
@@ -278,12 +283,12 @@ export type CompositeTypeChildren<T extends CompositeType> =
     : Parameters<T> extends []
     ? DefaultChildren
     : Parameters<T> extends [infer IArgs, ...any]
-    ? IArgs extends { children?: infer IChildren }
+    ? IArgs extends { children: infer IChildren }
       ? /*
-         * & any[] is a bit spooky, but TS throws errors
-         * if its not there
+         * & ChildrenArray is a bit spooky, but TS throws errors if its not
+         * there
          */
-        SizedChildrenArray<ChildrenArraySize<IChildren & any[]>>
+        SizedChildrenArray<ChildrenArraySize<IChildren & ChildrenArray>>
       : DefaultChildren
     : DefaultChildren;
 

@@ -1,12 +1,16 @@
-import { Child } from "../children";
+import { Child, EmptyChildren } from "../children";
 
 /**
  * ZNode children.
+ *
+ * @see EmptyChildren
  */
-export type ZChildren = [];
+export type ZChildren = EmptyChildren;
 
 /**
  * TapOutNode children.
+ *
+ * @see Child
  */
 export type TapOutChildren = [
   /**
@@ -17,11 +21,15 @@ export type TapOutChildren = [
 
 /**
  * TapInNode children.
+ *
+ * @see EmptyChildren
  */
-export type TapInChildren = [];
+export type TapInChildren = EmptyChildren;
 
 /**
  * DelayNode children.
+ *
+ * @see Child
  */
 export type DelayChildren = [
   /**

@@ -2,6 +2,8 @@ import { Child } from "../children";
 
 /**
  * PhasorNode children.
+ *
+ * @see Child
  */
 export type PhasorChildren = [
   /**
@@ -12,6 +14,8 @@ export type PhasorChildren = [
 
 /**
  * TrainNode children.
+ *
+ * @see Child
  */
 export type TrainChildren = [
   /**
@@ -22,6 +26,8 @@ export type TrainChildren = [
 
 /**
  * CycleNode children.
+ *
+ * @see Child
  */
 export type CycleChildren = [
   /**
@@ -32,6 +38,8 @@ export type CycleChildren = [
 
 /**
  * SawNode children.
+ *
+ * @see Child
  */
 export type SawChildren = [
   /**
@@ -42,6 +50,8 @@ export type SawChildren = [
 
 /**
  * SquareNode children.
+ *
+ * @see Child
  */
 export type SquareChildren = [
   /**
@@ -52,6 +62,8 @@ export type SquareChildren = [
 
 /**
  * TriangleNode children.
+ *
+ * @see Child
  */
 export type TriangleChildren = [
   /**
@@ -62,6 +74,8 @@ export type TriangleChildren = [
 
 /**
  * BlepSawNode children.
+ *
+ * @see Child
  */
 export type BlepSawChildren = [
   /**
@@ -72,6 +86,8 @@ export type BlepSawChildren = [
 
 /**
  * BlepSquareNode children.
+ *
+ * @see Child
  */
 export type BlepSquareChildren = [
   /**
@@ -82,6 +98,8 @@ export type BlepSquareChildren = [
 
 /**
  * BlepTriangleNode children.
+ *
+ * @see Child
  */
 export type BlepTriangleChildren = [
   /**

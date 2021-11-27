@@ -1,9 +1,15 @@
+import { EmptyChildren } from "../children";
+
 /**
  * MetroNode children.
+ *
+ * @see EmptyChildren
  */
-export type MetroChildren = [];
+export type MetroChildren = EmptyChildren;
 
 /**
  * RandNode children.
+ *
+ * @see EmptyChildren
  */
-export type RandChildren = [];
+export type RandChildren = EmptyChildren;

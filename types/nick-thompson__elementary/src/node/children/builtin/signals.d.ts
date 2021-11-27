@@ -2,6 +2,8 @@ import { Child } from "../children";
 
 /**
  * EnvNode children.
+ *
+ * @see Child
  */
 export type EnvChildren = [
   /**
@@ -22,6 +24,8 @@ export type EnvChildren = [
 
 /**
  * AdsrNode children.
+ *
+ * @see Child
  */
 export type AdsrChildren = [
   /**
@@ -52,6 +56,8 @@ export type AdsrChildren = [
 
 /**
  * LatchNode children.
+ *
+ * @see Child
  */
 export type LatchChildren = [
   /**
@@ -67,6 +73,8 @@ export type LatchChildren = [
 
 /**
  * SeqNode children.
+ *
+ * @see Child
  */
 export type SeqChildren = [
   /**
@@ -82,6 +90,8 @@ export type SeqChildren = [
 
 /**
  * HannNode children.
+ *
+ * @see Child
  */
 export type HannChildren = [
   /**

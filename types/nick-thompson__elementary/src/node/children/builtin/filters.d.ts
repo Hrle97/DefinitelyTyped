@@ -2,6 +2,8 @@ import { Child } from "../children";
 
 /**
  * PoleNode children.
+ *
+ * @see Child
  */
 export type PoleChildren = [
   /**
@@ -17,6 +19,8 @@ export type PoleChildren = [
 
 /**
  * ZeroNode children.
+ *
+ * @see Child
  */
 export type ZeroChildren = [
   /**
@@ -37,6 +41,8 @@ export type ZeroChildren = [
 
 /**
  * DcBlockNode children.
+ *
+ * @see Child
  */
 export type DcBlockChildren = [
   /**
@@ -47,6 +53,8 @@ export type DcBlockChildren = [
 
 /**
  * Df11Node children.
+ *
+ * @see Child
  */
 export type Df11Children = [
   /**
@@ -72,6 +80,8 @@ export type Df11Children = [
 
 /**
  * SmoothNode children.
+ *
+ * @see Child
  */
 export type SmoothChildren = [
   /**
@@ -87,6 +97,8 @@ export type SmoothChildren = [
 
 /**
  * SmNode children.
+ *
+ * @see Child
  */
 export type SmChildren = [
   /**
@@ -97,6 +109,8 @@ export type SmChildren = [
 
 /**
  * BiquadNode children.
+ *
+ * @see Child
  */
 export type BiquadChildren = [
   /**
@@ -132,6 +146,8 @@ export type BiquadChildren = [
 
 /**
  * LowPassNode children.
+ *
+ * @see Child
  */
 export type LowPassChildren = [
   /**
@@ -152,6 +168,8 @@ export type LowPassChildren = [
 
 /**
  * HighPassNode children.
+ *
+ * @see Child
  */
 export type HighPassChildren = [
   /**
@@ -172,6 +190,8 @@ export type HighPassChildren = [
 
 /**
  * BandPassNode children.
+ *
+ * @see Child
  */
 export type BandPassChildren = [
   /**
@@ -192,6 +212,8 @@ export type BandPassChildren = [
 
 /**
  * AllPassNode children.
+ *
+ * @see Child
  */
 export type AllPassChildren = [
   /**
@@ -212,6 +234,8 @@ export type AllPassChildren = [
 
 /**
  * NotchNode children.
+ *
+ * @see Child
  */
 export type NotchChildren = [
   /**
@@ -232,6 +256,8 @@ export type NotchChildren = [
 
 /**
  * PeakNode children.
+ *
+ * @see Child
  */
 export type PeakChildren = [
   /**
@@ -257,6 +283,8 @@ export type PeakChildren = [
 
 /**
  * LowShelfNode children.
+ *
+ * @see Child
  */
 export type LowShelfChildren = [
   /**
@@ -282,6 +310,8 @@ export type LowShelfChildren = [
 
 /**
  * HighShelfNode children.
+ *
+ * @see Child
  */
 export type HighShelfChildren = [
   /**
@@ -307,6 +337,8 @@ export type HighShelfChildren = [
 
 /**
  * ConvolveNode children.
+ *
+ * @see Child
  */
 export type ConvolveChildren = [
   /**
@@ -317,6 +349,8 @@ export type ConvolveChildren = [
 
 /**
  * PinkNode children.
+ *
+ * @see Child
  */
 export type PinkChildren = [
   /**

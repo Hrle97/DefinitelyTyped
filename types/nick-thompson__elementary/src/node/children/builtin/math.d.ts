@@ -3,6 +3,8 @@ import { VariadicChildrenArray } from "../array";
 
 /**
  * SinNode children.
+ *
+ * @see Child
  */
 export type SinChildren = [
   /**
@@ -13,6 +15,8 @@ export type SinChildren = [
 
 /**
  * CosNode children.
+ *
+ * @see Child
  */
 export type CosChildren = [
   /**
@@ -23,6 +27,8 @@ export type CosChildren = [
 
 /**
  * TanNode children.
+ *
+ * @see Child
  */
 export type TanChildren = [
   /**
@@ -33,6 +39,8 @@ export type TanChildren = [
 
 /**
  * TanhNode children.
+ *
+ * @see Child
  */
 export type TanhChildren = [
   /**
@@ -43,6 +51,8 @@ export type TanhChildren = [
 
 /**
  * AsinhNode children.
+ *
+ * @see Child
  */
 export type AsinhChildren = [
   /**
@@ -53,6 +63,8 @@ export type AsinhChildren = [
 
 /**
  * LnNode children.
+ *
+ * @see Child
  */
 export type LnChildren = [
   /**
@@ -63,6 +75,8 @@ export type LnChildren = [
 
 /**
  * LogNode children.
+ *
+ * @see Child
  */
 export type LogChildren = [
   /**
@@ -73,6 +87,8 @@ export type LogChildren = [
 
 /**
  * Log2Node children.
+ *
+ * @see Child
  */
 export type Log2Children = [
   /**
@@ -83,6 +99,8 @@ export type Log2Children = [
 
 /**
  * CeilNode children.
+ *
+ * @see Child
  */
 export type CeilChildren = [
   /**
@@ -94,6 +112,8 @@ export type CeilChildren = [
 
 /**
  * FloorNode children.
+ *
+ * @see Child
  */
 export type FloorChildren = [
   /**
@@ -104,6 +124,8 @@ export type FloorChildren = [
 
 /**
  * SqrtNode children.
+ *
+ * @see Child
  */
 export type SqrtChildren = [
   /**
@@ -114,6 +136,8 @@ export type SqrtChildren = [
 
 /**
  * ExpNode children.
+ *
+ * @see Child
  */
 export type ExpChildren = [
   /**
@@ -124,6 +148,8 @@ export type ExpChildren = [
 
 /**
  * AbsNode children.
+ *
+ * @see Child
  */
 export type AbsChildren = [
   /**
@@ -134,6 +160,8 @@ export type AbsChildren = [
 
 /**
  * LeNode children.
+ *
+ * @see Child
  */
 export type LeChildren = [
   /**
@@ -149,6 +177,8 @@ export type LeChildren = [
 
 /**
  * LeqNode children.
+ *
+ * @see Child
  */
 export type LeqChildren = [
   /**
@@ -164,6 +194,8 @@ export type LeqChildren = [
 
 /**
  * GeNode children.
+ *
+ * @see Child
  */
 export type GeChildren = [
   /**
@@ -179,6 +211,8 @@ export type GeChildren = [
 
 /**
  * GeqNode children.
+ *
+ * @see Child
  */
 export type GeqChildren = [
   /**
@@ -194,6 +228,8 @@ export type GeqChildren = [
 
 /**
  * PowNode children.
+ *
+ * @see Child
  */
 export type PowChildren = [
   /**
@@ -209,6 +245,8 @@ export type PowChildren = [
 
 /**
  * ModNode children.
+ *
+ * @see Child
  */
 export type ModChildren = [
   /**
@@ -224,6 +262,8 @@ export type ModChildren = [
 
 /**
  * MinNode children.
+ *
+ * @see Child
  */
 export type MinChildren = [
   /**
@@ -239,6 +279,8 @@ export type MinChildren = [
 
 /**
  * MaxNode children.
+ *
+ * @see Child
  */
 export type MaxChildren = [
   /**
@@ -254,20 +296,28 @@ export type MaxChildren = [
 
 /**
  * AddNode children.
+ *
+ * @see VariadicChildrenArray
  */
 export type AddChildren = VariadicChildrenArray;
 
 /**
  * SubNode children.
+ *
+ * @see VariadicChildrenArray
  */
 export type SubChildren = VariadicChildrenArray;
 
 /**
  * MulNode children.
+ *
+ * @see VariadicChildrenArray
  */
 export type MulChildren = VariadicChildrenArray;
 
 /**
  * DivNode children.
+ *
+ * @see VariadicChildrenArray
  */
 export type DivChildren = VariadicChildrenArray;

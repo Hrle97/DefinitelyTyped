@@ -1,17 +1,23 @@
-import { Child } from "../children";
+import { Child, EmptyChildren } from "../children";
 
 /**
  * SrNode children.
+ *
+ * @see EmptyChildren
  */
-export type SrChildren = [];
+export type SrChildren = EmptyChildren;
 
 /**
  * ConstNode children.
+ *
+ * @see EmptyChildren
  */
-export type ConstChildren = [];
+export type ConstChildren = EmptyChildren;
 
 /**
  * CounterNode children.
+ *
+ * @see Child
  */
 export type CounterChildren = [
   /**
@@ -22,6 +28,8 @@ export type CounterChildren = [
 
 /**
  * SelectNode children.
+ *
+ * @see Child
  */
 export type SelectChildren = [
   /**

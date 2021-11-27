@@ -1,9 +1,15 @@
+import { EmptyChildren } from "../children";
+
 /**
  * NoiseNode children.
+ *
+ * @see EmptyChildren
  */
-export type NoiseChildren = [];
+export type NoiseChildren = EmptyChildren;
 
 /**
  * PinkNoiseNode children.
+ *
+ * @see EmptyChildren
  */
-export type PinkNoiseChildren = [];
+export type PinkNoiseChildren = EmptyChildren;
