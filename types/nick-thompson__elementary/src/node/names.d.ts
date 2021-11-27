@@ -8,7 +8,6 @@ export type BuiltinNativeName =
   | "metro"
   | "rand"
   /* Basics */
-  | "in"
   | "sr"
   | "const"
   | "counter"
@@ -66,6 +65,7 @@ export type BuiltinCompositeName =
   /* Analysis */
   /* Native */
   /* Basics */
+  | "select"
   /* Delays */
   /* Filters */
   | "zero"

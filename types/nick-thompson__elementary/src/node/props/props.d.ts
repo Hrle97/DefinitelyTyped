@@ -1,8 +1,10 @@
 import {
-  BuiltinNativeNodeType,
-  NativeNodeType,
-  CompositeNodeType,
-  NodeType,
+  BuiltinNativeType,
+  BuiltinCompositeType,
+  NativeType,
+  CompositeType,
+  Type,
+  TypeName,
 } from "../types";
 
 import {
@@ -38,6 +40,7 @@ import {
   LowShelfProps,
   HighShelfProps,
   ConvolveProps,
+  PinkProps,
   /* Math */
   SinProps,
   CosProps,
@@ -91,11 +94,9 @@ import {
 } from "./builtin";
 
 /**
- * Base props object for nodes.
+ * Base node props.
  *
- * Unlike {@link KeyProps}, this type allows for any prop value with a
- * string key.
- * Useful in some situations.
+ * Unlike key props, this type allows for any prop value with a string key.
  *
  * @see KeyProps
  */
@@ -104,12 +105,10 @@ export interface Props {
 }
 
 /**
- * Base props object for nodes.
+ * Key node props.
  *
  * Key determines whether props changed or the whole node changed upon
  * re-render.
- *
- * @see Props
  */
 export interface KeyProps {
   /**
@@ -119,26 +118,19 @@ export interface KeyProps {
 }
 
 /**
- * Default props type
+ * Default node props type.
  *
+ * @see Props
  * @see KeyProps
  */
-export type DefaultProps = KeyProps;
+export type DefaultProps = Props & KeyProps;
 
 /**
- * Type of props of any given {@link BuiltinNativeNodeType}.
+ * Props for the provided builtin native node type.
  *
- * @see NativeNodeType
- * @see InProps
- * @see ConstProps
- * @see DelayProps
- * @see ConvolveProps
- * @see SampleProps
- * @see TableProps
- * @see SeqProps
- * @see KeyProps
+ * @see BuiltinNativeType
  */
-export type BuiltinNativeNodeProps<T extends BuiltinNativeNodeType> = {
+export type BuiltinNativeTypeProps<T extends BuiltinNativeType> = {
   /* Analysis */
   meter: MeterProps;
   /* Native */
@@ -148,7 +140,6 @@ export type BuiltinNativeNodeProps<T extends BuiltinNativeNodeType> = {
   sr: SrProps;
   const: ConstProps;
   counter: CounterProps;
-  select: SelectProps;
   /* Delays */
   z: ZProps;
   tapOut: TapOutProps;
@@ -156,20 +147,7 @@ export type BuiltinNativeNodeProps<T extends BuiltinNativeNodeType> = {
   delay: DelayProps;
   /* Filters */
   pole: PoleProps;
-  zero: ZeroProps;
-  dcblock: DcBlockProps;
-  df11: Df11Props;
-  smooth: SmoothProps;
-  sm: SmProps;
   biquad: BiquadProps;
-  low: LowPassProps;
-  high: HighPassProps;
-  band: BandPassProps;
-  all: AllPassProps;
-  notch: NotchProps;
-  peak: PeakProps;
-  lowShelf: LowShelfProps;
-  highShelf: HighShelfProps;
   convolve: ConvolveProps;
   /* Math */
   sin: SinProps;
@@ -198,10 +176,49 @@ export type BuiltinNativeNodeProps<T extends BuiltinNativeNodeType> = {
   mul: MulProps;
   div: DivProps;
   /* Noise */
+  /* Oscillators */
+  phasor: PhasorProps;
+  /* Samples */
+  sample: SampleProps;
+  table: TableProps;
+  /* Signals */
+  latch: LatchProps;
+  seq: SeqProps;
+  /* In */
+  in: InProps;
+}[TypeName<T>];
+
+/**
+ * Props for the provided builtin composite node type.
+ *
+ * @see BuiltinCompositeType
+ */
+export type BuiltinCompositeTypeProps<T extends BuiltinCompositeType> = {
+  /* Analysis */
+  /* Native */
+  /* Basics */
+  select: SelectProps;
+  /* Delays */
+  /* Filters */
+  zero: ZeroProps;
+  dcblock: DcBlockProps;
+  df11: Df11Props;
+  smooth: SmoothProps;
+  sm: SmProps;
+  lowpass: LowPassProps;
+  highpass: HighPassProps;
+  bandpass: BandPassProps;
+  allpass: AllPassProps;
+  notch: NotchProps;
+  peak: PeakProps;
+  lowshelf: LowShelfProps;
+  highshelf: HighShelfProps;
+  pink: PinkProps;
+  /* Math */
+  /* Noise */
   noise: NoiseProps;
   pinknoise: PinkNoiseProps;
   /* Oscillators */
-  phasor: PhasorProps;
   train: TrainProps;
   cycle: CycleProps;
   saw: SawProps;
@@ -211,54 +228,57 @@ export type BuiltinNativeNodeProps<T extends BuiltinNativeNodeType> = {
   blepsquare: BlepSquareProps;
   bleptriangle: BlepTriangleProps;
   /* Samples */
-  sample: SampleProps;
-  table: TableProps;
   /* Signals */
   env: EnvProps;
   adsr: AdsrProps;
-  latch: LatchProps;
-  seq: SeqProps;
   hann: HannProps;
   /* In */
-  in: InProps;
-}[T];
+}[TypeName<T>];
 
 /**
- * Type of props of any given {@link NativeNodeType}.
+ * Props for provided native node type.
  *
- * @see NativeNodeType
- * @see BuiltinNativeNodeProps
+ * @see NativeType
+ * @see BuiltinNativeType
+ * @see BuiltinNativeTypeProps
+ * @see DefaultProps
+ */
+export type NativeTypeProps<T extends NativeType> = T extends BuiltinNativeType
+  ? BuiltinNativeTypeProps<T>
+  : DefaultProps;
+
+/**
+ * Props for provided composite node type.
+ *
+ * @see CompositeType
+ * @see BuiltinCompositeType
+ * @see BuiltinNativeTypeProps
  * @see KeyProps
+ * @see DefaultProps
  */
-export type NativeNodeProps<T extends NativeNodeType> =
-  T extends BuiltinNativeNodeType ? BuiltinNativeNodeProps<T> : KeyProps;
-
-/**
- * Type of props of any given {@link CompositeNodeType}.
- *
- * @see Props
- */
-export type CompositeNodeProps<T extends CompositeNodeType> =
-  Parameters<T> extends []
-    ? KeyProps
+export type CompositeTypeProps<T extends CompositeType> =
+  T extends BuiltinCompositeType
+    ? BuiltinCompositeTypeProps<T>
+    : Parameters<T> extends []
+    ? DefaultProps
     : Parameters<T> extends [infer IArgs, ...any]
     ? IArgs extends { props: infer IProps }
       ? IProps & KeyProps
-      : KeyProps
-    : never;
+      : DefaultProps
+    : DefaultProps;
 
 /**
- * Type of props of any {@link NodeType}.
+ * Props for provided node type.
  *
- * @see NodeType
- * @see NativeNodeType
- * @see NativeNodeProps
- * @see CompositeNodeProps
+ * @see Type
+ * @see NativeType
+ * @see NativeTypeProps
+ * @see CompositeType
+ * @see CompositeTypeProps
+ * @see DefaultProps
  */
-export type NodeProps<T extends NodeType> = NodeType extends T
-  ? Props
-  : T extends NativeNodeType
-  ? NativeNodeProps<T>
-  : T extends CompositeNodeType
-  ? CompositeNodeProps<T>
-  : never;
+export type TypeProps<T extends Type> = T extends NativeType
+  ? NativeTypeProps<T>
+  : T extends CompositeType
+  ? CompositeTypeProps<T>
+  : DefaultProps;

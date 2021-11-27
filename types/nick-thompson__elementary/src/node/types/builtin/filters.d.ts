@@ -32,7 +32,7 @@ import {
   PinkChildren,
 } from "../../children/builtin/filters";
 
-import { CompositeNodeFunction } from "../types";
+import { CompositeFunction } from "../types";
 
 /**
  * PoleNode type.
@@ -42,12 +42,12 @@ export type PoleType = "pole";
 /**
  * ZeroNode type.
  */
-export type ZeroType = CompositeNodeFunction<"zero", ZeroProps, ZeroChildren>;
+export type ZeroType = CompositeFunction<"zero", ZeroProps, ZeroChildren>;
 
 /**
  * DcBlockNode type.
  */
-export type DcBlockType = CompositeNodeFunction<
+export type DcBlockType = CompositeFunction<
   "dcblock",
   DcBlockProps,
   DcBlockChildren
@@ -56,12 +56,12 @@ export type DcBlockType = CompositeNodeFunction<
 /**
  * Df11Node type.
  */
-export type Df11Type = CompositeNodeFunction<"df11", Df11Props, Df11Children>;
+export type Df11Type = CompositeFunction<"df11", Df11Props, Df11Children>;
 
 /**
  * SmoothNode type.
  */
-export type SmoothType = CompositeNodeFunction<
+export type SmoothType = CompositeFunction<
   "smooth",
   SmoothProps,
   SmoothChildren
@@ -70,7 +70,7 @@ export type SmoothType = CompositeNodeFunction<
 /**
  * SmNode type.
  */
-export type SmType = CompositeNodeFunction<"sm", SmProps, SmChildren>;
+export type SmType = CompositeFunction<"sm", SmProps, SmChildren>;
 
 /**
  * BiquadNode type.
@@ -80,7 +80,7 @@ export type BiquadType = "biquad";
 /**
  * LowPassNode type.
  */
-export type LowPassType = CompositeNodeFunction<
+export type LowPassType = CompositeFunction<
   "lowpass",
   LowPassProps,
   LowPassChildren
@@ -89,7 +89,7 @@ export type LowPassType = CompositeNodeFunction<
 /**
  * HighPassNode type.
  */
-export type HighPassType = CompositeNodeFunction<
+export type HighPassType = CompositeFunction<
   "highpass",
   HighPassProps,
   HighPassChildren
@@ -98,7 +98,7 @@ export type HighPassType = CompositeNodeFunction<
 /**
  * BandPassNode type.
  */
-export type BandPassType = CompositeNodeFunction<
+export type BandPassType = CompositeFunction<
   "bandpass",
   BandPassProps,
   BandPassChildren
@@ -107,7 +107,7 @@ export type BandPassType = CompositeNodeFunction<
 /**
  * AllPassNode type.
  */
-export type AllPassType = CompositeNodeFunction<
+export type AllPassType = CompositeFunction<
   "allpass",
   AllPassProps,
   AllPassChildren
@@ -116,21 +116,17 @@ export type AllPassType = CompositeNodeFunction<
 /**
  * NotchNode type.
  */
-export type NotchType = CompositeNodeFunction<
-  "notch",
-  NotchProps,
-  NotchChildren
->;
+export type NotchType = CompositeFunction<"notch", NotchProps, NotchChildren>;
 
 /**
  * PeakNode type.
  */
-export type PeakType = CompositeNodeFunction<"peak", PeakProps, PeakChildren>;
+export type PeakType = CompositeFunction<"peak", PeakProps, PeakChildren>;
 
 /**
  * LowShelfNode type.
  */
-export type LowShelfType = CompositeNodeFunction<
+export type LowShelfType = CompositeFunction<
   "lowshelf",
   LowShelfProps,
   LowShelfChildren
@@ -139,7 +135,7 @@ export type LowShelfType = CompositeNodeFunction<
 /**
  * HighShelfNode type.
  */
-export type HighShelfType = CompositeNodeFunction<
+export type HighShelfType = CompositeFunction<
   "highshelf",
   HighShelfProps,
   HighShelfChildren
@@ -153,4 +149,4 @@ export type ConvolveType = "convolve";
 /**
  * PinkNode type.
  */
-export type PinkType = CompositeNodeFunction<"pink", PinkProps, PinkChildren>;
+export type PinkType = CompositeFunction<"pink", PinkProps, PinkChildren>;

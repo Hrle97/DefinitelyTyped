@@ -20,7 +20,7 @@ import {
   BlepTriangleChildren,
 } from "../../children/builtin/oscillators";
 
-import { CompositeNodeFunction } from "../types";
+import { CompositeFunction } from "../types";
 
 /**
  * PhasorNode type.
@@ -30,30 +30,22 @@ export type PhasorType = "phasor";
 /**
  * TrainNode type.
  */
-export type TrainType = CompositeNodeFunction<
-  "train",
-  TrainProps,
-  TrainChildren
->;
+export type TrainType = CompositeFunction<"train", TrainProps, TrainChildren>;
 
 /**
  * CycleNode type.
  */
-export type CycleType = CompositeNodeFunction<
-  "cycle",
-  CycleProps,
-  CycleChildren
->;
+export type CycleType = CompositeFunction<"cycle", CycleProps, CycleChildren>;
 
 /**
  * SawNode type.
  */
-export type SawType = CompositeNodeFunction<"saw", SawProps, SawChildren>;
+export type SawType = CompositeFunction<"saw", SawProps, SawChildren>;
 
 /**
  * SquareNode type.
  */
-export type SquareType = CompositeNodeFunction<
+export type SquareType = CompositeFunction<
   "square",
   SquareProps,
   SquareChildren
@@ -62,7 +54,7 @@ export type SquareType = CompositeNodeFunction<
 /**
  * TriangleNode type.
  */
-export type TriangleType = CompositeNodeFunction<
+export type TriangleType = CompositeFunction<
   "triangle",
   TriangleProps,
   TriangleChildren
@@ -71,7 +63,7 @@ export type TriangleType = CompositeNodeFunction<
 /**
  * BlepSawNode type.
  */
-export type BlepSawType = CompositeNodeFunction<
+export type BlepSawType = CompositeFunction<
   "blepsaw",
   BlepSawProps,
   BlepSawChildren
@@ -80,7 +72,7 @@ export type BlepSawType = CompositeNodeFunction<
 /**
  * BlepSquareNode type.
  */
-export type BlepSquareType = CompositeNodeFunction<
+export type BlepSquareType = CompositeFunction<
   "blepsquare",
   BlepSquareProps,
   BlepSquareChildren
@@ -89,7 +81,7 @@ export type BlepSquareType = CompositeNodeFunction<
 /**
  * BlepTriangleNode type.
  */
-export type BlepTriangleType = CompositeNodeFunction<
+export type BlepTriangleType = CompositeFunction<
   "bleptriangle",
   BlepTriangleProps,
   BlepTriangleChildren

@@ -1,3 +1,9 @@
+import { SelectProps } from "../../props/builtin/basics";
+
+import { SelectChildren } from "../../children/builtin/basics";
+
+import { CompositeFunction } from "../types";
+
 /**
  * SrNode type.
  */
@@ -16,4 +22,8 @@ export type CounterType = "counter";
 /**
  * SelectNode type.
  */
-export type SelectType = "const";
+export type SelectType = CompositeFunction<
+  "select",
+  SelectProps,
+  SelectChildren
+>;

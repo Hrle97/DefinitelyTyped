@@ -6,17 +6,17 @@ import {
   HannChildren,
 } from "../../children/builtin/signals";
 
-import { CompositeNodeFunction } from "../types";
+import { CompositeFunction } from "../types";
 
 /**
  * EnvNode type.
  */
-export type EnvType = CompositeNodeFunction<"env", EnvProps, EnvChildren>;
+export type EnvType = CompositeFunction<"env", EnvProps, EnvChildren>;
 
 /**
  * AdsrNode type.
  */
-export type AdsrType = CompositeNodeFunction<"adsr", AdsrProps, AdsrChildren>;
+export type AdsrType = CompositeFunction<"adsr", AdsrProps, AdsrChildren>;
 
 /**
  * LatchNode type.
@@ -31,4 +31,4 @@ export type SeqType = "seq";
 /**
  * HannNode type.
  */
-export type HannType = CompositeNodeFunction<"hann", HannProps, HannChildren>;
+export type HannType = CompositeFunction<"hann", HannProps, HannChildren>;

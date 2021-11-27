@@ -2,14 +2,19 @@ import { Node } from "../node";
 import { Context } from "../context";
 import { Props } from "../props";
 import { Children } from "../children";
-import { Name } from "../names";
+import { Name, BuiltinNativeName, BuiltinCompositeName } from "../names";
 import { ChildrenArraySizeRange, SizedChildrenArray } from "../children";
 
 /**
- * Returns a composite node function for the appropriate name, props,
- * and children.
+ * Composite node function for the provided name, props, and children.
+ *
+ * @see Name
+ * @see Context
+ * @see Props
+ * @see Children
+ * @see Node
  */
-export type CompositeNodeFunction<
+export type CompositeFunction<
   N extends Name,
   P extends Props,
   C extends Children
@@ -18,98 +23,69 @@ export type CompositeNodeFunction<
 };
 
 /**
- * Builtin native types of {@link Node}s.
+ * Builtin native node types.
  *
- * @see Node
+ * @see BuiltinNativeName
  */
-export type BuiltinNativeNodeType =
-  /* Analysis */
-  | "meter"
-  /* Native */
-  | "metro"
-  | "rand"
-  /* Basics */
-  | "in"
-  | "sr"
-  | "const"
-  | "counter"
-  /* Delays */
-  | "z"
-  | "tapIn"
-  | "tapOut"
-  | "delay"
-  /* Filters */
-  | "pole"
-  | "biquad"
-  | "convolve"
-  /* Math */
-  | "sin"
-  | "cos"
-  | "tan"
-  | "tanh"
-  | "asinh"
-  | "ln"
-  | "log"
-  | "log2"
-  | "ceil"
-  | "floor"
-  | "sqrt"
-  | "exp"
-  | "abs"
-  | "le"
-  | "leq"
-  | "ge"
-  | "geq"
-  | "pow"
-  | "add"
-  | "sub"
-  | "mul"
-  | "div"
-  | "mod"
-  | "min"
-  | "max"
-  /* Noise */
-  /* Oscillators */
-  | "phasor"
-  /* Samples */
-  | "sample"
-  | "table"
-  /* Signals */
-  | "latch"
-  | "seq";
+export type BuiltinNativeType = BuiltinNativeName;
 
 /**
- * Native types of {@link Node}s.
+ * Builtin composite node types.
  *
- * @see Node
+ * @see BuiltinNativeName
  */
-export type NativeNodeType = BuiltinNativeNodeType | string;
+export type BuiltinCompositeType = {
+  [childrenArraySize in ChildrenArraySizeRange]: CompositeFunction<
+    BuiltinCompositeName,
+    Props,
+    SizedChildrenArray<childrenArraySize>
+  >;
+}[ChildrenArraySizeRange];
 
 /**
- * Composites types of {@link Node}s.
+ * Native types of nodes.
+ *
+ * @see BuiltinNativeType
+ */
+export type NativeType = BuiltinNativeType | string;
+
+/**
+ * Composites types of nodes.
  *
  * Defined this way because we want a union of functions and not a function
  * which takes a union of arguments which is essentially an overloaded
  * function.
  *
- * @see Node
  * @see Context
  * @see Props
- * @see Children
+ * @see SizedChildrenArray
+ * @see ChildrenArraySizeRange
+ * @see Node
  */
-export type CompositeNodeType = {
-  [childrenArraySize in ChildrenArraySizeRange]: (args: {
-    context: Context;
-    props: Props;
-    children: SizedChildrenArray<childrenArraySize>;
-  }) => Node;
+export type CompositeType = {
+  [childrenArraySize in ChildrenArraySizeRange]: CompositeFunction<
+    Name,
+    Props,
+    SizedChildrenArray<childrenArraySize>
+  >;
 }[ChildrenArraySizeRange];
 
 /**
- * Types of {@link Node}s.
+ * Types of nodes.
  *
- * @see Node
- * @see NativeNodeType
- * @see CompositeNodeType
+ * @see NativeType
+ * @see CompositeType
  */
-export type NodeType = NativeNodeType | CompositeNodeType;
+export type Type = NativeType | CompositeType;
+
+/**
+ * Node name from its type.
+ *
+ * @see NativeType
+ * @see CompositeType
+ */
+export type TypeName<T extends Type> = T extends NativeType
+  ? T
+  : T extends CompositeType
+  ? T["name"]
+  : never;
