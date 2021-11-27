@@ -9,3 +9,4 @@ export * from "./oscillators";
 export * from "./samples";
 export * from "./signals";
 export * from "./in";
+export * from "./builtin";

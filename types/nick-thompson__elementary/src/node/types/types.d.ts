@@ -3,7 +3,7 @@ import {
   BuiltinCompositeName,
   NativeName,
   CompositeName,
-} from "../name";
+} from "../names";
 import { CompositeFunction } from "../composite";
 import { Props } from "../props";
 import { ChildrenArraySizeRange, SizedChildrenArray } from "../children";
