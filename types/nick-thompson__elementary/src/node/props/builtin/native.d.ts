@@ -1,23 +1,26 @@
-import { KeyProps } from "../props";
+import { node, event } from "@nick-thompson/elementary";
 
 /**
- * MetroNode props.
+ * {@link node.MetroNode} {@link node.Props}.
+ *
+ * @see node.MetroNode
  */
-export interface MetroProps extends KeyProps {
+export interface MetroProps extends node.KeyProps {
   /**
-   * Name of the MetroNode.
-   *
+   * Name of the {@link node.MetroNode}.
    * Default is ''.
    */
   name?: string;
 
   /**
-   * Interval in which the 'metro' event will be fired.
+   * Interval in which the {@link event.MetroEvent} will be fired.
    */
   interval?: number;
 }
 
 /**
- * RandNode props.
+ * {@link node.RandNode} {@link node.Props}.
+ *
+ * @see node.RandNode
  */
-export interface RandProps extends KeyProps {}
+export interface RandProps extends node.KeyProps {}

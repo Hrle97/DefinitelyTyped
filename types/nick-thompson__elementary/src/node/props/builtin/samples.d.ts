@@ -1,19 +1,21 @@
-import { KeyProps } from "../props";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * SampleNode props.
+ * {@link node.SampleNode} {@link node.Props}.
+ *
+ * @see node.SampleNode
  */
-export interface SampleProps extends KeyProps {
+export interface SampleProps extends node.KeyProps {
   /**
    * Path to the file of the sample.
    */
   path?: string;
 
   /**
-   * Channel of the sample that the SampleNode will output.
+   * Channel of the sample that the {@link node.SampleNode} will output.
    *
-   * Nodes can output only one channel so you have to select the channel
-   * to read from the sample.
+   * {@link node.Node}s can output only one channel, so you have to select
+   * the channel to read from the sample.
    */
   channel?: number;
 
@@ -42,11 +44,14 @@ export interface SampleProps extends KeyProps {
 }
 
 /**
- * TableNode props.
+ * {@link node.TableNode} {@link node.Props}.
  *
- * Properties 'path' and 'data' are mutually exclusive.
+ * Properties {@link node.TableProps.path} and {@link node.TableProps.data}
+ * are mutually exclusive.
+ *
+ * @see node.TableNode
  */
-export type TableProps = KeyProps &
+export type TableProps = node.KeyProps &
   (
     | {
         /**
@@ -66,10 +71,11 @@ export type TableProps = KeyProps &
       }
   ) & {
     /**
-     * Channel of the sample that the SampleNode will output.
+     * Channel of the sample that the {@link node.TableNode} will output.
+     * Default is 0.
      *
-     * Nodes can output only one channel so you have to select the channel
-     * to read from the sample.
+     * {@link node.Node}s can output only one channel, so you have to select
+     * the channel to read from the sample.
      */
     channel?: number;
   };

@@ -1,13 +1,15 @@
-import { KeyProps } from "../props";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * InNode props.
+ * {@link node.InNode} {@link node.Props}.
+ *
+ * @see node.InNode
  */
-export type InProps = KeyProps &
+export type InProps = node.KeyProps &
   (
     | {
         /**
-         * Input channel of the InNode.
+         * Input channel of the {@link node.InNode}.
          */
         channel?: number;
       }

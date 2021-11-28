@@ -1,112 +1,114 @@
-import * as props from "./";
-import * as names from "../../names";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * Maps native builtin node names to their props.
+ * Maps {@link node.BuiltinNativeName}s to their {@link node.Node}.
  */
 export type BuiltinNativeNamePropsMap =
   /* Analysis */
-  Record<names.MeterName, props.MeterProps> &
+  Record<node.MeterName, node.MeterProps> &
     /* Native */
-    Record<names.MetroName, props.MetroProps> &
-    Record<names.RandName, props.RandProps> &
+    Record<node.MetroName, node.MetroProps> &
+    Record<node.RandName, node.RandProps> &
     /* Basics */
-    Record<names.SrName, props.SrProps> &
-    Record<names.ConstName, props.ConstProps> &
-    Record<names.CounterName, props.CounterProps> &
+    Record<node.SrName, node.SrProps> &
+    Record<node.ConstName, node.ConstProps> &
+    Record<node.CounterName, node.CounterProps> &
     /* Delays */
-    Record<names.ZName, props.ZProps> &
-    Record<names.TapOutName, props.TapOutProps> &
-    Record<names.TapInName, props.TapInProps> &
-    Record<names.DelayName, props.DelayProps> &
+    Record<node.ZName, node.ZProps> &
+    Record<node.TapOutName, node.TapOutProps> &
+    Record<node.TapInName, node.TapInProps> &
+    Record<node.DelayName, node.DelayProps> &
     /* Filters */
-    Record<names.PoleName, props.PoleProps> &
-    Record<names.BiquadName, props.BiquadProps> &
-    Record<names.ConvolveName, props.ConvolveProps> &
+    Record<node.PoleName, node.PoleProps> &
+    Record<node.BiquadName, node.BiquadProps> &
+    Record<node.ConvolveName, node.ConvolveProps> &
     /* Math */
-    Record<names.SinName, props.SinProps> &
-    Record<names.CosName, props.CosProps> &
-    Record<names.TanName, props.TanProps> &
-    Record<names.TanhName, props.TanhProps> &
-    Record<names.AsinhName, props.AsinhProps> &
-    Record<names.LnName, props.LnProps> &
-    Record<names.LogName, props.LogProps> &
-    Record<names.Log2Name, props.Log2Props> &
-    Record<names.CeilName, props.CeilProps> &
-    Record<names.FloorName, props.FloorProps> &
-    Record<names.SqrtName, props.SqrtProps> &
-    Record<names.ExpName, props.ExpProps> &
-    Record<names.AbsName, props.AbsProps> &
-    Record<names.LeName, props.LeProps> &
-    Record<names.LeqName, props.LeqProps> &
-    Record<names.GeName, props.GeProps> &
-    Record<names.GeqName, props.GeqProps> &
-    Record<names.PowName, props.PowProps> &
-    Record<names.ModName, props.ModProps> &
-    Record<names.MinName, props.MinProps> &
-    Record<names.MaxName, props.MaxProps> &
-    Record<names.AddName, props.AddProps> &
-    Record<names.SubName, props.SubProps> &
-    Record<names.MulName, props.MulProps> &
-    Record<names.DivName, props.DivProps> &
+    Record<node.SinName, node.SinProps> &
+    Record<node.CosName, node.CosProps> &
+    Record<node.TanName, node.TanProps> &
+    Record<node.TanhName, node.TanhProps> &
+    Record<node.AsinhName, node.AsinhProps> &
+    Record<node.LnName, node.LnProps> &
+    Record<node.LogName, node.LogProps> &
+    Record<node.Log2Name, node.Log2Props> &
+    Record<node.CeilName, node.CeilProps> &
+    Record<node.FloorName, node.FloorProps> &
+    Record<node.SqrtName, node.SqrtProps> &
+    Record<node.ExpName, node.ExpProps> &
+    Record<node.AbsName, node.AbsProps> &
+    Record<node.LeName, node.LeProps> &
+    Record<node.LeqName, node.LeqProps> &
+    Record<node.GeName, node.GeProps> &
+    Record<node.GeqName, node.GeqProps> &
+    Record<node.PowName, node.PowProps> &
+    Record<node.ModName, node.ModProps> &
+    Record<node.MinName, node.MinProps> &
+    Record<node.MaxName, node.MaxProps> &
+    Record<node.AddName, node.AddProps> &
+    Record<node.SubName, node.SubProps> &
+    Record<node.MulName, node.MulProps> &
+    Record<node.DivName, node.DivProps> &
     /* Noise */
     /* Oscillators */
-    Record<names.PhasorName, props.PhasorProps> &
+    Record<node.PhasorName, node.PhasorProps> &
     /* Samples */
-    Record<names.SampleName, props.SampleProps> &
-    Record<names.TableName, props.TableProps> &
+    Record<node.SampleName, node.SampleProps> &
+    Record<node.TableName, node.TableProps> &
     /* Signals */
-    Record<names.LatchName, props.LatchProps> &
-    Record<names.SeqName, props.SeqProps> &
+    Record<node.LatchName, node.LatchProps> &
+    Record<node.SeqName, node.SeqProps> &
     /* In */
-    Record<names.InName, props.InProps>;
+    Record<node.InName, node.InProps>;
 
 /**
- * Maps composite builtin node names to their props.
+ * Maps {@link node.BuiltinCompositeName}s to their {@link node.Node}.
  */
 export type BuiltinCompositeNamePropsMap =
   /* Analysis */
   /* Native */
   /* Basics */
-  Record<names.SelectName, props.SelectProps> &
+  Record<node.SelectName, node.SelectProps> &
     /* Delays */
     /* Filters */
-    Record<names.ZeroName, props.ZeroProps> &
-    Record<names.DcBlockName, props.DcBlockProps> &
-    Record<names.Df11Name, props.Df11Props> &
-    Record<names.SmoothName, props.SmoothProps> &
-    Record<names.SmName, props.SmProps> &
-    Record<names.LowPassName, props.LowPassProps> &
-    Record<names.HighPassName, props.HighPassProps> &
-    Record<names.BandPassName, props.BandPassProps> &
-    Record<names.AllPassName, props.AllPassProps> &
-    Record<names.NotchName, props.NotchProps> &
-    Record<names.PeakName, props.PeakProps> &
-    Record<names.LowShelfName, props.LowShelfProps> &
-    Record<names.HighShelfName, props.HighShelfProps> &
-    Record<names.PinkName, props.PinkProps> &
+    Record<node.ZeroName, node.ZeroProps> &
+    Record<node.DcBlockName, node.DcBlockProps> &
+    Record<node.Df11Name, node.Df11Props> &
+    Record<node.SmoothName, node.SmoothProps> &
+    Record<node.SmName, node.SmProps> &
+    Record<node.LowPassName, node.LowPassProps> &
+    Record<node.HighPassName, node.HighPassProps> &
+    Record<node.BandPassName, node.BandPassProps> &
+    Record<node.AllPassName, node.AllPassProps> &
+    Record<node.NotchName, node.NotchProps> &
+    Record<node.PeakName, node.PeakProps> &
+    Record<node.LowShelfName, node.LowShelfProps> &
+    Record<node.HighShelfName, node.HighShelfProps> &
+    Record<node.PinkName, node.PinkProps> &
     /* Math */
     /* Noise */
-    Record<names.NoiseName, props.NoiseProps> &
-    Record<names.PinkNoiseName, props.PinkNoiseProps> &
+    Record<node.NoiseName, node.NoiseProps> &
+    Record<node.PinkNoiseName, node.PinkNoiseProps> &
     /* Oscillators */
-    Record<names.TrainName, props.TrainProps> &
-    Record<names.CycleName, props.CycleProps> &
-    Record<names.SawName, props.SawProps> &
-    Record<names.SquareName, props.SquareProps> &
-    Record<names.TriangleName, props.TriangleProps> &
-    Record<names.BlepSawName, props.BlepSawProps> &
-    Record<names.BlepSquareName, props.BlepSquareProps> &
-    Record<names.BlepTriangleName, props.BlepTriangleProps> &
+    Record<node.TrainName, node.TrainProps> &
+    Record<node.CycleName, node.CycleProps> &
+    Record<node.SawName, node.SawProps> &
+    Record<node.SquareName, node.SquareProps> &
+    Record<node.TriangleName, node.TriangleProps> &
+    Record<node.BlepSawName, node.BlepSawProps> &
+    Record<node.BlepSquareName, node.BlepSquareProps> &
+    Record<node.BlepTriangleName, node.BlepTriangleProps> &
     /* Samples */
     /* Signals */
-    Record<names.EnvName, props.EnvProps> &
-    Record<names.AdsrName, props.AdsrProps> &
-    Record<names.HannName, props.HannProps>;
+    Record<node.EnvName, node.EnvProps> &
+    Record<node.AdsrName, node.AdsrProps> &
+    Record<node.HannName, node.HannProps>;
 /* In */
 
 /**
- * Maps builtin node names to their props.
+ * Maps {@link node.BuiltinName}s to their {@link node.Node}.
+ *
+ * @see node.BuiltinNativeNamePropsMap
+ * @see node.BuiltinCompositeNamePropsMap
  */
-export type BuiltinNamePropsMap = BuiltinNativeNamePropsMap &
-  BuiltinCompositeNamePropsMap;
+export type BuiltinNamePropsMap = node.BuiltinNativeNamePropsMap &
+  node.BuiltinCompositeNamePropsMap;

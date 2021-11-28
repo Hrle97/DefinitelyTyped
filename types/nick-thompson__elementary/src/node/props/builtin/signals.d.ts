@@ -1,24 +1,24 @@
-import { KeyProps } from "../props";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * EnvNode props.
+ * {@link node.EnvNode} {@link node.Props}.
  */
-export interface EnvProps extends KeyProps {}
+export interface EnvProps extends node.KeyProps {}
 
 /**
- * AdsrNode props.
+ * {@link node.AdsrNode} {@link node.Props}.
  */
-export interface AdsrProps extends KeyProps {}
+export interface AdsrProps extends node.KeyProps {}
 
 /**
- * LatchNode props.
+ * {@link node.LatchNode} {@link node.Props}.
  */
-export interface LatchProps extends KeyProps {}
+export interface LatchProps extends node.KeyProps {}
 
 /**
- * SeqNode props.
+ * {@link node.SeqNode} {@link node.Props}.
  */
-export interface SeqProps extends KeyProps {
+export interface SeqProps extends node.KeyProps {
   /**
    * Sequence of values to generate.
    */
@@ -36,6 +36,6 @@ export interface SeqProps extends KeyProps {
 }
 
 /**
- * HannNode props.
+ * {@link node.HannNode} {@link node.Props}.
  */
-export interface HannProps extends KeyProps {}
+export interface HannProps extends node.KeyProps {}

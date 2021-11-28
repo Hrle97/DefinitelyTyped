@@ -1,46 +1,64 @@
-import { KeyProps } from "../props";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * PhasorNode props.
+ * {@link node.PhasorNode} {@link node.Props}.
+ *
+ * @see node.PhasorNode
  */
-export interface PhasorProps extends KeyProps {}
+export interface PhasorProps extends node.KeyProps {}
 
 /**
- * TrainNode props.
+ * {@link node.TrainNode} {@link node.Props}.
+ *
+ * @see node.TrainNode
  */
-export interface TrainProps extends KeyProps {}
+export interface TrainProps extends node.KeyProps {}
 
 /**
- * CycleNode props.
+ * {@link node.CycleNode} {@link node.Props}.
+ *
+ * @see node.CycleNode
  */
-export interface CycleProps extends KeyProps {}
+export interface CycleProps extends node.KeyProps {}
 
 /**
- * SawNode props.
+ * {@link node.SawNode} {@link node.Props}.
+ *
+ * @see node.SawNode
  */
-export interface SawProps extends KeyProps {}
+export interface SawProps extends node.KeyProps {}
 
 /**
- * SquareNode props.
+ * {@link node.SquareNode} {@link node.Props}.
+ *
+ * @see node.SquareNode
  */
-export interface SquareProps extends KeyProps {}
+export interface SquareProps extends node.KeyProps {}
 
 /**
- * TriangleNode props.
+ * {@link node.TriangleNode} {@link node.Props}.
+ *
+ * @see node.TriangleNode
  */
-export interface TriangleProps extends KeyProps {}
+export interface TriangleProps extends node.KeyProps {}
 
 /**
- * BlepSawNode props.
+ * {@link node.BlepSawNode} {@link node.Props}.
+ *
+ * @see node.BlepSawNode
  */
-export interface BlepSawProps extends KeyProps {}
+export interface BlepSawProps extends node.KeyProps {}
 
 /**
- * BlepSquareNode props.
+ * {@link node.BlepSquareNode} {@link node.Props}.
+ *
+ * @see node.BlepSquareNode
  */
-export interface BlepSquareProps extends KeyProps {}
+export interface BlepSquareProps extends node.KeyProps {}
 
 /**
- * BlepTriangleNode props.
+ * {@link node.BlepTriangleNode} {@link node.Props}.
+ *
+ * @see node.BlepTriangleNode
  */
-export interface BlepTriangleProps extends KeyProps {}
+export interface BlepTriangleProps extends node.KeyProps {}

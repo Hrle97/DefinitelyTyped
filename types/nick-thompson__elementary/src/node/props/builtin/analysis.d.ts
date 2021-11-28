@@ -1,12 +1,11 @@
-import { KeyProps } from "../props";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * MeterNode props.
+ * {@link node.MeterNode} {@link node.Props}.
  */
-export interface MeterProps extends KeyProps {
+export interface MeterProps extends node.KeyProps {
   /**
-   * Name of the MeterNode.
-   *
+   * Name of the {@link node.MeterNode}.
    * Default is ''.
    */
   name?: string;

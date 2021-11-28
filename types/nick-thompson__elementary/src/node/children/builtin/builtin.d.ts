@@ -106,6 +106,9 @@ export type BuiltinCompositeNameChildrenMap =
 
 /**
  * Maps {@link node.BuiltinName}s to their {@link node.Node}.
+ *
+ * @see node.BuiltinNativeNameChildrenMap
+ * @see node.BuiltinCompositeNameChildrenMap
  */
-export type BuiltinNameChildrenMap = BuiltinNativeNameChildrenMap &
-  BuiltinCompositeNameChildrenMap;
+export type BuiltinNameChildrenMap = node.BuiltinNativeNameChildrenMap &
+  node.BuiltinCompositeNameChildrenMap;

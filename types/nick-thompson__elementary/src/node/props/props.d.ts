@@ -1,125 +1,109 @@
-import {
-  BuiltinNativeType,
-  BuiltinCompositeType,
-  BuiltinType,
-  NativeType,
-  CompositeType,
-  Type,
-  NativeTypeName,
-  CompositeTypeName,
-} from "../types";
-
-import {
-  BuiltinNativeNamePropsMap,
-  BuiltinCompositeNamePropsMap,
-} from "./builtin";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * Base node props.
- *
- * @see KeyProps
+ * {@link node.Node} props base.
  */
 export interface Props {
   [key: string]: any;
 }
 
 /**
- * Node key props.
+ * {@link node.Node} key {@link node.Props}.
  *
- * Key determines whether props changed or the whole node changed upon
- * re-render.
+ * Keys help Elementary to analyze audio graph changes.
  */
 export interface KeyProps {
   /**
-   * Key of the node being created.
+   * Key of the {@link node.Node} being created.
    */
   key?: string;
 }
 
 /**
- * Default node props type.
+ * Default {@link node.Node} {@link node.Props}.
  *
- * @see Props
- * @see KeyProps
+ * @see node.Props
+ * @see node.KeyProps
  */
-export type DefaultProps = Props & KeyProps;
+export type DefaultProps = node.Props & node.KeyProps;
 
 /**
- * Props for the provided builtin native node type.
+ * {@link node.Props} for the provided {@link node.BuiltinNativeType}.
  *
- * @see BuiltinNativeType
+ * @see node.BuiltinNativeType
  */
-export type BuiltinNativeTypeProps<T extends BuiltinNativeType> =
-  BuiltinNativeNamePropsMap[NativeTypeName<T>];
+export type BuiltinNativeTypeProps<T extends node.BuiltinNativeType> =
+  node.BuiltinNativeNamePropsMap[node.NativeTypeName<T>];
 
 /**
- * Props for the provided builtin composite node type.
+ * {@link node.Props} for the provided {@link node.BuiltinCompositeType}.
  *
- * @see BuiltinCompositeType
+ * @see node.BuiltinCompositeType
  */
-export type BuiltinCompositeTypeProps<T extends BuiltinCompositeType> =
-  BuiltinCompositeNamePropsMap[CompositeTypeName<T>];
+export type BuiltinCompositeTypeProps<T extends node.BuiltinCompositeType> =
+  node.BuiltinCompositeNamePropsMap[node.CompositeTypeName<T>];
 
 /**
- * Props for the provided builtin node type.
+ * {@link node.Props} for the provided {@link node.BuiltinType}.
  *
- * @see BuiltinType
- * @see BuiltinNativeType
- * @see BuiltinNativeTypeProps
- * @see BuiltinCompositeType
- * @see BuiltinCompositeTypeProps
+ * @see node.BuiltinType
+ * @see node.BuiltinNativeType
+ * @see node.BuiltinNativeTypeProps
+ * @see node.BuiltinCompositeType
+ * @see node.BuiltinCompositeTypeProps
  */
-export type BuiltinTypeProps<T extends BuiltinType> =
-  T extends BuiltinNativeType
-    ? BuiltinNativeTypeProps<T>
-    : T extends BuiltinCompositeType
-    ? BuiltinCompositeTypeProps<T>
+export type BuiltinTypeProps<T extends node.BuiltinType> =
+  T extends node.BuiltinNativeType
+    ? node.BuiltinNativeTypeProps<T>
+    : T extends node.BuiltinCompositeType
+    ? node.BuiltinCompositeTypeProps<T>
     : never;
 
 /**
- * Props for provided native node type.
+ * {@link node.Props} for the provided {@link node.NativeType}.
  *
- * @see NativeType
- * @see BuiltinNativeType
- * @see BuiltinNativeTypeProps
- * @see DefaultProps
+ * @see node.NativeType
+ * @see node.BuiltinNativeType
+ * @see node.BuiltinNativeTypeProps
+ * @see node.DefaultProps
  */
-export type NativeTypeProps<T extends NativeType> = T extends BuiltinNativeType
-  ? BuiltinNativeTypeProps<T>
-  : DefaultProps;
-
-/**
- * Props for provided composite node type.
- *
- * @see CompositeType
- * @see BuiltinCompositeType
- * @see BuiltinNativeTypeProps
- * @see KeyProps
- * @see DefaultProps
- */
-export type CompositeTypeProps<T extends CompositeType> =
-  T extends BuiltinCompositeType
-    ? BuiltinCompositeTypeProps<T>
-    : Parameters<T> extends []
-    ? DefaultProps
-    : Parameters<T> extends [infer IParams, ...any]
-    ? IParams extends { props: infer IProps }
-      ? IProps & KeyProps
-      : DefaultProps
+export type NativeTypeProps<T extends node.NativeType> =
+  T extends node.BuiltinNativeType
+    ? node.BuiltinNativeTypeProps<T>
     : DefaultProps;
 
 /**
- * Props for provided node type.
+ * {@link node.Props} for the provided {@link node.CompositeType}.
  *
- * @see Type
- * @see NativeType
- * @see NativeTypeProps
- * @see CompositeType
- * @see CompositeTypeProps
- * @see DefaultProps
+ * @see node.CompositeType
+ * @see node.BuiltinCompositeType
+ * @see node.BuiltinNativeTypeProps
+ * @see node.KeyProps
+ * @see node.DefaultProps
  */
-export type TypeProps<T extends Type> = T extends NativeType
-  ? NativeTypeProps<T>
-  : T extends CompositeType
-  ? CompositeTypeProps<T>
-  : DefaultProps;
+export type CompositeTypeProps<T extends node.CompositeType> =
+  T extends node.BuiltinCompositeType
+    ? node.BuiltinCompositeTypeProps<T>
+    : Parameters<T> extends []
+    ? node.DefaultProps
+    : Parameters<T> extends [infer IParams, ...any]
+    ? IParams extends { props: infer IProps }
+      ? IProps & KeyProps
+      : node.DefaultProps
+    : node.DefaultProps;
+
+/**
+ * {@link node.Props} for the provided {@link node.Type}.
+ *
+ * @see node.Type
+ * @see node.NativeType
+ * @see node.NativeTypeProps
+ * @see node.CompositeType
+ * @see node.CompositeTypeProps
+ * @see node.DefaultProps
+ */
+export type TypeProps<T extends node.Type> = T extends node.NativeType
+  ? node.NativeTypeProps<T>
+  : T extends node.CompositeType
+  ? node.CompositeTypeProps<T>
+  : node.DefaultProps;

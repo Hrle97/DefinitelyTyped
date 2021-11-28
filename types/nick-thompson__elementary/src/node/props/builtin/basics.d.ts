@@ -1,26 +1,34 @@
-import { KeyProps } from "../props";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * SrNode props.
+ * {@link node.SrNode} {@link node.Props}.
+ *
+ * @see node.SrNode
  */
-export interface SrProps extends KeyProps {}
+export interface SrProps extends node.KeyProps {}
 
 /**
- * ConstNode props.
+ * {@link node.ConstNode} {@link node.Props}.
+ *
+ * @see node.ConstNode
  */
-export interface ConstProps extends KeyProps {
+export interface ConstProps extends node.KeyProps {
   /**
-   * Value of the ConstNode.
+   * Value of the {@link node.ConstNode}.
    */
   value: number;
 }
 
 /**
- * CounterNode props.
+ * {@link node.CounterNode} {@link node.Props}.
+ *
+ * @see node.CounterNode
  */
-export interface CounterProps extends KeyProps {}
+export interface CounterProps extends node.KeyProps {}
 
 /**
- * SelectNode props.
+ * {@link node.SelectNode} {@link node.Props}.
+ *
+ * @see node.SelectNode
  */
-export interface SelectProps extends KeyProps {}
+export interface SelectProps extends node.KeyProps {}

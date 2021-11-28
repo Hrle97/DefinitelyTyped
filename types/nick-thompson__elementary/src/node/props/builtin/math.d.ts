@@ -1,126 +1,176 @@
-import { KeyProps } from "../props";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * SinNode props.
+ * {@link node.SinNode} {@link node.Props}.
+ *
+ * @see node.SinNode
  */
-export interface SinProps extends KeyProps {}
+export interface SinProps extends node.KeyProps {}
 
 /**
- * CosNode props.
+ * {@link node.CosNode} {@link node.Props}.
+ *
+ * @see node.CosNode
  */
-export interface CosProps extends KeyProps {}
+export interface CosProps extends node.KeyProps {}
 
 /**
- * TanNode props.
+ * {@link node.TanNode} {@link node.Props}.
+ *
+ * @see node.TanNode
  */
-export interface TanProps extends KeyProps {}
+export interface TanProps extends node.KeyProps {}
 
 /**
- * TanhNode props.
+ * {@link node.TanhNode} {@link node.Props}.
+ *
+ * @see node.TanhNode
  */
-export interface TanhProps extends KeyProps {}
+export interface TanhProps extends node.KeyProps {}
 
 /**
- * AsinhNode props.
+ * {@link node.AsinhNode} {@link node.Props}.
+ *
+ * @see node.AsinhNode
  */
-export interface AsinhProps extends KeyProps {}
+export interface AsinhProps extends node.KeyProps {}
 
 /**
- * LnNode props.
+ * {@link node.LnNode} {@link node.Props}.
+ *
+ * @see node.LnNode
  */
-export interface LnProps extends KeyProps {}
+export interface LnProps extends node.KeyProps {}
 
 /**
- * LogNode props.
+ * {@link node.LogNode} {@link node.Props}.
+ *
+ * @see node.LogNode
  */
-export interface LogProps extends KeyProps {}
+export interface LogProps extends node.KeyProps {}
 
 /**
- * Log2Node props.
+ * {@link node.Log2Node} {@link node.Props}.
+ *
+ * @see node.Log2Node
  */
-export interface Log2Props extends KeyProps {}
+export interface Log2Props extends node.KeyProps {}
 
 /**
- * CeilNode props.
+ * {@link node.CeilNode} {@link node.Props}.
+ *
+ * @see node.CeilNode
  */
-export interface CeilProps extends KeyProps {}
+export interface CeilProps extends node.KeyProps {}
 
 /**
- * FloorNode props.
+ * {@link node.FloorNode} {@link node.Props}.
+ *
+ * @see node.FloorNode
  */
-export interface FloorProps extends KeyProps {}
+export interface FloorProps extends node.KeyProps {}
 
 /**
- * SqrtNode props.
+ * {@link node.SqrtNode} {@link node.Props}.
+ *
+ * @see node.SqrtNode
  */
-export interface SqrtProps extends KeyProps {}
+export interface SqrtProps extends node.KeyProps {}
 
 /**
- * ExpNode props.
+ * {@link node.ExpNode} {@link node.Props}.
+ *
+ * @see node.ExpNode
  */
-export interface ExpProps extends KeyProps {}
+export interface ExpProps extends node.KeyProps {}
 
 /**
- * AbsNode props.
+ * {@link node.AbsNode} {@link node.Props}.
+ *
+ * @see node.AbsNode
  */
-export interface AbsProps extends KeyProps {}
+export interface AbsProps extends node.KeyProps {}
 
 /**
- * LeNode props.
+ * {@link node.LeNode} {@link node.Props}.
+ *
+ * @see node.LeNode
  */
-export interface LeProps extends KeyProps {}
+export interface LeProps extends node.KeyProps {}
 
 /**
- * LeqNode props.
+ * {@link node.LeqNode} {@link node.Props}.
+ *
+ * @see node.LeqNode
  */
-export interface LeqProps extends KeyProps {}
+export interface LeqProps extends node.KeyProps {}
 
 /**
- * GeNode props.
+ * {@link node.GeNode} {@link node.Props}.
+ *
+ * @see node.GeNode
  */
-export interface GeProps extends KeyProps {}
+export interface GeProps extends node.KeyProps {}
 
 /**
- * GeqNode props.
+ * {@link node.GeqNode} {@link node.Props}.
+ *
+ * @see node.GeqNode
  */
-export interface GeqProps extends KeyProps {}
+export interface GeqProps extends node.KeyProps {}
 
 /**
- * PowNode props.
+ * {@link node.PowNode} {@link node.Props}.
+ *
+ * @see node.PowNode
  */
-export interface PowProps extends KeyProps {}
+export interface PowProps extends node.KeyProps {}
 
 /**
- * ModNode props.
+ * {@link node.ModNode} {@link node.Props}.
+ *
+ * @see node.ModNode
  */
-export interface ModProps extends KeyProps {}
+export interface ModProps extends node.KeyProps {}
 
 /**
- * MinNode props.
+ * {@link node.MinNode} {@link node.Props}.
+ *
+ * @see node.MinNode
  */
-export interface MinProps extends KeyProps {}
+export interface MinProps extends node.KeyProps {}
 
 /**
- * MaxNode props.
+ * {@link node.MaxNode} {@link node.Props}.
+ *
+ * @see node.MaxNode
  */
-export interface MaxProps extends KeyProps {}
+export interface MaxProps extends node.KeyProps {}
 
 /**
- * AddNode props.
+ * {@link node.AddNode} {@link node.Props}.
+ *
+ * @see node.AddNode
  */
-export interface AddProps extends KeyProps {}
+export interface AddProps extends node.KeyProps {}
 
 /**
- * SubNode props.
+ * {@link node.SubNode} {@link node.Props}.
+ *
+ * @see node.SubNode
  */
-export interface SubProps extends KeyProps {}
+export interface SubProps extends node.KeyProps {}
 
 /**
- * MulNode props.
+ * {@link node.MulNode} {@link node.Props}.
+ *
+ * @see node.MulNode
  */
-export interface MulProps extends KeyProps {}
+export interface MulProps extends node.KeyProps {}
 
 /**
- * DivNode props.
+ * {@link node.DivNode} {@link node.Props}.
+ *
+ * @see node.DivNode
  */
-export interface DivProps extends KeyProps {}
+export interface DivProps extends node.KeyProps {}

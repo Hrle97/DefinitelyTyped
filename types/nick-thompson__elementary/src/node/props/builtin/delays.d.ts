@@ -1,21 +1,25 @@
-import { KeyProps } from "../props";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * ZNode props.
+ * {@link node.ZNode} {@link node.Props}.
+ *
+ * @see node.ZNode
  */
-export interface ZProps extends KeyProps {}
+export interface ZProps extends node.KeyProps {}
 
 /**
- * TapOutNode props.
+ * {@link node.TapOutNode} {@link node.Props}.
+ *
+ * @see node.TapOutNode
  */
-export interface TapOutProps extends KeyProps {
+export interface TapOutProps extends node.KeyProps {
   /**
-   * Name of the TapOutNode.
+   * Name of the {@link node.TapOutNode}.
    */
   name: string;
 
   /**
-   * Delay of the TapOutNode. Default is 512.
+   * Delay of the {@link node.TapOutNode}. Default is 512.
    *
    * The delay will be clamped up to the block size for performance reasons,
    * but this could change in a future release.
@@ -24,19 +28,24 @@ export interface TapOutProps extends KeyProps {
 }
 
 /**
- * TapInNode props.
+ * {@link node.TapInNode} {@link node.Props}.
+ *
+ * @see node.TapInNode
  */
-export interface TapInProps extends KeyProps {
+export interface TapInProps extends node.KeyProps {
   /**
-   * Name of the TapOutNode that this should take the signal from.
+   * Name of the {@link node.TapOutNode} that this should take the signal
+   * from.
    */
   name: string;
 }
 
 /**
- * DelayNode props.
+ * {@link node.DelayNode} {@link node.Props}.
+ *
+ * @see node.DelayNode
  */
-export interface DelayProps extends KeyProps {
+export interface DelayProps extends node.KeyProps {
   /**
    * Maximum delay line in samples.
    */

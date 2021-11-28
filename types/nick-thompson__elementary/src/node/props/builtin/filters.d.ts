@@ -1,94 +1,130 @@
-import { KeyProps } from "../props";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * PoleNode props.
+ * {@link node.PoleNode} {@link node.Props}.
+ *
+ * @see node.PoleNode
  */
-export interface PoleProps extends KeyProps {}
+export interface PoleProps extends node.KeyProps {}
 
 /**
- * ZeroNode props.
+ * {@link node.ZeroNode} {@link node.Props}.
+ *
+ * @see node.ZeroNode
  */
-export interface ZeroProps extends KeyProps {}
+export interface ZeroProps extends node.KeyProps {}
 
 /**
- * DcBlockNode props.
+ * {@link node.DcBlockNode} {@link node.Props}.
+ *
+ * @see node.DcBlockNode
  */
-export interface DcBlockProps extends KeyProps {}
+export interface DcBlockProps extends node.KeyProps {}
 
 /**
- * Df11Node props.
+ * {@link node.Df11Node} {@link node.Props}.
+ *
+ * @see node.Df11Node
  */
-export interface Df11Props extends KeyProps {}
+export interface Df11Props extends node.KeyProps {}
 
 /**
- * SmoothNode props.
+ * {@link node.SmoothNode} {@link node.Props}.
+ *
+ * @see node.SmoothNode
  */
-export interface SmoothProps extends KeyProps {}
+export interface SmoothProps extends node.KeyProps {}
 
 /**
- * SmNode props.
+ * {@link node.SmNode} {@link node.Props}.
+ *
+ * @see node.SmNode
  */
-export interface SmProps extends KeyProps {}
+export interface SmProps extends node.KeyProps {}
 
 /**
- * BiquadNode props.
+ * {@link node.BiquadNode} {@link node.Props}.
+ *
+ * @see node.BiquadNode
  */
-export interface BiquadProps extends KeyProps {}
+export interface BiquadProps extends node.KeyProps {}
 
 /**
- * LowPassNode props.
+ * {@link node.LowPassNode} {@link node.Props}.
+ *
+ * @see node.LowPassNode
  */
-export interface LowPassProps extends KeyProps {}
+export interface LowPassProps extends node.KeyProps {}
 
 /**
- * HighPassNode props.
+ * {@link node.HighPassNode} {@link node.Props}.
+ *
+ * @see node.HighPassNode
  */
-export interface HighPassProps extends KeyProps {}
+export interface HighPassProps extends node.KeyProps {}
 
 /**
- * BandPassNode props.
+ * {@link node.BandPassNode} {@link node.Props}.
+ *
+ * @see node.BandPassNode
  */
-export interface BandPassProps extends KeyProps {}
+export interface BandPassProps extends node.KeyProps {}
 
 /**
- * AllPassNode props.
+ * {@link node.AllPassNode} {@link node.Props}.
+ *
+ * @see node.AllPassNode
  */
-export interface AllPassProps extends KeyProps {}
+export interface AllPassProps extends node.KeyProps {}
 
 /**
- * NotchNode props.
+ * {@link node.NotchNode} {@link node.Props}.
+ *
+ * @see node.NotchNode
  */
-export interface NotchProps extends KeyProps {}
+export interface NotchProps extends node.KeyProps {}
 
 /**
- * PeakNode props.
+ * {@link node.PeakNode} {@link node.Props}.
+ *
+ * @see node.PeakNode
  */
-export interface PeakProps extends KeyProps {}
+export interface PeakProps extends node.KeyProps {}
 
 /**
- * LowShelfNode props.
+ * {@link node.LowShelfNode} {@link node.Props}.
+ *
+ * @see node.LowShelfNode
  */
-export interface LowShelfProps extends KeyProps {}
+export interface LowShelfProps extends node.KeyProps {}
 
 /**
- * HighShelfNode props.
+ * {@link node.HighShelfNode} {@link node.Props}.
+ *
+ * @see node.HighShelfNode
  */
-export interface HighShelfProps extends KeyProps {}
+export interface HighShelfProps extends node.KeyProps {}
 
 /**
- * ConvolveNode props.
+ * {@link node.ConvolveNode} {@link node.Props}.
+ *
+ * @see node.ConvolveNode
  */
-export interface ConvolveProps extends KeyProps {}
+export interface ConvolveProps extends node.KeyProps {}
 
 /**
- * PinkNode props.
+ * {@link node.PinkNode} {@link node.Props}.
+ *
+ * @see node.PinkNode
  */
-export interface PinkProps extends KeyProps {}
+export interface PinkProps extends node.KeyProps {}
 
 /**
- * ConvolveNode props.
+ * {@link node.ConvolveNode} {@link node.Props}.
+ *
+ * @see node.ConvolveNode
  */
-export interface ConvolveProps extends KeyProps {
+export interface ConvolveProps extends node.KeyProps {
   /**
    * Path to the file of the impulse response on disk.
    */
