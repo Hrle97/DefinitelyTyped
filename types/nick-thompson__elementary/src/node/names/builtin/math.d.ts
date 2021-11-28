@@ -1,124 +1,176 @@
+import { node } from "@nick-thompson/elementary";
+
 /**
- * SinNode name.
+ * {@link node.SinNode} name.
+ *
+ * @see node.SinNode
  */
 export type SinName = "sin";
 
 /**
- * CosNode name.
+ * {@link node.CosNode} name.
+ *
+ * @see node.CosNode
  */
 export type CosName = "cos";
 
 /**
- * TanNode name.
+ * {@link node.TanNode} name.
+ *
+ * @see node.TanNode
  */
 export type TanName = "tan";
 
 /**
- * TanhNode name.
+ * {@link node.TanhNode} name.
+ *
+ * @see node.TanhNode
  */
 export type TanhName = "tanh";
 
 /**
- * AsinhNode name.
+ * {@link node.AsinhNode} name.
+ *
+ * @see node.AsinhNode
  */
 export type AsinhName = "asinh";
 
 /**
- * LnNode name.
+ * {@link node.LnNode} name.
+ *
+ * @see node.LnNode
  */
 export type LnName = "ln";
 
 /**
- * LogNode name.
+ * {@link node.LogNode} name.
+ *
+ * @see node.LogNode
  */
 export type LogName = "log";
 
 /**
- * Log2Node name.
+ * {@link node.Log2Node} name.
+ *
+ * @see node.Log2Node
  */
 export type Log2Name = "log2";
 
 /**
- * CeilNode name.
+ * {@link node.CeilNode} name.
+ *
+ * @see node.CeilNode
  */
 export type CeilName = "ceil";
 
 /**
- * FloorNode name.
+ * {@link node.FloorNode} name.
+ *
+ * @see node.FloorNode
  */
 export type FloorName = "floor";
 
 /**
- * SqrtNode name.
+ * {@link node.SqrtNode} name.
+ *
+ * @see node.SqrtNode
  */
 export type SqrtName = "sqrt";
 
 /**
- * ExpNode name.
+ * {@link node.ExpNode} name.
+ *
+ * @see node.ExpNode
  */
 export type ExpName = "exp";
 
 /**
- * AbsNode name.
+ * {@link node.AbsNode} name.
+ *
+ * @see node.AbsNode
  */
 export type AbsName = "abs";
 
 /**
- * LeNode name.
+ * {@link node.LeNode} name.
+ *
+ * @see node.LeNode
  */
 export type LeName = "le";
 
 /**
- * LeqNode name.
+ * {@link node.LeqNode} name.
+ *
+ * @see node.LeqNode
  */
 export type LeqName = "leq";
 
 /**
- * GeNode name.
+ * {@link node.GeNode} name.
+ *
+ * @see node.GeNode
  */
 export type GeName = "ge";
 
 /**
- * GeqNode name.
+ * {@link node.GeqNode} name.
+ *
+ * @see node.GeqNode
  */
 export type GeqName = "geq";
 
 /**
- * PowNode name.
+ * {@link node.PowNode} name.
+ *
+ * @see node.PowNode
  */
 export type PowName = "pow";
 
 /**
- * ModNode name.
+ * {@link node.ModNode} name.
+ *
+ * @see node.ModNode
  */
 export type ModName = "mod";
 
 /**
- * MinNode name.
+ * {@link node.MinNode} name.
+ *
+ * @see node.MinNode
  */
 export type MinName = "min";
 
 /**
- * MaxNode name.
+ * {@link node.MaxNode} name.
+ *
+ * @see node.MaxNode
  */
 export type MaxName = "max";
 
 /**
- * AddNode name.
+ * {@link node.AddNode} name.
+ *
+ * @see node.AddNode
  */
 export type AddName = "add";
 
 /**
- * SubNode name.
+ * {@link node.SubNode} name.
+ *
+ * @see node.SubNode
  */
 export type SubName = "sub";
 
 /**
- * MulNode name.
+ * {@link node.MulNode} name.
+ *
+ * @see node.MulNode
  */
 export type MulName = "mul";
 
 /**
- * DivNode name.
+ * {@link node.DivNode} name.
+ *
+ * @see node.DivNode
  */
 export type DivName = "div";

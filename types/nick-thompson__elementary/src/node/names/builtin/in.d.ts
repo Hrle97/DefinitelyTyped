@@ -1,4 +1,8 @@
+import { node } from "@nick-thompson/elementary";
+
 /**
- * InNode name.
+ * {@link node.InNode} name.
+ *
+ * @see node.InNode
  */
 export type InName = "in";

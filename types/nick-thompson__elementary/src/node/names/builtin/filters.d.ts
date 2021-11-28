@@ -1,84 +1,120 @@
+import { node } from "@nick-thompson/elementary";
+
 /**
- * PoleNode name.
+ * {@link node.PoleNode} name.
+ *
+ * @see node.PoleNode
  */
 export type PoleName = "pole";
 
 /**
- * ZeroNode name.
+ * {@link node.ZeroNode} name.
+ *
+ * @see node.ZeroNode
  */
 export type ZeroName = "zero";
 
 /**
- * DcBlockNode name.
+ * {@link node.DcBlockNode} name.
+ *
+ * @see node.DcBlockNode
  */
 export type DcBlockName = "dcblock";
 
 /**
- * Df11Node name.
+ * {@link node.Df11Node} name.
+ *
+ * @see node.Df11Node
  */
 export type Df11Name = "df11";
 
 /**
- * SmoothNode name.
+ * {@link node.SmoothNode} name.
+ *
+ * @see node.SmoothNode
  */
 export type SmoothName = "smooth";
 
 /**
- * SmNode name.
+ * {@link node.SmNode} name.
+ *
+ * @see node.SmNode
  */
 export type SmName = "sm";
 
 /**
- * BiquadNode name.
+ * {@link node.BiquadNode} name.
+ *
+ * @see node.BiquadNode
  */
 export type BiquadName = "biquad";
 
 /**
- * LowPassNode name.
+ * {@link node.LowPassNode} name.
+ *
+ * @see node.LowPassNode
  */
 export type LowPassName = "lowpass";
 
 /**
- * HighPassNode name.
+ * {@link node.HighPassNode} name.
+ *
+ * @see node.HighPassNode
  */
 export type HighPassName = "highpass";
 
 /**
- * BandPassNode name.
+ * {@link node.BandPassNode} name.
+ *
+ * @see node.BandPassNode
  */
 export type BandPassName = "bandpass";
 
 /**
- * AllPassNode name.
+ * {@link node.AllPassNode} name.
+ *
+ * @see node.AllPassNode
  */
 export type AllPassName = "allpass";
 
 /**
- * NotchNode name.
+ * {@link node.NotchNode} name.
+ *
+ * @see node.NotchNode
  */
 export type NotchName = "notch";
 
 /**
- * PeakNode name.
+ * {@link node.PeakNode} name.
+ *
+ * @see node.PeakNode
  */
 export type PeakName = "peak";
 
 /**
- * LowShelfNode name.
+ * {@link node.LowShelfNode} name.
+ *
+ * @see node.LowShelfNode
  */
 export type LowShelfName = "lowshelf";
 
 /**
- * HighShelfNode name.
+ * {@link node.HighShelfNode} name.
+ *
+ * @see node.HighShelfNode
  */
 export type HighShelfName = "highshelf";
 
 /**
- * ConvolveNode name.
+ * {@link node.ConvolveNode} name.
+ *
+ * @see node.ConvolveNode
  */
 export type ConvolveName = "convolve";
 
 /**
- * PinkNode name.
+ * {@link node.PinkNode} name.
+ *
+ * @see node.PinkNode
  */
 export type PinkName = "pink";

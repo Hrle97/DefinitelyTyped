@@ -1,44 +1,64 @@
+import { node } from "@nick-thompson/elementary";
+
 /**
- * PhasorNode name.
+ * {@link node.PhasorNode} name.
+ *
+ * @see node.PhasorNode
  */
 export type PhasorName = "phasor";
 
 /**
- * TrainNode name.
+ * {@link node.TrainNode} name.
+ *
+ * @see node.TrainNode
  */
 export type TrainName = "train";
 
 /**
- * CycleNode name.
+ * {@link node.CycleNode} name.
+ *
+ * @see node.CycleNode
  */
 export type CycleName = "cycle";
 
 /**
- * SawNode name.
+ * {@link node.SawNode} name.
+ *
+ * @see node.SawNode
  */
 export type SawName = "saw";
 
 /**
- * SquareNode name.
+ * {@link node.SquareNode} name.
+ *
+ * @see node.SquareNode
  */
 export type SquareName = "square";
 
 /**
- * TriangleNode name.
+ * {@link node.TriangleNode} name.
+ *
+ * @see node.TriangleNode
  */
 export type TriangleName = "triangle";
 
 /**
- * BlepSawNode name.
+ * {@link node.BlepSawNode} name.
+ *
+ * @see node.BlepSawNode
  */
 export type BlepSawName = "blepsaw";
 
 /**
- * BlepSquareNode name.
+ * {@link node.BlepSquareNode} name.
+ *
+ * @see node.BlepSquareNode
  */
 export type BlepSquareName = "blepsquare";
 
 /**
- * BlepTriangleNode name.
+ * {@link node.BlepTriangleNode} name.
+ *
+ * @see node.BlepTriangleNode
  */
 export type BlepTriangleName = "bleptriangle";

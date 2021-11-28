@@ -1,9 +1,15 @@
+import { node } from "@nick-thompson/elementary";
+
 /**
- * SampleNode name.
+ * {@link node.SampleNode} name.
+ *
+ * @see node.SampleNode
  */
 export type SampleName = "sample";
 
 /**
- * TableNode name.
+ * {@link node.TableNode} name.
+ *
+ * @see node.TableNode
  */
 export type TableName = "table";

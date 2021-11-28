@@ -1,24 +1,36 @@
+import { node } from "@nick-thompson/elementary";
+
 /**
- * EnvNode name.
+ * {@link node.EnvNode} name.
+ *
+ * @see node.EnvNode
  */
 export type EnvName = "env";
 
 /**
- * AdsrNode name.
+ * {@link node.AdsrNode} name.
+ *
+ * @see node.AdsrNode
  */
 export type AdsrName = "adsr";
 
 /**
- * LatchNode name.
+ * {@link node.LatchNode} name.
+ *
+ * @see node.LatchNode
  */
 export type LatchName = "latch";
 
 /**
- * SeqNode name.
+ * {@link node.SeqNode} name.
+ *
+ * @see node.SeqNode
  */
 export type SeqName = "seq";
 
 /**
- * HannNode name.
+ * {@link node.HannNode} name.
+ *
+ * @see node.HannNode
  */
 export type HannName = "hann";

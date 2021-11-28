@@ -1,4 +1,8 @@
+import { node } from "@nick-thompson/elementary";
+
 /**
- * MeterNode name.
+ * {@link node.MeterNode} name.
+ *
+ * @see node.MeterNode
  */
 export type MeterName = "meter";

@@ -1,14 +1,19 @@
+import { node } from "@nick-thompson/elementary";
+
 /**
- * Native node names.
+ * Native {@link node.Node} names.
  */
 export type NativeName = string;
 
 /**
- * Composite node names.
+ * Composite {@link node.Node} names.
  */
 export type CompositeName = string;
 
 /**
- * Node names.
+ * {@link node.Node} names.
+ *
+ * @see node.NativeName
+ * @see node.CompositeName
  */
-export type Name = NativeName | CompositeName;
+export type Name = node.NativeName | node.CompositeName;

@@ -107,4 +107,4 @@ export type BuiltinCompositeName =
 /**
  * Builtin {@link node.Node} names.
  */
-export type BuiltinName = BuiltinNativeName | BuiltinCompositeName;
+export type BuiltinName = node.BuiltinNativeName | node.BuiltinCompositeName;

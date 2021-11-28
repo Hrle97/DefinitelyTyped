@@ -1,9 +1,15 @@
+import { node } from "@nick-thompson/elementary";
+
 /**
- * MetroNode name.
+ * {@link node.MetroNode} name.
+ *
+ * @see node.MetroNode
  */
 export type MetroName = "metro";
 
 /**
- * RandNode name.
+ * {@link node.RandNode} name.
+ *
+ * @see node.RandNode
  */
 export type RandName = "rand";
