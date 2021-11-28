@@ -23,8 +23,6 @@ export type BuiltinNativeTypeNode<T extends node.BuiltinNativeType> =
 /**
  * {@link node.Node} for the provided {@link node.BuiltinCompositeType}.
  *
- * .
- *
  * @see node.BuiltinCompositeType
  * @see node.NamedNode
  * @see node.CompositeTypeName
@@ -103,7 +101,8 @@ export interface NamedNode<N extends node.Name> extends node.Node {
   // NOTE: $$typeof is a symbol but N | unknown is there to suppress
   // NOTE: unused N warning
   /**
-   * Do not use this! It is only here to differentiate node and props types.
+   * Do not use this! It is only here to differentiate {@link node.Node} and
+   * {@link node.Props} types.
    */
   $$typeof: (N | unknown) & symbol;
 }
