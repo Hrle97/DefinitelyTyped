@@ -1,112 +1,111 @@
-import * as node from "./";
-import * as names from "../names";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * Maps native builtin node names to their node.
+ * Maps {@link node.NativeBuiltinName} to their {@link node.Node}.
  */
 export type BuiltinNativeNameNodeMap =
   /* Analysis */
-  Record<names.MeterName, node.MeterNode> &
+  Record<node.MeterName, node.MeterNode> &
     /* Native */
-    Record<names.MetroName, node.MetroNode> &
-    Record<names.RandName, node.RandNode> &
+    Record<node.MetroName, node.MetroNode> &
+    Record<node.RandName, node.RandNode> &
     /* Basics */
-    Record<names.SrName, node.SrNode> &
-    Record<names.ConstName, node.ConstNode> &
-    Record<names.CounterName, node.CounterNode> &
+    Record<node.SrName, node.SrNode> &
+    Record<node.ConstName, node.ConstNode> &
+    Record<node.CounterName, node.CounterNode> &
     /* Delays */
-    Record<names.ZName, node.ZNode> &
-    Record<names.TapOutName, node.TapOutNode> &
-    Record<names.TapInName, node.TapInNode> &
-    Record<names.DelayName, node.DelayNode> &
+    Record<node.ZName, node.ZNode> &
+    Record<node.TapOutName, node.TapOutNode> &
+    Record<node.TapInName, node.TapInNode> &
+    Record<node.DelayName, node.DelayNode> &
     /* Filters */
-    Record<names.PoleName, node.PoleNode> &
-    Record<names.BiquadName, node.BiquadNode> &
-    Record<names.ConvolveName, node.ConvolveNode> &
+    Record<node.PoleName, node.PoleNode> &
+    Record<node.BiquadName, node.BiquadNode> &
+    Record<node.ConvolveName, node.ConvolveNode> &
     /* Math */
-    Record<names.SinName, node.SinNode> &
-    Record<names.CosName, node.CosNode> &
-    Record<names.TanName, node.TanNode> &
-    Record<names.TanhName, node.TanhNode> &
-    Record<names.AsinhName, node.AsinhNode> &
-    Record<names.LnName, node.LnNode> &
-    Record<names.LogName, node.LogNode> &
-    Record<names.Log2Name, node.Log2Node> &
-    Record<names.CeilName, node.CeilNode> &
-    Record<names.FloorName, node.FloorNode> &
-    Record<names.SqrtName, node.SqrtNode> &
-    Record<names.ExpName, node.ExpNode> &
-    Record<names.AbsName, node.AbsNode> &
-    Record<names.LeName, node.LeNode> &
-    Record<names.LeqName, node.LeqNode> &
-    Record<names.GeName, node.GeNode> &
-    Record<names.GeqName, node.GeqNode> &
-    Record<names.PowName, node.PowNode> &
-    Record<names.ModName, node.ModNode> &
-    Record<names.MinName, node.MinNode> &
-    Record<names.MaxName, node.MaxNode> &
-    Record<names.AddName, node.AddNode> &
-    Record<names.SubName, node.SubNode> &
-    Record<names.MulName, node.MulNode> &
-    Record<names.DivName, node.DivNode> &
+    Record<node.SinName, node.SinNode> &
+    Record<node.CosName, node.CosNode> &
+    Record<node.TanName, node.TanNode> &
+    Record<node.TanhName, node.TanhNode> &
+    Record<node.AsinhName, node.AsinhNode> &
+    Record<node.LnName, node.LnNode> &
+    Record<node.LogName, node.LogNode> &
+    Record<node.Log2Name, node.Log2Node> &
+    Record<node.CeilName, node.CeilNode> &
+    Record<node.FloorName, node.FloorNode> &
+    Record<node.SqrtName, node.SqrtNode> &
+    Record<node.ExpName, node.ExpNode> &
+    Record<node.AbsName, node.AbsNode> &
+    Record<node.LeName, node.LeNode> &
+    Record<node.LeqName, node.LeqNode> &
+    Record<node.GeName, node.GeNode> &
+    Record<node.GeqName, node.GeqNode> &
+    Record<node.PowName, node.PowNode> &
+    Record<node.ModName, node.ModNode> &
+    Record<node.MinName, node.MinNode> &
+    Record<node.MaxName, node.MaxNode> &
+    Record<node.AddName, node.AddNode> &
+    Record<node.SubName, node.SubNode> &
+    Record<node.MulName, node.MulNode> &
+    Record<node.DivName, node.DivNode> &
     /* Noise */
     /* Oscillators */
-    Record<names.PhasorName, node.PhasorNode> &
+    Record<node.PhasorName, node.PhasorNode> &
     /* Samples */
-    Record<names.SampleName, node.SampleNode> &
-    Record<names.TableName, node.TableNode> &
+    Record<node.SampleName, node.SampleNode> &
+    Record<node.TableName, node.TableNode> &
     /* Signals */
-    Record<names.LatchName, node.LatchNode> &
-    Record<names.SeqName, node.SeqNode> &
+    Record<node.LatchName, node.LatchNode> &
+    Record<node.SeqName, node.SeqNode> &
     /* In */
-    Record<names.InName, node.InNode>;
+    Record<node.InName, node.InNode>;
 
 /**
- * Maps composite builtin node names to their node.
+ * Maps {@link node.CompositeBuiltinName} to their {@link node.Node}.
  */
 export type BuiltinCompositeNameNodeMap =
   /* Analysis */
   /* Native */
   /* Basics */
-  Record<names.SelectName, node.SelectNode> &
+  Record<node.SelectName, node.SelectNode> &
     /* Delays */
     /* Filters */
-    Record<names.ZeroName, node.ZeroNode> &
-    Record<names.DcBlockName, node.DcBlockNode> &
-    Record<names.Df11Name, node.Df11Node> &
-    Record<names.SmoothName, node.SmoothNode> &
-    Record<names.SmName, node.SmNode> &
-    Record<names.LowPassName, node.LowPassNode> &
-    Record<names.HighPassName, node.HighPassNode> &
-    Record<names.BandPassName, node.BandPassNode> &
-    Record<names.AllPassName, node.AllPassNode> &
-    Record<names.NotchName, node.NotchNode> &
-    Record<names.PeakName, node.PeakNode> &
-    Record<names.LowShelfName, node.LowShelfNode> &
-    Record<names.HighShelfName, node.HighShelfNode> &
-    Record<names.PinkName, node.PinkNode> &
+    Record<node.ZeroName, node.ZeroNode> &
+    Record<node.DcBlockName, node.DcBlockNode> &
+    Record<node.Df11Name, node.Df11Node> &
+    Record<node.SmoothName, node.SmoothNode> &
+    Record<node.SmName, node.SmNode> &
+    Record<node.LowPassName, node.LowPassNode> &
+    Record<node.HighPassName, node.HighPassNode> &
+    Record<node.BandPassName, node.BandPassNode> &
+    Record<node.AllPassName, node.AllPassNode> &
+    Record<node.NotchName, node.NotchNode> &
+    Record<node.PeakName, node.PeakNode> &
+    Record<node.LowShelfName, node.LowShelfNode> &
+    Record<node.HighShelfName, node.HighShelfNode> &
+    Record<node.PinkName, node.PinkNode> &
     /* Math */
     /* Noise */
-    Record<names.NoiseName, node.NoiseNode> &
-    Record<names.PinkNoiseName, node.PinkNoiseNode> &
+    Record<node.NoiseName, node.NoiseNode> &
+    Record<node.PinkNoiseName, node.PinkNoiseNode> &
     /* Oscillators */
-    Record<names.TrainName, node.TrainNode> &
-    Record<names.CycleName, node.CycleNode> &
-    Record<names.SawName, node.SawNode> &
-    Record<names.SquareName, node.SquareNode> &
-    Record<names.TriangleName, node.TriangleNode> &
-    Record<names.BlepSawName, node.BlepSawNode> &
-    Record<names.BlepSquareName, node.BlepSquareNode> &
-    Record<names.BlepTriangleName, node.BlepTriangleNode> &
+    Record<node.TrainName, node.TrainNode> &
+    Record<node.CycleName, node.CycleNode> &
+    Record<node.SawName, node.SawNode> &
+    Record<node.SquareName, node.SquareNode> &
+    Record<node.TriangleName, node.TriangleNode> &
+    Record<node.BlepSawName, node.BlepSawNode> &
+    Record<node.BlepSquareName, node.BlepSquareNode> &
+    Record<node.BlepTriangleName, node.BlepTriangleNode> &
     /* Samples */
     /* Signals */
-    Record<names.EnvName, node.EnvNode> &
-    Record<names.AdsrName, node.AdsrNode> &
-    Record<names.HannName, node.HannNode>;
+    Record<node.EnvName, node.EnvNode> &
+    Record<node.AdsrName, node.AdsrNode> &
+    Record<node.HannName, node.HannNode>;
 /* In */
 
 /**
- * Maps builtin node names to their node.
+ * Maps {@link node.BuiltinName} to their {@link node.Node}.
  */
 export type BuiltinNameNodeMap = BuiltinNativeNameNodeMap &
   BuiltinCompositeNameNodeMap;

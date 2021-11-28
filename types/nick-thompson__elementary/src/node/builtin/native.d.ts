@@ -1,23 +1,25 @@
-import { TypeNode } from "../node";
+import { node, renderer, event } from "@nick-thompson/elementary";
 
-import { MetroType } from "../types";
 /**
- * Emits a pulse train signal much like the TrainNode, alternating from 0 to 1
- * at a given rate. Importantly, the MetroNode (metronome node) node is used
- * for synchronized train signals, and will emit the 'metro' event through a
- * Renderer's interface on each rising edge of its output signal.
+ * Emits a pulse train signal much like the {@link node.TrainNode},
+ * alternating from 0 to 1 at a given rate.
+ * Importantly, the {@link node.MetroNode} ("Metronome Node") is used for
+ * synchronized train signals, and will emit the {@link event.MetroEvent}
+ * through a {@link renderer.Renderer}s interface on each rising edge of its
+ * output signal.
  *
- * @see TypeNode
- * @see MetroType
+ * @see node.TypeNode
+ * @see node.MetroType
+ * @see renderer.Renderer
+ * @see event.MetroEvent
  */
-export type MetroNode = TypeNode<MetroType>;
+export type MetroNode = node.TypeNode<node.MetroType>;
 
-import { RandType } from "../types";
 /**
  * Generates a stream of random numbers uniformly distributed on the range
  * [0, 1].
  *
- * @see TypeNode
- * @see RandType
+ * @see node.TypeNode
+ * @see node.RandType
  */
-export type RandNode = TypeNode<RandType>;
+export type RandNode = node.TypeNode<node.RandType>;

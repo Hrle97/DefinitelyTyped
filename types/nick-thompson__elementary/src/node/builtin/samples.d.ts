@@ -1,21 +1,19 @@
-import { TypeNode } from "../node";
+import { nose } from "@nick-thompson/elementary";
 
-import { SampleType } from "../types";
 /**
  * Loads a sample from disk and triggers its playback on the rising edge of an
  * incoming pulse train.
  *
- * @see TypeNode
- * @see SampleType
+ * @see node.TypeNode
+ * @see node.SampleType
  */
-export type SampleNode = TypeNode<SampleType>;
+export type SampleNode = node.TypeNode<node.SampleType>;
 
-import { TableType } from "../types";
 /**
  * Loads a lookup table which is then read from with a position determined by
  * the incoming signal phase.
  *
- * @see TypeNode
- * @see TableType
+ * @see node.TypeNode
+ * @see node.TableType
  */
-export type TableNode = TypeNode<TableType>;
+export type TableNode = node.TypeNode<node.TableType>;

@@ -1,11 +1,10 @@
-import { TypeNode } from "../node";
+import { node } from "@nick-thompson/elementary";
 
-import { InType } from "../types";
 /**
- * Identity node that just passes through the incoming signal or an input node
- * which outputs an input channel.
+ * Identity {@link node.Node} that just passes through the incoming signal or
+ * an input {@link node.Node} which outputs an input channel.
  *
- * @see TypeNode
- * @see InType
+ * @see node.TypeNode
+ * @see node.InType
  */
-export type InNode = TypeNode<InType>;
+export type InNode = node.TypeNode<node.InType>;

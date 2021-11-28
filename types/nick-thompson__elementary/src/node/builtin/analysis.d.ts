@@ -1,12 +1,14 @@
-import { TypeNode } from "../node";
+import { node, renderer, event } from "@nick-thompson/elementary";
 
-import { MeterType } from "../types";
 /**
- * A pass-through node which analyses its incoming signal, measuring the
- * maximum and minimum peak value each block. The result is emitted through
- * a Renderer event interface on 'meter' events.
+ * A pass-through {@link node.Node} which analyses its incoming signal,
+ * measuring the maximum and minimum peak value each block.
+ * The result is emitted through a {@link renderer.Renderer}s event interface
+ * on {@link event.MeterEvent}s.
  *
- * @see TypeNode
- * @see MeterType
+ * @see node.TypeNode
+ * @see node.MeterType
+ * @see renderer.Renderer
+ * @see event.MeterEvent
  */
-export type MeterNode = TypeNode<MeterType>;
+export type MeterNode = node.TypeNode<node.MeterType>;

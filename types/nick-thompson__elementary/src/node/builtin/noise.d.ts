@@ -1,21 +1,19 @@
-import { TypeNode } from "../node";
+import { node } from "@nick-thompson/elementary";
 
-import { NoiseType } from "../types";
 /**
  * Generates a stream of random numbers uniformly distributed on the range
  * [-1, 1]. This is generally referred to as "white" noise.
  *
- * @see TypeNode
- * @see NoiseType
+ * @see node.TypeNode
+ * @see node.NoiseType
  */
-export type NoiseNode = TypeNode<NoiseType>;
+export type NoiseNode = node.TypeNode<node.NoiseType>;
 
-import { PinkNoiseType } from "../types";
 /**
  * This generates a noise signal with a -3dB/octave frequency response,
  * approximating "pink" noise.
  *
- * @see TypeNode
- * @see PinkNoiseType
+ * @see node.TypeNode
+ * @see node.PinkNoiseType
  */
-export type PinkNoiseNode = TypeNode<PinkNoiseType>;
+export type PinkNoiseNode = node.TypeNode<node.PinkNoiseType>;

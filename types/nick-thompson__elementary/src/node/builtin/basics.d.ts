@@ -1,38 +1,36 @@
-import { TypeNode } from "../node";
+import { node } from "@nick-thompson/elementary";
 
-import { SrType } from "../types";
 /**
- * A constant value node whose value is the current sample rate of the system.
+ * A constant value {@link node.Node} whose value is the current sample rate
+ * of the system.
  *
- * @see TypeNode
- * @see SrType
+ * @see node.node.TypeNode
+ * @see node.SrType
  */
-export type SrNode = TypeNode<SrType>;
+export type SrNode = node.TypeNode<node.SrType>;
 
-import { ConstType } from "../types";
 /**
- * A constant value node whose value is set by the value prop. Commonly,
- * you'll see the const node expressed as a numeric literal.
+ * A constant value {@link node.Node} whose value is set by the value prop.
+ * Commonly, you'll see the const {@link node.Node} expressed as a numeric
+ * literal.
  *
- * @see TypeNode
- * @see ConstType
+ * @see node.TypeNode
+ * @see node.ConstType
  */
-export type ConstNode = TypeNode<ConstType>;
+export type ConstNode = node.TypeNode<node.ConstType>;
 
-import { CounterType } from "../types";
 /**
  * Outputs a continuous count of elapsed samples.
  *
- * @see TypeNode
- * @see CounterType
+ * @see node.TypeNode
+ * @see node.CounterType
  */
-export type CounterNode = TypeNode<CounterType>;
+export type CounterNode = node.TypeNode<node.CounterType>;
 
-import { SelectType } from "../types";
 /**
- * A simple conditional operator.
+ * A simple conditional operator {@link node.Node}.
  *
- * @see TypeNode
- * @see SelectType
+ * @see node.TypeNode
+ * @see node.SelectType
  */
-export type SelectNode = TypeNode<SelectType>;
+export type SelectNode = node.TypeNode<node.SelectType>;

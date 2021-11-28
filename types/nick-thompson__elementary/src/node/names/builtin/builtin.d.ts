@@ -1,110 +1,110 @@
-import * as names from "./";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * Builtin native node names.
+ * Builtin native {@link node.Node} names.
  */
 export type BuiltinNativeName =
   /* Analysis */
-  | names.MeterName
+  | node.MeterName
   /* Native */
-  | names.MetroName
-  | names.RandName
+  | node.MetroName
+  | node.RandName
   /* Basics */
-  | names.SrName
-  | names.ConstName
-  | names.CounterName
+  | node.SrName
+  | node.ConstName
+  | node.CounterName
   /* Delays */
-  | names.ZName
-  | names.TapInName
-  | names.TapOutName
-  | names.DelayName
+  | node.ZName
+  | node.TapInName
+  | node.TapOutName
+  | node.DelayName
   /* Filters */
-  | names.PoleName
-  | names.BiquadName
-  | names.ConvolveName
+  | node.PoleName
+  | node.BiquadName
+  | node.ConvolveName
   /* Math */
-  | names.SinName
-  | names.CosName
-  | names.TanName
-  | names.TanhName
-  | names.AsinhName
-  | names.LnName
-  | names.LogName
-  | names.Log2Name
-  | names.CeilName
-  | names.FloorName
-  | names.SqrtName
-  | names.ExpName
-  | names.AbsName
-  | names.LeName
-  | names.LeqName
-  | names.GeName
-  | names.GeqName
-  | names.PowName
-  | names.AddName
-  | names.SubName
-  | names.MulName
-  | names.DivName
-  | names.ModName
-  | names.MinName
-  | names.MaxName
+  | node.SinName
+  | node.CosName
+  | node.TanName
+  | node.TanhName
+  | node.AsinhName
+  | node.LnName
+  | node.LogName
+  | node.Log2Name
+  | node.CeilName
+  | node.FloorName
+  | node.SqrtName
+  | node.ExpName
+  | node.AbsName
+  | node.LeName
+  | node.LeqName
+  | node.GeName
+  | node.GeqName
+  | node.PowName
+  | node.AddName
+  | node.SubName
+  | node.MulName
+  | node.DivName
+  | node.ModName
+  | node.MinName
+  | node.MaxName
   /* Noise */
   /* Oscillators */
-  | names.PhasorName
+  | node.PhasorName
   /* Samples */
-  | names.SampleName
-  | names.TableName
+  | node.SampleName
+  | node.TableName
   /* Signals */
-  | names.LatchName
-  | names.SeqName
+  | node.LatchName
+  | node.SeqName
   /* In */
-  | names.InName;
+  | node.InName;
 
 /**
- * Names of builtin composite nodes.
+ * Builtin composite {@link node.Node} names.
  */
 export type BuiltinCompositeName =
   /* Analysis */
   /* Native */
   /* Basics */
-  | names.SelectName
+  | node.SelectName
   /* Delays */
   /* Filters */
-  | names.ZeroName
-  | names.DcBlockName
-  | names.Df11Name
-  | names.SmoothName
-  | names.SmName
-  | names.LowPassName
-  | names.HighPassName
-  | names.BandPassName
-  | names.AllPassName
-  | names.NotchName
-  | names.PeakName
-  | names.LowShelfName
-  | names.HighShelfName
-  | names.PinkName
+  | node.ZeroName
+  | node.DcBlockName
+  | node.Df11Name
+  | node.SmoothName
+  | node.SmName
+  | node.LowPassName
+  | node.HighPassName
+  | node.BandPassName
+  | node.AllPassName
+  | node.NotchName
+  | node.PeakName
+  | node.LowShelfName
+  | node.HighShelfName
+  | node.PinkName
   /* Math */
   /* Noise */
-  | names.NoiseName
-  | names.PinkNoiseName
+  | node.NoiseName
+  | node.PinkNoiseName
   /* Oscillators */
-  | names.TrainName
-  | names.CycleName
-  | names.SawName
-  | names.SquareName
-  | names.TriangleName
-  | names.BlepSawName
-  | names.BlepSquareName
-  | names.BlepTriangleName
+  | node.TrainName
+  | node.CycleName
+  | node.SawName
+  | node.SquareName
+  | node.TriangleName
+  | node.BlepSawName
+  | node.BlepSquareName
+  | node.BlepTriangleName
   /* Samples */
   /* Signals */
-  | names.EnvName
-  | names.AdsrName
-  | names.HannName;
+  | node.EnvName
+  | node.AdsrName
+  | node.HannName;
 /* In */
 
 /**
- * Builtin node names.
+ * Builtin {@link node.Node} names.
  */
 export type BuiltinName = BuiltinNativeName | BuiltinCompositeName;

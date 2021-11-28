@@ -1,91 +1,82 @@
-import { TypeNode } from "../node";
+import { node } from "@nick-thompson/elementary";
 
-import { PhasorType } from "../types";
 /**
  * Outputs a ramp from 0 to 1 at the given rate.
  *
- * @see TypeNode
- * @see PhasorType
+ * @see node.TypeNode
+ * @see node.PhasorType
  */
-export type PhasorNode = TypeNode<PhasorType>;
+export type PhasorNode = node.TypeNode<node.PhasorType>;
 
-import { TrainType } from "../types";
 /**
  * Outputs a pulse train alternating between 0 and 1 at the given rate.
  *
- * @see TypeNode
- * @see TrainType
+ * @see node.TypeNode
+ * @see node.TrainType
  */
-export type TrainNode = TypeNode<TrainType>;
+export type TrainNode = node.TypeNode<node.TrainType>;
 
-import { CycleType } from "../types";
 /**
  * Outputs a periodic sine tone at the given frequency.
  *
- * @see TypeNode
- * @see CycleType
+ * @see node.TypeNode
+ * @see node.CycleType
  */
-export type CycleNode = TypeNode<CycleType>;
+export type CycleNode = node.TypeNode<node.CycleType>;
 
-import { SawType } from "../types";
 /**
  * Outputs a naive sawtooth oscillator at the given frequency.
  *
  * Typically, due to the aliasing of the naive sawtooth at audio rates, this
  * oscillator is used for low frequencly modulation.
  *
- * @see TypeNode
- * @see SawType
+ * @see node.TypeNode
+ * @see node.SawType
  */
-export type SawNode = TypeNode<SawType>;
+export type SawNode = node.TypeNode<node.SawType>;
 
-import { SquareType } from "../types";
 /**
  * Outputs a naive square oscillator at the given frequency.
  *
  * Typically, due to the aliasing of the naive square at audio rates, this
  * oscillator is used for low frequencly modulation.
  *
- * @see TypeNode
- * @see SquareType
+ * @see node.TypeNode
+ * @see node.SquareType
  */
-export type SquareNode = TypeNode<SquareType>;
+export type SquareNode = node.TypeNode<node.SquareType>;
 
-import { TriangleType } from "../types";
 /**
  * Outputs a naive triangle oscillator at the given frequency.
  *
  * Typically, due to the aliasing of the naive triangle at audio rates, this
  * oscillator is used for low frequencly modulation.
  *
- * @see TypeNode
- * @see TriangleType
+ * @see node.TypeNode
+ * @see node.TriangleType
  */
-export type TriangleNode = TypeNode<TriangleType>;
+export type TriangleNode = node.TypeNode<node.TriangleType>;
 
-import { BlepSawType } from "../types";
 /**
  * Outputs a band-limited polyblep sawtooth waveform at the given frequency.
  *
- * @see TypeNode
- * @see BlepSawType
+ * @see node.TypeNode
+ * @see node.BlepSawType
  */
-export type BlepSawNode = TypeNode<BlepSawType>;
+export type BlepSawNode = node.TypeNode<node.BlepSawType>;
 
-import { BlepSquareType } from "../types";
 /**
  * Outputs a band-limited polyblep square waveform at the given frequency.
  *
- * @see TypeNode
- * @see BlepSquareType
+ * @see node.TypeNode
+ * @see node.BlepSquareType
  */
-export type BlepSquareNode = TypeNode<BlepSquareType>;
+export type BlepSquareNode = node.TypeNode<node.BlepSquareType>;
 
-import { BlepTriangleType } from "../types";
 /**
  * Outputs a band-limited polyblep triangle waveform at the given frequency.
  *
- * @see TypeNode
- * @see BlepTriangleType
+ * @see node.TypeNode
+ * @see node.BlepTriangleType
  */
-export type BlepTriangleNode = TypeNode<BlepTriangleType>;
+export type BlepTriangleNode = node.TypeNode<node.BlepTriangleType>;

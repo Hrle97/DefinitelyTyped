@@ -1,158 +1,142 @@
-import { TypeNode } from "../node";
+import { node } from "@nick-thompson/elementary";
 
-import { PoleType } from "../types";
 /**
- * A very simple single-sample delay node (z^-1).
+ * Implements a simple one-pole filter, also sometimes called a leaky
+ * integrator.
  *
- * @see TypeNode
- * @see PoleType
+ * @see node.TypeNode
+ * @see node.PoleType
  */
-export type PoleNode = TypeNode<PoleType>;
+export type PoleNode = node.TypeNode<node.PoleType>;
 
-import { ZeroType } from "../types";
 /**
  * Implements a simple one-zero filter.
  *
- * @see TypeNode
- * @see ZeroType
+ * @see node.TypeNode
+ * @see node.ZeroType
  */
-export type ZeroNode = TypeNode<ZeroType>;
+export type ZeroNode = node.TypeNode<node.ZeroType>;
 
-import { DcBlockType } from "../types";
 /**
  * Implements a default DC blocking filter with a pole at 0.995 and a zero at
  * 1. This filter has a -3dB point near 35Hz at 44.1kHz.
  *
- * @see TypeNode
- * @see DcBlockType
+ * @see node.TypeNode
+ * @see node.DcBlockType
  */
-export type DcBlockNode = TypeNode<DcBlockType>;
+export type DcBlockNode = node.TypeNode<node.DcBlockType>;
 
-import { Df11Type } from "../types";
 /**
  * A simple first order pole-zero filter, Direct Form 1.
  *
- * @see TypeNode
- * @see Df11Type
+ * @see node.TypeNode
+ * @see node.Df11Type
  */
-export type Df11Node = TypeNode<Df11Type>;
+export type Df11Node = node.TypeNode<node.Df11Type>;
 
-import { SmoothType } from "../types";
 /**
  * Unity gain one-pole smoothing. Commonly used for addressing discontinuities
  * in control signals.
  *
- * @see TypeNode
- * @see SmoothType
+ * @see node.TypeNode
+ * @see node.SmoothType
  */
-export type SmoothNode = TypeNode<SmoothType>;
+export type SmoothNode = node.TypeNode<node.SmoothType>;
 
-import { SmType } from "../types";
 /**
  * A pre-defined smoothing function with a 20ms decay time.
  *
- * @see TypeNode
- * @see SmType
+ * @see node.TypeNode
+ * @see node.SmType
  */
-export type SmNode = TypeNode<SmType>;
+export type SmNode = node.TypeNode<node.SmType>;
 
-import { BiquadType } from "../types";
 /**
  * A second order transposed direct-form II filter implementation.
  *
- * @see TypeNode
- * @see BiquadType
+ * @see node.TypeNode
+ * @see node.BiquadType
  */
-export type BiquadNode = TypeNode<BiquadType>;
+export type BiquadNode = node.TypeNode<node.BiquadType>;
 
-import { LowPassType } from "../types";
 /**
  * A simple lowpass biquad filter.
  *
- * @see TypeNode
- * @see LowPassType
+ * @see node.TypeNode
+ * @see node.LowPassType
  */
-export type LowPassNode = TypeNode<LowPassType>;
+export type LowPassNode = node.TypeNode<node.LowPassType>;
 
-import { HighPassType } from "../types";
 /**
  * A simple highpass biquad filter.
  *
- * @see TypeNode
- * @see HighPassType
+ * @see node.TypeNode
+ * @see node.HighPassType
  */
-export type HighPassNode = TypeNode<HighPassType>;
+export type HighPassNode = node.TypeNode<node.HighPassType>;
 
-import { BandPassType } from "../types";
 /**
  * A simple bandpass biquad filter.
  *
- * @see TypeNode
- * @see BandPassType
+ * @see node.TypeNode
+ * @see node.BandPassType
  */
-export type BandPassNode = TypeNode<BandPassType>;
+export type BandPassNode = node.TypeNode<node.BandPassType>;
 
-import { AllPassType } from "../types";
 /**
  * An allpass biquad filter.
  *
- * @see TypeNode
- * @see AllPassType
+ * @see node.TypeNode
+ * @see node.AllPassType
  */
-export type AllPassNode = TypeNode<AllPassType>;
+export type AllPassNode = node.TypeNode<node.AllPassType>;
 
-import { NotchType } from "../types";
 /**
  * A notch biquad filter.
  *
- * @see TypeNode
- * @see NotchType
+ * @see node.TypeNode
+ * @see node.NotchType
  */
-export type NotchNode = TypeNode<NotchType>;
+export type NotchNode = node.TypeNode<node.NotchType>;
 
-import { PeakType } from "../types";
 /**
  * A peaking (bell) biquad filter.
  *
- * @see TypeNode
- * @see PeakType
+ * @see node.TypeNode
+ * @see node.PeakType
  */
-export type PeakNode = TypeNode<PeakType>;
+export type PeakNode = node.TypeNode<node.PeakType>;
 
-import { LowShelfType } from "../types";
 /**
  * A lowshelf biquad filter.
  *
- * @see TypeNode
- * @see LowShelfType
+ * @see node.TypeNode
+ * @see node.LowShelfType
  */
-export type LowShelfNode = TypeNode<LowShelfType>;
+export type LowShelfNode = node.TypeNode<node.LowShelfType>;
 
-import { HighShelfType } from "../types";
 /**
  * A highshelf biquad filter.
  *
- * @see TypeNode
- * @see HighShelfType
+ * @see node.TypeNode
+ * @see node.HighShelfType
  */
-export type HighShelfNode = TypeNode<HighShelfType>;
+export type HighShelfNode = node.TypeNode<node.HighShelfType>;
 
-import { ConvolveType } from "../types";
 /**
- * A convolution node which reads an impulse response and convolves it with
- * the input signal.
+ * A convolution {@link node.Node} which reads an impulse response and
+ * convolves it with the input signal.
  *
- * @see TypeNode
- * @see ConvolveType
+ * @see node.TypeNode
+ * @see node.ConvolveType
  */
-export type ConvolveNode = TypeNode<ConvolveType>;
+export type ConvolveNode = node.TypeNode<node.ConvolveType>;
 
-import { PinkType } from "../types";
 /**
  * A pink noise filter designed to apply a -3dB/octave lowpass to the incoming
  * signal.
  *
- * @see TypeNode
- * @see PinkType
+ * @see node.TypeNode
+ * @see node.PinkType
  */
-export type PinkNode = TypeNode<PinkType>;
+export type PinkNode = node.TypeNode<node.PinkType>;

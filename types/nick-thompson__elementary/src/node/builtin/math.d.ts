@@ -1,237 +1,212 @@
-import { TypeNode } from "../node";
+import { node } from "@nick-thompson/elementary";
 
-import { SinType } from "../types";
 /**
  * Computes the sine of the input signal.
  *
- * @see TypeNode
- * @see SinType
+ * @see node.TypeNode
+ * @see node.SinType
  */
-export type SinNode = TypeNode<SinType>;
+export type SinNode = node.TypeNode<node.SinType>;
 
-import { CosType } from "../types";
 /**
  * Computes the cosine of the input signal.
  *
- * @see TypeNode
- * @see CosType
+ * @see node.TypeNode
+ * @see node.CosType
  */
-export type CosNode = TypeNode<CosType>;
+export type CosNode = node.TypeNode<node.CosType>;
 
-import { TanType } from "../types";
 /**
  * Computes the tangent of the input signal.
  *
- * @see TypeNode
- * @see TanType
+ * @see node.TypeNode
+ * @see node.TanType
  */
-export type TanNode = TypeNode<TanType>;
+export type TanNode = node.TypeNode<node.TanType>;
 
-import { TanhType } from "../types";
 /**
  * Computes the hyperbolic tangent of the input signal.
  *
- * @see TypeNode
- * @see TanhType
+ * @see node.TypeNode
+ * @see node.TanhType
  */
-export type TanhNode = TypeNode<TanhType>;
+export type TanhNode = node.TypeNode<node.TanhType>;
 
-import { AsinhType } from "../types";
 /**
  * Computes the inverse hyperbolic sine of the input signal.
  *
- * @see TypeNode
- * @see AsinhType
+ * @see node.TypeNode
+ * @see node.AsinhType
  */
-export type AsinhNode = TypeNode<AsinhType>;
+export type AsinhNode = node.TypeNode<node.AsinhType>;
 
-import { LnType } from "../types";
 /**
  * Computes the natural logarithm (where the base is Euler's number) of
  * the input signal.
  *
- * @see TypeNode
- * @see LnType
+ * @see node.TypeNode
+ * @see node.LnType
  */
-export type LnNode = TypeNode<LnType>;
+export type LnNode = node.TypeNode<node.LnType>;
 
-import { LogType } from "../types";
 /**
  * Computes the log (where the base is 10) of the input signal.
  *
- * @see TypeNode
- * @see LogType
+ * @see node.TypeNode
+ * @see node.LogType
  */
-export type LogNode = TypeNode<LogType>;
+export type LogNode = node.TypeNode<node.LogType>;
 
-import { Log2Type } from "../types";
 /**
  * Computes the log (where the base is 2) of the input signal.
  *
- * @see TypeNode
- * @see Log2Type
+ * @see node.TypeNode
+ * @see node.Log2Type
  */
-export type Log2Node = TypeNode<Log2Type>;
+export type Log2Node = node.TypeNode<node.Log2Type>;
 
-import { CeilType } from "../types";
 /**
  * Computes the ceiling (rounding up to the nearest whole number) of the input
  * signal.
  *
- * @see TypeNode
- * @see CeilType
+ * @see node.TypeNode
+ * @see node.CeilType
  */
-export type CeilNode = TypeNode<CeilType>;
+export type CeilNode = node.TypeNode<node.CeilType>;
 
-import { FloorType } from "../types";
 /**
  * Computes the floor (rounding down to the nearest whole number) of the input
  * signal.
  *
- * @see TypeNode
- * @see FloorType
+ * @see node.TypeNode
+ * @see node.FloorType
  */
-export type FloorNode = TypeNode<FloorType>;
+export type FloorNode = node.TypeNode<node.FloorType>;
 
-import { SqrtType } from "../types";
 /**
  * Computes the square root of the input signal.
  *
- * @see TypeNode
- * @see SqrtType
+ * @see node.TypeNode
+ * @see node.SqrtType
  */
-export type SqrtNode = TypeNode<SqrtType>;
+export type SqrtNode = node.TypeNode<node.SqrtType>;
 
-import { ExpType } from "../types";
 /**
  * Exponentiates Euler's number with the input signal.
  *
- * @see TypeNode
- * @see ExpType
+ * @see node.TypeNode
+ * @see node.ExpType
  */
-export type ExpNode = TypeNode<ExpType>;
+export type ExpNode = node.TypeNode<node.ExpType>;
 
-import { AbsType } from "../types";
 /**
  * Computes the absolute value of the input signal.
  *
- * @see TypeNode
- * @see AbsType
+ * @see node.TypeNode
+ * @see node.AbsType
  */
-export type AbsNode = TypeNode<AbsType>;
+export type AbsNode = node.TypeNode<node.AbsType>;
 
-import { LeType } from "../types";
 /**
  * Compares the first input to the second input, returning 1 when the first is
  * less than the second, and 0 otherwise.
  *
- * @see TypeNode
- * @see LeType
+ * @see node.TypeNode
+ * @see node.LeType
  */
-export type LeNode = TypeNode<LeType>;
+export type LeNode = node.TypeNode<node.LeType>;
 
-import { LeqType } from "../types";
 /**
  * Compares the first input to the second input, returning 1 when the first is
  * less than or equal to the second, and 0 otherwise.
  *
- * @see TypeNode
- * @see LeqType
+ * @see node.TypeNode
+ * @see node.LeqType
  */
-export type LeqNode = TypeNode<LeqType>;
+export type LeqNode = node.TypeNode<node.LeqType>;
 
-import { GeType } from "../types";
 /**
  * Compares the first input to the second input, returning 1 when the first is
  * greater than the second, and 0 otherwise.
  *
- * @see TypeNode
- * @see GeType
+ * @see node.TypeNode
+ * @see node.GeType
  */
-export type GeNode = TypeNode<GeType>;
+export type GeNode = node.TypeNode<node.GeType>;
 
-import { GeqType } from "../types";
 /**
  * Compares the first input to the second input, returning 1 when the first is
  * greater than or equal to the second, and 0 otherwise.
  *
- * @see TypeNode
- * @see GeqType
+ * @see node.TypeNode
+ * @see node.GeqType
  */
-export type GeqNode = TypeNode<GeqType>;
+export type GeqNode = node.TypeNode<node.GeqType>;
 
-import { PowType } from "../types";
 /**
  * Exponentiates the first input signal with the second.
  *
- * @see TypeNode
- * @see PowType
+ * @see node.TypeNode
+ * @see node.PowType
  */
-export type PowNode = TypeNode<PowType>;
+export type PowNode = node.TypeNode<node.PowType>;
 
-import { ModType } from "../types";
 /**
  * Modulo operator.
  *
  * Outputs the remainder of division of the first input signal with the
  * second.
  *
- * @see TypeNode
- * @see ModType
+ * @see node.TypeNode
+ * @see node.ModType
  */
-export type ModNode = TypeNode<ModType>;
+export type ModNode = node.TypeNode<node.ModType>;
 
-import { MinType } from "../types";
 /**
  * Outputs the minimal result of the two incoming signals.
  *
- * @see TypeNode
- * @see MinType
+ * @see node.TypeNode
+ * @see node.MinType
  */
-export type MinNode = TypeNode<MinType>;
+export type MinNode = node.TypeNode<node.MinType>;
 
-import { MaxType } from "../types";
 /**
  * Outputs the maximal result of the two incoming signals.
  *
- * @see TypeNode
- * @see MaxType
+ * @see node.TypeNode
+ * @see node.MaxType
  */
-export type MaxNode = TypeNode<MaxType>;
+export type MaxNode = node.TypeNode<node.MaxType>;
 
-import { AddType } from "../types";
 /**
  * Adds up the incoming signals (left fold with the addition operator).
  *
- * @see TypeNode
- * @see AddType
+ * @see node.TypeNode
+ * @see node.AddType
  */
-export type AddNode = TypeNode<AddType>;
+export type AddNode = node.TypeNode<node.AddType>;
 
-import { SubType } from "../types";
 /**
  * Subtracts the incoming signals (left fold with the subtraction operator).
  *
- * @see TypeNode
- * @see SubType
+ * @see node.TypeNode
+ * @see node.SubType
  */
-export type SubNode = TypeNode<SubType>;
+export type SubNode = node.TypeNode<node.SubType>;
 
-import { MulType } from "../types";
 /**
  * Multiplies the incoming signals (left fold with the multiplication
  * operator).
  *
- * @see TypeNode
- * @see MulType
+ * @see node.TypeNode
+ * @see node.MulType
  */
-export type MulNode = TypeNode<MulType>;
+export type MulNode = node.TypeNode<node.MulType>;
 
-import { DivType } from "../types";
 /**
  * Divides the incoming signals (left fold with the division operator).
  *
- * @see TypeNode
- * @see DivType
+ * @see node.TypeNode
+ * @see node.DivType
  */
-export type DivNode = TypeNode<DivType>;
+export type DivNode = node.TypeNode<node.DivType>;
