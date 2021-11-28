@@ -1,4 +1,4 @@
-import * as node from "../node";
+import { node } from "@nick-thompson/elementary";
 
 /**
  * A pass-through node which analyses its incoming signal, measuring the

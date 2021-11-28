@@ -1,4 +1,4 @@
-import * as node from '../node';
+import { node } from "@nick-thompson/elementary";
 
 // ============================================================================
 // Native
@@ -22,7 +22,7 @@ import * as node from '../node';
  * @see node.PhasorNode
  */
 export const phasor: node.NativeNodeFactory<
-  'phasor',
+  "phasor",
   node.KeyProps,
   [rate: node.Child]
 >;

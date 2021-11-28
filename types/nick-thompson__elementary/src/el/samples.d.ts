@@ -1,4 +1,4 @@
-import * as node from '../node';
+import { node } from "@nick-thompson/elementary";
 
 // ============================================================================
 // Native
@@ -34,7 +34,7 @@ import * as node from '../node';
  * @see node.SampleNode
  */
 export const sample: node.NativeNodeFactory<
-  'sample',
+  "sample",
   node.SampleProps,
   [trigger: node.Child]
 >;
@@ -81,7 +81,7 @@ export const sample: node.NativeNodeFactory<
  * @see node.TableNode
  */
 export const table: node.NativeNodeFactory<
-  'table',
+  "table",
   node.KeyProps,
   [trigger: node.Child]
 >;

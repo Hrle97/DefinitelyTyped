@@ -1,4 +1,4 @@
-import * as node from '../node';
+import { node } from "@nick-thompson/elementary";
 
 // ============================================================================
 // Native
@@ -24,7 +24,7 @@ import * as node from '../node';
  * @see node.SinNode
  */
 export const sin: node.NativeNodeFactory<
-  'sin',
+  "sin",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -46,7 +46,7 @@ export const sin: node.NativeNodeFactory<
  * @see node.CosNode
  */
 export const cos: node.NativeNodeFactory<
-  'cos',
+  "cos",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -68,7 +68,7 @@ export const cos: node.NativeNodeFactory<
  * @see node.TanNode
  */
 export const tan: node.NativeNodeFactory<
-  'tan',
+  "tan",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -90,7 +90,7 @@ export const tan: node.NativeNodeFactory<
  * @see node.TanhNode
  */
 export const tanh: node.NativeNodeFactory<
-  'tanh',
+  "tanh",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -113,7 +113,7 @@ export const tanh: node.NativeNodeFactory<
  * @see node.AsinhNode
  */
 export const asinh: node.NativeNodeFactory<
-  'asinh',
+  "asinh",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -135,7 +135,7 @@ export const asinh: node.NativeNodeFactory<
  * @see node.LnNode
  */
 export const ln: node.NativeNodeFactory<
-  'ln',
+  "ln",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -157,7 +157,7 @@ export const ln: node.NativeNodeFactory<
  * @see node.LogNode
  */
 export const log: node.NativeNodeFactory<
-  'log',
+  "log",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -179,7 +179,7 @@ export const log: node.NativeNodeFactory<
  * @see node.Log2Node
  */
 export const log2: node.NativeNodeFactory<
-  'log2',
+  "log2",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -201,7 +201,7 @@ export const log2: node.NativeNodeFactory<
  * @see node.CeilNode
  */
 export const ceil: node.NativeNodeFactory<
-  'ceil',
+  "ceil",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -223,7 +223,7 @@ export const ceil: node.NativeNodeFactory<
  * @see node.FloorNode
  */
 export const floor: node.NativeNodeFactory<
-  'floor',
+  "floor",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -245,7 +245,7 @@ export const floor: node.NativeNodeFactory<
  * @see node.SqrtNode
  */
 export const sqrt: node.NativeNodeFactory<
-  'sqrt',
+  "sqrt",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -267,7 +267,7 @@ export const sqrt: node.NativeNodeFactory<
  * @see node.ExpNode
  */
 export const exp: node.NativeNodeFactory<
-  'exp',
+  "exp",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -289,7 +289,7 @@ export const exp: node.NativeNodeFactory<
  * @see node.AbsNode
  */
 export const abs: node.NativeNodeFactory<
-  'abs',
+  "abs",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -317,7 +317,7 @@ export const abs: node.NativeNodeFactory<
  * @see node.LeNode
  */
 export const le: node.NativeNodeFactory<
-  'le',
+  "le",
   node.KeyProps,
   [first: node.Child, second: node.Child]
 >;
@@ -343,7 +343,7 @@ export const le: node.NativeNodeFactory<
  * @see node.LeqNode
  */
 export const leq: node.NativeNodeFactory<
-  'leq',
+  "leq",
   node.KeyProps,
   [first: node.Child, second: node.Child]
 >;
@@ -369,7 +369,7 @@ export const leq: node.NativeNodeFactory<
  * @see node.GeNode
  */
 export const ge: node.NativeNodeFactory<
-  'ge',
+  "ge",
   node.KeyProps,
   [first: node.Child, second: node.Child]
 >;
@@ -395,7 +395,7 @@ export const ge: node.NativeNodeFactory<
  * @see node.GeqNode
  */
 export const geq: node.NativeNodeFactory<
-  'geq',
+  "geq",
   node.KeyProps,
   [first: node.Child, second: node.Child]
 >;
@@ -421,7 +421,7 @@ export const geq: node.NativeNodeFactory<
  * @see node.PowNode
  */
 export const pow: node.NativeNodeFactory<
-  'pow',
+  "pow",
   node.KeyProps,
   [first: node.Child, second: node.Child]
 >;
@@ -446,7 +446,7 @@ export const pow: node.NativeNodeFactory<
  * @see node.ModNode
  */
 export const mod: node.NativeNodeFactory<
-  'mod',
+  "mod",
   node.KeyProps,
   [first: node.Child, second: node.Child]
 >;
@@ -471,7 +471,7 @@ export const mod: node.NativeNodeFactory<
  * @see node.MinNode
  */
 export const min: node.NativeNodeFactory<
-  'min',
+  "min",
   node.KeyProps,
   [first: node.Child, second: node.Child]
 >;
@@ -496,7 +496,7 @@ export const min: node.NativeNodeFactory<
  * @see node.MaxNode
  */
 export const max: node.NativeNodeFactory<
-  'max',
+  "max",
   node.KeyProps,
   [first: node.Child, second: node.Child]
 >;
@@ -524,7 +524,7 @@ export const max: node.NativeNodeFactory<
  * @see node.AddNode
  */
 export const add: node.NativeNodeFactory<
-  'add',
+  "add",
   node.KeyProps,
   [...operands: node.VariadicChildrenArray]
 >;
@@ -547,7 +547,7 @@ export const add: node.NativeNodeFactory<
  * @see node.SubNode
  */
 export const sub: node.NativeNodeFactory<
-  'sub',
+  "sub",
   node.KeyProps,
   [...operands: node.VariadicChildrenArray]
 >;
@@ -573,7 +573,7 @@ export const sub: node.NativeNodeFactory<
  * @see node.MulNode
  */
 export const mul: node.NativeNodeFactory<
-  'mul',
+  "mul",
   node.KeyProps,
   [...operands: node.VariadicChildrenArray]
 >;
@@ -599,7 +599,7 @@ export const mul: node.NativeNodeFactory<
  * @see node.DivNode
  */
 export const div: node.NativeNodeFactory<
-  'div',
+  "div",
   node.KeyProps,
   [...operands: node.VariadicChildrenArray]
 >;

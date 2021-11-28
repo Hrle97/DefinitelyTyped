@@ -1,4 +1,4 @@
-import * as node from '../node';
+import { node } from "@nick-thompson/elementary";
 
 // ============================================================================
 // Native
@@ -23,7 +23,7 @@ import * as node from '../node';
  * @see node.Node
  */
 declare const identity: node.NativeNodeFactory<
-  'in',
+  "in",
   node.KeyProps,
   [operand: node.Child]
 >;
@@ -43,7 +43,7 @@ declare const identity: node.NativeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-declare const input: node.NativeNodeFactory<'in', node.InProps>;
+declare const input: node.NativeNodeFactory<"in", node.InProps>;
 
 /**
  * Either the identity or the input function.

@@ -1,4 +1,4 @@
-import * as node from '../node';
+import { node } from "@nick-thompson/elementary";
 
 // ============================================================================
 // Native
@@ -26,7 +26,7 @@ import * as node from '../node';
  * @see node.PoleNode
  */
 export const pole: node.NativeNodeFactory<
-  'pole',
+  "pole",
   node.KeyProps,
   [polePosition: node.Child, signal: node.Child]
 >;
@@ -65,7 +65,7 @@ export const pole: node.NativeNodeFactory<
  * @see node.BiquadNode
  */
 export const biquad: node.NativeNodeFactory<
-  'biquad',
+  "biquad",
   node.KeyProps,
   [
     b0: node.Child,
@@ -73,7 +73,7 @@ export const biquad: node.NativeNodeFactory<
     b2: node.Child,
     a1: node.Child,
     a2: node.Child,
-    signal: node.Child,
+    signal: node.Child
   ]
 >;
 
@@ -95,7 +95,7 @@ export const biquad: node.NativeNodeFactory<
  * @see node.Node
  */
 export const convolve: node.NativeNodeFactory<
-  'convolve',
+  "convolve",
   node.ConvolveProps,
   [signal: node.Child]
 >;

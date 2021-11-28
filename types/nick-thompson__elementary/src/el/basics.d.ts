@@ -1,4 +1,4 @@
-import * as node from '../node';
+import { node } from "@nick-thompson/elementary";
 
 // ============================================================================
 // Functions
@@ -102,7 +102,7 @@ export function ms2samps(time: number): number;
  * @see node.Child
  * @see node.ConstNode
  */
-declare const _const: node.NativeNodeFactory<'const', node.ConstProps>;
+declare const _const: node.NativeNodeFactory<"const", node.ConstProps>;
 
 // noinspection ReservedWordAsName
 export { _const as const };
@@ -120,7 +120,7 @@ export { _const as const };
  * @see node.Child
  * @see node.SrNode
  */
-export const sr: node.NativeNodeFactory<'sr'>;
+export const sr: node.NativeNodeFactory<"sr">;
 
 /**
  * Outputs a continuous count of elapsed samples.
@@ -143,7 +143,7 @@ export const sr: node.NativeNodeFactory<'sr'>;
  * @see node.CounterNode
  */
 export const counter: node.NativeNodeFactory<
-  'counter',
+  "counter",
   node.KeyProps,
   [pulse: node.Child]
 >;

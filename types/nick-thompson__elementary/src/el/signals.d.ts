@@ -1,4 +1,4 @@
-import * as node from '../node';
+import { node } from "@nick-thompson/elementary";
 
 // ============================================================================
 // Native
@@ -30,7 +30,7 @@ import * as node from '../node';
  * @see node.LatchNode
  */
 export const latch: node.NativeNodeFactory<
-  'latch',
+  "latch",
   node.KeyProps,
   [control: node.Child, input: node.Child]
 >;
@@ -63,7 +63,7 @@ export const latch: node.NativeNodeFactory<
  * @see node.SeqNode
  */
 export const seq: node.NativeNodeFactory<
-  'seq',
+  "seq",
   node.SeqProps,
   [next: node.Child] | [next: node.Child, last: node.Child]
 >;
@@ -113,7 +113,7 @@ export const adsr: node.CompositeNodeFactory<
     delay: node.Child,
     sustain: node.Child,
     release: node.Child,
-    gate: node.Child,
+    gate: node.Child
   ]
 >;
 
