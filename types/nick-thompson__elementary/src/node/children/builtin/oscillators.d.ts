@@ -1,109 +1,118 @@
-import { Child } from "../children";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * PhasorNode children.
+ * {@link node.PhasorNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.PhasorNode
+ * @see node.Child
  */
 export type PhasorChildren = [
   /**
-   * Phasor rate in hertz.
+   * Rate in hertz.
    */
-  rate: Child
+  rate: node.Child
 ];
 
 /**
- * TrainNode children.
+ * {@link node.TrainNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.TrainNode
+ * @see node.Child
  */
 export type TrainChildren = [
   /**
-   * Train rate in hertz.
+   * Rate in hertz.
    */
-  rate: Child
+  rate: node.Child
 ];
 
 /**
- * CycleNode children.
+ * {@link node.CycleNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.CycleNode
+ * @see node.Child
  */
 export type CycleChildren = [
   /**
-   * Cycle rate in hertz.
+   * Rate in hertz.
    */
-  rate: Child
+  rate: node.Child
 ];
 
 /**
- * SawNode children.
+ * {@link node.SawNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.SawNode
+ * @see node.Child
  */
 export type SawChildren = [
   /**
-   * Saw rate in hertz.
+   * Rate in hertz.
    */
-  rate: Child
+  rate: node.Child
 ];
 
 /**
- * SquareNode children.
+ * {@link node.SquareNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.SquareNode
+ * @see node.Child
  */
 export type SquareChildren = [
   /**
-   * Square rate in hertz.
+   * Rate in hertz.
    */
-  rate: Child
+  rate: node.Child
 ];
 
 /**
- * TriangleNode children.
+ * {@link node.TriangleNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.TriangleNode
+ * @see node.Child
  */
 export type TriangleChildren = [
   /**
-   * Triangle rate in hertz.
+   * Rate in hertz.
    */
-  rate: Child
+  rate: node.Child
 ];
 
 /**
- * BlepSawNode children.
+ * {@link node.BlepSawNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.BlepSawNode
+ * @see node.Child
  */
 export type BlepSawChildren = [
   /**
-   * BlepSaw rate in hertz.
+   * Rate in hertz.
    */
-  rate: Child
+  rate: node.Child
 ];
 
 /**
- * BlepSquareNode children.
+ * {@link node.BlepSquareNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.BlepSquareNode
+ * @see node.Child
  */
 export type BlepSquareChildren = [
   /**
-   * BlepSquare rate in hertz.
+   * Rate in hertz.
    */
-  rate: Child
+  rate: node.Child
 ];
 
 /**
- * BlepTriangleNode children.
+ * {@link node.BlepTriangleNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.BlepTriangleNode
+ * @see node.Child
  */
 export type BlepTriangleChildren = [
   /**
-   * BlepTriangle rate in hertz.
+   * Rate in hertz.
    */
-  rate: Child
+  rate: node.Child
 ];

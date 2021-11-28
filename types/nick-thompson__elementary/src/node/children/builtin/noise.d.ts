@@ -1,15 +1,17 @@
-import { EmptyChildren } from "../children";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * NoiseNode children.
+ * {@link node.NoiseNode} {@link node.Child}ren.
  *
- * @see EmptyChildren
+ * @see node.NoiseNode
+ * @see node.EmptyChildren
  */
-export type NoiseChildren = EmptyChildren;
+export type NoiseChildren = node.EmptyChildren;
 
 /**
- * PinkNoiseNode children.
+ * {@link node.PinkNoiseNode} {@link node.Child}ren.
  *
- * @see EmptyChildren
+ * @see node.PinkNoiseNode
+ * @see node.EmptyChildren
  */
-export type PinkNoiseChildren = EmptyChildren;
+export type PinkNoiseChildren = node.EmptyChildren;

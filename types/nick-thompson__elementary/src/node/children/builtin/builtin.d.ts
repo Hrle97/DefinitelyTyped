@@ -1,112 +1,111 @@
-import * as children from "./";
-import * as names from "../../names";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * Maps native builtin node names to their children.
+ * Maps {@link node.BuiltinNativeName}s to their {@link node.Node}.
  */
 export type BuiltinNativeNameChildrenMap =
   /* Analysis */
-  Record<names.MeterName, children.MeterChildren> &
+  Record<node.MeterName, node.MeterChildren> &
     /* Native */
-    Record<names.MetroName, children.MetroChildren> &
-    Record<names.RandName, children.RandChildren> &
+    Record<node.MetroName, node.MetroChildren> &
+    Record<node.RandName, node.RandChildren> &
     /* Basics */
-    Record<names.SrName, children.SrChildren> &
-    Record<names.ConstName, children.ConstChildren> &
-    Record<names.CounterName, children.CounterChildren> &
+    Record<node.SrName, node.SrChildren> &
+    Record<node.ConstName, node.ConstChildren> &
+    Record<node.CounterName, node.CounterChildren> &
     /* Delays */
-    Record<names.ZName, children.ZChildren> &
-    Record<names.TapOutName, children.TapOutChildren> &
-    Record<names.TapInName, children.TapInChildren> &
-    Record<names.DelayName, children.DelayChildren> &
+    Record<node.ZName, node.ZChildren> &
+    Record<node.TapOutName, node.TapOutChildren> &
+    Record<node.TapInName, node.TapInChildren> &
+    Record<node.DelayName, node.DelayChildren> &
     /* Filters */
-    Record<names.PoleName, children.PoleChildren> &
-    Record<names.BiquadName, children.BiquadChildren> &
-    Record<names.ConvolveName, children.ConvolveChildren> &
+    Record<node.PoleName, node.PoleChildren> &
+    Record<node.BiquadName, node.BiquadChildren> &
+    Record<node.ConvolveName, node.ConvolveChildren> &
     /* Math */
-    Record<names.SinName, children.SinChildren> &
-    Record<names.CosName, children.CosChildren> &
-    Record<names.TanName, children.TanChildren> &
-    Record<names.TanhName, children.TanhChildren> &
-    Record<names.AsinhName, children.AsinhChildren> &
-    Record<names.LnName, children.LnChildren> &
-    Record<names.LogName, children.LogChildren> &
-    Record<names.Log2Name, children.Log2Children> &
-    Record<names.CeilName, children.CeilChildren> &
-    Record<names.FloorName, children.FloorChildren> &
-    Record<names.SqrtName, children.SqrtChildren> &
-    Record<names.ExpName, children.ExpChildren> &
-    Record<names.AbsName, children.AbsChildren> &
-    Record<names.LeName, children.LeChildren> &
-    Record<names.LeqName, children.LeqChildren> &
-    Record<names.GeName, children.GeChildren> &
-    Record<names.GeqName, children.GeqChildren> &
-    Record<names.PowName, children.PowChildren> &
-    Record<names.ModName, children.ModChildren> &
-    Record<names.MinName, children.MinChildren> &
-    Record<names.MaxName, children.MaxChildren> &
-    Record<names.AddName, children.AddChildren> &
-    Record<names.SubName, children.SubChildren> &
-    Record<names.MulName, children.MulChildren> &
-    Record<names.DivName, children.DivChildren> &
+    Record<node.SinName, node.SinChildren> &
+    Record<node.CosName, node.CosChildren> &
+    Record<node.TanName, node.TanChildren> &
+    Record<node.TanhName, node.TanhChildren> &
+    Record<node.AsinhName, node.AsinhChildren> &
+    Record<node.LnName, node.LnChildren> &
+    Record<node.LogName, node.LogChildren> &
+    Record<node.Log2Name, node.Log2Children> &
+    Record<node.CeilName, node.CeilChildren> &
+    Record<node.FloorName, node.FloorChildren> &
+    Record<node.SqrtName, node.SqrtChildren> &
+    Record<node.ExpName, node.ExpChildren> &
+    Record<node.AbsName, node.AbsChildren> &
+    Record<node.LeName, node.LeChildren> &
+    Record<node.LeqName, node.LeqChildren> &
+    Record<node.GeName, node.GeChildren> &
+    Record<node.GeqName, node.GeqChildren> &
+    Record<node.PowName, node.PowChildren> &
+    Record<node.ModName, node.ModChildren> &
+    Record<node.MinName, node.MinChildren> &
+    Record<node.MaxName, node.MaxChildren> &
+    Record<node.AddName, node.AddChildren> &
+    Record<node.SubName, node.SubChildren> &
+    Record<node.MulName, node.MulChildren> &
+    Record<node.DivName, node.DivChildren> &
     /* Noise */
     /* Oscillators */
-    Record<names.PhasorName, children.PhasorChildren> &
+    Record<node.PhasorName, node.PhasorChildren> &
     /* Samples */
-    Record<names.SampleName, children.SampleChildren> &
-    Record<names.TableName, children.TableChildren> &
+    Record<node.SampleName, node.SampleChildren> &
+    Record<node.TableName, node.TableChildren> &
     /* Signals */
-    Record<names.LatchName, children.LatchChildren> &
-    Record<names.SeqName, children.SeqChildren> &
+    Record<node.LatchName, node.LatchChildren> &
+    Record<node.SeqName, node.SeqChildren> &
     /* In */
-    Record<names.InName, children.InChildren>;
+    Record<node.InName, node.InChildren>;
 
 /**
- * Maps composite builtin node names to their children.
+ * Maps {@link node.BuiltinCompositeName}s to their {@link node.Node}.
  */
 export type BuiltinCompositeNameChildrenMap =
   /* Analysis */
   /* Native */
   /* Basics */
-  Record<names.SelectName, children.SelectChildren> &
+  Record<node.SelectName, node.SelectChildren> &
     /* Delays */
     /* Filters */
-    Record<names.ZeroName, children.ZeroChildren> &
-    Record<names.DcBlockName, children.DcBlockChildren> &
-    Record<names.Df11Name, children.Df11Children> &
-    Record<names.SmoothName, children.SmoothChildren> &
-    Record<names.SmName, children.SmChildren> &
-    Record<names.LowPassName, children.LowPassChildren> &
-    Record<names.HighPassName, children.HighPassChildren> &
-    Record<names.BandPassName, children.BandPassChildren> &
-    Record<names.AllPassName, children.AllPassChildren> &
-    Record<names.NotchName, children.NotchChildren> &
-    Record<names.PeakName, children.PeakChildren> &
-    Record<names.LowShelfName, children.LowShelfChildren> &
-    Record<names.HighShelfName, children.HighShelfChildren> &
-    Record<names.PinkName, children.PinkChildren> &
+    Record<node.ZeroName, node.ZeroChildren> &
+    Record<node.DcBlockName, node.DcBlockChildren> &
+    Record<node.Df11Name, node.Df11Children> &
+    Record<node.SmoothName, node.SmoothChildren> &
+    Record<node.SmName, node.SmChildren> &
+    Record<node.LowPassName, node.LowPassChildren> &
+    Record<node.HighPassName, node.HighPassChildren> &
+    Record<node.BandPassName, node.BandPassChildren> &
+    Record<node.AllPassName, node.AllPassChildren> &
+    Record<node.NotchName, node.NotchChildren> &
+    Record<node.PeakName, node.PeakChildren> &
+    Record<node.LowShelfName, node.LowShelfChildren> &
+    Record<node.HighShelfName, node.HighShelfChildren> &
+    Record<node.PinkName, node.PinkChildren> &
     /* Math */
     /* Noise */
-    Record<names.NoiseName, children.NoiseChildren> &
-    Record<names.PinkNoiseName, children.PinkNoiseChildren> &
+    Record<node.NoiseName, node.NoiseChildren> &
+    Record<node.PinkNoiseName, node.PinkNoiseChildren> &
     /* Oscillators */
-    Record<names.TrainName, children.TrainChildren> &
-    Record<names.CycleName, children.CycleChildren> &
-    Record<names.SawName, children.SawChildren> &
-    Record<names.SquareName, children.SquareChildren> &
-    Record<names.TriangleName, children.TriangleChildren> &
-    Record<names.BlepSawName, children.BlepSawChildren> &
-    Record<names.BlepSquareName, children.BlepSquareChildren> &
-    Record<names.BlepTriangleName, children.BlepTriangleChildren> &
+    Record<node.TrainName, node.TrainChildren> &
+    Record<node.CycleName, node.CycleChildren> &
+    Record<node.SawName, node.SawChildren> &
+    Record<node.SquareName, node.SquareChildren> &
+    Record<node.TriangleName, node.TriangleChildren> &
+    Record<node.BlepSawName, node.BlepSawChildren> &
+    Record<node.BlepSquareName, node.BlepSquareChildren> &
+    Record<node.BlepTriangleName, node.BlepTriangleChildren> &
     /* Samples */
     /* Signals */
-    Record<names.EnvName, children.EnvChildren> &
-    Record<names.AdsrName, children.AdsrChildren> &
-    Record<names.HannName, children.HannChildren>;
+    Record<node.EnvName, node.EnvChildren> &
+    Record<node.AdsrName, node.AdsrChildren> &
+    Record<node.HannName, node.HannChildren>;
 /* In */
 
 /**
- * Maps builtin node names to their children.
+ * Maps {@link node.BuiltinName}s to their {@link node.Node}.
  */
 export type BuiltinNameChildrenMap = BuiltinNativeNameChildrenMap &
   BuiltinCompositeNameChildrenMap;

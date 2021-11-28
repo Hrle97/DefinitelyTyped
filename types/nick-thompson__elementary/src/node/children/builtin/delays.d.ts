@@ -1,39 +1,43 @@
-import { Child, EmptyChildren } from "../children";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * ZNode children.
+ * {@link node.ZNode} {@link node.Child}ren.
  *
- * @see EmptyChildren
+ * @see node.ZNode
+ * @see node.EmptyChildren
  */
-export type ZChildren = EmptyChildren;
+export type ZChildren = node.EmptyChildren;
 
 /**
- * TapOutNode children.
+ * {@link node.TapOutNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.TapOutNode
+ * @see node.Child
  */
 export type TapOutChildren = [
   /**
-   * Signal to use in a TapInNode.
+   * Signal to use in a {@link node.TapInNode}.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * TapInNode children.
+ * {@link node.TapInNode} {@link node.Child}ren.
  *
- * @see EmptyChildren
+ * @see node.TapInNode
+ * @see node.EmptyChildren
  */
-export type TapInChildren = EmptyChildren;
+export type TapInChildren = node.EmptyChildren;
 
 /**
- * DelayNode children.
+ * {@link node.DelayNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.DelayNode
+ * @see node.Child
  */
 export type DelayChildren = [
   /**
    * Signal to delay.
    */
-  signal: Child
+  signal: node.Child
 ];

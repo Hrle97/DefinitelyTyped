@@ -1,360 +1,377 @@
-import { Child } from "../children";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * PoleNode children.
+ * {@link node.PoleNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.PoleNode
+ * @see node.Child
  */
 export type PoleChildren = [
   /**
    * Pole position.
    */
-  position: Child,
+  position: node.Child,
 
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * ZeroNode children.
+ * {@link node.ZeroNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.ZeroNode
+ * @see node.Child
  */
 export type ZeroChildren = [
   /**
    * b0 coefficient.
    */
-  b0: Child,
+  b0: node.Child,
 
   /**
    * b1 coefficient.
    */
-  b1: Child,
+  b1: node.Child,
 
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * DcBlockNode children.
+ * {@link node.DcBlockNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.DcBlockNode
+ * @see node.Child
  */
 export type DcBlockChildren = [
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * Df11Node children.
+ * {@link node.Df11Node} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.Df11Node
+ * @see node.Child
  */
 export type Df11Children = [
   /**
    * b0 coefficient.
    */
-  b0: Child,
+  b0: node.Child,
 
   /**
    * b1 coefficient.
    */
-  b1: Child,
+  b1: node.Child,
 
   /**
    * a1 coefficient.
    */
-  a1: Child,
+  a1: node.Child,
 
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * SmoothNode children.
+ * {@link node.SmoothNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.SmoothNode
+ * @see node.Child
  */
 export type SmoothChildren = [
   /**
    * Pole position.
    */
-  position: Child,
+  position: node.Child,
 
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * SmNode children.
+ * {@link node.SmNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.SmNode
+ * @see node.Child
  */
 export type SmChildren = [
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * BiquadNode children.
+ * {@link node.BiquadNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.BiquadNode
+ * @see node.Child
  */
 export type BiquadChildren = [
   /**
    * b0 coefficient.
    */
-  b0: Child,
+  b0: node.Child,
 
   /**
    * b1 coefficient.
    */
-  b1: Child,
+  b1: node.Child,
 
   /**
    * b2 coefficient.
    */
-  b2: Child,
+  b2: node.Child,
 
   /**
    * a1 coefficient.
    */
-  a1: Child,
+  a1: node.Child,
 
   /**
    * a2 coefficient.
    */
-  a2: Child,
+  a2: node.Child,
 
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * LowPassNode children.
+ * {@link node.LowPassNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.LowPassNode
+ * @see node.Child
  */
 export type LowPassChildren = [
   /**
    * Cutoff frequency of the filter.
    */
-  cutoff: Child,
+  cutoff: node.Child,
 
   /**
    * Q of the filter.
    */
-  q: Child,
+  q: node.Child,
 
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * HighPassNode children.
+ * {@link node.HighPassNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.HighPassNode
+ * @see node.Child
  */
 export type HighPassChildren = [
   /**
    * Cutoff frequency of the filter.
    */
-  cutoff: Child,
+  cutoff: node.Child,
 
   /**
    * Q of the filter.
    */
-  q: Child,
+  q: node.Child,
 
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * BandPassNode children.
+ * {@link node.BandPassNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.BandPassNode
+ * @see node.Child
  */
 export type BandPassChildren = [
   /**
    * Cutoff frequency of the filter.
    */
-  cutoff: Child,
+  cutoff: node.Child,
 
   /**
    * Q of the filter.
    */
-  q: Child,
+  q: node.Child,
 
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * AllPassNode children.
+ * {@link node.AllPassNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.AllPassNode
+ * @see node.Child
  */
 export type AllPassChildren = [
   /**
    * Cutoff frequency of the filter.
    */
-  cutoff: Child,
+  cutoff: node.Child,
 
   /**
    * Q of the filter.
    */
-  q: Child,
+  q: node.Child,
 
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * NotchNode children.
+ * {@link node.NotchNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.NotchNode
+ * @see node.Child
  */
 export type NotchChildren = [
   /**
    * Cutoff frequency of the filter.
    */
-  cutoff: Child,
+  cutoff: node.Child,
 
   /**
    * Q of the filter.
    */
-  q: Child,
+  q: node.Child,
 
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * PeakNode children.
+ * {@link node.PeakNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.PeakNode
+ * @see node.Child
  */
 export type PeakChildren = [
   /**
    * Cutoff frequency of the filter.
    */
-  cutoff: Child,
+  cutoff: node.Child,
 
   /**
    * Q of the filter.
    */
-  q: Child,
+  q: node.Child,
 
   /**
    * Gain of the filter in decibels.
    */
-  gain: Child,
+  gain: node.Child,
 
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * LowShelfNode children.
+ * {@link node.LowShelfNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.LowShelfNode
+ * @see node.Child
  */
 export type LowShelfChildren = [
   /**
    * Cutoff frequency of the filter.
    */
-  cutoff: Child,
+  cutoff: node.Child,
 
   /**
    * Q of the filter.
    */
-  q: Child,
+  q: node.Child,
 
   /**
    * Gain of the filter in decibels.
    */
-  gain: Child,
+  gain: node.Child,
 
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * HighShelfNode children.
+ * {@link node.HighShelfNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.HighShelfNode
+ * @see node.Child
  */
 export type HighShelfChildren = [
   /**
    * Cutoff frequency of the filter.
    */
-  cutoff: Child,
+  cutoff: node.Child,
 
   /**
    * Q of the filter.
    */
-  q: Child,
+  q: node.Child,
 
   /**
    * Gain of the filter in decibels.
    */
-  gain: Child,
+  gain: node.Child,
 
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * ConvolveNode children.
+ * {@link node.ConvolveNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.ConvolveNode
+ * @see node.Child
  */
 export type ConvolveChildren = [
   /**
    * Signal to convolve.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * PinkNode children.
+ * {@link node.PinkNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.PinkNode
+ * @see node.Child
  */
 export type PinkChildren = [
   /**
    * Signal to filter.
    */
-  signal: Child
+  signal: node.Child
 ];

@@ -1,15 +1,17 @@
-import { EmptyChildren } from "../children";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * MetroNode children.
+ * {@link node.MetroNode} {@link node.Child}ren.
  *
- * @see EmptyChildren
+ * @see node.MetroNode
+ * @see node.EmptyChildren
  */
-export type MetroChildren = EmptyChildren;
+export type MetroChildren = node.EmptyChildren;
 
 /**
- * RandNode children.
+ * {@link node.RandNode} {@link node.Child}ren.
  *
- * @see EmptyChildren
+ * @see node.RandNode
+ * @see node.EmptyChildren
  */
-export type RandChildren = EmptyChildren;
+export type RandChildren = node.EmptyChildren;

@@ -1,49 +1,54 @@
-import { Child, EmptyChildren } from "../children";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * SrNode children.
+ * {@link node.SrNode} {@link node.Child}ren.
  *
- * @see EmptyChildren
+ * @see node.SrNode
+ * @see node.EmptyChildren
  */
-export type SrChildren = EmptyChildren;
+export type SrChildren = node.EmptyChildren;
 
 /**
- * ConstNode children.
+ * {@link node.ConstNode} {@link node.Child}ren.
  *
- * @see EmptyChildren
+ * @see node.ConstNode
+ * @see node.EmptyChildren
  */
-export type ConstChildren = EmptyChildren;
+export type ConstChildren = node.EmptyChildren;
 
 /**
- * CounterNode children.
+ * {@link node.CounterNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.CounterNode
+ * @see node.Child
  */
 export type CounterChildren = [
   /**
-   * Impulse train that controls when the counterNode is counting samples.
+   * Impulse train that controls when samples are being counted.
+   * samples.
    */
-  train: Child
+  train: node.Child
 ];
 
 /**
- * SelectNode children.
+ * {@link node.SelectNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.SelectNode
+ * @see node.Child
  */
 export type SelectChildren = [
   /**
    * Signal that controls whether to return the on or off signal.
    */
-  gate: Child,
+  gate: node.Child,
 
   /**
    * Signal to return when the gate is high.
    */
-  on: Child,
+  on: node.Child,
 
   /**
    * Signal to return when the gate is low.
    */
-  off: Child
+  off: node.Child
 ];

@@ -1,25 +1,27 @@
-import { Child } from "../children";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * SampleNode children.
+ * {@link node.SampleNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.SampleNode
+ * @see node.Child
  */
 export type SampleChildren = [
   /**
    * Pulse train that triggers the playback of the sample.
    */
-  trigger: Child
+  trigger: node.Child
 ];
 
 /**
- * TableNode children.
+ * {@link node.TableNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.TableNode
+ * @see node.Child
  */
 export type TableChildren = [
   /**
    * Lookup position of the table.
    */
-  position: Child
+  position: node.Child
 ];

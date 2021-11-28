@@ -1,101 +1,106 @@
-import { Child } from "../children";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * EnvNode children.
+ * {@link node.EnvNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.EnvNode
+ * @see node.Child
  */
 export type EnvChildren = [
   /**
    * Pole position for the attack phase.
    */
-  attack: Child,
+  attack: node.Child,
 
   /**
    * Pole position for the release phase.
    */
-  release: Child,
+  release: node.Child,
 
   /**
    * Signal to monitor.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * AdsrNode children.
+ * {@link node.AdsrNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.AdsrNode
+ * @see node.Child
  */
 export type AdsrChildren = [
   /**
    * Attack time in seconds.
    */
-  attack: Child,
+  attack: node.Child,
 
   /**
    * Decay time in seconds.
    */
-  decay: Child,
+  decay: node.Child,
 
   /**
    * Sustain amplitude.
    */
-  sustain: Child,
+  sustain: node.Child,
 
   /**
    * Release time in seconds.
    */
-  release: Child,
+  release: node.Child,
 
   /**
    * Gate that triggers the ADSR envelope.
    */
-  gate: Child
+  gate: node.Child
 ];
 
 /**
- * LatchNode children.
+ * {@link node.LatchNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.LatchNode
+ * @see node.Child
  */
 export type LatchChildren = [
   /**
    * Pulse train that determines when to move on to the next sample.
    */
-  control: Child,
+  control: node.Child,
 
   /**
    * Signal to sample.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * SeqNode children.
+ * {@link node.SeqNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.SeqNode
+ * @see node.Child
  */
 export type SeqChildren = [
   /**
    * Pulse train that determines when to move on to the next step.
    */
-  control: Child,
+  control: node.Child,
 
   /**
    * Pulse train that determines when to reset the sequence.
    */
-  reset?: Child
+  reset?: node.Child
 ];
 
 /**
- * HannNode children.
+ * {@link node.HannNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.HannNode
+ * @see node.Child
  */
 export type HannChildren = [
   /**
    * Incoming phase of the Hann window.
    */
-  phase: Child
+  phase: node.Child
 ];

@@ -1,16 +1,17 @@
-import { Child, EmptyChildren } from "../children";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * InNode children.
+ * {@link node.InNode} {@link node.Child}ren.
  *
- * @see Child
- * @see EmptyChildren
+ * @see node.InNode
+ * @see node.Child
+ * @see node.EmptyChildren
  */
 export type InChildren =
-  | EmptyChildren
+  | node.EmptyChildren
   | [
       /*
        * Signal to pass through.
        */
-      signal: Child
+      signal: node.Child
     ];

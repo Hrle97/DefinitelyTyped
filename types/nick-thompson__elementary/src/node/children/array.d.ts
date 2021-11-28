@@ -1,72 +1,92 @@
-import { Child } from "./children";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * Node children array size range. Nodes can have eight children at most.
+ * {@link node.Node} {@link node.Child}ren array size range.
+ * {@link node.Node}s can have eight {@link node.Child}ren at most.
  */
 export type ChildrenArraySizeRange = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 /**
- * Variadic node children array size range.
- * Variadic nodess (ie. AddNode and DivNode) can have eight children at
- * most and at least one child.
+ * Variadic {@link node.Node} {@link node.Child}ren array size range.
+ * Variadic {@link node.Node}s (ie. {@link node.AddNode} and
+ * {@link node.DivNode}) can have eight {@link node.Child}ren at most and
+ * at least one {@link node.Child}.
  */
 export type VariadicChildrenArraySizeRange = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 /**
- * Children array of length 0.
+ * {@link node.Child}ren array of length 0.
  *
- * @see Child
+ * @see node.Child
  */
-export type EmptyChildrenArray = Child[] & { length: 0 };
+export type EmptyChildrenArray = node.Child[] & { length: 0 };
 
 /**
- * Children array of fixed size.
+ * {@link node.Child}ren array of fixed size.
  *
- * @see Child
- * @see ChildrenArraySizeRange
+ * @see node.ChildrenArraySizeRange
+ * @see node.Child
+ * @see node.EmptyChildrenArray
  */
-export type SizedChildrenArray<size extends ChildrenArraySizeRange> =
+export type SizedChildrenArray<size extends node.ChildrenArraySizeRange> =
   size extends 1
-    ? [Child]
+    ? [node.Child]
     : size extends 2
-    ? [Child, Child]
+    ? [node.Child, node.Child]
     : size extends 3
-    ? [Child, Child, Child]
+    ? [node.Child, node.Child, node.Child]
     : size extends 4
-    ? [Child, Child, Child, Child]
+    ? [node.Child, node.Child, node.Child, node.Child]
     : size extends 5
-    ? [Child, Child, Child, Child, Child]
+    ? [node.Child, node.Child, node.Child, node.Child, node.Child]
     : size extends 6
-    ? [Child, Child, Child, Child, Child, Child]
+    ? [node.Child, node.Child, node.Child, node.Child, node.Child, node.Child]
     : size extends 7
-    ? [Child, Child, Child, Child, Child, Child, Child]
+    ? [
+        node.Child,
+        node.Child,
+        node.Child,
+        node.Child,
+        node.Child,
+        node.Child,
+        node.Child
+      ]
     : size extends 8
-    ? [Child, Child, Child, Child, Child, Child, Child, Child]
-    : EmptyChildrenArray;
+    ? [
+        node.Child,
+        node.Child,
+        node.Child,
+        node.Child,
+        node.Child,
+        node.Child,
+        node.Child,
+        node.Child
+      ]
+    : node.EmptyChildrenArray;
 
 /**
- * Union of all possible children arrays.
+ * Union of all possible {@link node.Child}ren arrays.
  *
- * @see SizedChildrenArray
- * @see ChildrenArraySizeRange
+ * @see node.SizedChildrenArray
+ * @see node.ChildrenArraySizeRange
  */
-export type ChildrenArray = SizedChildrenArray<ChildrenArraySizeRange>;
+export type ChildrenArray =
+  node.SizedChildrenArray<node.ChildrenArraySizeRange>;
 
 /**
- * Union of all possible variadic children arrays.
+ * Union of all possible variadic {@link node.Child}ren arrays.
  *
- * @see Child
- * @see ChildrenArraySizeRange
- * @see SizedChildrenArray
+ * @see node.SizedChildrenArray
+ * @see node.VariadicChildrenArraySizeRange
  */
 export type VariadicChildrenArray =
-  SizedChildrenArray<VariadicChildrenArraySizeRange>;
+  node.SizedChildrenArray<node.VariadicChildrenArraySizeRange>;
 
 /**
- * Size of a children array.
+ * Size of a {@link node.Child}ren array.
  *
- * @see ChildrenArray
- * @see ChildrenArraySizeRange
+ * @see node.ChildrenArray
+ * @see node.ChildrenArraySizeRange
  */
-export type ChildrenArraySize<A extends ChildrenArray> = A["length"] &
-  ChildrenArraySizeRange;
+export type ChildrenArraySize<A extends node.ChildrenArray> = A["length"] &
+  node.ChildrenArraySizeRange;

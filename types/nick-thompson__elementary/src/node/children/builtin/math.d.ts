@@ -1,323 +1,347 @@
-import { Child } from "../children";
-import { VariadicChildrenArray } from "../array";
+import { node } from "@nick-thompson/elementary";
 
 /**
- * SinNode children.
+ * {@link node.SinNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.SinNode
+ * @see node.Child
  */
 export type SinChildren = [
   /**
    * Signal to compute the sine of.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * CosNode children.
+ * {@link node.CosNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.CosNode
+ * @see node.Child
  */
 export type CosChildren = [
   /**
    * Signal to compute the cosine of.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * TanNode children.
+ * {@link node.TanNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.TanNode
+ * @see node.Child
  */
 export type TanChildren = [
   /**
    * Signal to compute the tangent of.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * TanhNode children.
+ * {@link node.TanhNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.TanhNode
+ * @see node.Child
  */
 export type TanhChildren = [
   /**
    * Signal to compute the hyperbolic tangent of.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * AsinhNode children.
+ * {@link node.AsinhNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.AsinhNode
+ * @see node.Child
  */
 export type AsinhChildren = [
   /**
    * Signal to compute the inverse hyperbolic sine of.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * LnNode children.
+ * {@link node.LnNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.LnNode
+ * @see node.Child
  */
 export type LnChildren = [
   /**
    * Signal to compute the natural logarithm of.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * LogNode children.
+ * {@link node.LogNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.LogNode
+ * @see node.Child
  */
 export type LogChildren = [
   /**
    * Signal to compute the base 10 logarithm of.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * Log2Node children.
+ * {@link node.Log2Node} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.Log2Node
+ * @see node.Child
  */
 export type Log2Children = [
   /**
    * Signal to compute the base 2 logarithm of.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * CeilNode children.
+ * {@link node.CeilNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.CeilNode
+ * @see node.Child
  */
 export type CeilChildren = [
   /**
    * Signal to compute the ceiling (rounding up to the nearest whole number)
    * of.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * FloorNode children.
+ * {@link node.FloorNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.FloorNode
+ * @see node.Child
  */
 export type FloorChildren = [
   /**
    * Signal to compute the floor (rounding up to the nearest whole number) of.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * SqrtNode children.
+ * {@link node.SqrtNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.SqrtNode
+ * @see node.Child
  */
 export type SqrtChildren = [
   /**
    * Signal to compute the square root of.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * ExpNode children.
+ * {@link node.ExpNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.ExpNode
+ * @see node.Child
  */
 export type ExpChildren = [
   /**
    * Signal with which to exponantiate the Euler's number.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * AbsNode children.
+ * {@link node.AbsNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.AbsNode
+ * @see node.Child
  */
 export type AbsChildren = [
   /**
    * Signal to compute absolute value of.
    */
-  signal: Child
+  signal: node.Child
 ];
 
 /**
- * LeNode children.
+ * {@link node.LeNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.LeNode
+ * @see node.Child
  */
 export type LeChildren = [
   /**
    * Left hand side of the "lesser than" operator.
    */
-  lhs: Child,
+  lhs: node.Child,
 
   /**
    * Right hand side of the "lesser than" operator.
    */
-  rhs: Child
+  rhs: node.Child
 ];
 
 /**
- * LeqNode children.
+ * {@link node.LeqNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.LeqNode
+ * @see node.Child
  */
 export type LeqChildren = [
   /**
    * Left hand side of the "lesser than or equal to" operator.
    */
-  lhs: Child,
+  lhs: node.Child,
 
   /**
    * Right hand side of the "lesser than or equal to" operator.
    */
-  rhs: Child
+  rhs: node.Child
 ];
 
 /**
- * GeNode children.
+ * {@link node.GeNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.GeNode
+ * @see node.Child
  */
 export type GeChildren = [
   /**
    * Left hand side of the "greater than" operator.
    */
-  lhs: Child,
+  lhs: node.Child,
 
   /**
    * Right hand side of the "greater than" operator.
    */
-  rhs: Child
+  rhs: node.Child
 ];
 
 /**
- * GeqNode children.
+ * {@link node.GeqNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.GeqNode
+ * @see node.Child
  */
 export type GeqChildren = [
   /**
    * Left hand side of the "greater than or equal to" operator.
    */
-  lhs: Child,
+  lhs: node.Child,
 
   /**
    * Right hand side of the "greater than or equal to" operator.
    */
-  rhs: Child
+  rhs: node.Child
 ];
 
 /**
- * PowNode children.
+ * {@link node.PowNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.PowNode
+ * @see node.Child
  */
 export type PowChildren = [
   /**
    * Operand to compute the power of.
    */
-  op: Child,
+  op: node.Child,
 
   /**
    * Exponent whith which to exponantiate the oparand.
    */
-  exp: Child
+  exp: node.Child
 ];
 
 /**
- * ModNode children.
+ * {@link node.ModNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.ModNode
+ * @see node.Child
  */
 export type ModChildren = [
   /**
    * Left hand side of the modulo operator.
    */
-  lhs: Child,
+  lhs: node.Child,
 
   /**
    * Right hand side of the modulo operator.
    */
-  rhs: Child
+  rhs: node.Child
 ];
 
 /**
- * MinNode children.
+ * {@link node.MinNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.MinNode
+ * @see node.Child
  */
 export type MinChildren = [
   /**
    * First input signal.
    */
-  a: Child,
+  a: node.Child,
 
   /**
    * Second input signal.
    */
-  b: Child
+  b: node.Child
 ];
 
 /**
- * MaxNode children.
+ * {@link node.MaxNode} {@link node.Child}ren.
  *
- * @see Child
+ * @see node.MaxNode
+ * @see node.Child
  */
 export type MaxChildren = [
   /**
    * First input signal.
    */
-  a: Child,
+  a: node.Child,
 
   /**
    * Second input signal.
    */
-  b: Child
+  b: node.Child
 ];
 
 /**
- * AddNode children.
+ * {@link node.AddNode} {@link node.Child}ren.
  *
- * @see VariadicChildrenArray
+ * @see node.AddNode
+ * @see node.VariadicChildrenArray
  */
-export type AddChildren = VariadicChildrenArray;
+export type AddChildren = node.VariadicChildrenArray;
 
 /**
- * SubNode children.
+ * {@link node.SubNode} {@link node.Child}ren.
  *
- * @see VariadicChildrenArray
+ * @see node.SubNode
+ * @see node.VariadicChildrenArray
  */
-export type SubChildren = VariadicChildrenArray;
+export type SubChildren = node.VariadicChildrenArray;
 
 /**
- * MulNode children.
+ * {@link node.MulNode} {@link node.Child}ren.
  *
- * @see VariadicChildrenArray
+ * @see node.MulNode
+ * @see node.VariadicChildrenArray
  */
-export type MulChildren = VariadicChildrenArray;
+export type MulChildren = node.VariadicChildrenArray;
 
 /**
- * DivNode children.
+ * {@link node.DivNode} {@link node.Child}ren.
  *
- * @see VariadicChildrenArray
+ * @see node.DivNode
+ * @see node.VariadicChildrenArray
  */
-export type DivChildren = VariadicChildrenArray;
+export type DivChildren = node.VariadicChildrenArray;
