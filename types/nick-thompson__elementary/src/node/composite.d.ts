@@ -1,47 +1,49 @@
-import { Name } from "./names";
-import { Props } from "./props";
-import { Children } from "./children";
-import { Node } from "./node";
+import { node, renderer } from "@nick-thompson/elementary";
 
 /**
- * Context passed to a composite node function to get information about the
- * current renderer.
+ * Context passed to a {@link node.CompositeFunction} to get information about
+ * the current {@link renderer.Renderer}.
  */
-export interface Context {
+export interface RenderContext {
   /**
-   * Sample rate of current renderer.
+   * Sample rate of the current {@link renderer.Renderer}.
    */
   sampleRate: number;
 
   /**
-   * Block size of current renderer.
+   * Block size of the current {@link renderer.Renderer}.
    */
   blockSize: number;
 
   /**
-   * Number of input channels of current renderer.
+   * Number of input channels of the current {@link renderer.Renderer}.
    */
   numInputs: number;
 
   /**
-   * Number of output channels of current renderer.
+   * Number of output channels of the current {@link renderer.Renderer}.
    */
   numOutputs: number;
 }
 
 /**
- * Composite node function for the provided name, props, and children.
+ * {@link node.CompositeFunction} for the provided {@link node.Name},
+ * {@link node.Props}, and {@link node.Children}.
  *
- * @see Name
- * @see Context
- * @see Props
- * @see Children
- * @see Node
+ * @see node.Name
+ * @see node.Context
+ * @see node.Props
+ * @see node.Children
+ * @see node.Node
  */
 export type CompositeFunction<
-  N extends Name,
-  P extends Props,
-  C extends Children
-> = ((args: { context: Context; props: P; children: C }) => Node) & {
+  N extends node.Name,
+  P extends node.Props,
+  C extends node.Children
+> = ((args: {
+  context: node.RenderContext;
+  props: P;
+  children: C;
+}) => node.Node) & {
   name: N;
 };

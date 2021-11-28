@@ -1,8 +1,6 @@
-import { NativeRenderer } from "./native";
+import { renderer } from "@nick-thompson/elementary";
 
 /**
- * {@link NativeRenderer} for the Elementary DevKit.
- *
- * @see NativeRenderer
+ * {@link renderer.Renderer} for Elementary plugins.
  */
-export interface ElementaryPluginRenderer extends NativeRenderer {}
+export interface PluginRenderer extends renderer.NativeRenderer {}

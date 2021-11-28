@@ -1,40 +1,21 @@
-import { Renderer } from "./renderer";
+import { renderer } from "@nick-thompson/elementary";
 
 /**
- * WebAudio {@link Renderer} for Elementary.
- *
- * Rendering Elementary applications via WebAudio is extremely simple. In
- * general, you'll just need to import the {@link ElementaryWebAudioRenderer}
- * from the top level package, establish a callback for the "load" event,
- * initialize the renderer by passing in an {@link AudioContext} and an
- * optional configuration object, then connect the resulting
- * {@link AudioWorkletNode} to your desired destination.
- *
- * @example
- *   import {
- *     ElementaryWebAudioRenderer as core,
- *     el
- *   } from '@nick-thompson/elementary';
- *
- *   core.on('load', function() {
- *     core.render(el.cycle(440), el.cycle(441));
- *   });
- *
- * @see Renderer
+ * Elementary {@link renderer.Renderer} for WebAudio.
  */
-export interface ElementaryWebAudioRenderer extends Renderer {
+export interface WebAudioRenderer extends renderer.Renderer {
   /**
    * This method installs the necessary communication mechanisms between the
-   * {@link Renderer} and the backend engine, and if necessary, spins up an
-   * instance of the underlying engine. It must be called once at the
-   * beginning of your application's lifetime to kick off the Elementary
-   * engine, and should be called only after installing a "load" event
-   * listener on the {@link Renderer} instance itself.
+   * {@link renderer.Renderer} and the WebAudio backend engine, and if
+   * necessary, spins up an instance of the underlying engine.
    *
-   * @async
+   * It must be called once at the beginning of your application's lifetime to
+   * kick off the Elementary engine, and should be called only after
+   * installing a "load" event listener on the {@link renderer.Renderer}
+   * instance itself.
    *
    * @param context
-   * {@link AudioContext} to initialize the {@link ElementaryWebAudioRenderer}
+   * {@link AudioContext} to initialize the {@link renderer.WebAudioRenderer}
    * with
    *
    * @param options
@@ -44,7 +25,9 @@ export interface ElementaryWebAudioRenderer extends Renderer {
    * @returns
    * when the {@link Renderer} is initialized
    *
-   * @see Renderer
+   * @see AudioContext
+   * @see AudioWorkletNode
+   * @see AudioWorkletNodeOptions
    */
   initialize(
     context: AudioContext,

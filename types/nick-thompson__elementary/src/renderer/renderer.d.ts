@@ -1,24 +1,27 @@
 import { EventEmitter } from "events";
 
-import * as node from "../node";
-import * as event from "../event";
+import { node, event } from "@nick-thompson/elementary";
 
+/**
+ * Base type of Elementary renderers.
+ */
 export interface Renderer extends EventEmitter {
   /**
-   * Registers a callback for the specified event type.
+   * Registers a callback for the specified {@link event.Type}.
    *
-   * The load event fires when the runtime has finished preparing the audio
+   * The 'load' event fires when the runtime has finished preparing the audio
    * rendering thread and is ready to handle render calls.
    *
-   * The midi event fires any time the runtime receives a MIDI event from
+   * The 'midi' event fires any time the runtime receives a MIDI event from
    * any connected and enabled device. By default, the runtime will be
    * listening to any such device, which may yield frequent MIDI events.
    *
-   * The meter event fires any time a meter node emits it. This happens on
-   * each block processed by the renderer.
+   * The 'meter' event fires any time a {@link node.MeterNode} emits it.
+   * This happens on each block processed by the renderer.
    *
-   * The metro event fires any time a metro node emits it. This happens on
-   * each interval that the meter event node was initialized with.
+   * The 'metro' event fires any time a {@link node.MetroNode} emits it.
+   * This happens on each interval that the meter event node was initialized
+   * with.
    *
    * @param type
    * {@link event.Type} on which to call the callback
@@ -32,7 +35,7 @@ export interface Renderer extends EventEmitter {
   on: <T extends event.Type>(type: T, doThis: event.TypeCallback<T>) => this;
 
   /**
-   * Factory for any {@link node.Node} type.
+   * Factory for any {@link node.Type}.
    *
    * @param type
    * the type of {@link node.Node} to create
@@ -78,7 +81,6 @@ export interface Renderer extends EventEmitter {
    * if predicate is false, the newly computed result of the provided
    * {@link node.CompositeFunction} and the memoized result otherwise
    *
-   * @see Renderer
    * @see node.Name
    * @see node.Props
    * @see node.Children
@@ -90,10 +92,10 @@ export interface Renderer extends EventEmitter {
   ) => node.CompositeFunction<N, P, C>;
 
   /**
-   * Accepts a variadic set of arguments, each one representing the audio
-   * signal that will rendered into the given channel.
+   * Accepts a variadic set of {@link node.Child}ren, each one representing
+   * the audio signal that will rendered into the given channel.
    *
-   * Will throw an error if invoked before the load event has fired.
+   * Will throw an error if invoked before the 'load' event has fired.
    *
    * @param children
    * {@link node.Child}ren to render in channels

@@ -1,16 +1,4 @@
-import {
-  BuiltinNativeType,
-  BuiltinCompositeType,
-  BuiltinType,
-  NativeType,
-  CompositeType,
-  Type,
-  NativeTypeName,
-  CompositeTypeName,
-  TypeName,
-} from "./types";
-
-import { Name } from "./names";
+import { node } from "@nick-thompson/elementary";
 
 /**
  * The fundamental building block of the Elementary audio graph.
@@ -23,85 +11,99 @@ export interface Node {
 }
 
 /**
- * Node for the provided builtin native node type.
+ * {@link node.Node} for the provided {@link node.BuiltinNativeType}.
  *
- * @see BuiltinNativeType
+ * @see node.BuiltinNativeType
+ * @see node.NamedNode
+ * @see node.NativeTypeName
  */
-export type BuiltinNativeTypeNode<T extends BuiltinNativeType> = NamedNode<
-  NativeTypeName<T>
->;
+export type BuiltinNativeTypeNode<T extends node.BuiltinNativeType> =
+  node.NamedNode<node.NativeTypeName<T>>;
 
 /**
- * Node for the provided builtin composite node type.
+ * {@link node.Node} for the provided {@link node.BuiltinCompositeType}.
  *
- * @see BuiltinCompositeType
+ * .
+ *
+ * @see node.BuiltinCompositeType
+ * @see node.NamedNode
+ * @see node.CompositeTypeName
  */
-export type BuiltinCompositeTypeNode<T extends BuiltinCompositeType> =
-  NamedNode<CompositeTypeName<T>>;
+export type BuiltinCompositeTypeNode<T extends node.BuiltinCompositeType> =
+  node.NamedNode<node.CompositeTypeName<T>>;
 
 /**
- * Node for the provided builtin node type.
+ * {@link node.Node} for the provided {@link node.BuiltinType}.
  *
- * @see BuiltinType
- * @see BuiltinNativeType
- * @see BuiltinNativeTypeNode
- * @see BuiltinCompositeType
- * @see BuiltinCompositeTypeNode
+ * @see node.BuiltinType
+ * @see node.BuiltinNativeType
+ * @see node.BuiltinNativeTypeNode
+ * @see node.BuiltinCompositeType
+ * @see node.BuiltinCompositeTypeNode
+ * @see node.NamedNode
+ * @see node.TypeName
  */
-export type BuiltinTypeNode<T extends BuiltinType> = T extends BuiltinNativeType
-  ? BuiltinNativeTypeNode<T>
-  : T extends BuiltinCompositeType
-  ? BuiltinCompositeTypeNode<T>
-  : NamedNode<TypeName<T>>;
+export type BuiltinTypeNode<T extends node.BuiltinType> =
+  T extends node.BuiltinNativeType
+    ? node.BuiltinNativeTypeNode<T>
+    : T extends node.BuiltinCompositeType
+    ? node.BuiltinCompositeTypeNode<T>
+    : node.NamedNode<node.TypeName<T>>;
 
 /**
- * Node of provided native node type.
+ * {@link node.Node} of provided {@link node.NativeType}.
  *
- * @see NativeType
- * @see TypeName
- * @see NamedNativeNode
+ * @see node.NativeType
+ * @see node.TypeName
+ * @see node.NamedNativeNode
+ * @see node.NamedNode
+ * @see node.NativeTypeName
  */
-export type NativeTypeNode<T extends NativeType> = T extends BuiltinNativeType
-  ? BuiltinNativeTypeNode<T>
-  : NamedNode<NativeTypeName<T>>;
+export type NativeTypeNode<T extends node.NativeType> =
+  T extends node.BuiltinNativeType
+    ? node.BuiltinNativeTypeNode<T>
+    : node.NamedNode<node.NativeTypeName<T>>;
 
 /**
- * Node of provided composite node type.
+ * {@link node.Node} of provided {@link node.CompositeType}.
  *
- * @see CompositeType
- * @see TypeName
- * @see NamedCompositeNode
+ * @see node.CompositeType
+ * @see node.TypeName
+ * @see node.NamedCompositeNode
+ * @see node.NamedNode
+ * @see node.NativeTypeName
  */
-export type CompositeTypeNode<T extends CompositeType> =
-  T extends BuiltinCompositeType
-    ? BuiltinCompositeTypeNode<T>
-    : NamedNode<CompositeTypeName<T>>;
+export type CompositeTypeNode<T extends node.CompositeType> =
+  T extends node.BuiltinCompositeType
+    ? node.BuiltinCompositeTypeNode<T>
+    : node.NamedNode<node.CompositeTypeName<T>>;
 
 /**
- * Node of the provided node type.
+ * {@link node.Node} of the provided {@link node.Type}.
  *
- * @see Type
- * @see NativeType
- * @see NativeTypeNode
- * @see CompositeType
- * @see CompositeTypeNode
+ * @see node.Type
+ * @see node.NativeType
+ * @see node.NativeTypeNode
+ * @see node.CompositeType
+ * @see node.CompositeTypeNode
  */
-export type TypeNode<T extends Type> = T extends NativeType
-  ? NativeTypeNode<T>
-  : T extends CompositeType
-  ? CompositeTypeNode<T>
-  : NamedNode<TypeName<T>>;
+export type TypeNode<T extends node.Type> = T extends node.NativeType
+  ? node.NativeTypeNode<T>
+  : T extends node.CompositeType
+  ? node.CompositeTypeNode<T>
+  : node.NamedNode<node.TypeName<T>>;
 
 /**
- * Node type for prettier messages.
+ * {@link node.Node} type for prettier messages.
  *
- * @see Name
- * @see Node
+ * @see node.Name
+ * @see node.Node
  */
-interface NamedNode<N extends Name> extends Node {
+export interface NamedNode<N extends node.Name> extends node.Node {
+  // NOTE: $$typeof is a symbol but N | unknown is there to suppress
+  // NOTE: unused N warning
   /**
    * Do not use this! It is only here to differentiate node and props types.
    */
   $$typeof: (N | unknown) & symbol;
-  // NOTE: $$typeof is symbol but N | unknown to suppress unused N warning
 }

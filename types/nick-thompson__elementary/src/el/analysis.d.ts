@@ -1,8 +1,5 @@
 import * as node from "../node";
 
-// ============================================================================
-// Native
-
 /**
  * A pass-through node which analyses its incoming signal, measuring the
  * maximum and minimum peak value each block. The result is emitted through
@@ -18,4 +15,4 @@ import * as node from "../node";
  * @see node.MeterProps
  * @see node.MeterNode
  */
-export const meter: node.NativeNodeFactory<"meter", node.MeterProps>;
+export const meter: node.TypeFactory<node.MeterType>;

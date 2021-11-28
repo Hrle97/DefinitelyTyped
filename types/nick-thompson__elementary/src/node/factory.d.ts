@@ -1,18 +1,15 @@
-import { Type } from "./types";
-import { TypeProps } from "./props";
-import { TypeChildren } from "./children";
-import { TypeNode } from "./node";
+import { node } from "@nick-thompson/elementary";
 
 /**
  * Node factory of the provided type.
  *
- * @see Type
- * @see TypeProps
- * @see TypeChildren
- * @see TypeNode
+ * @see node.Type
+ * @see node.TypeProps
+ * @see node.TypeChildren
+ * @see node.TypeNode
  */
-export type TypeFactory<T extends Type> = ((
-  props: TypeProps<T>,
-  ...children: TypeChildren<T>
-) => TypeNode<T>) &
-  ((...children: TypeChildren<T>) => TypeNode<T>);
+export type TypeFactory<T extends node.Type> = ((
+  props: node.TypeProps<T>,
+  ...children: node.TypeChildren<T>
+) => node.TypeNode<T>) &
+  ((...children: node.TypeChildren<T>) => node.TypeNode<T>);

@@ -1,8 +1,6 @@
-import { NativeRenderer } from "./native";
+import { renderer } from "@nick-thompson/elementary";
 
 /**
- * {@link NativeRenderer} for the Elemenentary CLI.
- *
- * @see NativeRenderer
+ * {@link renderer.Renderer} for the Elemenentary CLI.
  */
-export interface ElementaryNodeRenderer extends NativeRenderer {}
+export interface NodeRenderer extends renderer.NativeRenderer {}

@@ -1,9 +1,13 @@
+import { node } from "@nick-thompson/elementary";
+
 /**
- * Event emitted by meter nodes that measure volume on every block.
+ * Event emitted by {@link node.MeterNode}s that measure volume on every block.
+ *
+ * @see node.MeterNode
  */
 export interface MeterEvent {
   /**
-   * Name of the meter node that emitted the event.
+   * Name of the {@link node.MeterNode} that emitted the event.
    */
   source?: string;
 
