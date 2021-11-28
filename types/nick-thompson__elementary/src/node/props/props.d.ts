@@ -3,18 +3,28 @@ import { node } from "@nick-thompson/elementary";
 /**
  * {@link node.Node} props base.
  */
-export interface Props {
-  [key: string]: any;
-}
+export interface Props {}
 
 /**
  * {@link node.Node} key {@link node.Props}.
  *
- * Keys help Elementary to analyze audio graph changes.
+ * Keys help Elementary keep track of which signals have changed and which
+ * signals just had their properties changes.
+ * Elementary will assume that a signal with the same key had its
+ * {@link node.Props} or {@link node.Children} changed rather than interpreting
+ * it as a new signal on subsequent renders reducing the amount of time that
+ * Elementary takes to render the new audio graph.
  */
 export interface KeyProps {
   /**
    * Key of the {@link node.Node} being created.
+   *
+   * Keys help Elementary keep track of which signals have changed and which
+   * signals just had their properties changes.
+   * Elementary will assume that a signal with the same key had its
+   * {@link node.Props} or {@link node.Children} changed rather than
+   * interpreting it as a new signal on subsequent renders reducing the amount
+   * of time that Elementary takes to render the new audio graph.
    */
   key?: string;
 }

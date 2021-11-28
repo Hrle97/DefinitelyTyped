@@ -1,15 +1,17 @@
-import { SampleName } from "../../names";
-/**
- * SampleNode type.
- *
- * @see SampleName
- */
-export type SampleType = SampleName;
+import { node } from "@nick-thompson/elementary";
 
-import { TableName } from "../../names";
 /**
- * TableNode type.
+ * {@link node.SampleNode} {@link node.Type}.
  *
- * @see TableName
+ * @see node.SampleNode
+ * @see node.SampleName
  */
-export type TableType = TableName;
+export type SampleType = node.SampleName;
+
+/**
+ * {@link node.TableNode} {@link node.Type}.
+ *
+ * @see node.TableNode
+ * @see node.TableName
+ */
+export type TableType = node.TableName;

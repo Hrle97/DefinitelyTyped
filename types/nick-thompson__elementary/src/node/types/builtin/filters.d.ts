@@ -1,237 +1,235 @@
-import { CompositeFunction } from "../../composite";
+import { node } from "@nick-thompson/elementary";
 
-import { PoleName } from "../../names";
 /**
- * PoleNode type.
+ * {@link node.PoleNode} {@link node.Type}.
  *
- * @see PoleName
+ * @see node.PoleNode
+ * @see node.PoleName
  */
-export type PoleType = PoleName;
+export type PoleType = node.PoleName;
 
-import { ZeroName } from "../../names";
-import { ZeroProps } from "../../props";
-import { ZeroChildren } from "../../children";
 /**
- * ZeroNode type.
+ * {@link node.ZeroNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see ZeroName
- * @see ZeroProps
- * @see ZeroChildren
+ * @see node.ZeroNode
+ * @see node.CompositeFunction
+ * @see node.ZeroName
+ * @see node.ZeroProps
+ * @see node.ZeroChildren
  */
-export type ZeroType = CompositeFunction<ZeroName, ZeroProps, ZeroChildren>;
+export type ZeroType = node.CompositeFunction<
+  node.ZeroName,
+  node.ZeroProps,
+  node.ZeroChildren
+>;
 
-import { DcBlockProps } from "../../props";
-import { DcBlockChildren } from "../../children";
 /**
- * DcBlockNode type.
+ * {@link node.DcBlockNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see DcBlockName
- * @see DcBlockProps
- * @see DcBlockChildren
+ * @see node.DcBlockNode
+ * @see node.CompositeFunction
+ * @see node.DcBlockName
+ * @see node.DcBlockProps
+ * @see node.DcBlockChildren
  */
-export type DcBlockType = CompositeFunction<
+export type DcBlockType = node.CompositeFunction<
   "dcblock",
-  DcBlockProps,
-  DcBlockChildren
+  node.DcBlockProps,
+  node.DcBlockChildren
 >;
 
-import { Df11Name } from "../../names";
-import { Df11Props } from "../../props";
-import { Df11Children } from "../../children";
 /**
- * Df11Node type.
+ * {@link node.Df11Node} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see Df11Name
- * @see Df11Props
- * @see Df11Children
+ * @see node.Df11Node
+ * @see node.CompositeFunction
+ * @see node.Df11Name
+ * @see node.Df11Props
+ * @see node.Df11Children
  */
-export type Df11Type = CompositeFunction<Df11Name, Df11Props, Df11Children>;
+export type Df11Type = node.CompositeFunction<
+  node.Df11Name,
+  node.Df11Props,
+  node.Df11Children
+>;
 
-import { SmoothProps } from "../../props";
-import { SmoothChildren } from "../../children";
 /**
- * SmoothNode type.
+ * {@link node.SmoothNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see SmoothName
- * @see SmoothProps
- * @see SmoothChildren
+ * @see node.SmoothNode
+ * @see node.CompositeFunction
+ * @see node.SmoothName
+ * @see node.SmoothProps
+ * @see node.SmoothChildren
  */
-export type SmoothType = CompositeFunction<
+export type SmoothType = node.CompositeFunction<
   "smooth",
-  SmoothProps,
-  SmoothChildren
+  node.SmoothProps,
+  node.SmoothChildren
 >;
 
-import { SmName } from "../../names";
-import { SmProps } from "../../props";
-import { SmChildren } from "../../children";
 /**
- * SmNode type.
+ * {@link node.SmNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see SmName
- * @see SmProps
- * @see SmChildren
+ * @see node.SmNode
+ * @see node.CompositeFunction
+ * @see node.SmName
+ * @see node.SmProps
+ * @see node.SmChildren
  */
-export type SmType = CompositeFunction<SmName, SmProps, SmChildren>;
-
-import { BiquadName } from "../../names";
-/**
- * BiquadNode type.
- *
- * @see BiquadName
- */
-export type BiquadType = BiquadName;
-
-import { LowPassName } from "../../names";
-import { LowPassProps } from "../../props";
-import { LowPassChildren } from "../../children";
-/**
- * LowPassNode type.
- *
- * @see CompositeFunction
- * @see LowPassName
- * @see LowPassProps
- * @see LowPassChildren
- */
-export type LowPassType = CompositeFunction<
-  LowPassName,
-  LowPassProps,
-  LowPassChildren
+export type SmType = node.CompositeFunction<
+  node.SmName,
+  node.SmProps,
+  node.SmChildren
 >;
 
-import { HighPassName } from "../../names";
-import { HighPassProps } from "../../props";
-import { HighPassChildren } from "../../children";
 /**
- * HighPassNode type.
+ * {@link node.BiquadNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see HighPassName
- * @see HighPassProps
- * @see HighPassChildren
+ * @see node.BiquadNode
+ * @see node.BiquadName
  */
-export type HighPassType = CompositeFunction<
-  HighPassName,
-  HighPassProps,
-  HighPassChildren
+export type BiquadType = node.BiquadName;
+
+/**
+ * {@link node.LowPassNode} {@link node.Type}.
+ *
+ * @see node.LowPassNode
+ * @see node.CompositeFunction
+ * @see node.LowPassName
+ * @see node.LowPassProps
+ * @see node.LowPassChildren
+ */
+export type LowPassType = node.CompositeFunction<
+  node.LowPassName,
+  node.LowPassProps,
+  node.LowPassChildren
 >;
 
-import { BandPassName } from "../../names";
-import { BandPassProps } from "../../props";
-import { BandPassChildren } from "../../children";
 /**
- * BandPassNode type.
+ * {@link node.HighPassNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see BandPassName
- * @see BandPassProps
- * @see BandPassChildren
+ * @see node.HighPassNode
+ * @see node.CompositeFunction
+ * @see node.HighPassName
+ * @see node.HighPassProps
+ * @see node.HighPassChildren
  */
-export type BandPassType = CompositeFunction<
-  BandPassName,
-  BandPassProps,
-  BandPassChildren
+export type HighPassType = node.CompositeFunction<
+  node.HighPassName,
+  node.HighPassProps,
+  node.HighPassChildren
 >;
 
-import { AllPassName } from "../../names";
-import { AllPassProps } from "../../props";
-import { AllPassChildren } from "../../children";
 /**
- * AllPassNode type.
+ * {@link node.BandPassNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see AllPassName
- * @see AllPassProps
- * @see AllPassChildren
+ * @see node.BandPassNode
+ * @see node.CompositeFunction
+ * @see node.BandPassName
+ * @see node.BandPassProps
+ * @see node.BandPassChildren
  */
-export type AllPassType = CompositeFunction<
-  AllPassName,
-  AllPassProps,
-  AllPassChildren
+export type BandPassType = node.CompositeFunction<
+  node.BandPassName,
+  node.BandPassProps,
+  node.BandPassChildren
 >;
 
-import { NotchName } from "../../names";
-import { NotchProps } from "../../props";
-import { NotchChildren } from "../../children";
 /**
- * NotchNode type.
+ * {@link node.AllPassNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see NotchName
- * @see NotchProps
- * @see NotchChildren
+ * @see node.AllPassNode
+ * @see node.CompositeFunction
+ * @see node.AllPassName
+ * @see node.AllPassProps
+ * @see node.AllPassChildren
  */
-export type NotchType = CompositeFunction<NotchName, NotchProps, NotchChildren>;
-
-import { PeakName } from "../../names";
-import { PeakProps } from "../../props";
-import { PeakChildren } from "../../children";
-/**
- * PeakNode type.
- *
- * @see CompositeFunction
- * @see PeakName
- * @see PeakProps
- * @see PeakChildren
- */
-export type PeakType = CompositeFunction<PeakName, PeakProps, PeakChildren>;
-
-import { LowShelfName } from "../../names";
-import { LowShelfProps } from "../../props";
-import { LowShelfChildren } from "../../children";
-/**
- * LowShelfNode type.
- *
- * @see CompositeFunction
- * @see LowShelfName
- * @see LowShelfProps
- * @see LowShelfChildren
- */
-export type LowShelfType = CompositeFunction<
-  LowShelfName,
-  LowShelfProps,
-  LowShelfChildren
+export type AllPassType = node.CompositeFunction<
+  node.AllPassName,
+  node.AllPassProps,
+  node.AllPassChildren
 >;
 
-import { HighShelfName } from "../../names";
-import { HighShelfProps } from "../../props";
-import { HighShelfChildren } from "../../children";
 /**
- * HighShelfNode type.
+ * {@link node.NotchNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see HighShelfName
- * @see HighShelfProps
- * @see HighShelfChildren
+ * @see node.NotchNode
+ * @see node.CompositeFunction
+ * @see node.NotchName
+ * @see node.NotchProps
+ * @see node.NotchChildren
  */
-export type HighShelfType = CompositeFunction<
-  HighShelfName,
-  HighShelfProps,
-  HighShelfChildren
+export type NotchType = node.CompositeFunction<
+  node.NotchName,
+  node.NotchProps,
+  node.NotchChildren
 >;
 
-import { ConvolveName } from "../../names";
 /**
- * ConvolveNode type.
+ * {@link node.PeakNode} {@link node.Type}.
  *
- * @see ConvolveName
+ * @see node.PeakNode
+ * @see node.CompositeFunction
+ * @see node.PeakName
+ * @see node.PeakProps
+ * @see node.PeakChildren
  */
-export type ConvolveType = ConvolveName;
+export type PeakType = node.CompositeFunction<
+  node.PeakName,
+  node.PeakProps,
+  node.PeakChildren
+>;
 
-import { PinkName } from "../../names";
-import { PinkProps } from "../../props";
-import { PinkChildren } from "../../children";
 /**
- * PinkNode type.
+ * {@link node.LowShelfNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see PinkName
- * @see PinkProps
- * @see PinkChildren
+ * @see node.LowShelfNode
+ * @see node.CompositeFunction
+ * @see node.LowShelfName
+ * @see node.LowShelfProps
+ * @see node.LowShelfChildren
  */
-export type PinkType = CompositeFunction<PinkName, PinkProps, PinkChildren>;
+export type LowShelfType = node.CompositeFunction<
+  node.LowShelfName,
+  node.LowShelfProps,
+  node.LowShelfChildren
+>;
+
+/**
+ * {@link node.HighShelfNode} {@link node.Type}.
+ *
+ * @see node.HighShelfNode
+ * @see node.CompositeFunction
+ * @see node.HighShelfName
+ * @see node.HighShelfProps
+ * @see node.HighShelfChildren
+ */
+export type HighShelfType = node.CompositeFunction<
+  node.HighShelfName,
+  node.HighShelfProps,
+  node.HighShelfChildren
+>;
+
+/**
+ * {@link node.ConvolveNode} {@link node.Type}.
+ *
+ * @see node.ConvolveNode
+ * @see node.ConvolveName
+ */
+export type ConvolveType = node.ConvolveName;
+
+/**
+ * {@link node.PinkNode} {@link node.Type}.
+ *
+ * @see node.PinkNode
+ * @see node.CompositeFunction
+ * @see node.PinkName
+ * @see node.PinkProps
+ * @see node.PinkChildren
+ */
+export type PinkType = node.CompositeFunction<
+  node.PinkName,
+  node.PinkProps,
+  node.PinkChildren
+>;

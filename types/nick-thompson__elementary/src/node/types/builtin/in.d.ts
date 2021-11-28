@@ -1,7 +1,9 @@
-import { InName } from "../../names";
+import { node } from "@nick-thompson/elementary";
+
 /**
- * InNode type.
+ * {@link node.InNode} {@link node.Type}.
  *
- * @see InName
+ * @see node.InNode
+ * @see node.InName
  */
-export type InType = InName;
+export type InType = node.InName;

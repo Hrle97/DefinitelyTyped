@@ -1,5 +1,9 @@
-import { MeterName } from "../../names";
+import { node } from "@nick-thompson/elementary";
+
 /**
- * MeterNode type.
+ * {@link node.MeterNode} {@link node.Type}.
+ *
+ * @see node.MeterNode
+ * @see node.MeterName
  */
-export type MeterType = MeterName;
+export type MeterType = node.MeterName;

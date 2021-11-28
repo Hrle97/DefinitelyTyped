@@ -1,31 +1,40 @@
-import { CompositeFunction } from "../../composite";
+import { node } from "@nick-thompson/elementary";
 
-import { SrName } from "../../names";
 /**
- * SrNode type.
+ * {@link node.SrNode} {@link node.Type}.
+ *
+ * @see node.SrNode
+ * @see node.SrName
  */
-export type SrType = SrName;
+export type SrType = node.SrName;
 
-import { ConstName } from "../../names";
 /**
- * ConstNode type.
+ * {@link node.ConstNode} {@link node.Type}.
+ *
+ * @see node.ConstNode
+ * @see node.ConstName
  */
-export type ConstType = ConstName;
+export type ConstType = node.ConstName;
 
-import { CounterName } from "../../names";
 /**
- * CounterNode type.
+ * {@link node.CounterNode} {@link node.Type}.
+ *
+ * @see node.CounterNode
+ * @see node.CounterName
  */
-export type CounterType = CounterName;
+export type CounterType = node.CounterName;
 
-import { SelectName } from "../../names";
-import { SelectProps } from "../../props";
-import { SelectChildren } from "../../children";
 /**
- * SelectNode type.
+ * {@link node.SelectNode} {@link node.Type}.
+ *
+ * @see node.SelectNode
+ * @see node.CompositeFunction
+ * @see node.SelectName
+ * @see node.SelectProps
+ * @see node.SelectChildren
  */
-export type SelectType = CompositeFunction<
-  SelectName,
-  SelectProps,
-  SelectChildren
+export type SelectType = node.CompositeFunction<
+  node.SelectName,
+  node.SelectProps,
+  node.SelectChildren
 >;

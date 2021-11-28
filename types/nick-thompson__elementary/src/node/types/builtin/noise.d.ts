@@ -1,31 +1,31 @@
-import { CompositeFunction } from "../../composite";
+import { node } from "@nick-thompson/elementary";
 
-import { NoiseName } from "../../names";
-import { NoiseProps } from "../../props";
-import { NoiseChildren } from "../../children";
 /**
- * NoiseNode type.
+ * {@link node.NoiseNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see NoiseName
- * @see NoiseProps
- * @see NoiseChildren
+ * @see node.NoiseNode
+ * @see node.CompositeFunction
+ * @see node.NoiseName
+ * @see node.NoiseProps
+ * @see node.NoiseChildren
  */
-export type NoiseType = CompositeFunction<NoiseName, NoiseProps, NoiseChildren>;
+export type NoiseType = node.CompositeFunction<
+  node.NoiseName,
+  node.NoiseProps,
+  node.NoiseChildren
+>;
 
-import { PinkNoiseName } from "../../names";
-import { PinkNoiseProps } from "../../props";
-import { PinkNoiseChildren } from "../../children";
 /**
- * PinkNoiseNode type.
+ * {@link node.PinkNoiseNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see PinkNoiseName
- * @see PinkNoiseProps
- * @see PinkNoiseChildren
+ * @see node.PinkNoiseNode
+ * @see node.CompositeFunction
+ * @see node.PinkNoiseName
+ * @see node.PinkNoiseProps
+ * @see node.PinkNoiseChildren
  */
-export type PinkNoiseType = CompositeFunction<
-  PinkNoiseName,
-  PinkNoiseProps,
-  PinkNoiseChildren
+export type PinkNoiseType = node.CompositeFunction<
+  node.PinkNoiseName,
+  node.PinkNoiseProps,
+  node.PinkNoiseChildren
 >;

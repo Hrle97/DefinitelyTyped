@@ -1,15 +1,17 @@
-import { MetroName } from "../../names";
-/**
- * MetroNode type.
- *
- * @see MetroName
- */
-export type MetroType = MetroName;
+import { node } from "@nick-thompson/elementary";
 
-import { RandName } from "../../names";
 /**
- * RandNode type.
+ * {@link node.MetroNode} {@link node.Type}.
  *
- * @see RandName
+ * @see node.MetroNode
+ * @see node.MetroName
  */
-export type RandType = RandName;
+export type MetroType = node.MetroName;
+
+/**
+ * {@link node.RandNode} {@link node.Type}.
+ *
+ * @see node.RandNode
+ * @see node.RandName
+ */
+export type RandType = node.RandName;

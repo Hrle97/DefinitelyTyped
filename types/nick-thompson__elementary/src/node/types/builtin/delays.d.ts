@@ -1,23 +1,33 @@
-import { ZName } from "../../names";
-/**
- * ZNode type.
- */
-export type ZType = ZName;
+import { node } from "@nick-thompson/elementary";
 
-import { TapOutName } from "../../names";
 /**
- * TapOutNode type.
+ * {@link node.ZNode} {@link node.Type}.
+ *
+ * @see node.ZNode
+ * @see node.ZName
  */
-export type TapOutType = TapOutName;
+export type ZType = node.ZName;
 
-import { TapInName } from "../../names";
 /**
- * TapInNode type.
+ * {@link node.TapOutNode} {@link node.Type}.
+ *
+ * @see node.TapOutNode
+ * @see node.TapOutName
  */
-export type TapInType = TapInName;
+export type TapOutType = node.TapOutName;
 
-import { DelayName } from "../../names";
 /**
- * DelayNode type.
+ * {@link node.TapInNode} {@link node.Type}.
+ *
+ * @see node.TapInNode
+ * @see node.TapInName
  */
-export type DelayType = DelayName;
+export type TapInType = node.TapInName;
+
+/**
+ * {@link node.DelayNode} {@link node.Type}.
+ *
+ * @see node.DelayNode
+ * @see node.DelayName
+ */
+export type DelayType = node.DelayName;

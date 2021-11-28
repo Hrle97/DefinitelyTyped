@@ -1,133 +1,129 @@
-import { CompositeFunction } from "../../composite";
+import { node } from "@nick-thompson/elementary";
 
-import { PhasorName } from "../../names";
 /**
- * PhasorNode type.
+ * {@link node.PhasorNode} {@link node.Type}.
  *
- * @see PhasorName
+ * @see node.PhasorNode
+ * @see node.PhasorName
  */
-export type PhasorType = PhasorName;
+export type PhasorType = node.PhasorName;
 
-import { TrainName } from "../../names";
-import { TrainProps } from "../../props";
-import { TrainChildren } from "../../children";
 /**
- * TrainNode type.
+ * {@link node.TrainNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see TrainName
- * @see TrainProps
- * @see TrainChildren
+ * @see node.TrainNode
+ * @see node.CompositeFunction
+ * @see node.TrainName
+ * @see node.TrainProps
+ * @see node.TrainChildren
  */
-export type TrainType = CompositeFunction<TrainName, TrainProps, TrainChildren>;
-
-import { CycleName } from "../../names";
-import { CycleProps } from "../../props";
-import { CycleChildren } from "../../children";
-/**
- * CycleNode type.
- *
- * @see CompositeFunction
- * @see CycleName
- * @see CycleProps
- * @see CycleChildren
- */
-export type CycleType = CompositeFunction<CycleName, CycleProps, CycleChildren>;
-
-import { SawName } from "../../names";
-import { SawProps } from "../../props";
-import { SawChildren } from "../../children";
-/**
- * SawNode type.
- *
- * @see CompositeFunction
- * @see SawName
- * @see SawProps
- * @see SawChildren
- */
-export type SawType = CompositeFunction<SawName, SawProps, SawChildren>;
-
-import { SquareName } from "../../names";
-import { SquareProps } from "../../props";
-import { SquareChildren } from "../../children";
-/**
- * SquareNode type.
- *
- * @see CompositeFunction
- * @see SquareName
- * @see SquareProps
- * @see SquareChildren
- */
-export type SquareType = CompositeFunction<
-  SquareName,
-  SquareProps,
-  SquareChildren
+export type TrainType = node.CompositeFunction<
+  node.TrainName,
+  node.TrainProps,
+  node.TrainChildren
 >;
 
-import { TriangleName } from "../../names";
-import { TriangleProps } from "../../props";
-import { TriangleChildren } from "../../children";
 /**
- * TriangleNode type.
+ * {@link node.CycleNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see TriangleName
- * @see TriangleProps
- * @see TriangleChildren
+ * @see node.CycleNode
+ * @see node.CompositeFunction
+ * @see node.CycleName
+ * @see node.CycleProps
+ * @see node.CycleChildren
  */
-export type TriangleType = CompositeFunction<
-  TriangleName,
-  TriangleProps,
-  TriangleChildren
+export type CycleType = node.CompositeFunction<
+  node.CycleName,
+  node.CycleProps,
+  node.CycleChildren
 >;
 
-import { BlepSawName } from "../../names";
-import { BlepSawProps } from "../../props";
-import { BlepSawChildren } from "../../children";
 /**
- * BlepSawNode type.
+ * {@link node.SawNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see BlepSawName
- * @see BlepSawProps
- * @see BlepSawChildren
+ * @see node.SawNode
+ * @see node.CompositeFunction
+ * @see node.SawName
+ * @see node.SawProps
+ * @see node.SawChildren
  */
-export type BlepSawType = CompositeFunction<
-  BlepSawName,
-  BlepSawProps,
-  BlepSawChildren
+export type SawType = node.CompositeFunction<
+  node.SawName,
+  node.SawProps,
+  node.SawChildren
 >;
 
-import { BlepSquareName } from "../../names";
-import { BlepSquareProps } from "../../props";
-import { BlepSquareChildren } from "../../children";
 /**
- * BlepSquareNode type.
+ * {@link node.SquareNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see BlepSquareName
- * @see BlepSquareProps
- * @see BlepSquareChildren
+ * @see node.SquareNode
+ * @see node.CompositeFunction
+ * @see node.SquareName
+ * @see node.SquareProps
+ * @see node.SquareChildren
  */
-export type BlepSquareType = CompositeFunction<
-  BlepSquareName,
-  BlepSquareProps,
-  BlepSquareChildren
+export type SquareType = node.CompositeFunction<
+  node.SquareName,
+  node.SquareProps,
+  node.SquareChildren
 >;
 
-import { BlepTriangleName } from "../../names";
-import { BlepTriangleProps } from "../../props";
-import { BlepTriangleChildren } from "../../children";
 /**
- * BlepTriangleNode type.
+ * {@link node.TriangleNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see BlepTriangleName
- * @see BlepTriangleProps
- * @see BlepTriangleChildren
+ * @see node.TriangleNode
+ * @see node.CompositeFunction
+ * @see node.TriangleName
+ * @see node.TriangleProps
+ * @see node.TriangleChildren
  */
-export type BlepTriangleType = CompositeFunction<
-  BlepTriangleName,
-  BlepTriangleProps,
-  BlepTriangleChildren
+export type TriangleType = node.CompositeFunction<
+  node.TriangleName,
+  node.TriangleProps,
+  node.TriangleChildren
+>;
+
+/**
+ * {@link node.BlepSawNode} {@link node.Type}.
+ *
+ * @see node.BlepSawNode
+ * @see node.CompositeFunction
+ * @see node.BlepSawName
+ * @see node.BlepSawProps
+ * @see node.BlepSawChildren
+ */
+export type BlepSawType = node.CompositeFunction<
+  node.BlepSawName,
+  node.BlepSawProps,
+  node.BlepSawChildren
+>;
+
+/**
+ * {@link node.BlepSquareNode} {@link node.Type}.
+ *
+ * @see node.BlepSquareNode
+ * @see node.CompositeFunction
+ * @see node.BlepSquareName
+ * @see node.BlepSquareProps
+ * @see node.BlepSquareChildren
+ */
+export type BlepSquareType = node.CompositeFunction<
+  node.BlepSquareName,
+  node.BlepSquareProps,
+  node.BlepSquareChildren
+>;
+
+/**
+ * {@link node.BlepTriangleNode} {@link node.Type}.
+ *
+ * @see node.BlepTriangleNode
+ * @see node.CompositeFunction
+ * @see node.BlepTriangleName
+ * @see node.BlepTriangleProps
+ * @see node.BlepTriangleChildren
+ */
+export type BlepTriangleType = node.CompositeFunction<
+  node.BlepTriangleName,
+  node.BlepTriangleProps,
+  node.BlepTriangleChildren
 >;

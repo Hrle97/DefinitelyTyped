@@ -1,56 +1,62 @@
-import { CompositeFunction } from "../../composite";
+import { node } from "@nick-thompson/elementary";
 
-import { EnvName } from "../../names";
-import { EnvProps } from "../../props";
-import { EnvChildren } from "../../children";
 /**
- * EnvNode type.
+ * {@link node.EnvNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see EnvName
- * @see EnvProps
- * @see EnvChildren
+ * @see node.EnvNode
+ * @see node.CompositeFunction
+ * @see node.EnvName
+ * @see node.EnvProps
+ * @see node.EnvChildren
  */
-export type EnvType = CompositeFunction<EnvName, EnvProps, EnvChildren>;
+export type EnvType = node.CompositeFunction<
+  node.EnvName,
+  node.EnvProps,
+  node.EnvChildren
+>;
 
-import { AdsrName } from "../../names";
-import { AdsrProps } from "../../props";
-import { AdsrChildren } from "../../children";
 /**
- * AdsrNode type.
+ * {@link node.AdsrNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see AdsrName
- * @see AdsrProps
- * @see AdsrChildren
+ * @see node.AdsrNode
+ * @see node.CompositeFunction
+ * @see node.AdsrName
+ * @see node.AdsrProps
+ * @see node.AdsrChildren
  */
-export type AdsrType = CompositeFunction<AdsrName, AdsrProps, AdsrChildren>;
+export type AdsrType = node.CompositeFunction<
+  node.AdsrName,
+  node.AdsrProps,
+  node.AdsrChildren
+>;
 
-import { LatchName } from "../../names";
 /**
- * LatchNode type.
+ * {@link node.LatchNode} {@link node.Type}.
  *
- * @see LatchName
+ * @see node.LatchNode
+ * @see node.LatchName
  */
-export type LatchType = LatchName;
+export type LatchType = node.LatchName;
 
-import { SeqName } from "../../names";
 /**
- * SeqNode type.
+ * {@link node.SeqNode} {@link node.Type}.
  *
- * @see SeqName
+ * @see node.SeqNode
+ * @see node.SeqName
  */
-export type SeqType = SeqName;
+export type SeqType = node.SeqName;
 
-import { HannName } from "../../names";
-import { HannProps } from "../../props";
-import { HannChildren } from "../../children";
 /**
- * HannNode type.
+ * {@link node.HannNode} {@link node.Type}.
  *
- * @see CompositeFunction
- * @see HannName
- * @see HannProps
- * @see HannChildren
+ * @see node.HannNode
+ * @see node.CompositeFunction
+ * @see node.HannName
+ * @see node.HannProps
+ * @see node.HannChildren
  */
-export type HannType = CompositeFunction<HannName, HannProps, HannChildren>;
+export type HannType = node.CompositeFunction<
+  node.HannName,
+  node.HannProps,
+  node.HannChildren
+>;

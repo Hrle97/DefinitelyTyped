@@ -1,199 +1,201 @@
-import { SinName } from "../../names";
-/**
- * SinNode type.
- *
- * @see SinName
- */
-export type SinType = SinName;
+import { node } from "@nick-thompson/elementary";
 
-import { CosName } from "../../names";
 /**
- * CosNode type.
+ * {@link node.SinNode} {@link node.Type}.
  *
- * @see CosName
+ * @see node.SinNode
+ * @see node.SinName
  */
-export type CosType = CosName;
+export type SinType = node.SinName;
 
-import { TanName } from "../../names";
 /**
- * TanNode type.
+ * {@link node.CosNode} {@link node.Type}.
  *
- * @see TanName
+ * @see node.CosNode
+ * @see node.CosName
  */
-export type TanType = TanName;
+export type CosType = node.CosName;
 
-import { TanhName } from "../../names";
 /**
- * TanhNode type.
+ * {@link node.TanNode} {@link node.Type}.
  *
- * @see TanhName
+ * @see node.TanNode
+ * @see node.TanName
  */
-export type TanhType = TanhName;
+export type TanType = node.TanName;
 
-import { AsinhName } from "../../names";
 /**
- * AsinhNode type.
+ * {@link node.TanhNode} {@link node.Type}.
  *
- * @see AsinhName
+ * @see node.TanhNode
+ * @see node.TanhName
  */
-export type AsinhType = AsinhName;
+export type TanhType = node.TanhName;
 
-import { LnName } from "../../names";
 /**
- * LnNode type.
+ * {@link node.AsinhNode} {@link node.Type}.
  *
- * @see LnName
+ * @see node.AsinhNode
+ * @see node.AsinhName
  */
-export type LnType = LnName;
+export type AsinhType = node.AsinhName;
 
-import { LogName } from "../../names";
 /**
- * LogNode type.
+ * {@link node.LnNode} {@link node.Type}.
  *
- * @see LogName
+ * @see node.LnNode
+ * @see node.LnName
  */
-export type LogType = LogName;
+export type LnType = node.LnName;
 
-import { Log2Name } from "../../names";
 /**
- * Log2Node type.
+ * {@link node.LogNode} {@link node.Type}.
  *
- * @see Log2Name
+ * @see node.LogNode
+ * @see node.LogName
  */
-export type Log2Type = Log2Name;
+export type LogType = node.LogName;
 
-import { CeilName } from "../../names";
 /**
- * CeilNode type.
+ * {@link node.Log2Node} {@link node.Type}.
  *
- * @see CeilName
+ * @see node.Log2Node
+ * @see node.Log2Name
  */
-export type CeilType = CeilName;
+export type Log2Type = node.Log2Name;
 
-import { FloorName } from "../../names";
 /**
- * FloorNode type.
+ * {@link node.CeilNode} {@link node.Type}.
  *
- * @see FloorName
+ * @see node.CeilNode
+ * @see node.CeilName
  */
-export type FloorType = FloorName;
+export type CeilType = node.CeilName;
 
-import { SqrtName } from "../../names";
 /**
- * SqrtNode type.
+ * {@link node.FloorNode} {@link node.Type}.
  *
- * @see SqrtName
+ * @see node.FloorNode
+ * @see node.FloorName
  */
-export type SqrtType = SqrtName;
+export type FloorType = node.FloorName;
 
-import { ExpName } from "../../names";
 /**
- * ExpNode type.
+ * {@link node.SqrtNode} {@link node.Type}.
  *
- * @see ExpName
+ * @see node.SqrtNode
+ * @see node.SqrtName
  */
-export type ExpType = ExpName;
+export type SqrtType = node.SqrtName;
 
-import { AbsName } from "../../names";
 /**
- * AbsNode type.
+ * {@link node.ExpNode} {@link node.Type}.
  *
- * @see AbsName
+ * @see node.ExpNode
+ * @see node.ExpName
  */
-export type AbsType = AbsName;
+export type ExpType = node.ExpName;
 
-import { LeName } from "../../names";
 /**
- * LeNode type.
+ * {@link node.AbsNode} {@link node.Type}.
  *
- * @see LeName
+ * @see node.AbsNode
+ * @see node.AbsName
  */
-export type LeType = LeName;
+export type AbsType = node.AbsName;
 
-import { LeqName } from "../../names";
 /**
- * LeqNode type.
+ * {@link node.LeNode} {@link node.Type}.
  *
- * @see LeqName
+ * @see node.LeNode
+ * @see node.LeName
  */
-export type LeqType = LeqName;
+export type LeType = node.LeName;
 
-import { GeName } from "../../names";
 /**
- * GeNode type.
+ * {@link node.LeqNode} {@link node.Type}.
  *
- * @see GeName
+ * @see node.LeqNode
+ * @see node.LeqName
  */
-export type GeType = GeName;
+export type LeqType = node.LeqName;
 
-import { GeqName } from "../../names";
 /**
- * GeqNode type.
+ * {@link node.GeNode} {@link node.Type}.
  *
- * @see GeqName
+ * @see node.GeNode
+ * @see node.GeName
  */
-export type GeqType = GeqName;
+export type GeType = node.GeName;
 
-import { PowName } from "../../names";
 /**
- * PowNode type.
+ * {@link node.GeqNode} {@link node.Type}.
  *
- * @see PowName
+ * @see node.GeqNode
+ * @see node.GeqName
  */
-export type PowType = PowName;
+export type GeqType = node.GeqName;
 
-import { ModName } from "../../names";
 /**
- * ModNode type.
+ * {@link node.PowNode} {@link node.Type}.
  *
- * @see ModName
+ * @see node.PowNode
+ * @see node.PowName
  */
-export type ModType = ModName;
+export type PowType = node.PowName;
 
-import { MinName } from "../../names";
 /**
- * MinNode type.
+ * {@link node.ModNode} {@link node.Type}.
  *
- * @see MinName
+ * @see node.ModNode
+ * @see node.ModName
  */
-export type MinType = MinName;
+export type ModType = node.ModName;
 
-import { MaxName } from "../../names";
 /**
- * MaxNode type.
+ * {@link node.MinNode} {@link node.Type}.
  *
- * @see MaxName
+ * @see node.MinNode
+ * @see node.MinName
  */
-export type MaxType = MaxName;
+export type MinType = node.MinName;
 
-import { AddName } from "../../names";
 /**
- * AddNode type.
+ * {@link node.MaxNode} {@link node.Type}.
  *
- * @see AddName
+ * @see node.MaxNode
+ * @see node.MaxName
  */
-export type AddType = AddName;
+export type MaxType = node.MaxName;
 
-import { SubName } from "../../names";
 /**
- * SubNode type.
+ * {@link node.AddNode} {@link node.Type}.
  *
- * @see SubName
+ * @see node.AddNode
+ * @see node.AddName
  */
-export type SubType = SubName;
+export type AddType = node.AddName;
 
-import { MulName } from "../../names";
 /**
- * MulNode type.
+ * {@link node.SubNode} {@link node.Type}.
  *
- * @see MulName
+ * @see node.SubNode
+ * @see node.SubName
  */
-export type MulType = MulName;
+export type SubType = node.SubName;
 
-import { DivName } from "../../names";
 /**
- * DivNode type.
+ * {@link node.MulNode} {@link node.Type}.
  *
- * @see DivName
+ * @see node.MulNode
+ * @see node.MulName
  */
-export type DivType = DivName;
+export type MulType = node.MulName;
+
+/**
+ * {@link node.DivNode} {@link node.Type}.
+ *
+ * @see node.DivNode
+ * @see node.DivName
+ */
+export type DivType = node.DivName;
