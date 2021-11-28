@@ -1,4 +1,4 @@
-import { nose } from "@nick-thompson/elementary";
+import { node } from "@nick-thompson/elementary";
 
 /**
  * Loads a sample from disk and triggers its playback on the rising edge of an
