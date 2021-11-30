@@ -1,8 +1,5 @@
 import { node } from "@nick-thompson/elementary";
 
-// ============================================================================
-// Native
-
 /**
  * A very simple single-sample delay {@link node.Node} (z^-1).
  *
@@ -15,7 +12,7 @@ import { node } from "@nick-thompson/elementary";
  * @see node.KeyProps
  * @see node.ZNode
  */
-export const z: node.NativeNodeFactory<"z">;
+export declare const z: node.TypeFactory<node.ZType>;
 
 /**
  * The {@link node.TapOutNode} pairs with the tapIn node to provide special
@@ -47,11 +44,7 @@ export const z: node.NativeNodeFactory<"z">;
  * @see node.Child
  * @see node.TapOutNode
  */
-export const tapOut: node.NativeNodeFactory<
-  "tapOut",
-  node.TapOutProps,
-  [node.Child]
->;
+export declare const tapOut: node.TypeFactory<node.TapOutType>;
 
 /**
  * See the description for the {@link node.TapOoutNode} above.
@@ -74,7 +67,7 @@ export const tapOut: node.NativeNodeFactory<
  * @see node.TapInProps
  * @see node.TapInNode
  */
-export const tapIn: node.NativeNodeFactory<"tapIn", node.TapInProps>;
+export declare const tapIn: node.TypeFactory<node.TapInType>;
 
 /**
  * A variable-length delay line with a feedback component.
@@ -117,8 +110,4 @@ export const tapIn: node.NativeNodeFactory<"tapIn", node.TapInProps>;
  * @see node.Child
  * @see node.DelayNode
  */
-export const delay: node.NativeNodeFactory<
-  "delay",
-  node.DelayProps,
-  [length: node.Child, feedback: node.Child, signal: node.Child]
->;
+export declare const delay: node.TypeFactory<node.DelayType>;

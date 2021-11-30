@@ -1,8 +1,5 @@
 import { node } from "@nick-thompson/elementary";
 
-// ============================================================================
-// Composite
-
 /**
  * A simple white noise generator.
  * Generates values uniformly distributed on the range [-1, 1].
@@ -17,7 +14,7 @@ import { node } from "@nick-thompson/elementary";
  * @see node.Child
  * @see node.Node
  */
-export const noise: node.CompositeNodeFactory;
+export declare const noise: node.TypeFactory<node.NoiseType>;
 
 /**
  * A simple pink noise generator.
@@ -33,4 +30,4 @@ export const noise: node.CompositeNodeFactory;
  * @see node.Child
  * @see node.Node
  */
-export const pinknoise: node.CompositeNodeFactory;
+export declare const pinknoise: node.TypeFactory<node.PinkNoiseType>;

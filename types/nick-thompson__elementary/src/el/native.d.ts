@@ -1,8 +1,5 @@
 import { node } from "@nick-thompson/elementary";
 
-// ============================================================================
-// Native
-
 /**
  * Generates a stream of random numbers
  * uniformly distributed on the range [0, 1].
@@ -16,7 +13,7 @@ import { node } from "@nick-thompson/elementary";
  * @see node.KeyProps
  * @see node.RandNode
  */
-export const rand: node.NativeNodeFactory<"rand", node.KeyProps>;
+export declare const rand: node.TypeFactory<node.RandType>;
 
 /**
  * Emits a pulse train signal much like el.train, alternating from 0 to 1 at a
@@ -34,4 +31,4 @@ export const rand: node.NativeNodeFactory<"rand", node.KeyProps>;
  * @see node.KeyProps
  * @see node.MetroNode
  */
-export const metro: node.NativeNodeFactory<"metro", node.MetroProps>;
+export declare const metro: node.TypeFactory<node.MetroType>;
