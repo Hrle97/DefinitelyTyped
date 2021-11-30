@@ -3,14 +3,7 @@ import { node } from "@nick-thompson/elementary";
 /**
  * A very simple single-sample delay {@link node.Node} (z^-1).
  *
- * @param [props]
- * props object with optional key
- *
- * @returns
- * the signal {@link node.ZNode} to delay
- *
- * @see node.KeyProps
- * @see node.ZNode
+ * @see node.ZType
  */
 export declare const z: node.ZType;
 
@@ -31,18 +24,7 @@ export declare const z: node.ZType;
  * prevent this behavior. Please use care when implementing feedback to insert
  * appropriate gains.
  *
- * @param [props]
- * props object with optional key
- *
- * @param signal
- * signal {@link node.Node} to tap out
- *
- * @returns
- * the delayed pass through {@link node.TapOutNode}
- *
- * @see node.TapOutProps
- * @see node.Child
- * @see node.TapOutNode
+ * @see node.TapOutType
  */
 export declare const tapOut: node.TapOutType;
 
@@ -58,14 +40,7 @@ export declare const tapOut: node.TapOutType;
  * prevent this behavior. Please use care when implementing feedback to insert
  * appropriate gains.
  *
- * @param [props]
- * props object with optional key
- *
- * @returns
- * the signal from the wired {@link node.TapOutNode}
- *
- * @see node.TapInProps
- * @see node.TapInNode
+ * @see node.TapInType
  */
 export declare const tapIn: node.TapInType;
 
@@ -77,8 +52,8 @@ export declare const tapIn: node.TapInType;
  * At small delay times, and with various feedback and feedforward components,
  * this gives various comb filters.
  *
- * At larger delay times with a positive feedback
- * this gives a simple feedback delay/echo.
+ * At larger delay times with a positive feedback this gives a simple feedback
+ * delay/echo.
  *
  * In the following example, a feedforward component where feedforward is equal
  * to the negative feedback gives an allpass filter:
@@ -91,23 +66,6 @@ export declare const tapIn: node.TapInType;
  *       feedback,
  *       signal));
  *
- * @param [props]
- * {@link node.DelayProps} object
- *
- * @param length
- * delay time in samples
- *
- * @param feedback
- * feedback in the range of [-1, 1]
- *
- * @param signal
- * the signal to delay
- *
- * @returns
- * a {@link node.DelayNode} that computes the output of the delay
- *
- * @see node.DelayProps
- * @see node.Child
- * @see node.DelayNode
+ * @see node.DelayType
  */
 export declare const delay: node.DelayType;

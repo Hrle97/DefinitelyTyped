@@ -11,7 +11,7 @@ import { node } from "@nick-thompson/elementary";
  *     el.inputs() === [el.in({channel: 0}), el.in({channel: 1})]
  *
  * @returns
- * an array of {@link node.InNode} that output the input signals of their
+ * an array of {@link node.InNode}s that output the input signals of their
  * designated channels
  *
  * @see node.InNode
@@ -19,8 +19,8 @@ import { node } from "@nick-thompson/elementary";
 export function inputs(): node.InNode[];
 
 /**
- * Computes a real pole position giving exponential decay over t,
- * where t is the time to decay 60dB.
+ * Computes a real pole position giving exponential decay over t, where t is
+ * the time to decay 60dB.
  * Computes lazily.
  *
  * @param child
@@ -34,8 +34,8 @@ export function inputs(): node.InNode[];
 export function tau2pole(child: node.Node): node.Node;
 
 /**
- * Computes a real pole position giving exponential decay over t,
- * where t is the time to decay 60dB.
+ * Computes a real pole position giving exponential decay over t, where t is
+ * the time to decay 60dB.
  * Computes eagerly.
  *
  * @param time
@@ -47,8 +47,8 @@ export function tau2pole(child: node.Node): node.Node;
 export function tau2pole(time: number): number;
 
 /**
- * Equivalent to (time / 1000) * sampleRate,
- * where time is the input time in milliseconds.
+ * Equivalent to (time / 1000) * sampleRate, where time is the input time in
+ * milliseconds.
  * Computes lazily.
  *
  * @param child
@@ -62,8 +62,8 @@ export function tau2pole(time: number): number;
 export function ms2samps(child: node.Node): node.Node;
 
 /**
- * Equivalent to (time / 1000) * sampleRate,
- * where time is the input time in milliseconds.
+ * Equivalent to (time / 1000) * sampleRate, where time is the input time in
+ * milliseconds.
  * Computes eagerly.
  *
  * @param time

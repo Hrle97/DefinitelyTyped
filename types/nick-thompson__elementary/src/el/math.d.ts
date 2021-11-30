@@ -155,9 +155,6 @@ export declare const max: node.TypeFactory<node.MaxType>;
  * Adds up the operands.
  * Identical to: (((child1 + child2) + child3) + ... )
  *
- * Expects at least one operand.
- * If only one is passed it behaves as the identity function.
- *
  * @see node.AddType
  */
 export declare const add: node.TypeFactory<node.AddType>;
@@ -165,9 +162,6 @@ export declare const add: node.TypeFactory<node.AddType>;
 /**
  * Subtracts the rest of the operands from the first.
  * Identical to: (((child1 - child2) - child3) - ... )
- *
- * Expects at least one operand.
- * If only one is passed it behaves as the identity function.
  *
  * @see node.SubType
  */
@@ -177,9 +171,6 @@ export declare const sub: node.TypeFactory<node.SubType>;
  * Multiplies the operands.
  * Identical to: (((child1 * child2) * child3) * ... )
  *
- * Expects at least one operand.
- * If only one is passed it as the identity function.
- *
  * @see node.MulType
  */
 export declare const mul: node.TypeFactory<node.MulType>;
@@ -187,9 +178,6 @@ export declare const mul: node.TypeFactory<node.MulType>;
 /**
  * Divides the first with the rest of the operands.
  * Identical to: (((child1 / child2) / child3) / ... )
- *
- * Expects at least one operand.
- * If only one is passed it behaves as the identity function.
  *
  * @see node.DivType
  */

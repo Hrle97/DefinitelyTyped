@@ -3,9 +3,9 @@ import { node } from "@nick-thompson/elementary";
 /**
  * A very simple single-sample delay {@link node.Node} (z^-1).
  *
- * @see node.ZType
+ * @see node.ZNode
  */
-export declare const z: node.TypeFactory<node.ZType>;
+export declare const z: node.ZNode;
 
 /**
  * The {@link node.TapOutNode} pairs with the tapIn node to provide special
@@ -52,8 +52,8 @@ export declare const tapIn: node.TypeFactory<node.TapInType>;
  * At small delay times, and with various feedback and feedforward components,
  * this gives various comb filters.
  *
- * At larger delay times with a positive feedback
- * this gives a simple feedback delay/echo.
+ * At larger delay times with a positive feedback this gives a simple feedback
+ * delay/echo.
  *
  * In the following example, a feedforward component where feedforward is equal
  * to the negative feedback gives an allpass filter:

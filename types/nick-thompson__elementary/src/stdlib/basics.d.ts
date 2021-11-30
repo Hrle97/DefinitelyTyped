@@ -9,16 +9,7 @@ import { node } from "@nick-thompson/elementary";
  *     el.cycle(440)
  *     el.cycle(el.const({value: 440}))
  *
- * @param [props]
- * {@link node.ConstProps} object
- *
- * @returns
- * a {@link node.ConstNode} that returns the given value
- *
- * @see node.KeyProps
- * @see node.ConstProps
- * @see node.Child
- * @see node.ConstNode
+ * @see node.ConstType
  */
 declare const _const: node.ConstType;
 export { _const as const };
@@ -26,11 +17,9 @@ export { _const as const };
 /**
  * A constant value node whose value is the current sample rate of the system.
  *
- * @see node.KeyProps
- * @see node.Child
- * @see node.SrNode
+ * @see node.SrType
  */
-export declare const sr: node.SrNode;
+export declare const sr: node.SrType;
 
 /**
  * Outputs a continuous count of elapsed samples.
@@ -39,18 +28,7 @@ export declare const sr: node.SrNode;
  * When the pulse is low, the counter will reset and output 0 until the
  * pulse is high again.
  *
- * @param [props]
- * props object with optional key
- *
- * @param pulse
- * pulse to count
- *
- * @returns
- * a {@link node.CounterNode} that computes the count of the counter
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.CounterNode
+ * @see node.CounterType
  */
 export const counter: node.CounterType;
 
@@ -60,24 +38,6 @@ export const counter: node.CounterType;
  * For values of the signal between (0, 1), performs a linear interpolation
  * between high and low.
  *
- * @param [props]
- * props object with optional key
- *
- * @param signal
- * the signal to test
- *
- * @param high
- * result when signal is high
- *
- * @param low
- * result when signal is low
- *
- * @returns
- * a {@link node.Node} that results in high or low or their interpolation
- * depending on the signal
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.Node
+ * @see node.SelectType
  */
 export declare const select: node.SelectType;

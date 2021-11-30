@@ -3,8 +3,6 @@ import { node } from "@nick-thompson/elementary";
 /**
  * Implements a simple one-pole filter,
  * also sometimes called a leaky integrator.
- * Expects two children, the first is the pole position,
- * the second is the signal to filter.
  *
  * @see node.PoleType
  */
@@ -12,8 +10,6 @@ export declare const pole: node.TypeFactory<node.PoleType>;
 
 /**
  * A second order transposed direct-form II filter implementation.
- * Expects six children, the first five of which are the raw filter
- * coefficients (b0, b1, b2, a1, a2). The final input is the signal to filter.
  *
  * @see node.BiquadType
  */
@@ -29,9 +25,6 @@ export declare const convolve: node.TypeFactory<node.ConvolveType>;
 
 /**
  * Implements a simple one-zero filter.
- * Expects the b0 coefficient as the first argument,
- * the zero position b1 as the second argument,
- * and the input to the filter as the third.
  *
  * @see node.ZeroType
  */
@@ -56,8 +49,6 @@ export declare const df11: node.TypeFactory<node.Df11Type>;
 /**
  * Unity gain one-pole smoothing. Commonly used for addressing
  * discontinuities in control signals.
- * Expects two children, the first is the pole position,
- * the second is the signal to filter.
  *
  * @see node.SmoothType
  */

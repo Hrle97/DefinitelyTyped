@@ -14,8 +14,6 @@ import { node } from "@nick-thompson/elementary";
  *      {path: '/path/to/kick.wav', channel: 1},
  *      el.train(1));
  *
- * Expects exactly one argument, the pulse train to trigger playback.
- *
  * @see node.SampleType
  */
 export declare const sample: node.TypeFactory<node.SampleType>;
