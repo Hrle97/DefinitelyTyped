@@ -16,19 +16,7 @@ import { node } from "@nick-thompson/elementary";
  *
  * Expects exactly one argument, the pulse train to trigger playback.
  *
- * @param [props]
- * {@link node.SampleProps} object
- *
- * @param trigger
- * the pulse train that triggers the playback
- *
- * @returns
- * a {@link node.SampleNode} that outputs the playback of the sample
- *
- * @see node.KeyProps
- * @see node.SampleProps
- * @see node.Child
- * @see node.SampleNode
+ * @see node.SampleType
  */
 export declare const sample: node.TypeFactory<node.SampleType>;
 
@@ -59,18 +47,6 @@ export declare const sample: node.TypeFactory<node.SampleType>;
  *      {path: '/path/to/padSound.wav'},
  *      el.add(0.1, el.mul(0.1, el.phasor(1))));
  *
- * @param [props]
- * {@link node.TableProps} object
- *
- * @param trigger
- * the pulse train that triggers the playback
- *
- * @returns
- * a {@link node.TableNode} that computes the lookup table output
- *
- * @see node.KeyProps
- * @see node.TableProps
- * @see node.Child
- * @see node.TableNode
+ * @see node.TableType
  */
 export declare const table: node.TypeFactory<node.TableType>;

@@ -3,235 +3,91 @@ import { node } from "@nick-thompson/elementary";
 /**
  * Computes the sine of the operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operand
- * to compute the sine of
- *
- * @returns
- * a {@link node.SinNode} that computes the sine of the operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.SinNode
+ * @see node.SinType
  */
 export declare const sin: node.TypeFactory<node.SinType>;
 
 /**
  * Computes the cosine of the operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operand
- * to compute the cosine of
- *
- * @returns
- * a {@link node.CosNode} that computes the cosine of the operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.CosNode
+ * @see node.CosType
  */
 export declare const cos: node.TypeFactory<node.CosType>;
 
 /**
  * Computes the tangent of the operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operand
- * to compute the tangent of
- *
- * @returns
- * a {@link node.TanNode} that computes the tangent of the operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.TanNode
+ * @see node.TanType
  */
 export declare const tan: node.TypeFactory<node.TanType>;
 
 /**
  * Computes the hyperbolic tangent of the operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operand
- * to compute the hyperbolic tangent of
- *
- * @returns
- * a {@link node.TanhNode} that computes the hyperbolic tangent of the operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.TanhNode
+ * @see node.TanhType
  */
 export declare const tanh: node.TypeFactory<node.TanhType>;
 
 /**
  * Computes the inverse hyperbolic sine of the operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operand
- * to compute the inverse hyperbolic sine of
- *
- * @returns
- * a {@link node.AsinhNode} that computes the inverse hyperbolic sine
- * of the operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.AsinhNode
+ * @see node.AsinhType
  */
 export declare const asinh: node.TypeFactory<node.AsinhType>;
 
 /**
  * Computes the natural logarithm of the operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operand
- * to compute the natural logarithm of
- *
- * @returns
- * a {@link node.LnNode} that computes the natural logarithm of the operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.LnNode
+ * @see node.LnType
  */
 export declare const ln: node.TypeFactory<node.LnType>;
 
 /**
  * Computes the logarithm in base 10 of the operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operand
- * to compute the logarithm in base 10 of
- *
- * @returns
- * a {@link node.LogNode} that computes the logarithm in base 10 of the operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.LogNode
+ * @see node.LogType
  */
 export declare const log: node.TypeFactory<node.LogType>;
 
 /**
  * Computes the logarithm in base 2 of the operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operand
- * to compute the logarithm in base 2 of
- *
- * @returns
- * a {@link node.Log2Node} that computes the logarithm in base 2 of the operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.Log2Node
+ * @see node.Log2Type
  */
 export declare const log2: node.TypeFactory<node.Log2Type>;
 
 /**
  * Computes the ceiling of the operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operand
- * to compute the ceiling of
- *
- * @returns
- * a {@link node.CeilNode} that computes the ceiling of the operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.CeilNode
+ * @see node.CeilType
  */
 export declare const ceil: node.TypeFactory<node.CeilType>;
 
 /**
  * Computes the floor of the operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operand
- * to compute the floor of
- *
- * @returns
- * a {@link node.FloorNode} that computes the floor of the operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.FloorNode
+ * @see node.FloorType
  */
 export declare const floor: node.TypeFactory<node.FloorType>;
 
 /**
  * Computes the square root of the operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operand
- * to compute the square root of
- *
- * @returns
- * a {@link node.SqrtNode} that computes the square root of the operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.SqrtNode
+ * @see node.SqrtType
  */
 export declare const sqrt: node.TypeFactory<node.SqrtType>;
 
 /**
  * Computes the exponential in base 10 of the operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operand
- * to compute the exponential in base 10 of
- *
- * @returns
- * a {@link node.ExpNode} that computes the exponential in base 10 of the operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.ExpNode
+ * @see node.ExpType
  */
 export declare const exp: node.TypeFactory<node.ExpType>;
 
 /**
  * Computes the absolute number of the operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operand
- * to compute the absolute number of
- *
- * @returns
- * a {@link node.AbsNode} that computes the absolute number of the operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.AbsNode
+ * @see node.AbsType
  */
 export declare const abs: node.TypeFactory<node.AbsType>;
 
@@ -240,173 +96,56 @@ export declare const abs: node.TypeFactory<node.AbsType>;
 /**
  * Computes whether the first is lesser than the second.
  *
- * @param [props]
- * props object with optional key
- *
- * @param first
- * first operand
- *
- * @param second
- * second operand
- *
- * @returns
- * a {@link node.LeNode} that computes whether the first is lesser
- * than the second operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.LeNode
+ * @see node.LeType
  */
 export declare const le: node.TypeFactory<node.LeType>;
 
 /**
  * Computes whether the first is lesser or equal than the second.
  *
- * @param [props]
- * props object with optional key
- *
- * @param first
- * first operand
- *
- * @param second
- * second operand
- *
- * @returns
- * a {@link node.LeqNode} that computes whether the first is lesser or equal
- * than the second operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.LeqNode
+ * @see node.LeqType
  */
 export declare const leq: node.TypeFactory<node.LeqType>;
 
 /**
  * Computes whether the first is greater than the second.
  *
- * @param [props]
- * props object with optional key
- *
- * @param first
- * first operand
- *
- * @param second
- * second operand
- *
- * @returns
- * a {@link node.GeNode} that computes whether the first is greater
- * than the second operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.GeNode
+ * @see node.GeType
  */
 export declare const ge: node.TypeFactory<node.GeType>;
 
 /**
  * Computes whether the first is greater or equal than the second.
  *
- * @param [props]
- * props object with optional key
- *
- * @param first
- * first operand
- *
- * @param second
- * second operand
- *
- * @returns
- * a {@link node.GeqNode} that computes whether the first is greater or equal
- * than the second operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.GeqNode
+ * @see node.GeqType
  */
 export declare const geq: node.TypeFactory<node.GeqType>;
 
 /**
  * Computes the power of the first with with the second as the exponent.
  *
- * @param [props]
- * props object with optional key
- *
- * @param first
- * first operand
- *
- * @param second
- * second operand
- *
- * @returns
- * a {@link node.PowNode} that computes the power of the first with
- * the second as the exponent
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.PowNode
+ * @see node.PowType
  */
 export declare const pow: node.TypeFactory<node.PowType>;
 
 /**
  * Computes the modulo of the first with the second.
  *
- * @param [props]
- * props object with optional key
- *
- * @param first
- * first operand
- *
- * @param second
- * second operand
- *
- * @returns
- * a {@link node.ModNode} that computes the module of the first with the second
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.ModNode
+ * @see node.ModType
  */
 export declare const mod: node.TypeFactory<node.ModType>;
 
 /**
  * Returns the result of the minimal operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param first
- * first operand
- *
- * @param second
- * second operand
- *
- * @returns
- * a {@link node.MinNode} that returns the result of the minimal operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.MinNode
+ * @see node.MinType
  */
 export declare const min: node.TypeFactory<node.MinType>;
 
 /**
  * Returns the result of the maximal operand.
  *
- * @param [props]
- * props object with optional key
- *
- * @param first
- * first operand
- *
- * @param second
- * second operand
- *
- * @returns
- * a {@link node.MaxNode} that returns the result of the maximal operand
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.MaxNode
+ * @see node.MaxType
  */
 export declare const max: node.TypeFactory<node.MaxType>;
 
@@ -419,18 +158,7 @@ export declare const max: node.TypeFactory<node.MaxType>;
  * Expects at least one operand.
  * If only one is passed it behaves as the identity function.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operands
- * the operands to add up
- *
- * @returns
- * a {@link node.AddNode} that sums up the operands
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.AddNode
+ * @see node.AddType
  */
 export declare const add: node.TypeFactory<node.AddType>;
 
@@ -441,15 +169,7 @@ export declare const add: node.TypeFactory<node.AddType>;
  * Expects at least one operand.
  * If only one is passed it behaves as the identity function.
  *
- * @param operands
- * the operands to subtract
- *
- * @returns
- * a {@link node.SubNode} that subtracts the rest of the operands from the first
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.SubNode
+ * @see node.SubType
  */
 export declare const sub: node.TypeFactory<node.SubType>;
 
@@ -460,18 +180,7 @@ export declare const sub: node.TypeFactory<node.SubType>;
  * Expects at least one operand.
  * If only one is passed it as the identity function.
  *
- * @param [props]
- * props object with optional key
- *
- * @param rest
- * the operands to multiply
- *
- * @returns
- * a {@link node.MulNode} that multiplies the operands
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.MulNode
+ * @see node.MulType
  */
 export declare const mul: node.TypeFactory<node.MulType>;
 
@@ -482,17 +191,6 @@ export declare const mul: node.TypeFactory<node.MulType>;
  * Expects at least one operand.
  * If only one is passed it behaves as the identity function.
  *
- * @param [props]
- * props object with optional key
- *
- * @param operands
- * the operands to divide
- *
- * @returns
- * a {@link node.DivNode} that divides the first with the rest of the operands
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.DivNode
+ * @see node.DivType
  */
 export declare const div: node.TypeFactory<node.DivType>;

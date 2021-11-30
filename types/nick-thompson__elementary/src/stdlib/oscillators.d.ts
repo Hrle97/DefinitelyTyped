@@ -1,7 +1,4 @@
-import * as node from '../node';
-
-// ============================================================================
-// Native
+import { node } from "@nick-thompson/elementary";
 
 /**
  * Outputs a ramp from 0 to 1 at the given rate.
@@ -21,14 +18,7 @@ import * as node from '../node';
  * @see node.Child
  * @see node.PhasorNode
  */
-export const phasor: node.NativeNodeFactory<
-  'phasor',
-  node.KeyProps,
-  [rate: node.Child]
->;
-
-// ============================================================================
-// Composite
+export declare const phasor: node.PhasorType;
 
 /**
  * Outputs a pulse train alternating between 0 and 1 at the given rate.
@@ -48,10 +38,7 @@ export const phasor: node.NativeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const train: node.CompositeNodeFactory<
-  node.KeyProps,
-  [rate: node.Child]
->;
+export declare const train: node.TrainType;
 
 /**
  * Outputs a periodic sine tone at the given frequency.
@@ -71,10 +58,7 @@ export const train: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const cycle: node.CompositeNodeFactory<
-  node.KeyProps,
-  [frequency: node.Child]
->;
+export declare const cycle: node.CycleType;
 
 /**
  * Outputs a naive sawtooth oscillator at the given frequency.
@@ -97,10 +81,7 @@ export const cycle: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const saw: node.CompositeNodeFactory<
-  node.KeyProps,
-  [frequency: node.Child]
->;
+export declare const saw: node.SawType;
 
 /**
  * Outputs a naive square oscillator at the given frequency.
@@ -123,10 +104,7 @@ export const saw: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const square: node.CompositeNodeFactory<
-  node.KeyProps,
-  [frequency: node.Child]
->;
+export declare const square: node.SquareType;
 
 /**
  * Outputs a naive triangle oscillator at the given frequency.
@@ -149,10 +127,7 @@ export const square: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const triangle: node.CompositeNodeFactory<
-  node.KeyProps,
-  [frequency: node.Child]
->;
+export declare const triangle: node.TriangleType;
 
 /**
  * Outputs a band-limited polyblep sawtooth waveform at the given frequency.
@@ -172,10 +147,7 @@ export const triangle: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const blepsaw: node.CompositeNodeFactory<
-  node.KeyProps,
-  [frequency: node.Child]
->;
+export declare const blepsaw: node.BlepSawType;
 
 /**
  * Outputs a band-limited polyblep square waveform at the given frequency.
@@ -194,10 +166,7 @@ export const blepsaw: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const blepsquare: node.CompositeNodeFactory<
-  node.KeyProps,
-  [frequency: node.Child]
->;
+export declare const blepsquare: node.BlepSquareType;
 
 /**
  * Outputs a band-limited polyblep triangle waveform at the given frequency.
@@ -228,7 +197,4 @@ export const blepsquare: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const bleptriangle: node.CompositeNodeFactory<
-  node.KeyProps,
-  [frequency: node.Child]
->;
+export declare const bleptriangle: node.BlepTriangleType;

@@ -1,7 +1,4 @@
-import * as node from '../node';
-
-// ============================================================================
-// Native
+import { node } from "@nick-thompson/elementary";
 
 /**
  * Implements a simple one-pole filter,
@@ -25,11 +22,7 @@ import * as node from '../node';
  * @see node.Child
  * @see node.PoleNode
  */
-export const pole: node.NativeNodeFactory<
-  'pole',
-  node.KeyProps,
-  [polePosition: node.Child, signal: node.Child]
->;
+export declare const pole: node.PoleType;
 
 /**
  * A second order transposed direct-form II filter implementation.
@@ -64,18 +57,7 @@ export const pole: node.NativeNodeFactory<
  * @see node.Child
  * @see node.BiquadNode
  */
-export const biquad: node.NativeNodeFactory<
-  'biquad',
-  node.KeyProps,
-  [
-    b0: node.Child,
-    b1: node.Child,
-    b2: node.Child,
-    a1: node.Child,
-    a2: node.Child,
-    signal: node.Child,
-  ]
->;
+export declare const biquad: node.BiquadType;
 
 /**
  * A convolution node which reads an impulse response from disk and
@@ -94,14 +76,7 @@ export const biquad: node.NativeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const convolve: node.NativeNodeFactory<
-  'convolve',
-  node.ConvolveProps,
-  [signal: node.Child]
->;
-
-// ============================================================================
-// Functions
+export declare const convolve: node.ConvolveType;
 
 /**
  * Implements a simple one-zero filter.
@@ -128,10 +103,7 @@ export const convolve: node.NativeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const zero: node.CompositeNodeFactory<
-  node.KeyProps,
-  [b0: node.Child, b1: node.Child, signal: node.Child]
->;
+export declare const zero: node.ZeroType;
 
 /**
  * Implements a default DC blocking filter with a pole at 0.995 and a zero at 1.
@@ -150,10 +122,7 @@ export const zero: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const dcblock: node.CompositeNodeFactory<
-  node.KeyProps,
-  [signal: node.Child]
->;
+export declare const dcblock: node.DcBlockType;
 
 /**
  * A simple first order pole-zero filter, Direct Form 1.
@@ -180,10 +149,7 @@ export const dcblock: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const df11: node.CompositeNodeFactory<
-  node.KeyProps,
-  [b0: node.Child, b1: node.Child, a1: node.Child, signal: node.Child]
->;
+export declare const df11: node.Df11Type;
 
 /**
  * Unity gain one-pole smoothing. Commonly used for addressing
@@ -207,15 +173,12 @@ export const df11: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const smooth: node.CompositeNodeFactory<
-  node.KeyProps,
-  [polePosition: node.Child, signal: node.Child]
->;
+export declare const smooth: node.SmoothType;
 
 /**
- * A pre-defined smoothing export function with a 20ms decay time equivalent to
+ * A pre-defined smoothing export declare function with a 20ms decay time equivalent to
  * @example
- *     el.smooth(el.tau2pole(0.02), signal)
+ *     el.TypeFactory(el.tau2pole(0.02), signal)
  *
  * @param [props]
  * props object with optional key
@@ -230,7 +193,7 @@ export const smooth: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const sm: node.CompositeNodeFactory<node.KeyProps, [signal: node.Child]>;
+export declare const sm: node.SmType;
 
 /**
  * A simple lowpass biquad filter with a cutoff frequency, a Q,
@@ -255,10 +218,7 @@ export const sm: node.CompositeNodeFactory<node.KeyProps, [signal: node.Child]>;
  * @see node.Child
  * @see node.Node
  */
-export const lowpass: node.CompositeNodeFactory<
-  node.KeyProps,
-  [cutoff: node.Child, Q: node.Child, signal: node.Child]
->;
+export declare const lowpass: node.LowPassType;
 
 /**
  * A simple highpass biquad filter with a cutoff frequency, a Q,
@@ -283,10 +243,7 @@ export const lowpass: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const highpass: node.CompositeNodeFactory<
-  node.KeyProps,
-  [cutoff: node.Child, Q: node.Child, signal: node.Child]
->;
+export declare const highpass: node.HighPassType;
 
 /**
  * A simple bandpass biquad filter with a cutoff frequency, a Q,
@@ -311,10 +268,7 @@ export const highpass: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const bandpass: node.CompositeNodeFactory<
-  node.KeyProps,
-  [cutoff: node.Child, Q: node.Child, signal: node.Child]
->;
+export declare const bandpass: node.BandPassType;
 
 /**
  * An allpass biquad filter with a cutoff frequency, a Q,
@@ -339,10 +293,7 @@ export const bandpass: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const allpass: node.CompositeNodeFactory<
-  node.KeyProps,
-  [cutoff: node.Child, Q: node.Child, signal: node.Child]
->;
+export declare const allpass: node.AllPassType;
 
 /**
  * A notch biquad filter with a cutoff frequency, a Q,
@@ -367,10 +318,7 @@ export const allpass: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const notch: node.CompositeNodeFactory<
-  node.KeyProps,
-  [cutoff: node.Child, Q: node.Child, signal: node.Child]
->;
+export declare const notch: node.NotchType;
 
 /**
  * A peaking (bell) biquad filter with a cutoff frequency, a Q,
@@ -398,10 +346,7 @@ export const notch: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const peak: node.CompositeNodeFactory<
-  node.KeyProps,
-  [cutoff: node.Child, Q: node.Child, gain: node.Child, signal: node.Child]
->;
+export declare const peak: node.PeakType;
 
 /**
  * A lowshelf biquad filter with a cutoff frequency, a Q,
@@ -429,10 +374,7 @@ export const peak: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const lowshelf: node.CompositeNodeFactory<
-  node.KeyProps,
-  [cutoff: node.Child, Q: node.Child, gain: node.Child, signal: node.Child]
->;
+export declare const lowshelf: node.LowShelfType;
 
 /**
  * A highshelf biquad filter with a cutoff frequency, a Q,
@@ -460,10 +402,7 @@ export const lowshelf: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const highshelf: node.CompositeNodeFactory<
-  node.KeyProps,
-  [cutoff: node.Child, Q: node.Child, gain: node.Child, signal: node.Child]
->;
+export declare const highshelf: node.HighShelfType;
 
 /**
  * A pink noise filter designed to apply a -3dB/octave lowpass to the
@@ -482,7 +421,4 @@ export const highshelf: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const pink: node.CompositeNodeFactory<
-  node.KeyProps,
-  [signal: node.Child]
->;
+export declare const pink: node.PinkType;

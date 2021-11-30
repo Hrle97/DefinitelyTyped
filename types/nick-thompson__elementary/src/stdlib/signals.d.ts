@@ -1,7 +1,4 @@
-import * as node from '../node';
-
-// ============================================================================
-// Native
+import { node } from "@nick-thompson/elementary";
 
 /**
  * A sample and hold node.
@@ -29,11 +26,7 @@ import * as node from '../node';
  * @see node.Child
  * @see node.LatchNode
  */
-export const latch: node.NativeNodeFactory<
-  'latch',
-  node.KeyProps,
-  [control: node.Child, input: node.Child]
->;
+export declare const latch: node.LatchType;
 
 /**
  * A simple signal sequencer. Receives a sequence of values from the seq
@@ -62,14 +55,7 @@ export const latch: node.NativeNodeFactory<
  * @see node.Child
  * @see node.SeqNode
  */
-export const seq: node.NativeNodeFactory<
-  'seq',
-  node.SeqProps,
-  [next: node.Child] | [next: node.Child, last: node.Child]
->;
-
-// ============================================================================
-// Composite
+export declare const seq: node.SeqType;
 
 /**
  * An exponential ADSR envelope generator, triggered by the gate signal g.
@@ -106,16 +92,7 @@ export const seq: node.NativeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const adsr: node.CompositeNodeFactory<
-  node.KeyProps,
-  [
-    attack: node.Child,
-    delay: node.Child,
-    sustain: node.Child,
-    release: node.Child,
-    gate: node.Child,
-  ]
->;
+export declare const adsr: node.AdsrType;
 
 /**
  * A simple Hann window generator. The window is generated according to an
@@ -138,7 +115,4 @@ export const adsr: node.CompositeNodeFactory<
  * @see node.Child
  * @see node.Node
  */
-export const hann: node.CompositeNodeFactory<
-  node.KeyProps,
-  [phase: node.Child]
->;
+export declare const hann: node.HannType;

@@ -1,11 +1,4 @@
-import * as node from '../node';
-
-// ============================================================================
-// Native
-
-// Unary
-
-// in is in in.d.ts because it collides with the in function from basics
+import { node } from "@nick-thompson/elementary";
 
 /**
  * Computes the sine of the operand.
@@ -23,11 +16,7 @@ import * as node from '../node';
  * @see node.Child
  * @see node.SinNode
  */
-export const sin: node.NativeNodeFactory<
-  'sin',
-  node.KeyProps,
-  [operand: node.Child]
->;
+export declare const sin: node.SinType;
 
 /**
  * Computes the cosine of the operand.
@@ -45,11 +34,7 @@ export const sin: node.NativeNodeFactory<
  * @see node.Child
  * @see node.CosNode
  */
-export const cos: node.NativeNodeFactory<
-  'cos',
-  node.KeyProps,
-  [operand: node.Child]
->;
+export declare const cos: node.CosType;
 
 /**
  * Computes the tangent of the operand.
@@ -67,11 +52,7 @@ export const cos: node.NativeNodeFactory<
  * @see node.Child
  * @see node.TanNode
  */
-export const tan: node.NativeNodeFactory<
-  'tan',
-  node.KeyProps,
-  [operand: node.Child]
->;
+export declare const tan: node.TanType;
 
 /**
  * Computes the hyperbolic tangent of the operand.
@@ -89,11 +70,7 @@ export const tan: node.NativeNodeFactory<
  * @see node.Child
  * @see node.TanhNode
  */
-export const tanh: node.NativeNodeFactory<
-  'tanh',
-  node.KeyProps,
-  [operand: node.Child]
->;
+export declare const tanh: node.TanhType;
 
 /**
  * Computes the inverse hyperbolic sine of the operand.
@@ -112,11 +89,7 @@ export const tanh: node.NativeNodeFactory<
  * @see node.Child
  * @see node.AsinhNode
  */
-export const asinh: node.NativeNodeFactory<
-  'asinh',
-  node.KeyProps,
-  [operand: node.Child]
->;
+export declare const asinh: node.AsinhType;
 
 /**
  * Computes the natural logarithm of the operand.
@@ -134,11 +107,7 @@ export const asinh: node.NativeNodeFactory<
  * @see node.Child
  * @see node.LnNode
  */
-export const ln: node.NativeNodeFactory<
-  'ln',
-  node.KeyProps,
-  [operand: node.Child]
->;
+export declare const ln: node.LnType;
 
 /**
  * Computes the logarithm in base 10 of the operand.
@@ -156,11 +125,7 @@ export const ln: node.NativeNodeFactory<
  * @see node.Child
  * @see node.LogNode
  */
-export const log: node.NativeNodeFactory<
-  'log',
-  node.KeyProps,
-  [operand: node.Child]
->;
+export declare const log: node.LogType;
 
 /**
  * Computes the logarithm in base 2 of the operand.
@@ -178,11 +143,7 @@ export const log: node.NativeNodeFactory<
  * @see node.Child
  * @see node.Log2Node
  */
-export const log2: node.NativeNodeFactory<
-  'log2',
-  node.KeyProps,
-  [operand: node.Child]
->;
+export declare const log2: node.Log2Type;
 
 /**
  * Computes the ceiling of the operand.
@@ -200,11 +161,7 @@ export const log2: node.NativeNodeFactory<
  * @see node.Child
  * @see node.CeilNode
  */
-export const ceil: node.NativeNodeFactory<
-  'ceil',
-  node.KeyProps,
-  [operand: node.Child]
->;
+export declare const ceil: node.CeilType;
 
 /**
  * Computes the floor of the operand.
@@ -222,11 +179,7 @@ export const ceil: node.NativeNodeFactory<
  * @see node.Child
  * @see node.FloorNode
  */
-export const floor: node.NativeNodeFactory<
-  'floor',
-  node.KeyProps,
-  [operand: node.Child]
->;
+export declare const floor: node.FloorType;
 
 /**
  * Computes the square root of the operand.
@@ -244,11 +197,7 @@ export const floor: node.NativeNodeFactory<
  * @see node.Child
  * @see node.SqrtNode
  */
-export const sqrt: node.NativeNodeFactory<
-  'sqrt',
-  node.KeyProps,
-  [operand: node.Child]
->;
+export declare const sqrt: node.SqrtType;
 
 /**
  * Computes the exponential in base 10 of the operand.
@@ -266,11 +215,7 @@ export const sqrt: node.NativeNodeFactory<
  * @see node.Child
  * @see node.ExpNode
  */
-export const exp: node.NativeNodeFactory<
-  'exp',
-  node.KeyProps,
-  [operand: node.Child]
->;
+export declare const exp: node.ExpType;
 
 /**
  * Computes the absolute number of the operand.
@@ -288,11 +233,7 @@ export const exp: node.NativeNodeFactory<
  * @see node.Child
  * @see node.AbsNode
  */
-export const abs: node.NativeNodeFactory<
-  'abs',
-  node.KeyProps,
-  [operand: node.Child]
->;
+export declare const abs: node.AbsType;
 
 // Binary
 
@@ -316,11 +257,7 @@ export const abs: node.NativeNodeFactory<
  * @see node.Child
  * @see node.LeNode
  */
-export const le: node.NativeNodeFactory<
-  'le',
-  node.KeyProps,
-  [first: node.Child, second: node.Child]
->;
+export declare const le: node.LeType;
 
 /**
  * Computes whether the first is lesser or equal than the second.
@@ -342,11 +279,7 @@ export const le: node.NativeNodeFactory<
  * @see node.Child
  * @see node.LeqNode
  */
-export const leq: node.NativeNodeFactory<
-  'leq',
-  node.KeyProps,
-  [first: node.Child, second: node.Child]
->;
+export declare const leq: node.LeqType;
 
 /**
  * Computes whether the first is greater than the second.
@@ -368,11 +301,7 @@ export const leq: node.NativeNodeFactory<
  * @see node.Child
  * @see node.GeNode
  */
-export const ge: node.NativeNodeFactory<
-  'ge',
-  node.KeyProps,
-  [first: node.Child, second: node.Child]
->;
+export declare const ge: node.GeType;
 
 /**
  * Computes whether the first is greater or equal than the second.
@@ -394,11 +323,7 @@ export const ge: node.NativeNodeFactory<
  * @see node.Child
  * @see node.GeqNode
  */
-export const geq: node.NativeNodeFactory<
-  'geq',
-  node.KeyProps,
-  [first: node.Child, second: node.Child]
->;
+export declare const geq: node.GeqType;
 
 /**
  * Computes the power of the first with with the second as the exponent.
@@ -420,11 +345,7 @@ export const geq: node.NativeNodeFactory<
  * @see node.Child
  * @see node.PowNode
  */
-export const pow: node.NativeNodeFactory<
-  'pow',
-  node.KeyProps,
-  [first: node.Child, second: node.Child]
->;
+export declare const pow: node.PowType;
 
 /**
  * Computes the modulo of the first with the second.
@@ -445,11 +366,7 @@ export const pow: node.NativeNodeFactory<
  * @see node.Child
  * @see node.ModNode
  */
-export const mod: node.NativeNodeFactory<
-  'mod',
-  node.KeyProps,
-  [first: node.Child, second: node.Child]
->;
+export declare const mod: node.ModType;
 
 /**
  * Returns the result of the minimal operand.
@@ -470,11 +387,7 @@ export const mod: node.NativeNodeFactory<
  * @see node.Child
  * @see node.MinNode
  */
-export const min: node.NativeNodeFactory<
-  'min',
-  node.KeyProps,
-  [first: node.Child, second: node.Child]
->;
+export declare const min: node.MinType;
 
 /**
  * Returns the result of the maximal operand.
@@ -495,11 +408,7 @@ export const min: node.NativeNodeFactory<
  * @see node.Child
  * @see node.MaxNode
  */
-export const max: node.NativeNodeFactory<
-  'max',
-  node.KeyProps,
-  [first: node.Child, second: node.Child]
->;
+export declare const max: node.MaxType;
 
 // Variadic
 
@@ -523,11 +432,7 @@ export const max: node.NativeNodeFactory<
  * @see node.Child
  * @see node.AddNode
  */
-export const add: node.NativeNodeFactory<
-  'add',
-  node.KeyProps,
-  [...operands: node.VariadicChildrenArray]
->;
+export declare const add: node.AddType;
 
 /**
  * Subtracts the rest of the operands from the first.
@@ -546,11 +451,7 @@ export const add: node.NativeNodeFactory<
  * @see node.Child
  * @see node.SubNode
  */
-export const sub: node.NativeNodeFactory<
-  'sub',
-  node.KeyProps,
-  [...operands: node.VariadicChildrenArray]
->;
+export declare const sub: node.SubType;
 
 /**
  * Multiplies the operands.
@@ -572,11 +473,7 @@ export const sub: node.NativeNodeFactory<
  * @see node.Child
  * @see node.MulNode
  */
-export const mul: node.NativeNodeFactory<
-  'mul',
-  node.KeyProps,
-  [...operands: node.VariadicChildrenArray]
->;
+export declare const mul: node.MulType;
 
 /**
  * Divides the first with the rest of the operands.
@@ -598,8 +495,4 @@ export const mul: node.NativeNodeFactory<
  * @see node.Child
  * @see node.DivNode
  */
-export const div: node.NativeNodeFactory<
-  'div',
-  node.KeyProps,
-  [...operands: node.VariadicChildrenArray]
->;
+export declare const div: node.DivType;

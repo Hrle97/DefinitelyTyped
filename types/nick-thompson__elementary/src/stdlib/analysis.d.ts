@@ -1,4 +1,4 @@
-import * as node from "../node";
+import { node } from "@nick-thompson/elementary";
 
 /**
  * A pass-through node which analyses its incoming signal, measuring the
@@ -15,4 +15,4 @@ import * as node from "../node";
  * @see node.MeterProps
  * @see node.MeterNode
  */
-export const meter: node.TypeFactory<node.MeterType>;
+export const meter: node.MeterType;

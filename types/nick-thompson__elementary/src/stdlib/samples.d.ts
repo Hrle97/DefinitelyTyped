@@ -1,7 +1,4 @@
-import * as node from '../node';
-
-// ============================================================================
-// Native
+import { node } from "@nick-thompson/elementary";
 
 /**
  * Loads a sample from disk and triggers its playback on the rising edge of
@@ -33,11 +30,7 @@ import * as node from '../node';
  * @see node.Child
  * @see node.SampleNode
  */
-export const sample: node.NativeNodeFactory<
-  'sample',
-  node.SampleProps,
-  [trigger: node.Child]
->;
+export declare const sample: node.SampleType;
 
 /**
  * Loads a lookup table which is then read from with a position determined
@@ -80,8 +73,4 @@ export const sample: node.NativeNodeFactory<
  * @see node.Child
  * @see node.TableNode
  */
-export const table: node.NativeNodeFactory<
-  'table',
-  node.KeyProps,
-  [trigger: node.Child]
->;
+export declare const table: node.TableType;

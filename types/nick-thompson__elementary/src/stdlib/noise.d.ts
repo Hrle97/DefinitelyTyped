@@ -1,7 +1,4 @@
-import * as node from '../node';
-
-// ============================================================================
-// Composite
+import { node } from "@nick-thompson/elementary";
 
 /**
  * A simple white noise generator.
@@ -17,7 +14,7 @@ import * as node from '../node';
  * @see node.Child
  * @see node.Node
  */
-export const noise: node.CompositeNodeFactory;
+export declare const noise: node.NoiseType;
 
 /**
  * A simple pink noise generator.
@@ -33,4 +30,4 @@ export const noise: node.CompositeNodeFactory;
  * @see node.Child
  * @see node.Node
  */
-export const pinknoise: node.CompositeNodeFactory;
+export declare const pinknoise: node.PinkNoiseType;

@@ -10,21 +10,21 @@ import { node } from "@nick-thompson/elementary";
  * 1. The control signal
  * 2. The input signal to sample.
  *
- * @param [props]
- * props object with optional key
+ * @see node.EnvType
+ */
+export declare const env: node.TypeFactory<node.EnvType>;
+
+/**
+ * A sample and hold node.
+ * Samples a new value from the input on a rising edge of the control signal,
+ * then holds and emits that value until the next rising edge of
+ * the control signal.
  *
- * @param control
- * the control signal
+ * Expected children:
+ * 1. The control signal
+ * 2. The input signal to sample.
  *
- * @param input
- * the input signal
- *
- * @returns
- * a {@link node.LatchNode} that computes the controlled input signal output
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.LatchNode
+ * @see node.LatchType
  */
 export declare const latch: node.TypeFactory<node.LatchType>;
 
@@ -39,21 +39,7 @@ export declare const latch: node.TypeFactory<node.LatchType>;
  * another control signal (pulse train) whose rising edge will
  * reset the sequence position back to the beginning.
  *
- * @param [props]
- * {@link node.SeqProps} object
- *
- * @param next
- * the next step
- *
- * @param last
- * the last step
- *
- * @returns
- * a {@link node.SeqNode} that computes the output of the sequencer
- *
- * @see node.SeqProps
- * @see node.Child
- * @see node.SeqNode
+ * @see node.SeqType
  */
 export declare const seq: node.TypeFactory<node.SeqType>;
 
@@ -67,30 +53,7 @@ export declare const seq: node.TypeFactory<node.SeqType>;
  * 1 (number or signal) 4. Release time in seconds (number or signal) 5.
  * Gate signal; a pulse train alternating between 0 and 1.
  *
- * @param [props]
- * props object with optional key
- *
- * @param attack
- * the attack time in seconds
- *
- * @param delay
- * the decay time in seconds
- *
- * @param sustain
- * the sustain amplitude between 0 and 1
- *
- * @param release
- * the release time in seconds
- *
- * @param gate
- * the gate signal limited to values of 0 and 1
- *
- * @returns
- * a {@link node.Node} that computes the output of the envelope
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.Node
+ * @see node.AdsrType
  */
 export declare const adsr: node.TypeFactory<node.AdsrType>;
 
@@ -102,17 +65,6 @@ export declare const adsr: node.TypeFactory<node.AdsrType>;
  *
  * Expects exactly one child, the incoming phase.
  *
- * @param [props]
- * props object with optional key
- *
- * @param phase
- * the incoming phase
- *
- * @returns
- * a {@link node.Node} that computes the output of the generator
- *
- * @see node.KeyProps
- * @see node.Child
- * @see node.Node
+ * @see node.HannType
  */
 export declare const hann: node.TypeFactory<node.HannType>;

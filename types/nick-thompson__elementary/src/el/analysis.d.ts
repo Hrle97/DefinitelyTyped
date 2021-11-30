@@ -6,13 +6,6 @@ import { node } from "@nick-thompson/elementary";
  * the core Renderer event interface with an event object matching the
  * following structure.
  *
- * @param [props]
- * props object with optional key
- *
- * @returns
- * the pass-through {@link node.MeterNode}
- *
- * @see node.MeterProps
- * @see node.MeterNode
+ * @see node.MeterType
  */
 export const meter: node.TypeFactory<node.MeterType>;

@@ -5,9 +5,6 @@ import * as syntax from "./syntax";
 import * as el from "./el";
 import * as stdlib from "./stdlib";
 
-// ***************************************************************************
-// Types
-
 /**
  * @todo
  */
@@ -27,9 +24,6 @@ export import renderer = renderer;
  * @todo
  */
 export import syntax = syntax;
-
-// ***************************************************************************
-// Values
 
 /**
  * @todo
